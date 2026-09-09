@@ -11,9 +11,10 @@ You are editing the OPERAVA website repository. **Follow this file and `DESIGN.m
 ## Architecture
 
 - Static multi-page HTML at repo root (no required build step)
-- Pages: `index.html`, `about.html`, `referral.html`, `jobs-us.html`, `jobs-global.html`, `resume.html`, `talent.html`, `contact.html`
+- Pages: `index.html`, `about.html`, `referral.html`, `careers.html`, `jobs-us.html`, `jobs-global.html`, `resume.html`, `talent.html`, `contact.html`, `terms.html`
 - Primary nav links to real files, not only `#` anchors
 - Keep header/footer present and consistent on every page
+- Careers content and Terms content must stay faithful to official OPERAVA source documents when updated
 
 ## Layout (always)
 
@@ -56,6 +57,7 @@ This is a **principal-level editorial** product site, not a generic SaaS templat
 - [ ] Nav still works across pages
 - [ ] Mobile: collapsible nav, stacked grids, usable gutters
 - [ ] No unsolicited tooling files
+- [ ] Terms/Careers remain faithful to official source wording when those pages change
 
 ## Conflict resolution
 
