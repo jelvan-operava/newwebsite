@@ -4,87 +4,293 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms and Conditions | OPERAVA</title>
-<meta name="description" content="OPERAVA Global Solutions Terms and Conditions. Complete framework. Effective 17 August 2026.">
+<meta name="description" content="OPERAVA Global Solutions Terms and Conditions. Complete framework for websites, services, employment applications, and client engagements. Effective August 17, 2026.">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<style>:root{--ink:#0a1628;--muted:#5a6578;--line:#e2e6ee;--surface:#f4f6fa;--blue:#1a6dff;--navy:#06101f;--fd:'Roboto Condensed',system-ui,sans-serif;--fb:'Montserrat',system-ui,sans-serif;--g:clamp(20px,4.5vw,72px);--m:48rem}*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--fb);color:var(--ink);line-height:1.55;background:#fff}a{color:inherit;text-decoration:none}.nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:rgba(6,16,31,.96)}.nav-brand{font-family:var(--fd);font-weight:700;font-size:1.25rem;letter-spacing:.06em;color:#fff;text-transform:uppercase}.nav-links{display:flex;gap:clamp(14px,1.8vw,28px);flex-wrap:wrap}.nav-links a{font-family:var(--fd);font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.85)}.nav-links a:hover{color:#fff}.nav-toggle{display:none;background:0;border:0;cursor:pointer;padding:8px}.nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0}.page-hero{padding:calc(80px + 5vh) var(--g) 3.5rem;background:var(--navy);color:#fff}.page-hero .crumb{font-family:var(--fd);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:1rem}.page-hero .crumb a{color:rgba(255,255,255,.65)}.page-hero h1{font-family:var(--fd);font-weight:700;font-size:clamp(2.1rem,4.5vw,3.4rem);text-transform:uppercase;margin-bottom:1rem}.page-hero p{color:rgba(255,255,255,.72);max-width:var(--m)}.meta-row{display:flex;flex-wrap:wrap;gap:1rem 2rem;margin-top:1.25rem;font-size:.875rem;color:rgba(255,255,255,.65)}.meta-row strong{color:rgba(255,255,255,.9)}.band{padding:clamp(3.5rem,8vh,6rem) var(--g)}.notice{border-left:3px solid var(--blue);padding:.85rem 1.15rem;margin-bottom:1.5rem;max-width:var(--m)}.notice p{margin:0;font-size:.95rem;line-height:1.65}.prose{max-width:var(--m)}.prose h2{font-family:var(--fd);font-weight:700;font-size:1.2rem;text-transform:uppercase;margin:2.5rem 0 .75rem;padding-top:1rem;border-top:1px solid var(--line)}.prose h2:first-of-type{border-top:0;padding-top:0;margin-top:0}.prose p{font-size:1.02rem;color:var(--muted);line-height:1.75;margin-bottom:1rem}.prose ul{margin:0 0 1.15rem 1.2rem;color:var(--muted)}.prose li{margin-bottom:.4rem;line-height:1.6;font-size:.98rem}.legal-links{margin:1rem 0 1.5rem}.legal-links a{color:var(--blue);margin-right:1rem;font-size:.9rem}.footer{background:var(--navy);color:rgba(255,255,255,.55);padding:4rem var(--g) 2rem}.footer-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:2rem;margin-bottom:3rem}.footer-brand{font-family:var(--fd);font-weight:700;color:#fff;margin-bottom:.75rem}.footer h4{font-family:var(--fd);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem}.footer ul{list-style:none}.footer li{margin-bottom:.5rem}.footer a{font-size:.875rem;color:rgba(255,255,255,.6)}.footer-bottom{padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);font-size:.75rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;color:rgba(255,255,255,.35)}.footer-bottom a{color:rgba(255,255,255,.5)}@media(max-width:960px){.nav-links{display:none;position:absolute;top:80px;left:0;right:0;flex-direction:column;background:var(--navy);padding:1.25rem var(--g);gap:1rem}.nav-links.open{display:flex}.nav-toggle{display:block}.footer-grid{grid-template-columns:1fr}}</style>
+<style>
+:root{
+  --ink:#0a1628;
+  --muted:#505e73;
+  --line:#e2e6ee;
+  --surface:#f7f8fc;
+  --surface-2:#f0f2f9;
+  --purple:#4B20C9;
+  --purple-deep:#37169c;
+  --purple-light:#f3effc;
+  --purple-border:#dcd3f8;
+  --navy:#06101f;
+  --fd:'Roboto Condensed',system-ui,sans-serif;
+  --fb:'Montserrat',system-ui,sans-serif;
+  --g:clamp(20px,4.5vw,72px);
+  --m:48rem;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.6;background:#fff}
+a{color:inherit;text-decoration:none}
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-brand{font-family:var(--fd);font-weight:700;font-size:1.25rem;letter-spacing:.06em;color:var(--ink);text-transform:uppercase}
+.nav-links{display:flex;gap:clamp(14px,1.8vw,28px);flex-wrap:wrap}
+.nav-links a{font-family:var(--fd);font-size:.8125rem;font-weight:500;color:#384558;transition:color .2s}
+.nav-links a:hover,.nav-links a.is-active{color:var(--purple)}
+.nav-toggle{display:none;background:0;border:0;cursor:pointer;padding:8px}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0}
+.page-hero{padding:calc(80px + 5vh) var(--g) 3.5rem;background:linear-gradient(180deg,#f7f5fd 0%,#ffffff 100%);color:var(--ink);border-bottom:1px solid var(--line)}
+.page-hero .crumb{font-family:var(--fd);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.page-hero .crumb a{color:var(--purple)}
+.page-hero h1{font-family:var(--fd);font-weight:700;font-size:clamp(2.1rem,4.5vw,3.4rem);line-height:1.08;text-transform:uppercase;margin-bottom:1rem;color:var(--ink)}
+.page-hero p{font-size:1.05rem;color:var(--muted);max-width:var(--m)}
+.meta-row{display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;margin-top:1.5rem;font-size:.875rem;color:var(--muted)}
+.meta-row strong{color:var(--ink)}
+.band{padding:clamp(3.5rem,8vh,6rem) var(--g)}
+.notice{border-left:3px solid var(--purple);background:var(--purple-light);padding:1rem 1.25rem;margin-bottom:2rem;max-width:var(--m);border-radius:0 4px 4px 0}
+.notice p{margin:0;font-size:.95rem;color:var(--ink);line-height:1.65}
+.legal-nav{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;margin-bottom:2.5rem;padding:1rem 1.25rem;background:var(--surface);border-radius:4px;border:1px solid var(--line);max-width:var(--m)}
+.legal-nav span{font-family:var(--fd);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);align-self:center}
+.legal-nav a{font-family:var(--fd);font-size:.8125rem;font-weight:600;color:var(--purple);text-transform:uppercase}
+.legal-nav a:hover{text-decoration:underline}
+.prose{max-width:var(--m)}
+.prose h2{font-family:var(--fd);font-weight:700;font-size:1.2rem;text-transform:uppercase;margin:2.5rem 0 .75rem;padding-top:1.25rem;border-top:1px solid var(--line);color:var(--ink)}
+.prose h2:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.prose p{font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:1rem}
+.prose ul{margin:0 0 1.25rem 1.25rem;color:var(--muted)}
+.prose li{margin-bottom:.45rem;line-height:1.65;font-size:.98rem}
+.footer{background:var(--surface);color:var(--muted);padding:4.5rem var(--g) 2.5rem;border-top:1px solid var(--line)}
+.footer-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:clamp(2rem,4vw,3rem);margin-bottom:3rem}
+.footer-brand{font-family:var(--fd);font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:.75rem}
+.footer p{font-size:.875rem;line-height:1.65;max-width:22rem;color:var(--muted)}
+.footer h4{font-family:var(--fd);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:1rem}
+.footer ul{list-style:none}
+.footer li{margin-bottom:.55rem}
+.footer a{font-size:.875rem;color:var(--muted);transition:color .2s ease}
+.footer a:hover{color:var(--purple)}
+.footer-bottom{padding-top:1.75rem;border-top:1px solid var(--line);font-size:.8125rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;text-align:center;color:var(--muted)}
+.footer-legal{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.6rem 1rem;font-size:.875rem}
+.footer-legal a{color:var(--ink);font-weight:500;transition:color .2s ease}
+.footer-legal a:hover{color:var(--purple)}
+.footer-legal .sep{color:var(--line);user-select:none}
+.footer-copyright{font-size:.775rem;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s,transform .65s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:960px){
+  .nav-links{display:none;position:absolute;top:80px;left:0;right:0;flex-direction:column;background:#fff;padding:1.25rem var(--g);gap:1rem;border-bottom:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
-<header class="nav"><a class="nav-brand" href="index.html">OPERAVA</a><nav class="nav-links"><a href="about.html">About</a><a href="careers.html">Careers</a><a href="jobs-global.html">Global Jobs</a><a href="resume.html">Submit Resume</a><a href="talent.html">Request Talent</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button></header>
-<section class="page-hero"><p class="crumb"><a href="index.html">Home</a> / Terms and Conditions</p><h1>Terms and Conditions</h1><p>Website, Services, Employment Applications, Client Engagements and Digital Platforms.</p><div class="meta-row"><span><strong>Entity</strong> OPERAVA Global Solutions</span><span><strong>Effective</strong> 17 August 2026</span><span><strong>Jurisdiction</strong> Republic of the Philippines</span></div></section>
-<section class="band">
-<div class="notice"><p><strong>Important notice.</strong> This is a general corporate and website framework for OPERAVA Global Solutions OPC. Specific client agreements, employment agreements, statements of work, NDAs, data-processing agreements, and other contracts may supplement or supersede these Terms for the applicable relationship. This document should be reviewed by qualified Philippine counsel before publication or contractual use.</p></div>
-<div class="legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="refund-policy.html">Refund Policy</a></div>
-<div class="prose">
-<h2 id="section-1">1. About Operava</h2>
-<p>OPERAVA Global Solutions is a Philippine-based technology, workforce, and Business Process Outsourcing organization focused on Information Technology, digital services, cloud-related solutions, business operations, customer service, data processing, and remote professional services. OPERAVA may serve startups, small businesses, SMEs, growing organizations, established businesses, and enterprises. OPERAVA operates with a remote-first model and may work with professionals and clients in different countries, subject to applicable laws and contractual requirements. OPERAVA is an SEC-registered Philippine corporation. Corporate registration is not represented as a blanket government license, accreditation, certification, or authorization for every possible technology, professional, staffing, financial, regulated, or specialized activity. Separate permits, licenses, certifications, professional qualifications, or authorizations may apply to particular activities.</p>
-<h2 id="section-2">2. Acceptance</h2>
-<p>By accessing or using an OPERAVA website, platform, service, form, portal, or other digital property, you acknowledge these Terms to the extent applicable. If you do not agree, discontinue use of the relevant service or platform. Specific written agreements may contain additional or conflicting terms. The applicable specific agreement controls for that relationship and subject matter.</p>
-<h2 id="section-3">3. Services</h2>
-<p>OPERAVA services may include:</p>
-<ul><li>Software development</li><li>Web and mobile application development</li><li>SaaS and platform development</li><li>IT systems development</li><li>Computer programming</li><li>IT consulting</li><li>Systems integration</li><li>Database services</li><li>Cloud-related solutions</li><li>Cloud application environments</li><li>Hosting-related services</li><li>Cloud migration and infrastructure support</li><li>Application deployment</li><li>Systems administration</li><li>Customer service</li><li>Technical support</li><li>Help desk</li><li>Back-office operations</li><li>Data processing</li><li>Document processing</li><li>Virtual assistance</li><li>Administrative support</li><li>Recruitment process outsourcing and staffing support</li><li>Other IT, BPO, workforce, and professional services as agreed in writing</li></ul>
-<p>The exact scope of any engagement is defined by the applicable quotation, proposal, statement of work, service agreement, or other written agreement accepted by the parties.</p>
-<h2 id="section-4">4. No Automatic Service Obligation</h2>
-<p>Website descriptions, marketing materials, job postings, and general service listings do not by themselves create a binding obligation to provide a specific service, hire a specific individual, or accept a particular engagement. Binding obligations arise from accepted written agreements, statements of work, order forms, or other contracts expressly agreed by the parties.</p>
-<h2 id="section-5">5. Generalist And Specialist Workforce Model</h2>
-<p>OPERAVA may use broad professional titles and assign specialists based on client requirements, project needs, and available talent. Assignment of a professional does not guarantee permanent placement with a particular client unless expressly agreed in writing.</p>
-<h2 id="section-6">6. Client Responsibilities</h2>
-<p>Clients are responsible for providing accurate requirements, timely decisions, access, content, systems, credentials, and cooperation reasonably needed for delivery. Delays or deficiencies caused by Client inputs, approvals, or infrastructure may affect timelines and costs.</p>
-<h2 id="section-7">7. Service Quality</h2>
-<p>OPERAVA seeks to provide services professionally and in accordance with the applicable agreement. Specific service levels, acceptance criteria, and remedies are governed by the written agreement and any service level terms.</p>
-<h2 id="section-8">8. Talent Assignments</h2>
-<p>Where OPERAVA provides staffing or assigned professionals, the engagement terms, supervision model, replacement rights, and fees are defined in the applicable agreement. OPERAVA does not guarantee that any particular individual will remain assigned for a fixed duration unless expressly agreed.</p>
-<h2 id="section-9">9. Hiring Process</h2>
-<p>Recruitment and hiring processes may include:</p>
-<ul><li>Initial / AI-assisted interview</li><li>Skills or role assessment</li><li>OPERAVA Talent Acquisition interview</li><li>Client interview</li><li>Final selection and applicable employment/engagement documentation</li></ul>
-<p>Application does not guarantee employment or placement.</p>
-<h2 id="section-10">10. Remote Work</h2>
-<p>OPERAVA operates remote-first. Professionals and clients may work from different locations subject to applicable law, data-security requirements, and contractual terms.</p>
-<h2 id="section-11">11. Accounts And Security</h2>
-<p>Users of OPERAVA platforms are responsible for safeguarding account credentials and for activity under their accounts. OPERAVA may suspend access for security, abuse, non-payment, or legal reasons as permitted by law and the applicable agreement.</p>
-<h2 id="section-12">12. Acceptable Use</h2>
-<p>Users must not misuse OPERAVA websites, systems, or services, including unlawful activity, unauthorized access, interference with systems, or infringement of intellectual property or privacy rights.</p>
-<h2 id="section-13">13. Intellectual Property</h2>
-<p>Ownership of pre-existing materials remains with the originating party. Ownership and license rights in deliverables, software, documentation, and work product are governed by the applicable written agreement.</p>
-<h2 id="section-14">14. Client Materials</h2>
-<p>Clients retain rights in materials they provide. Clients grant OPERAVA a limited license to use client materials as needed to perform the agreed services.</p>
-<h2 id="section-15">15. Third-Party Services</h2>
-<p>Services may depend on third-party platforms, cloud providers, software, APIs, or tools. Third-party terms apply to those services. OPERAVA is not responsible for third-party failures beyond its reasonable control, except as required by law or the agreement.</p>
-<h2 id="section-16">16. Confidentiality</h2>
-<p>Each party must protect the other party’s confidential information and use it only for the purpose of the engagement, subject to the agreement and applicable law.</p>
-<h2 id="section-17">17. Data Privacy</h2>
-<p>Personal data is processed in accordance with applicable law, including the Philippine Data Privacy Act of 2012 where applicable, and OPERAVA’s Privacy Policy.</p>
-<h2 id="section-18">18. Security</h2>
-<p>OPERAVA implements reasonable security measures appropriate to the nature of the services and risks. No system is completely secure.</p>
-<h2 id="section-19">19. Payments And Commercial Terms</h2>
-<p>Fees, deposits, billing frequency, payment methods, and late-payment consequences are set in the applicable agreement, quotation, or invoice terms.</p>
-<h2 id="section-20">20. Taxes</h2>
-<p>Taxes, duties, and similar charges may apply as required by law and as stated in the agreement or invoice.</p>
-<h2 id="section-21">21. Cancellation And Termination</h2>
-<p>Cancellation and termination rights, notice periods, and consequences are governed by the applicable agreement. Cancellation does not automatically create a refund right; see the Refund Policy and the agreement.</p>
-<h2 id="section-22">22. Professional Advice Disclaimer</h2>
-<p>OPERAVA does not provide legal, tax, accounting, or regulated professional advice unless expressly engaged for that purpose under a separate agreement and authorized to do so.</p>
-<h2 id="section-23">23. Limitation Of Liability</h2>
-<p>To the maximum extent permitted by law, OPERAVA’s liability is limited as stated in the applicable agreement. Nothing excludes liability that cannot lawfully be excluded, including fraud or mandatory consumer rights where applicable.</p>
-<h2 id="section-24">24. Force Majeure</h2>
-<p>Neither party is responsible for delay or failure caused by events beyond reasonable control, subject to the agreement and applicable law.</p>
-<h2 id="section-25">25. Modifications</h2>
-<p>OPERAVA may update these Terms for the website and general framework. Material changes will be indicated by updating the effective date. Specific signed agreements are modified only as those agreements provide.</p>
-<h2 id="section-26">26. Governing Law</h2>
-<p>These Terms are governed by the laws of the Republic of the Philippines, without prejudice to mandatory laws that apply to a particular transaction or party.</p>
-<h2 id="section-27">27. Severability</h2>
-<p>If any provision is held invalid or unenforceable, the remaining provisions continue in effect.</p>
-<h2 id="section-28">28. No Waiver</h2>
-<p>Failure to enforce a provision is not a waiver of the right to enforce it later.</p>
-<h2 id="section-29">29. Entire Agreement</h2>
-<p>For website use, these Terms and the Privacy Policy form the general framework. For client and employment relationships, the signed agreements, statements of work, and related documents control.</p>
-<h2 id="section-30">30. Contact</h2>
-<p>OPERAVA Global Solutions<br>Initial Philippine office: Pagudpud, Ilocos Norte 2919, Philippines<br>Use current official contact channels for inquiries: hello@operavaglobal.com · hr@operavaglobal.com · cs@operavaglobal.com · compliance@operavaglobal.com</p>
-<h2 id="section-31">31. Final Notice</h2>
-<p>This document is a general framework and is not a substitute for a signed client service agreement, employment agreement, NDA, data-processing agreement, or other legally required document.</p>
-<p style="margin-top:2.5rem"><strong>OPERAVA — Operating in Advance.</strong></p>
-</div>
+<header class="nav">
+  <a class="nav-brand" href="index.html">OPERAVA</a>
+  <nav class="nav-links">
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="jobs-global.html">Global Jobs</a>
+    <a href="resume.html">Submit Resume</a>
+    <a href="talent.html">Request Talent</a>
+    <a href="referral.html">Referral</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<section class="page-hero">
+  <p class="crumb"><a href="index.html">Home</a> / Terms and Conditions</p>
+  <h1>Terms and Conditions</h1>
+  <p>Website, Services, Employment Applications, Client Engagements, and Digital Platforms.</p>
+  <div class="meta-row">
+    <span><strong>Entity</strong> Operava Global Solutions</span>
+    <span><strong>Effective Date</strong> August 17, 2026</span>
+    <span><strong>Jurisdiction</strong> Republic of the Philippines</span>
+    <span><strong>Status</strong> Official Corporate Framework</span>
+  </div>
 </section>
-<footer class="footer"><div class="footer-grid"><div><div class="footer-brand">Operava Global Solutions</div><p>Technology is our focus, and quality is our commitment.</p></div><div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div><div><h4>Solutions</h4><ul><li><a href="talent.html">Technology Talent</a></li><li><a href="talent.html">Business Talent</a></li></ul></div><div><h4>Resources</h4><ul><li><a href="jobs-global.html">Global Jobs</a></li><li><a href="resume.html">Submit Resume</a></li></ul></div></div><div class="footer-bottom"><span>© 2026 Operava Global Solutions</span><span><a href="terms.html">Terms and Conditions</a> · <a href="privacy-policy.html">Privacy Policy</a> · <a href="refund-policy.html">Refund Policy</a></span></div></footer>
-<script>(function(){var t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');if(t)t.onclick=function(){l.classList.toggle('open')}})();</script>
+
+<section class="band">
+  <div class="notice reveal">
+    <p><strong>Important Legal Framework.</strong> This document constitutes the general corporate and online operational framework for Operava Global Solutions OPC. Specific client agreements, Statements of Work (SOWs), NDAs, Data Processing Agreements (DPAs), and employment contracts control their specific relationships.</p>
+  </div>
+
+  <div class="legal-nav reveal">
+    <span>Related Documents:</span>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="refund-policy.html">Refund Policy</a>
+    <a href="contact.html">Contact Legal</a>
+  </div>
+
+  <div class="prose reveal">
+    <h2 id="section-1">1. About Operava</h2>
+    <p>Operava Global Solutions is an SEC-registered Philippine corporation providing Information Technology, workforce augmentation, and Business Process Outsourcing (BPO) solutions. We serve startups, SMEs, fast-growing technology companies, and global enterprises. Operava operates under a remote-first model connecting high-caliber talent in the Philippines with clients worldwide in full compliance with applicable laws.</p>
+
+    <h2 id="section-2">2. Acceptance of Terms</h2>
+    <p>By accessing or utilizing our website, client portals, application forms, or digital services, you acknowledge that you have read, understood, and agreed to these Terms and Conditions. If you do not agree to these terms, please refrain from using our platforms. In commercial relationships, mutually executed written contracts govern and take precedence over website terms.</p>
+
+    <h2 id="section-3">3. Services Provided</h2>
+    <p>Operava offers comprehensive technology and workforce capabilities, including:</p>
+    <ul>
+      <li>Custom software and systems engineering</li>
+      <li>Web, mobile, and enterprise platform development</li>
+      <li>Cloud application environments and DevOps automation</li>
+      <li>Cloud migration, infrastructure monitoring, and system administration</li>
+      <li>Customer experience (CX), technical helpdesk, and omnichannel customer service</li>
+      <li>Back-office data processing, document verification, and workflow management</li>
+      <li>Recruitment Process Outsourcing (RPO) and dedicated workforce augmentation</li>
+      <li>IT strategy, architecture consulting, and technology advisory</li>
+    </ul>
+
+    <h2 id="section-4">4. No Automatic Service Obligation</h2>
+    <p>General descriptions on this website, capability showcases, and job listings do not constitute an automatic or binding contractual commitment. Enforceable obligations arise solely from signed commercial agreements, Statements of Work (SOWs), or approved Order Forms.</p>
+
+    <h2 id="section-5">5. Talent Model &amp; Resource Allocation</h2>
+    <p>Operava employs a structured generalist-to-specialist workforce hierarchy. Assigned professionals are deployed based on verified technical competencies, project milestones, and client criteria. Specific team member assignments are subject to resource availability and contractual parameters.</p>
+
+    <h2 id="section-6">6. Client Obligations</h2>
+    <p>Clients are responsible for providing clear specifications, timely project feedback, required system credentials, and reasonable cooperation necessary for successful milestone execution. Operava is not liable for delivery delays arising from delayed client approvals or missing third-party access.</p>
+
+    <h2 id="section-7">7. Service Quality &amp; Acceptance</h2>
+    <p>Operava conducts all professional services in a diligent, workmanlike manner conforming to prevailing industry standards. Acceptance procedures, QA review cycles, and performance metrics are governed by the relevant Statement of Work.</p>
+
+    <h2 id="section-8">8. Dedicated Staffing &amp; Talent Augmentation</h2>
+    <p>Where professionals are dedicated to a Client, day-to-day project priorities are directed by the Client while administrative, payroll, and statutory employer responsibilities are managed by Operava. If a placement requires replacement during the warranty period, Operava provides qualified replacement personnel promptly.</p>
+
+    <h2 id="section-9">9. Recruitment &amp; Application Process</h2>
+    <p>Candidate evaluation includes: (a) initial AI-assisted screening and skills matching, (b) technical assessment, (c) Operava talent team interview, and (d) client final interview where applicable. Application submission does not guarantee employment or assignment.</p>
+
+    <h2 id="section-10">10. Remote-First Operations</h2>
+    <p>Operava operates on a remote-first global delivery model. All remote personnel utilize secure, encrypted workstations and adhere to rigorous information security protocols regardless of physical location.</p>
+
+    <h2 id="section-11">11. Account Security &amp; Credentials</h2>
+    <p>Users granted access to Operava client portals, dashboards, or shared systems must maintain the confidentiality of their credentials and immediately notify Operava of any suspected unauthorized access or compromise.</p>
+
+    <h2 id="section-12">12. Acceptable Use Policy</h2>
+    <p>Users shall not utilize Operava systems or services for any unlawful purpose, including transmission of malicious software, unauthorized vulnerability probing, infringement of third-party intellectual property, or activities that violate Philippine or international law.</p>
+
+    <h2 id="section-13">13. Intellectual Property Rights</h2>
+    <p>Each party retains all pre-existing intellectual property. Work product, custom software, and deliverables developed specifically for a Client under an SOW become Client property upon full, timely payment of all applicable invoices, subject to explicit contract terms.</p>
+
+    <h2 id="section-14">14. Client Materials &amp; Trademarks</h2>
+    <p>Clients retain complete ownership of all data, logos, assets, and proprietary materials provided to Operava. Clients grant Operava a limited, non-exclusive license to utilize these materials solely to perform the contracted services.</p>
+
+    <h2 id="section-15">15. Third-Party Integrations &amp; Cloud Providers</h2>
+    <p>Services may incorporate third-party cloud infrastructure (e.g., AWS, GCP, Azure) and SaaS APIs. Such components are subject to their respective vendor license agreements. Operava is not responsible for upstream third-party outages beyond our reasonable control.</p>
+
+    <h2 id="section-16">16. Confidentiality &amp; Non-Disclosure</h2>
+    <p>Both parties agree to protect and treat all proprietary, business, and technical information exchanged during the relationship as strictly confidential, exercising no less than reasonable care, during and after contract termination.</p>
+
+    <h2 id="section-17">17. Data Protection &amp; Privacy</h2>
+    <p>All personal data is processed strictly in accordance with the Philippine Data Privacy Act of 2012 (RA 10173), applicable international data privacy standards, and our published Privacy Policy.</p>
+
+    <h2 id="section-18">18. Information Security Controls</h2>
+    <p>Operava implements enterprise-grade technical safeguards including end-to-end data encryption, multi-factor authentication, network firewalls, and regular security audits to protect client data assets.</p>
+
+    <h2 id="section-19">19. Invoicing, Fees, and Commercial Terms</h2>
+    <p>Fees, billing milestones, retainer schedules, and payment terms are detailed in the applicable commercial agreement or invoice. Invoices are payable within the net terms specified upon issuance.</p>
+
+    <h2 id="section-20">20. Statutory Taxes &amp; Withholding</h2>
+    <p>Invoices may include applicable Value Added Tax (VAT) or statutory levies as required by the Philippine Bureau of Internal Revenue (BIR). Withholding tax certificates must be provided in a timely manner where applicable.</p>
+
+    <h2 id="section-21">21. Contract Cancellation &amp; Termination</h2>
+    <p>Termination rights, cure periods, and notice requirements are defined in the signed commercial contract. Cancellation of an engagement does not automatically generate a refund for properly performed services; see our <a href="refund-policy.html" style="color:var(--purple);font-weight:600">Refund Policy</a>.</p>
+
+    <h2 id="section-22">22. Disclaimer of Regulated Professional Advice</h2>
+    <p>Operava provides technical, engineering, and workforce delivery services. Nothing provided by Operava shall be construed as formal legal, accounting, tax, or specialized regulated financial advice.</p>
+
+    <h2 id="section-23">23. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, Operava’s total aggregate liability for any claims arising out of or related to these Terms or the services provided shall not exceed the net fees paid by the Client to Operava for the specific service in dispute during the preceding three (3) months.</p>
+
+    <h2 id="section-24">24. Force Majeure</h2>
+    <p>Neither party will be held responsible for delayed performance or non-delivery caused by conditions beyond its reasonable control, including natural disasters, typhoons, severe national grid outages, war, pandemics, or government actions.</p>
+
+    <h2 id="section-25">25. Modifications to Terms</h2>
+    <p>Operava reserves the right to revise these Terms periodically. Revisions become effective upon publication on this website. Active clients with negotiated master agreements will be notified of material changes affecting operational delivery.</p>
+
+    <h2 id="section-26">26. Governing Law &amp; Jurisdiction</h2>
+    <p>These Terms and Conditions are governed by and construed under the laws of the Republic of the Philippines. Any unresolved legal disputes shall be brought exclusively before the courts of the Republic of the Philippines.</p>
+
+    <h2 id="section-27">27. Severability</h2>
+    <p>If any provision of these Terms is determined to be invalid, illegal, or unenforceable by a court of competent jurisdiction, the remaining provisions will continue in full force and effect.</p>
+
+    <h2 id="section-28">28. Non-Waiver</h2>
+    <p>The failure of either party to enforce any right or provision of these Terms will not constitute a waiver of future enforcement of that or any other provision.</p>
+
+    <h2 id="section-29">29. Entire Agreement</h2>
+    <p>These Terms, together with our Privacy Policy and Refund Policy, constitute the general framework governing website usage and preliminary engagement. Individually signed commercial contracts supersede these Terms with respect to their subject matter.</p>
+
+    <h2 id="section-30">30. Official Corporate Contact Information</h2>
+    <p>
+      <strong>Operava Global Solutions</strong><br>
+      Philippine Corporate Office: Pagudpud, Ilocos Norte 2919, Philippines<br>
+      SEC Registration: 2026080262213-03<br>
+      General Inquiries: <a href="mailto:hello@operavaglobal.com" style="color:var(--purple);font-weight:600">hello@operavaglobal.com</a><br>
+      Customer Support: <a href="mailto:cs@operavaglobal.com" style="color:var(--purple);font-weight:600">cs@operavaglobal.com</a><br>
+      Compliance &amp; Legal: <a href="mailto:compliance@operavaglobal.com" style="color:var(--purple);font-weight:600">compliance@operavaglobal.com</a>
+    </p>
+
+    <h2 id="section-31">31. Final Corporate Affirmation</h2>
+    <p>Operava Global Solutions is dedicated to delivering world-class engineering, operational agility, and transparent client partnerships worldwide.</p>
+    <p style="margin-top:2.5rem"><strong>OPERAVA — Operating in Advance.</strong></p>
+  </div>
+</section>
+
+<footer class="footer" id="main-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Operava Global Solutions</div>
+      <p>Technology is our focus, and quality is our commitment. Philippine-based · remote-first · global operations.</p>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="talent.html">Technology Talent</a></li>
+        <li><a href="talent.html">Business Talent</a></li>
+        <li><a href="about.html">Professional Services</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="jobs-global.html">Global Jobs</a></li>
+        <li><a href="jobs-us.html">U.S. Jobs</a></li>
+        <li><a href="resume.html">Submit Resume</a></li>
+        <li><a href="referral.html">Referral Program</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <span class="sep">·</span>
+      <a href="terms.html">Terms and Conditions</a>
+      <span class="sep">·</span>
+      <a href="refund-policy.html">Refund Policy</a>
+    </div>
+    <div class="footer-copyright">
+      © 2026 Operava Global Solutions. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');
+  if(t)t.onclick=function(){l.classList.toggle('open')};
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  }else{
+    els.forEach(function(el){el.classList.add('in')});
+  }
+})();
+</script>
 </body>
 </html>

@@ -4,44 +4,199 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | OPERAVA</title>
-<meta name="description" content="About Operava Global Solutions — Workforce, IT, and BPO.">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="About Operava Global Solutions — Philippine SEC-registered corporation providing remote-first technology, workforce, and BPO services globally.">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0a1628;--muted:#5a6578;--line:#e2e6ee;--surface:#f4f6fa;--blue:#1a6dff;--blue-deep:#0d4ed1;--navy:#06101f;--fd:'Roboto Condensed',system-ui,sans-serif;--fb:'Montserrat',system-ui,sans-serif;--g:clamp(20px,4.5vw,72px);--m:42rem}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--fb);color:var(--ink);line-height:1.55;background:#fff}a{color:inherit;text-decoration:none}
-.nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:rgba(6,16,31,.96);backdrop-filter:blur(14px)}
-.nav-brand{font-family:var(--fd);font-weight:700;font-size:1.25rem;letter-spacing:.06em;color:#fff;text-transform:uppercase}
-.nav-links{display:flex;gap:clamp(14px,1.8vw,28px);flex-wrap:wrap}
-.nav-links a{font-family:var(--fd);font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.85)}
-.nav-links a:hover,.nav-links a.is-active{color:#fff}
-.nav-toggle{display:none;background:0;border:0;cursor:pointer;padding:8px}.nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0}
-.page-hero{padding:calc(80px + 5vh) var(--g) 3.5rem;background:var(--navy);color:#fff}
-.page-hero .crumb{font-family:var(--fd);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:1rem}
-.page-hero .crumb a{color:rgba(255,255,255,.65)}
-.page-hero h1{font-family:var(--fd);font-weight:700;font-size:clamp(2.1rem,4.5vw,3.4rem);line-height:1.05;text-transform:uppercase;max-width:18ch;margin-bottom:1rem}
-.page-hero p{font-size:1.05rem;color:rgba(255,255,255,.72);max-width:var(--m)}
-.band{padding:clamp(3.5rem,8vh,6rem) var(--g)}.band-surface{background:var(--surface)}
-.kicker{font-family:var(--fd);font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:.75rem}
-.h2{font-family:var(--fd);font-weight:700;font-size:clamp(1.5rem,3vw,2.25rem);text-transform:uppercase;margin-bottom:1.25rem}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem)}
-.list-clean{list-style:none}.list-clean li{padding:.65rem 0;border-bottom:1px solid var(--line);font-size:.98rem;color:var(--muted)}.list-clean li strong{color:var(--ink)}
-.btn{display:inline-flex;font-family:var(--fd);font-weight:600;font-size:.875rem;padding:.95rem 1.65rem;border-radius:999px;border:0;cursor:pointer;transition:transform .2s,background .2s}
-.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blue-deep)}
-.footer{background:var(--navy);color:rgba(255,255,255,.55);padding:4rem var(--g) 2rem}
-.footer-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:2rem;margin-bottom:3rem}
-.footer-brand{font-family:var(--fd);font-weight:700;color:#fff;margin-bottom:.75rem}
-.footer h4{font-family:var(--fd);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem}
-.footer ul{list-style:none}.footer li{margin-bottom:.5rem}.footer a{font-size:.875rem;color:rgba(255,255,255,.6)}
-.footer-bottom{padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);font-size:.75rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;color:rgba(255,255,255,.35)}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s,transform .65s}.reveal.in{opacity:1;transform:none}
-@media(max-width:960px){.nav-links{display:none;position:absolute;top:80px;left:0;right:0;flex-direction:column;background:var(--navy);padding:1.25rem var(--g);gap:1rem}.nav-links.open{display:flex}.nav-toggle{display:block}.split,.footer-grid{grid-template-columns:1fr}}
+:root{
+  --ink:#0a1628;
+  --muted:#505e73;
+  --line:#e2e6ee;
+  --surface:#f7f8fc;
+  --purple:#4B20C9;
+  --purple-deep:#37169c;
+  --purple-light:#f3effc;
+  --purple-border:#dcd3f8;
+  --navy:#06101f;
+  --fd:'Roboto Condensed',system-ui,sans-serif;
+  --fb:'Montserrat',system-ui,sans-serif;
+  --g:clamp(20px,4.5vw,72px);
+  --m:44rem;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);line-height:1.6;background:#fff;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-brand{font-family:var(--fd);font-weight:700;font-size:1.3rem;letter-spacing:.08em;color:var(--ink);text-transform:uppercase;display:inline-flex;align-items:center;gap:.35rem}
+.nav-brand span{color:var(--purple)}
+.nav-links{display:flex;gap:clamp(14px,1.8vw,28px);flex-wrap:wrap;align-items:center}
+.nav-links a{font-family:var(--fd);font-size:.8125rem;font-weight:600;color:#384558;transition:color .2s}
+.nav-links a:hover,.nav-links a.is-active{color:var(--purple)}
+.nav-toggle{display:none;background:0;border:0;cursor:pointer;padding:8px}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0}
+.page-hero{padding:calc(80px + 6vh) var(--g) 4.5rem;background:linear-gradient(180deg,#f6f3fc 0%,#ffffff 100%);border-bottom:1px solid var(--line)}
+.page-hero .crumb{font-family:var(--fd);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem}
+.page-hero .crumb a{color:var(--purple);font-weight:600}
+.page-hero h1{font-family:var(--fd);font-weight:700;font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.05;text-transform:uppercase;color:var(--ink);margin-bottom:1rem}
+.page-hero p{font-size:1.1rem;color:var(--muted);max-width:var(--m);line-height:1.65}
+.band{padding:clamp(4rem,8vh,6.5rem) var(--g)}
+.band-surface{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--purple);margin-bottom:.75rem;display:inline-block}
+.h2{font-family:var(--fd);font-weight:700;font-size:clamp(1.75rem,3.2vw,2.5rem);text-transform:uppercase;margin-bottom:1.5rem;color:var(--ink);line-height:1.15}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,5rem)}
+.list-clean{list-style:none}
+.list-clean li{padding:.85rem 0;border-bottom:1px solid var(--line);font-size:.98rem;color:var(--muted);display:flex;flex-direction:column;gap:.25rem}
+.list-clean li strong{color:var(--ink);font-weight:600}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-weight:600;font-size:.875rem;padding:.95rem 1.75rem;border-radius:999px;border:0;cursor:pointer;transition:transform .2s,background .2s;text-transform:uppercase;letter-spacing:.03em}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--purple);color:#fff}
+.btn-primary:hover{background:var(--purple-deep);color:#fff}
+.footer{background:var(--surface);color:var(--muted);padding:4.5rem var(--g) 2.5rem;border-top:1px solid var(--line)}
+.footer-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:clamp(2rem,4vw,3rem);margin-bottom:3rem}
+.footer-brand{font-family:var(--fd);font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:.75rem}
+.footer p{font-size:.875rem;line-height:1.65;max-width:22rem;color:var(--muted)}
+.footer h4{font-family:var(--fd);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:1rem}
+.footer ul{list-style:none}
+.footer li{margin-bottom:.55rem}
+.footer a{font-size:.875rem;color:var(--muted);transition:color .2s ease}
+.footer a:hover{color:var(--purple)}
+.footer-bottom{padding-top:1.75rem;border-top:1px solid var(--line);font-size:.8125rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;text-align:center;color:var(--muted)}
+.footer-legal{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.6rem 1rem;font-size:.875rem}
+.footer-legal a{color:var(--ink);font-weight:500;transition:color .2s ease}
+.footer-legal a:hover{color:var(--purple)}
+.footer-legal .sep{color:var(--line);user-select:none}
+.footer-copyright{font-size:.775rem;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s,transform .65s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:960px){
+  .nav-links{display:none;position:absolute;top:80px;left:0;right:0;flex-direction:column;background:#fff;padding:1.25rem var(--g);gap:1rem;border-bottom:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .split,.footer-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<header class="nav"><a class="nav-brand" href="index.html">OPERAVA</a><nav class="nav-links"><a href="about.html" class="is-active">About</a><a href="careers.html">Careers</a><a href="jobs-global.html">Global Jobs</a><a href="resume.html">Submit Resume</a><a href="talent.html">Request Talent</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button></header>
-<section class="page-hero"><p class="crumb"><a href="index.html">Home</a> / About</p><h1>About</h1><p>Philippine SEC-registered corporation. Remote-first technology, workforce, and BPO services.</p></section>
-<section class="band"><div class="split reveal"><div><p class="kicker">Who we are</p><h2 class="h2">Philippine SEC-registered · remote-first · global</h2><p style="color:var(--muted);line-height:1.7;margin-bottom:1.25rem">Operava Global Solutions provides Workforce, Information Technology, and Business Process Outsourcing services on a remote-first delivery model.</p><ul class="list-clean"><li><strong>Location:</strong> Pagudpud, Ilocos Norte 2919, Philippines</li><li><strong>SEC Registration:</strong> 2026080262213-03</li><li><strong>Motto:</strong> Operating in Advance.</li></ul></div><div><p class="kicker">How we work</p><ul class="list-clean"><li>Remote-first delivery with client-assigned professionals</li><li>Broad executive tracks with specialization by assignment</li><li>IT, BPO, and workforce services defined by written agreements</li><li>Website descriptions do not create automatic service obligations</li></ul></div></div></section>
-<section class="band band-surface"><div class="reveal"><p class="kicker">Contact channels</p><h2 class="h2">Reach the right team</h2><ul class="list-clean" style="max-width:36rem"><li><strong>hello@operavaglobal.com</strong> — Client / general</li><li><strong>hr@operavaglobal.com</strong> — Human resources</li><li><strong>cs@operavaglobal.com</strong> — Customer support</li><li><strong>compliance@operavaglobal.com</strong> — Compliance</li></ul><p style="margin-top:2rem"><a class="btn btn-primary" href="contact.html">Contact us</a></p></div></section>
-<footer class="footer"><div class="footer-grid"><div><div class="footer-brand">Operava Global Solutions</div><p>Technology is our focus, and quality is our commitment.</p></div><div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li><li><a href="terms.html">Terms</a></li><li><a href="refund-policy.html">Refund Policy</a></li></ul></div><div><h4>Solutions</h4><ul><li><a href="talent.html">Technology Talent</a></li><li><a href="talent.html">Business Talent</a></li></ul></div><div><h4>Resources</h4><ul><li><a href="jobs-global.html">Global Jobs</a></li><li><a href="resume.html">Submit Resume</a></li></ul></div></div><div class="footer-bottom"><span>© 2026 Operava Global Solutions</span><span><a href="terms.html">Terms</a> · <a href="refund-policy.html">Refund Policy</a></span></div></footer>
-<script>(function(){var t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');if(t)t.onclick=function(){l.classList.toggle('open')};var els=document.querySelectorAll('.reveal');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(el){io.observe(el)})}else els.forEach(function(el){el.classList.add('in')})})();</script>
-</body></html>
+<header class="nav">
+  <a class="nav-brand" href="index.html">OPERAVA<span>.</span></a>
+  <nav class="nav-links">
+    <a href="about.html" class="is-active">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="jobs-global.html">Global Jobs</a>
+    <a href="resume.html">Submit Resume</a>
+    <a href="talent.html">Request Talent</a>
+    <a href="referral.html">Referral</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<section class="page-hero">
+  <p class="crumb"><a href="index.html">Home</a> / About</p>
+  <h1>About OPERAVA</h1>
+  <p>Philippine SEC-registered corporation delivering remote-first technology, dedicated engineering pods, and high-velocity BPO services globally.</p>
+</section>
+
+<section class="band">
+  <div class="split reveal">
+    <div>
+      <p class="kicker">Who We Are</p>
+      <h2 class="h2">Philippine SEC-Registered · Remote-First · Global</h2>
+      <p style="color:var(--muted);line-height:1.7;margin-bottom:1.5rem">Operava Global Solutions provides Workforce, Information Technology, and Business Process Outsourcing services built on a resilient remote-first delivery model.</p>
+      <ul class="list-clean">
+        <li><strong>Corporate Registered Entity:</strong> Operava Global Solutions (One Person Corporation)</li>
+        <li><strong>Location:</strong> Pagudpud, Ilocos Norte 2919, Philippines</li>
+        <li><strong>SEC Registration No.:</strong> 2026080262213-03</li>
+        <li><strong>Operating Motto:</strong> Operating in Advance.</li>
+      </ul>
+    </div>
+    <div>
+      <p class="kicker">Operating Methodology</p>
+      <h2 class="h2">High Standards &amp; Strict Governance</h2>
+      <ul class="list-clean">
+        <li><strong>Delivery Architecture:</strong> Remote-first operational pods with full-time, client-assigned engineering and operational talent.</li>
+        <li><strong>Executive Tracks:</strong> Standardized career frameworks spanning Technology, Customer Service, and Business Operations.</li>
+        <li><strong>Legal &amp; Contractual Rigor:</strong> All services are governed by written Master Services Agreements (MSAs), SOWs, and strict bilateral NDAs.</li>
+        <li><strong>Statutory Compliance:</strong> Registered under Philippine law with comprehensive Data Privacy Act of 2012 compliance.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band band-surface">
+  <div class="reveal">
+    <p class="kicker">Direct Communications</p>
+    <h2 class="h2">Connect With The Right Department</h2>
+    <ul class="list-clean" style="max-width:38rem">
+      <li><strong>Client &amp; Enterprise Partnerships:</strong> hello@operavaglobal.com</li>
+      <li><strong>Human Resources &amp; Talent Acquisition:</strong> hr@operavaglobal.com</li>
+      <li><strong>Customer Support &amp; Ticket Inquiries:</strong> cs@operavaglobal.com</li>
+      <li><strong>Compliance, Legal &amp; Data Protection:</strong> compliance@operavaglobal.com</li>
+      <li><strong>Payment &amp; Commercial Processing:</strong> pay.operavaglobal.com</li>
+    </ul>
+    <p style="margin-top:2.5rem"><a class="btn btn-primary" href="contact.html">Get in touch</a></p>
+  </div>
+</section>
+
+<!-- Reusable Footer Component -->
+<footer class="footer" id="main-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Operava Global Solutions</div>
+      <p>Technology is our focus, and quality is our commitment. Philippine-based · remote-first · global operations.</p>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="talent.html">Technology Talent</a></li>
+        <li><a href="talent.html">Business Talent</a></li>
+        <li><a href="about.html">Professional Services</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="jobs-global.html">Global Jobs</a></li>
+        <li><a href="jobs-us.html">U.S. Jobs</a></li>
+        <li><a href="resume.html">Submit Resume</a></li>
+        <li><a href="referral.html">Referral Program</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <span class="sep">·</span>
+      <a href="terms.html">Terms and Conditions</a>
+      <span class="sep">·</span>
+      <a href="refund-policy.html">Refund Policy</a>
+    </div>
+    <div class="footer-copyright">
+      © 2026 Operava Global Solutions. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');
+  if(t)t.onclick=function(){l.classList.toggle('open')};
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+    },{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  }else els.forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>

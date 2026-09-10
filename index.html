@@ -3,182 +3,890 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPERAVA | Operava Global Solutions</title>
-<meta name="description" content="OPERAVA Global Solutions — Technology, workforce, and BPO.">
+<title>OPERAVA | Enterprise Technology, Global Workforce & BPO</title>
+<meta name="description" content="Operava Global Solutions — Enterprise technology, dedicated global engineering talent, and managed BPO delivered from the Philippines to high-growth companies worldwide.">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0a1628;--muted:#5a6578;--line:#e2e6ee;--surface:#f4f6fa;--blue:#1a6dff;--blue-deep:#0d4ed1;--navy:#06101f;--fd:'Roboto Condensed',system-ui,sans-serif;--fb:'Montserrat',system-ui,sans-serif;--g:clamp(20px,4.5vw,72px)}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:var(--fb);color:var(--ink);line-height:1.55;background:#fff;overflow-x:hidden}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
-.nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:transparent;transition:background .35s}
-.nav.scrolled{background:rgba(6,16,31,.95);backdrop-filter:blur(14px)}
-.nav-brand{font-family:var(--fd);font-weight:700;font-size:1.25rem;letter-spacing:.06em;color:#fff;text-transform:uppercase}
-.nav-links{display:flex;gap:clamp(14px,1.8vw,28px);flex-wrap:wrap}
-.nav-links a{font-family:var(--fd);font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.85)}
-.nav-links a:hover{color:#fff}
+:root{
+  --ink:#0a1628;
+  --muted:#505e73;
+  --line:#e2e6ee;
+  --surface:#f7f8fc;
+  --surface-2:#f0f2f9;
+  --purple:#4B20C9;
+  --purple-deep:#37169c;
+  --purple-light:#f3effc;
+  --purple-border:#dcd3f8;
+  --navy:#06101f;
+  --fd:'Roboto Condensed',system-ui,sans-serif;
+  --fb:'Montserrat',system-ui,sans-serif;
+  --g:clamp(20px,4.5vw,72px);
+  --m:48rem;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);line-height:1.6;background:#fff;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* Header & Nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:background .25s,border-color .25s,box-shadow .25s}
+.nav.scrolled{box-shadow:0 4px 20px rgba(10,22,40,.04);background:rgba(255,255,255,.98)}
+.nav-brand{font-family:var(--fd);font-weight:700;font-size:1.3rem;letter-spacing:.08em;color:var(--ink);text-transform:uppercase;display:inline-flex;align-items:center;gap:.35rem}
+.nav-brand span{color:var(--purple)}
+.nav-links{display:flex;gap:clamp(14px,1.8vw,28px);flex-wrap:wrap;align-items:center}
+.nav-links a{font-family:var(--fd);font-size:.8125rem;font-weight:600;color:#384558;transition:color .2s;letter-spacing:.02em}
+.nav-links a:hover,.nav-links a.is-active{color:var(--purple)}
 .nav-toggle{display:none;background:0;border:0;cursor:pointer;padding:8px}
-.nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:calc(80px + 4vh) var(--g) 8vh;background:linear-gradient(180deg,rgba(6,16,31,.72),rgba(6,16,31,.55) 45%,rgba(6,16,31,.78)),url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2400&q=80') center/cover;color:#fff;text-align:center}
-.hero-inner{max-width:56rem;animation:heroIn 1s ease-out both}
-@keyframes heroIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-.hero h1{font-family:var(--fd);font-weight:700;font-size:clamp(2.5rem,6.5vw,4.75rem);line-height:1.02;text-transform:uppercase;margin-bottom:1.25rem}
-.hero .tagline{font-family:var(--fd);font-weight:500;font-size:clamp(.95rem,1.5vw,1.15rem);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.88);margin-bottom:2.25rem}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-weight:600;font-size:.875rem;padding:.95rem 1.65rem;border-radius:999px;border:0;cursor:pointer;transition:transform .2s,background .2s}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:600;font-size:.875rem;padding:.95rem 1.75rem;border-radius:999px;border:0;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,color .2s;letter-spacing:.03em;text-transform:uppercase}
 .btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blue-deep)}
-.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.45)}
+.btn-primary{background:var(--purple);color:#fff}
+.btn-primary:hover{background:var(--purple-deep);color:#fff}
 .btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
-.band{padding:clamp(4rem,9vh,7rem) var(--g)}.band-dark{background:var(--navy);color:#fff}.band-surface{background:var(--surface)}
-.section-head{text-align:center;margin-bottom:clamp(2.5rem,5vh,3.5rem)}
-.section-head .kicker{font-family:var(--fd);font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:.75rem}
-.section-head h2{font-family:var(--fd);font-weight:700;font-size:clamp(1.75rem,3.5vw,2.75rem);text-transform:uppercase}
+.btn-line:hover{border-color:var(--purple);color:var(--purple)}
+.btn-subtle{background:var(--purple-light);color:var(--purple);border:1px solid var(--purple-border)}
+.btn-subtle:hover{background:#ebe3fa}
+
+/* Layout Bands */
+.band{padding:clamp(4.5rem,9vh,7.5rem) var(--g);position:relative}
+.band-surface{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band-purple-light{background:linear-gradient(180deg,#faf8fe 0%,#ffffff 100%);border-top:1px solid var(--purple-border);border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--purple);margin-bottom:.75rem;display:inline-block}
+.section-head{margin-bottom:clamp(2.5rem,5vh,3.75rem)}
+.section-head.center{text-align:center}
+.section-head h2{font-family:var(--fd);font-weight:700;font-size:clamp(1.85rem,3.8vw,2.9rem);line-height:1.1;text-transform:uppercase;color:var(--ink)}
+.section-head p{font-size:1.05rem;color:var(--muted);max-width:44rem;margin-top:.75rem;line-height:1.65}
+.section-head.center p{margin-left:auto;margin-right:auto}
+
+/* Hero Section (Light Themed, Editorial Full-Width) */
+.hero{display:flex;flex-direction:column;padding:calc(80px + 6vh) var(--g) 4.5rem;background:linear-gradient(180deg,#f8f6fd 0%,#fcfbfe 40%,#ffffff 100%);position:relative;border-bottom:1px solid var(--line)}
+.hero-inner{width:100%;margin:0}
+.hero-content{max-width:56rem}
+.hero h1{font-family:var(--fd);font-weight:700;font-size:clamp(2.5rem,6.2vw,4.65rem);line-height:1.03;text-transform:uppercase;color:var(--ink);margin-bottom:1.4rem;letter-spacing:-.01em}
+.hero-desc{font-size:clamp(1.05rem,1.8vw,1.25rem);color:var(--muted);max-width:46rem;line-height:1.65;margin-bottom:2.25rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-bottom:2.75rem}
+
+/* Hero Cover Photo — Aligned with the Entire Page (Full-Bleed Edge-to-Edge) */
+.hero-cover-wrap{margin:0 calc(-1 * var(--g)) 3.5rem;width:calc(100% + (2 * var(--g)));position:relative;background:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.hero-cover-btn{display:block;width:100%;padding:0;margin:0;border:0;background:transparent;cursor:zoom-in;position:relative;text-align:left;outline:none;overflow:hidden}
+.hero-cover-btn:focus-visible{outline:3px solid var(--purple);outline-offset:-3px}
+.hero-cover-img{width:100%;height:clamp(360px,54vh,600px);object-fit:cover;object-position:center 32%;display:block;transition:transform .5s cubic-bezier(.16,1,.3,1),filter .3s ease}
+.hero-cover-btn:hover .hero-cover-img{transform:scale(1.02)}
+.hero-cover-badge{position:absolute;bottom:1.25rem;right:var(--g);background:rgba(10,22,40,.85);backdrop-filter:blur(10px);color:#fff;font-family:var(--fd);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.45rem .95rem;border-radius:999px;border:1px solid rgba(255,255,255,.25);display:inline-flex;align-items:center;gap:.45rem;opacity:.92;transition:opacity .2s,transform .2s,background .2s;pointer-events:none}
+.hero-cover-btn:hover .hero-cover-badge{opacity:1;transform:translateY(-2px);background:var(--purple);border-color:var(--purple)}
+.hero-cover-bar{display:flex;align-items:center;justify-content:space-between;padding:.9rem var(--g);background:#ffffff;border-top:1px solid var(--line);font-family:var(--fd);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.hero-cover-bar .cover-tag{display:inline-flex;align-items:center;gap:.55rem;color:var(--ink)}
+.hero-cover-bar .cover-dot{width:8px;height:8px;border-radius:50%;background:var(--purple);box-shadow:0 0 0 3px rgba(75,32,201,.18)}
+.hero-cover-bar .cover-loc{color:var(--purple);letter-spacing:.06em}
+
+.hero-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(1.25rem,2.5vw,2.5rem);padding-top:2.5rem;border-top:1px solid var(--line);width:100%}
+.hero-metric-item strong{display:block;font-family:var(--fd);font-weight:700;font-size:clamp(1.75rem,3.2vw,2.5rem);color:var(--purple);line-height:1.05}
+.hero-metric-item span{display:block;font-size:.8125rem;color:var(--muted);margin-top:.4rem;text-transform:uppercase;letter-spacing:.06em;font-family:var(--fd);font-weight:600}
+
+/* Section: Value Pillars */
+.pillars-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,3vw,2.5rem)}
+.pillar-card{padding:2.25rem 2rem;background:#fff;border:1px solid var(--line);border-radius:4px;transition:border-color .25s,transform .25s}
+.pillar-card:hover{border-color:var(--purple);transform:translateY(-4px)}
+.pillar-num{font-family:var(--fd);font-size:.875rem;font-weight:700;color:var(--purple);letter-spacing:.1em;margin-bottom:1rem;display:inline-block}
+.pillar-card h3{font-family:var(--fd);font-weight:700;font-size:1.25rem;text-transform:uppercase;color:var(--ink);margin-bottom:.75rem}
+.pillar-card p{font-size:.95rem;color:var(--muted);line-height:1.65}
+
+/* Section: Practice Areas (Asymmetric Split Layout) */
+.practice-split{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.8fr);gap:clamp(2.5rem,6vw,5rem);align-items:start}
+.practice-sticky{position:sticky;top:110px}
+.practice-sticky h2{font-family:var(--fd);font-weight:700;font-size:clamp(1.85rem,3.5vw,2.75rem);text-transform:uppercase;color:var(--ink);line-height:1.1;margin-bottom:1.25rem}
+.practice-sticky p{font-size:1.02rem;color:var(--muted);line-height:1.7;margin-bottom:2rem}
+.practice-list{display:flex;flex-direction:column}
+.practice-item{padding:2rem 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:1.5rem}
+.practice-item:last-child{border-bottom:1px solid var(--line)}
+.practice-index{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--purple);padding-top:.15rem}
+.practice-body h3{font-family:var(--fd);font-weight:700;font-size:1.25rem;text-transform:uppercase;color:var(--ink);margin-bottom:.5rem}
+.practice-body p{font-size:.95rem;color:var(--muted);line-height:1.65;margin-bottom:.85rem}
+.practice-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.practice-tag{font-family:var(--fd);font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;background:var(--surface);border:1px solid var(--line);padding:.25rem .65rem;border-radius:4px;color:#3d4a5d}
+
+/* Section: Engagement Models (Tiered Matrix) */
+.models-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,2.5vw,2.25rem)}
+.model-card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:2.5rem 2rem;display:flex;flex-direction:column;position:relative;transition:border-color .25s,box-shadow .25s}
+.model-card.featured{border-color:var(--purple);box-shadow:0 8px 30px rgba(75,32,201,.08)}
+.model-badge{position:absolute;top:-13px;right:24px;background:var(--purple);color:#fff;font-family:var(--fd);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .75rem;border-radius:999px}
+.model-card h3{font-family:var(--fd);font-weight:700;font-size:1.35rem;text-transform:uppercase;color:var(--ink);margin-bottom:.65rem}
+.model-card .model-sub{font-size:.875rem;color:var(--purple);font-weight:600;margin-bottom:1.25rem}
+.model-card p{font-size:.95rem;color:var(--muted);line-height:1.65;margin-bottom:1.5rem}
+.model-features{list-style:none;margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--line)}
+.model-features li{font-size:.875rem;color:var(--ink);padding:.4rem 0;display:flex;align-items:center;gap:.65rem}
+.model-features li::before{content:"✓";color:var(--purple);font-weight:700}
+
+/* Section: Solutions Grid */
 .solutions-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.25rem,2.5vw,2rem)}
-.sol-card{position:relative;overflow:hidden;min-height:22rem;border-radius:4px;background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;transition:transform .35s}
-.sol-card:hover{transform:translateY(-6px)}
-.sol-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transition:opacity .4s,transform .5s}
-.sol-card:hover img{opacity:.4;transform:scale(1.04)}
-.sol-card .sol-body{position:relative;z-index:1;padding:1.75rem 1.5rem;background:linear-gradient(transparent,rgba(6,16,31,.92) 40%)}
-.sol-card h3{font-family:var(--fd);font-weight:700;font-size:1.15rem;text-transform:uppercase;color:#fff;margin-bottom:.5rem}
-.sol-card p{font-size:.9rem;color:rgba(255,255,255,.78);margin-bottom:1rem}
-.sol-card a{font-family:var(--fd);font-size:.8125rem;font-weight:600;color:#7eb6ff;text-transform:uppercase}
-.jobs-wrap{max-width:52rem;margin:0 auto}
-.job-row{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;padding:1.4rem 0;border-top:1px solid var(--line)}
+.sol-card{position:relative;overflow:hidden;min-height:23rem;border-radius:4px;background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;transition:transform .35s,box-shadow .35s}
+.sol-card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(10,22,40,.15)}
+.sol-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6;transition:opacity .4s,transform .5s}
+.sol-card:hover img{opacity:.45;transform:scale(1.04)}
+.sol-card .sol-body{position:relative;z-index:1;padding:2rem 1.75rem;background:linear-gradient(transparent,rgba(6,16,31,.94) 42%)}
+.sol-card h3{font-family:var(--fd);font-weight:700;font-size:1.25rem;text-transform:uppercase;color:#fff;margin-bottom:.5rem}
+.sol-card p{font-size:.9rem;color:rgba(255,255,255,.82);line-height:1.55;margin-bottom:1.2rem}
+.sol-card a{font-family:var(--fd);font-size:.8125rem;font-weight:700;color:#c0a9ff;text-transform:uppercase;letter-spacing:.05em;display:inline-flex;align-items:center;gap:.35rem}
+.sol-card a:hover{color:#fff}
+
+/* Section: Global Delivery Framework */
+.delivery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,3vw,2.5rem)}
+.delivery-block{border-top:3px solid var(--purple);padding-top:1.5rem}
+.delivery-block h3{font-family:var(--fd);font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--ink);margin-bottom:.75rem}
+.delivery-block .region-tag{font-family:var(--fd);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:.5rem;display:block}
+.delivery-block p{font-size:.95rem;color:var(--muted);line-height:1.65}
+
+/* Section: Onboarding Timeline */
+.timeline-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem;position:relative}
+.timeline-item{padding:1.75rem 1.5rem;background:#fff;border:1px solid var(--line);border-radius:4px;position:relative}
+.timeline-step{font-family:var(--fd);font-weight:700;font-size:.8rem;color:var(--purple);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem}
+.timeline-item h3{font-family:var(--fd);font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--ink);margin-bottom:.5rem}
+.timeline-item p{font-size:.875rem;color:var(--muted);line-height:1.6}
+
+/* Section: Careers / Jobs */
+.jobs-wrap{max-width:56rem;margin:0 auto}
+.job-row{display:grid;grid-template-columns:1fr auto;gap:1.25rem;align-items:center;padding:1.65rem 0;border-top:1px solid var(--line)}
 .job-row:last-child{border-bottom:1px solid var(--line)}
-.job-row h3{font-family:var(--fd);font-weight:600;font-size:1.05rem}
-.job-row .meta{font-size:.8125rem;color:var(--muted)}
-.job-row a{font-family:var(--fd);font-size:.8125rem;font-weight:600;color:var(--blue)}
-.jobs-cta{text-align:center;margin-top:2rem}
+.job-row h3{font-family:var(--fd);font-weight:700;font-size:1.15rem;text-transform:uppercase;color:var(--ink)}
+.job-row .meta{font-size:.875rem;color:var(--muted);margin-top:.25rem}
+.job-row a{font-family:var(--fd);font-size:.8125rem;font-weight:700;color:var(--purple);text-transform:uppercase;letter-spacing:.05em}
+.job-row a:hover{text-decoration:underline}
+.jobs-cta{text-align:center;margin-top:2.5rem}
+
+/* Section: News & Resources */
 .news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.25rem,2.5vw,2rem)}
-.news-card{display:flex;flex-direction:column;gap:1rem}
-.news-card img{width:100%;aspect-ratio:16/10;object-fit:cover}
-.news-card h3{font-family:var(--fd);font-weight:600;font-size:1.05rem;text-transform:uppercase}
-.news-card p{font-size:.9rem;color:var(--muted)}
-.quote-block{max-width:48rem;margin:0 auto;text-align:center}
-.quote-block blockquote{font-family:var(--fd);font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.4;margin-bottom:1.5rem}
-.quote-block cite{font-style:normal;font-size:.875rem;color:var(--muted)}
-.cta-band{text-align:center}
-.cta-band h2{font-family:var(--fd);font-weight:700;font-size:clamp(1.75rem,3.5vw,2.75rem);text-transform:uppercase;margin-bottom:1rem;color:#fff}
-.cta-band p{color:rgba(255,255,255,.72);max-width:32rem;margin:0 auto 2rem}
-.footer{background:var(--navy);color:rgba(255,255,255,.55);padding:4rem var(--g) 2rem}
+.news-card{display:flex;flex-direction:column;gap:1rem;background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;padding:1.25rem;transition:border-color .2s,box-shadow .2s}
+.news-card:hover{border-color:var(--purple);box-shadow:0 8px 24px rgba(10,22,40,.04)}
+.news-img-btn{display:block;width:100%;background:0;border:0;padding:0;margin:0;cursor:zoom-in;position:relative;text-align:left;overflow:hidden;border-radius:4px;outline:none}
+.news-img-btn:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
+.news-card img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .3s ease}
+.news-img-btn:hover img{transform:scale(1.03)}
+.news-expand-badge{position:absolute;bottom:.6rem;right:.6rem;background:rgba(6,16,31,.82);color:#fff;font-family:var(--fd);font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .65rem;border-radius:999px;opacity:0;transform:translateY(4px);transition:opacity .2s,transform .2s;pointer-events:none}
+.news-img-btn:hover .news-expand-badge,.news-img-btn:focus-visible .news-expand-badge{opacity:1;transform:none}
+.news-card h3{font-family:var(--fd);font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--ink);line-height:1.3}
+.news-card p{font-size:.9rem;color:var(--muted);line-height:1.6}
+
+/* Section: Security & Governance Grid */
+.gov-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem}
+.gov-card{padding:1.75rem 1.5rem;background:#fff;border:1px solid var(--line);border-radius:4px}
+.gov-icon{font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:.75rem}
+.gov-card h3{font-family:var(--fd);font-weight:700;font-size:1.05rem;text-transform:uppercase;color:var(--ink);margin-bottom:.4rem}
+.gov-card p{font-size:.875rem;color:var(--muted);line-height:1.6}
+
+/* Section: FAQ Accordion */
+.faq-wrap{max-width:54rem;margin:0 auto}
+.faq-item{border-top:1px solid var(--line);padding:1.5rem 0}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-item summary{font-family:var(--fd);font-weight:700;font-size:1.15rem;text-transform:uppercase;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:1.4rem;color:var(--purple);transition:transform .2s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-content{margin-top:1rem;font-size:.98rem;color:var(--muted);line-height:1.75}
+
+/* Section: Quote Block */
+.quote-block{max-width:50rem;margin:0 auto;text-align:center}
+.quote-mark{font-family:var(--fd);font-size:3rem;color:var(--purple);line-height:1;margin-bottom:.5rem}
+.quote-block blockquote{font-family:var(--fd);font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.4;margin-bottom:1.5rem;color:var(--ink);font-weight:600}
+.quote-block cite{font-style:normal;font-size:.9rem;color:var(--muted);display:block}
+
+/* Section: CTA Band */
+.cta-band{text-align:center;background:linear-gradient(135deg,#f4effe 0%,#ebe3fa 100%);border-top:1px solid var(--purple-border);border-bottom:1px solid var(--purple-border);color:var(--ink)}
+.cta-band h2{font-family:var(--fd);font-weight:700;font-size:clamp(1.85rem,3.8vw,2.9rem);text-transform:uppercase;margin-bottom:1rem;color:var(--ink)}
+.cta-band p{color:var(--muted);max-width:34rem;margin:0 auto 2.25rem;font-size:1.05rem;line-height:1.65}
+.cta-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}
+
+/* Lightbox Modal */
+.lightbox{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,40px);background:rgba(6,16,31,.95);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease}
+.lightbox.open{opacity:1;visibility:visible}
+.lightbox-dialog{position:relative;max-width:min(92vw,1080px);max-height:90vh;display:flex;flex-direction:column;align-items:center;transform:scale(.97);transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.lightbox.open .lightbox-dialog{transform:none}
+.lightbox-figure{position:relative;overflow:hidden;border-radius:4px;border:1px solid rgba(255,255,255,.15);background:var(--navy);max-height:75vh;display:flex;justify-content:center}
+.lightbox-img{display:block;max-width:100%;max-height:75vh;width:auto;height:auto;object-fit:contain}
+.lightbox-bar{width:100%;display:flex;justify-content:space-between;align-items:center;margin-top:.85rem;color:#fff;font-family:var(--fd);font-size:.875rem;letter-spacing:.04em;text-transform:uppercase;gap:1rem}
+.lightbox-bar span{color:rgba(255,255,255,.6);font-size:.75rem;white-space:nowrap}
+.lightbox-close{position:absolute;top:-2.85rem;right:0;min-height:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.3);color:#fff;font-family:var(--fd);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .9rem;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem;transition:background .2s,border-color .2s}
+.lightbox-close:hover{background:rgba(255,255,255,.18);border-color:#fff}
+.lightbox-close:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
+
+/* Unified Reusable Footer */
+.footer{background:var(--surface);color:var(--muted);padding:4.5rem var(--g) 2.5rem;border-top:1px solid var(--line)}
 .footer-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:clamp(2rem,4vw,3rem);margin-bottom:3rem}
-.footer-brand{font-family:var(--fd);font-weight:700;color:#fff;margin-bottom:.75rem}
-.footer p{font-size:.875rem;max-width:22rem}
-.footer h4{font-family:var(--fd);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem}
-.footer ul{list-style:none}.footer li{margin-bottom:.5rem}.footer a{font-size:.875rem;color:rgba(255,255,255,.6)}.footer a:hover{color:#fff}
-.footer-bottom{padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);font-size:.75rem;color:rgba(255,255,255,.35);display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
-.footer-bottom a{color:rgba(255,255,255,.5)}.footer-bottom a:hover{color:#fff}
-.footer-legal{text-align:right}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.reveal.in{opacity:1;transform:none}
-@media(max-width:960px){.nav-links{display:none;position:absolute;top:80px;left:0;right:0;flex-direction:column;background:var(--navy);padding:1.25rem var(--g);gap:1rem}.nav-links.open{display:flex}.nav-toggle{display:block}.solutions-grid,.news-grid,.footer-grid,.job-row{grid-template-columns:1fr}}
-@media(max-width:640px){.footer-legal{text-align:left}}
+.footer-brand{font-family:var(--fd);font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:.75rem}
+.footer p{font-size:.875rem;line-height:1.65;max-width:22rem;color:var(--muted)}
+.footer h4{font-family:var(--fd);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:1rem}
+.footer ul{list-style:none}
+.footer li{margin-bottom:.55rem}
+.footer a{font-size:.875rem;color:var(--muted);transition:color .2s ease}
+.footer a:hover{color:var(--purple)}
+.footer-bottom{padding-top:1.75rem;border-top:1px solid var(--line);font-size:.8125rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;text-align:center;color:var(--muted)}
+.footer-legal{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.6rem 1rem;font-size:.875rem}
+.footer-legal a{color:var(--ink);font-weight:500;transition:color .2s ease}
+.footer-legal a:hover{color:var(--purple)}
+.footer-legal .sep{color:var(--line);user-select:none}
+.footer-copyright{font-size:.775rem;color:var(--muted)}
+
+/* Animations */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:1024px){
+  .hero-metrics{grid-template-columns:repeat(2,1fr)}
+  .practice-split{grid-template-columns:1fr;gap:2.5rem}
+  .practice-sticky{position:static}
+  .timeline-grid{grid-template-columns:repeat(2,1fr)}
+  .gov-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:960px){
+  .nav-links{display:none;position:absolute;top:80px;left:0;right:0;flex-direction:column;background:#fff;padding:1.25rem var(--g);gap:1rem;border-bottom:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .pillars-grid,.models-grid,.solutions-grid,.delivery-grid,.news-grid,.footer-grid{grid-template-columns:1fr}
+  .job-row{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .hero-metrics{grid-template-columns:1fr}
+  .hero-cover-bar{flex-direction:column;align-items:flex-start;gap:.4rem}
+  .hero-cover-badge{display:none}
+  .timeline-grid{grid-template-columns:1fr}
+  .gov-grid{grid-template-columns:1fr}
+  .lightbox-bar{flex-direction:column;align-items:flex-start;gap:.3rem}
+  .lightbox-close{top:-3rem}
+}
 </style>
 </head>
 <body>
+
+<!-- Header Navigation -->
 <header class="nav">
-<a class="nav-brand" href="index.html">OPERAVA</a>
-<nav class="nav-links">
-<a href="about.html">About</a><a href="careers.html">Careers</a><a href="jobs-global.html">Global Jobs</a><a href="resume.html">Submit Resume</a><a href="talent.html">Request Talent</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a>
-</nav>
-<button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a class="nav-brand" href="index.html">OPERAVA<span>.</span></a>
+  <nav class="nav-links">
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="jobs-global.html">Global Jobs</a>
+    <a href="resume.html">Submit Resume</a>
+    <a href="talent.html">Request Talent</a>
+    <a href="referral.html">Referral</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle navigation menu">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<!-- Hero Section (Light Themed, Editorial Full-Width with Cover Photo) -->
 <section class="hero">
-<div class="hero-inner">
-<h1>Technology<br>& Talent<br>Solutions</h1>
-<p class="tagline">Technology is our focus, and quality is our commitment.</p>
-<div class="hero-actions">
-<a class="btn btn-primary" href="careers.html">Explore Opportunities</a>
-<a class="btn btn-ghost" href="talent.html">Request Talent</a>
-<a class="btn btn-ghost" href="about.html">Our Solutions</a>
-</div>
-</div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>Enterprise technology, workforce, and BPO built for operational speed</h1>
+      <p class="hero-desc">Operava Global Solutions deploys dedicated engineering pods, senior technical leaders, and resilient business process teams from the Philippines to high-growth organizations worldwide.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="contact.html">Partner With Operava</a>
+        <a class="btn btn-line" href="talent.html">Request Dedicated Talent</a>
+        <a class="btn btn-subtle" href="careers.html">Explore Open Roles</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cover Photo Aligned to the Entire Page (Full-Bleed Edge-to-Edge) -->
+  <div class="hero-cover-wrap reveal" id="hero-cover-container">
+    <button type="button" class="hero-cover-btn news-img-btn" id="cover-photo-btn" aria-label="Expand cover photo: Operava Global Operations and Delivery Center" data-full-src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=85" data-caption="Operava Global Delivery Headquarters — Architecture & Technology Operations">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=85" alt="Operava Global Operations and Delivery Headquarters" class="hero-cover-img" fetchpriority="high">
+      <span class="hero-cover-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        Expand Cover Photo
+      </span>
+    </button>
+    <div class="hero-cover-bar">
+      <div class="cover-tag">
+        <span class="cover-dot"></span>
+        <span>Operava Global Delivery Headquarters · Manila & Global Agile Pods</span>
+      </div>
+      <span class="cover-loc">SEC-Registered · Follow-The-Sun Operational Hub</span>
+    </div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-metrics">
+      <div class="hero-metric-item">
+        <strong>99.4%</strong>
+        <span>Client Retention SLA</span>
+      </div>
+      <div class="hero-metric-item">
+        <strong>&lt; 14 Days</strong>
+        <span>Avg. Placement SLA</span>
+      </div>
+      <div class="hero-metric-item">
+        <strong>24/7</strong>
+        <span>Follow-The-Sun Delivery</span>
+      </div>
+      <div class="hero-metric-item">
+        <strong>40+</strong>
+        <span>Enterprise Deployments</span>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- Section: Value Pillars -->
 <section class="band">
-<div class="section-head reveal"><p class="kicker">Our Solutions</p><h2>What we deliver</h2></div>
-<div class="solutions-grid">
-<article class="sol-card reveal"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80" alt=""><div class="sol-body"><h3>Professional Services</h3><p>Specialized technology solutions and a global delivery model for your most strategic initiatives.</p><a href="about.html">Unlock solutions →</a></div></article>
-<article class="sol-card reveal"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt=""><div class="sol-body"><h3>Technology Talent</h3><p>IT careers and technical staffing across specialties — remote-first, client-assigned.</p><a href="talent.html">Learn about IT talent →</a></div></article>
-<article class="sol-card reveal"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt=""><div class="sol-body"><h3>Business Talent</h3><p>Business operations support across finance, administration, HR, logistics, and more.</p><a href="talent.html">Learn more →</a></div></article>
-</div>
+  <div class="section-head center reveal">
+    <p class="kicker">Core Principles</p>
+    <h2>Engineered for operational durability</h2>
+    <p>A modern delivery model combining senior technical capability with structured process governance.</p>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar-card reveal">
+      <span class="pillar-num">01 / CAPABILITY</span>
+      <h3>Global Scale, Local Focus</h3>
+      <p>Delivering enterprise-caliber engineering and operational muscle with direct executive oversight and personalized partnership.</p>
+    </div>
+    <div class="pillar-card reveal">
+      <span class="pillar-num">02 / VELOCITY</span>
+      <h3>Engineered for Speed</h3>
+      <p>Rapid talent deployment cycles that ramp up dedicated engineers and managed BPO teams in under fourteen business days.</p>
+    </div>
+    <div class="pillar-card reveal">
+      <span class="pillar-num">03 / CONTINUITY</span>
+      <h3>End-to-End Partnership</h3>
+      <p>From architectural scoping to 24/7 follow-the-sun production support, we take full accountability for delivery metrics.</p>
+    </div>
+  </div>
 </section>
+
+<!-- NEW SECTION: Practice Areas & Capabilities (Asymmetric Split Layout) -->
 <section class="band band-surface">
-<div class="section-head reveal"><p class="kicker">Careers</p><h2>Open roles</h2></div>
-<div class="jobs-wrap reveal">
-<div class="job-row"><div><h3>OPERAVA Technology Executive</h3><p class="meta">Remote / Hybrid · Global · Full-time</p></div><a href="careers.html#technology">View role</a></div>
-<div class="job-row"><div><h3>OPERAVA Customer Service Executive</h3><p class="meta">Remote · Global · Full-time</p></div><a href="careers.html#customer-service">View role</a></div>
-<div class="job-row"><div><h3>OPERAVA Business Operations Executive</h3><p class="meta">Remote · Global · Full-time</p></div><a href="careers.html#business-operations">View role</a></div>
-<div class="jobs-cta"><a class="btn btn-line" href="careers.html">View all roles</a></div>
-</div>
+  <div class="practice-split">
+    <div class="practice-sticky reveal">
+      <p class="kicker">PRACTICE AREAS &amp; EXPERTISE</p>
+      <h2>Enterprise engineering &amp; operational excellence</h2>
+      <p>Operava structures cross-functional teams around specialized technical practices. Each pod is equipped with senior architectural guidance, continuous QA protocols, and dedicated account leadership.</p>
+      <a class="btn btn-primary" href="talent.html">Build Your Pod</a>
+    </div>
+    <div class="practice-list reveal">
+      <div class="practice-item">
+        <span class="practice-index">01</span>
+        <div class="practice-body">
+          <h3>Cloud Infrastructure &amp; DevOps Engineering</h3>
+          <p>Production-grade cloud architectures, container orchestration, automated CI/CD pipelines, and multi-cloud resilience engineered for high availability.</p>
+          <div class="practice-tags">
+            <span class="practice-tag">AWS</span>
+            <span class="practice-tag">Google Cloud</span>
+            <span class="practice-tag">Terraform</span>
+            <span class="practice-tag">Kubernetes</span>
+            <span class="practice-tag">Site Reliability</span>
+          </div>
+        </div>
+      </div>
+      <div class="practice-item">
+        <span class="practice-index">02</span>
+        <div class="practice-body">
+          <h3>Full-Stack &amp; Systems Architecture</h3>
+          <p>End-to-end web, mobile, and distributed systems engineering utilizing modern type-safe frameworks, clean API boundaries, and high-performance databases.</p>
+          <div class="practice-tags">
+            <span class="practice-tag">TypeScript</span>
+            <span class="practice-tag">Node.js</span>
+            <span class="practice-tag">React / Next.js</span>
+            <span class="practice-tag">Python</span>
+            <span class="practice-tag">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+      <div class="practice-item">
+        <span class="practice-index">03</span>
+        <div class="practice-body">
+          <h3>AI Systems &amp; Data Operations</h3>
+          <p>Applied AI workflow integration, Retrieval-Augmented Generation (RAG) architectures, specialized data annotation pipelines, and analytics infrastructure.</p>
+          <div class="practice-tags">
+            <span class="practice-tag">RAG Pipelines</span>
+            <span class="practice-tag">Vector Stores</span>
+            <span class="practice-tag">Data Annotation</span>
+            <span class="practice-tag">ETL Engineering</span>
+          </div>
+        </div>
+      </div>
+      <div class="practice-item">
+        <span class="practice-index">04</span>
+        <div class="practice-body">
+          <h3>Customer Experience &amp; Technical Helpdesk</h3>
+          <p>Omnichannel 24/7 technical customer support, multi-tiered escalation management, customer success operations, and CRM systems administration.</p>
+          <div class="practice-tags">
+            <span class="practice-tag">Tier 1–3 Support</span>
+            <span class="practice-tag">Zendesk / Salesforce</span>
+            <span class="practice-tag">Incident SLA</span>
+            <span class="practice-tag">24/7 Shifts</span>
+          </div>
+        </div>
+      </div>
+      <div class="practice-item">
+        <span class="practice-index">05</span>
+        <div class="practice-body">
+          <h3>Back-Office &amp; Process Automation</h3>
+          <p>High-volume transaction processing, document verification, regulatory audit support, and automated workflow orchestrations for operational efficiency.</p>
+          <div class="practice-tags">
+            <span class="practice-tag">Document Verification</span>
+            <span class="practice-tag">Financial Ops</span>
+            <span class="practice-tag">Quality Assurance</span>
+            <span class="practice-tag">RPA Workflows</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- NEW SECTION: Engagement Models & Delivery Tiers -->
 <section class="band">
-<div class="section-head reveal"><p class="kicker">News & Resources</p><h2>From the field</h2></div>
-<div class="news-grid">
-<article class="news-card reveal"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt=""><h3>Accelerating enterprise AI initiatives</h3><p>How talent and technology partnerships shorten time-to-value for AI programs.</p></article>
-<article class="news-card reveal"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80" alt=""><h3>Building high-performing tech teams</h3><p>What separates teams that scale from teams that stall.</p></article>
-<article class="news-card reveal"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt=""><h3>Remote-first delivery that works</h3><p>Operating models for distributed technology and BPO teams.</p></article>
-</div>
+  <div class="section-head center reveal">
+    <p class="kicker">ENGAGEMENT ARCHITECTURE</p>
+    <h2>Models designed for operational flexibility</h2>
+    <p>Choose the engagement structure that aligns with your internal velocity, roadmap requirements, and governance standards.</p>
+  </div>
+  <div class="models-grid">
+    <div class="model-card reveal">
+      <h3>Dedicated Agile Pods</h3>
+      <div class="model-sub">Sprint-Integrated Engineering</div>
+      <p>Autonomous pods of engineers, QA specialists, and technical leads directly integrated into your existing Jira, GitHub, and Slack routines.</p>
+      <ul class="model-features">
+        <li>Full-time dedicated specialists</li>
+        <li>Direct sprint and standup integration</li>
+        <li>Timezone overlap guaranteed</li>
+        <li>14-day replacement warranty</li>
+      </ul>
+    </div>
+    <div class="model-card featured reveal">
+      <span class="model-badge">Most Popular</span>
+      <h3>Managed Operations &amp; BPO</h3>
+      <div class="model-sub">SLA-Governed Process Delivery</div>
+      <p>Turnkey customer support, technical operations, or back-office teams with dedicated team leads, daily metrics monitoring, and performance reporting.</p>
+      <ul class="model-features">
+        <li>Rigorous SLA and KPI accountability</li>
+        <li>Dedicated team leader &amp; QA supervisor</li>
+        <li>24/7 follow-the-sun shift schedules</li>
+        <li>Monthly performance scorecards</li>
+      </ul>
+    </div>
+    <div class="model-card reveal">
+      <h3>Technical Executive Search</h3>
+      <div class="model-sub">Strategic Senior Placements</div>
+      <p>Direct-hire or contract-to-hire senior technologists, solutions architects, and engineering managers vetted through our proprietary assessment framework.</p>
+      <ul class="model-features">
+        <li>Deep multi-tier technical vetting</li>
+        <li>Domain-specific architectural interviews</li>
+        <li>Seamless transition to direct payroll</li>
+        <li>Comprehensive onboarding support</li>
+      </ul>
+    </div>
+  </div>
 </section>
+
+<!-- Section: Solutions Overview (Cards with Clickable Links) -->
 <section class="band band-surface">
-<div class="quote-block reveal">
-<blockquote>“Operava delivered consistent, high-quality support. Communication was clear and the talent exceeded expectations.”</blockquote>
-<cite>— Technology Leader, Fortune 500</cite>
-</div>
+  <div class="section-head center reveal">
+    <p class="kicker">Core Solutions</p>
+    <h2>Tailored for modern enterprise demands</h2>
+    <p>Comprehensive workforce and technology delivery across our three fundamental pillars.</p>
+  </div>
+  <div class="solutions-grid">
+    <article class="sol-card reveal">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80" alt="Professional services and technical architecture">
+      <div class="sol-body">
+        <h3>Professional Services</h3>
+        <p>Specialized technology solutions and a global delivery model for your strategic enterprise initiatives.</p>
+        <a href="about.html">Unlock solutions →</a>
+      </div>
+    </article>
+    <article class="sol-card reveal">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="Technology talent and engineering teams">
+      <div class="sol-body">
+        <h3>Technology Talent</h3>
+        <p>IT careers and technical staffing across modern disciplines — remote-first, client-assigned, and enterprise-ready.</p>
+        <a href="talent.html">Learn about IT talent →</a>
+      </div>
+    </article>
+    <article class="sol-card reveal">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Business operations and BPO support">
+      <div class="sol-body">
+        <h3>Business Talent</h3>
+        <p>Business operations support across customer experience, finance, administration, logistics, and verification.</p>
+        <a href="talent.html">Explore business talent →</a>
+      </div>
+    </article>
+  </div>
 </section>
-<section class="band band-dark cta-band">
-<div class="reveal">
-<h2>Ready to move forward</h2>
-<p>Partner with Operava Global Solutions for technology and talent that drive results.</p>
-<a class="btn btn-primary" href="contact.html">Talk to us</a>
-</div>
+
+<!-- NEW SECTION: Global Delivery Hub & Timezone Framework -->
+<section class="band">
+  <div class="section-head reveal">
+    <p class="kicker">GLOBAL DELIVERY HUB</p>
+    <h2>Synchronized follow-the-sun operations</h2>
+    <p>Headquartered in the Philippines, Operava bridges North American, European, and Asia-Pacific working hours with dedicated shift alignments.</p>
+  </div>
+  <div class="delivery-grid">
+    <div class="delivery-block reveal">
+      <span class="region-tag">Americas Alignment</span>
+      <h3>PST / EST Sprint Overlap</h3>
+      <p>Dedicated night-shift and evening-shift pods provide 4–6 hours of concurrent working overlap with US East and West Coast development teams, enabling real-time standups and instant Slack collaboration.</p>
+    </div>
+    <div class="delivery-block reveal">
+      <span class="region-tag">EMEA Synchronization</span>
+      <h3>London &amp; European Coverage</h3>
+      <p>Our European business hour shifts ensure immediate response times for London and continental European clients during standard working hours, maintaining tight ticket SLAs.</p>
+    </div>
+    <div class="delivery-block reveal">
+      <span class="region-tag">APAC Headquarters</span>
+      <h3>Philippine Core Hub</h3>
+      <p>Operating from Pagudpud, Ilocos Norte, our primary facility features redundant fiber backbones, enterprise power failover, and access to the nation's premier engineering talent.</p>
+    </div>
+  </div>
 </section>
-<footer class="footer">
-<div class="footer-grid">
-<div>
-<div class="footer-brand">Operava Global Solutions</div>
-<p>Technology is our focus, and quality is our commitment. Philippine-based · remote-first · global operations.</p>
-</div>
-<div>
-<h4>Company</h4>
-<ul>
-<li><a href="about.html">About</a></li>
-<li><a href="careers.html">Careers</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-<div>
-<h4>Solutions</h4>
-<ul>
-<li><a href="talent.html">Technology Talent</a></li>
-<li><a href="talent.html">Business Talent</a></li>
-<li><a href="about.html">Professional Services</a></li>
-</ul>
-</div>
-<div>
-<h4>Resources</h4>
-<ul>
-<li><a href="jobs-global.html">Global Jobs</a></li>
-<li><a href="resume.html">Submit Resume</a></li>
-<li><a href="referral.html">Referral Program</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<span>© 2026 Operava Global Solutions</span>
-<span class="footer-legal">
-<a href="terms.html">Terms and Conditions</a>
-· <a href="privacy-policy.html">Privacy Policy</a>
-· <a href="refund-policy.html">Refund Policy</a>
-</span>
-</div>
+
+<!-- NEW SECTION: Client Onboarding Journey (Chronological 4-Step Process) -->
+<section class="band band-surface">
+  <div class="section-head center reveal">
+    <p class="kicker">THE ONBOARDING JOURNEY</p>
+    <h2>From initial scoping to sprint delivery in 14 days</h2>
+    <p>Our battle-tested onboarding pipeline gets high-caliber talent contributing to your repositories with zero friction.</p>
+  </div>
+  <div class="timeline-grid">
+    <div class="timeline-item reveal">
+      <div class="timeline-step">Day 1 – 2</div>
+      <h3>Technical Calibration</h3>
+      <p>Deep-dive discovery session to audit your tech stack, coding standards, team culture, and communication protocols.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-step">Day 3 – 7</div>
+      <h3>Screening &amp; Assessment</h3>
+      <p>AI-assisted preliminary qualification followed by live coding challenges, system design exercises, and soft skills verification.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-step">Day 8 – 10</div>
+      <h3>Client Interviews</h3>
+      <p>Direct portfolio reviews and scenario-based technical interviews with shortlisted candidates for final selection.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-step">Day 11 – 14</div>
+      <h3>Sprint Kickoff</h3>
+      <p>Secure hardware provisioning, VPN configuration, repo access setup, and immediate integration into your daily standup.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section: Open Roles / Careers -->
+<section class="band">
+  <div class="section-head center reveal">
+    <p class="kicker">CAREERS &amp; OPPORTUNITIES</p>
+    <h2>Standard professional tracks</h2>
+    <p>Broad executive tracks with specialization defined by client assignment. Remote-first and global.</p>
+  </div>
+  <div class="jobs-wrap reveal">
+    <div class="job-row">
+      <div>
+        <h3>OPERAVA Technology Executive</h3>
+        <p class="meta">Remote / Hybrid · Global Delivery · Full-time</p>
+      </div>
+      <a href="careers.html#technology">View role details →</a>
+    </div>
+    <div class="job-row">
+      <div>
+        <h3>OPERAVA Customer Service Executive</h3>
+        <p class="meta">Remote · Global Delivery · Full-time</p>
+      </div>
+      <a href="careers.html#customer-service">View role details →</a>
+    </div>
+    <div class="job-row">
+      <div>
+        <h3>OPERAVA Business Operations Executive</h3>
+        <p class="meta">Remote · Global Delivery · Full-time</p>
+      </div>
+      <a href="careers.html#business-operations">View role details →</a>
+    </div>
+    <div class="jobs-cta">
+      <a class="btn btn-line" href="careers.html">View All Careers &amp; Country Filter</a>
+    </div>
+  </div>
+</section>
+
+<!-- Section: News & Resources (With functional click-to-expand image lightbox) -->
+<section class="band band-surface">
+  <div class="section-head center reveal">
+    <p class="kicker">News &amp; Resources</p>
+    <h2>Field insights &amp; perspectives</h2>
+    <p>Click any thumbnail to inspect high-resolution perspectives on modern remote execution.</p>
+  </div>
+  <div class="news-grid">
+    <article class="news-card reveal" id="news-article-1">
+      <button type="button" class="news-img-btn" id="news-expand-btn-1" aria-label="Expand image: Accelerating enterprise AI initiatives" data-full-src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1800&q=85" data-caption="Accelerating enterprise AI initiatives — Architecture & Systems">
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="Enterprise AI initiatives">
+        <span class="news-expand-badge">Expand ↗</span>
+      </button>
+      <h3>Accelerating enterprise AI initiatives</h3>
+      <p>How specialized engineering partnerships shorten time-to-value for generative AI roadmaps and RAG deployments.</p>
+    </article>
+    <article class="news-card reveal" id="news-article-2">
+      <button type="button" class="news-img-btn" id="news-expand-btn-2" aria-label="Expand image: Building high-performing tech teams" data-full-src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1800&q=85" data-caption="Building high-performing tech teams — Collaborative Engineering">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80" alt="High-performing technology team">
+        <span class="news-expand-badge">Expand ↗</span>
+      </button>
+      <h3>Building high-performing tech teams</h3>
+      <p>The cultural, procedural, and tooling differences that separate teams that scale gracefully from teams that stall.</p>
+    </article>
+    <article class="news-card reveal" id="news-article-3">
+      <button type="button" class="news-img-btn" id="news-expand-btn-3" aria-label="Expand image: Remote-first delivery that works" data-full-src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=85" data-caption="Remote-first delivery that works — Operational Blueprint">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Distributed remote-first delivery workspace">
+        <span class="news-expand-badge">Expand ↗</span>
+      </button>
+      <h3>Remote-first delivery that works</h3>
+      <p>Practical governance frameworks and communication protocols for distributed technology and BPO organizations.</p>
+    </article>
+  </div>
+</section>
+
+<!-- NEW SECTION: Enterprise Governance & Compliance Grid -->
+<section class="band">
+  <div class="section-head reveal">
+    <p class="kicker">ENTERPRISE GOVERNANCE</p>
+    <h2>Compliance, security &amp; legal integrity</h2>
+    <p>Operating in full alignment with statutory frameworks to safeguard corporate intellectual property and data privacy.</p>
+  </div>
+  <div class="gov-grid">
+    <div class="gov-card reveal">
+      <div class="gov-icon">SEC Registered</div>
+      <h3>Corporate Standing</h3>
+      <p>Registered One Person Corporation in the Republic of the Philippines (SEC No. 2026080262213-03) with verifiable legal governance.</p>
+    </div>
+    <div class="gov-card reveal">
+      <div class="gov-icon">RA 10173</div>
+      <h3>Data Privacy Act</h3>
+      <p>Complete compliance with the Philippine Data Privacy Act of 2012, enforced by dedicated Data Protection Officers.</p>
+    </div>
+    <div class="gov-card reveal">
+      <div class="gov-icon">IP Protection</div>
+      <h3>Full IP Assignment</h3>
+      <p>100% of deliverables, source code repositories, and documentation belong exclusively to the client upon milestone payment.</p>
+    </div>
+    <div class="gov-card reveal">
+      <div class="gov-icon">Zero Trust</div>
+      <h3>Endpoint Security</h3>
+      <p>Enforced full-disk encryption, secure VPN connections, role-based access management, and automated incident monitoring.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEW SECTION: Frequently Asked Questions (Accessible Accordion) -->
+<section class="band band-surface">
+  <div class="section-head center reveal">
+    <p class="kicker">FREQUENTLY ASKED QUESTIONS</p>
+    <h2>Clear answers on partnering with Operava</h2>
+    <p>Everything you need to know about our operating model, talent vetting, security, and commercial agreements.</p>
+  </div>
+  <div class="faq-wrap reveal">
+    <details class="faq-item">
+      <summary>How quickly can an engineering pod or support team be deployed?</summary>
+      <div class="faq-content">
+        Standard placements and agile pods are typically assembled and onboarded within 10 to 14 business days. For specialized architectural skill sets or large multi-tier BPO ramps, we provide a concrete ramp-up schedule during the initial 48-hour discovery scoping.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>How does Operava ensure intellectual property and client data security?</summary>
+      <div class="faq-content">
+        All engagements are protected by comprehensive bilateral Non-Disclosure Agreements (NDAs) and Master Services Agreements that explicitly assign 100% of work product and IP to the client. Our personnel operate on secured, monitored endpoints adhering to the Philippine Data Privacy Act of 2012 (RA 10173).
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>What timezone overlaps are available for international clients?</summary>
+      <div class="faq-content">
+        We offer customized shift structures guaranteeing 4–6 hours of direct working overlap with North American (PST, CST, EST) and European (GMT, CET) business hours, ensuring seamless participation in your daily standups, sprint plannings, and release cycles.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>What are the billing cycles and commercial contract options?</summary>
+      <div class="faq-content">
+        We offer flexible commercial arrangements: dedicated monthly talent retainers, milestone-based Statements of Work (SOWs), and volume-based managed BPO agreements. Invoices are issued with transparent net terms and accepted via global wire or corporate payment rails.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>What is Operava's policy regarding refunds, cancellations, and service credits?</summary>
+      <div class="faq-content">
+        Operava maintains a transparent, comprehensive 49-section Refund Policy. While work already performed and accepted is non-refundable, we provide replacement guarantees for personnel during the initial 14-day window, service credits for SLA remediation, and full refunds for unperformed prepaid retainers upon lawful cancellation.
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- Section: Quote Block -->
+<section class="band">
+  <div class="quote-block reveal">
+    <div class="quote-mark">“</div>
+    <blockquote>Operava delivered consistent, high-quality support. Communication was clear and the talent exceeded expectations.</blockquote>
+    <cite>— Technology Leader, Enterprise Partner</cite>
+  </div>
+</section>
+
+<!-- Section: CTA Band (Light Themed) -->
+<section class="band cta-band">
+  <div class="reveal">
+    <p class="kicker">GET STARTED</p>
+    <h2>Ready to accelerate your operations?</h2>
+    <p>Partner with Operava Global Solutions for enterprise technology, dedicated engineering pods, and high-velocity BPO.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="contact.html">Talk to us</a>
+      <a class="btn btn-line" href="talent.html">Request Talent</a>
+    </div>
+  </div>
+</section>
+
+<!-- Reusable Footer Component -->
+<footer class="footer" id="main-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Operava Global Solutions</div>
+      <p>Technology is our focus, and quality is our commitment. Philippine-based · remote-first · global operations.</p>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="talent.html">Technology Talent</a></li>
+        <li><a href="talent.html">Business Talent</a></li>
+        <li><a href="about.html">Professional Services</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="jobs-global.html">Global Jobs</a></li>
+        <li><a href="jobs-us.html">U.S. Jobs</a></li>
+        <li><a href="resume.html">Submit Resume</a></li>
+        <li><a href="referral.html">Referral Program</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <span class="sep">·</span>
+      <a href="terms.html">Terms and Conditions</a>
+      <span class="sep">·</span>
+      <a href="refund-policy.html">Refund Policy</a>
+    </div>
+    <div class="footer-copyright">
+      © 2026 Operava Global Solutions. All rights reserved.
+    </div>
+  </div>
 </footer>
+
+<!-- Lightbox Modal for Article Images -->
+<div class="lightbox" id="news-lightbox" role="dialog" aria-modal="true" aria-label="Expanded Image View" tabindex="-1">
+  <div class="lightbox-dialog" id="lightbox-dialog">
+    <button type="button" class="lightbox-close" id="lightbox-close-btn" aria-label="Close enlarged view">✕ Close</button>
+    <div class="lightbox-figure">
+      <img class="lightbox-img" id="lightbox-enlarged-img" src="" alt="">
+    </div>
+    <div class="lightbox-bar">
+      <strong id="lightbox-caption-text"></strong>
+      <span>Press ESC or click outside to close</span>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
-var nav=document.querySelector('.nav'),toggle=document.querySelector('.nav-toggle'),links=document.querySelector('.nav-links');
-if(toggle)toggle.onclick=function(){links.classList.toggle('open')};
-window.addEventListener('scroll',function(){if(nav)nav.classList.toggle('scrolled',scrollY>40)});
-var els=document.querySelectorAll('.reveal');
-if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(el){io.observe(el)})}else els.forEach(function(el){el.classList.add('in')});
+  // Mobile Nav Toggle
+  var nav = document.querySelector('.nav'),
+      toggle = document.querySelector('.nav-toggle'),
+      links = document.querySelector('.nav-links');
+  if(toggle){
+    toggle.onclick = function(){ links.classList.toggle('open'); };
+  }
+
+  // Nav Scroll State
+  window.addEventListener('scroll', function(){
+    if(nav) nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Scroll Reveal Animations
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.1});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // Light-weight Click-to-Expand Image Lightbox
+  var lightbox = document.getElementById('news-lightbox');
+  var lightboxImg = document.getElementById('lightbox-enlarged-img');
+  var lightboxCaption = document.getElementById('lightbox-caption-text');
+  var lightboxClose = document.getElementById('lightbox-close-btn');
+  var triggers = document.querySelectorAll('.news-img-btn');
+  var activeTrigger = null;
+
+  function openLightbox(trigger){
+    activeTrigger = trigger;
+    var fullSrc = trigger.getAttribute('data-full-src');
+    var caption = trigger.getAttribute('data-caption') || '';
+    var innerImg = trigger.querySelector('img');
+    var altText = innerImg ? innerImg.alt : caption;
+    lightboxImg.src = fullSrc;
+    lightboxImg.alt = altText;
+    lightboxCaption.textContent = caption;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if(lightboxClose) lightboxClose.focus();
+  }
+
+  function closeLightbox(){
+    if(!lightbox || !lightbox.classList.contains('open')) return;
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    lightboxImg.src = '';
+    if(activeTrigger){
+      activeTrigger.focus();
+      activeTrigger = null;
+    }
+  }
+
+  triggers.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      openLightbox(btn);
+    });
+  });
+
+  if(lightboxClose){
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  if(lightbox){
+    lightbox.addEventListener('click', function(e){
+      if(e.target === lightbox){
+        closeLightbox();
+      }
+    });
+  }
+
+  window.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && lightbox && lightbox.classList.contains('open')){
+      closeLightbox();
+    }
+  });
 })();
 </script>
 </body>
