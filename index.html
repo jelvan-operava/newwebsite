@@ -29,9 +29,12 @@ body{font-family:var(--fb);color:var(--ink);line-height:1.6;background:#fff;over
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 
+/* Scroll Progress Bar at the Very Top */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--purple) 0%,#7c3aed 100%);z-index:1001;pointer-events:none;transition:width .08s ease-out;box-shadow:0 0 8px rgba(75,32,201,.4)}
+
 /* Header & Nav */
-.nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:background .25s,border-color .25s,box-shadow .25s}
-.nav.scrolled{box-shadow:0 4px 20px rgba(10,22,40,.04);background:rgba(255,255,255,.98)}
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:transparent;border-bottom:1px solid rgba(226,230,238,.45);transition:background .25s,border-color .25s,box-shadow .25s}
+.nav.scrolled{box-shadow:0 4px 20px rgba(10,22,40,.04);background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-brand{font-family:var(--fd);font-weight:700;font-size:1.3rem;letter-spacing:.08em;color:var(--ink);text-transform:uppercase;display:inline-flex;align-items:center;gap:.35rem}
 .nav-brand span{color:var(--purple)}
 .nav-links{display:flex;gap:clamp(14px,1.8vw,28px);flex-wrap:wrap;align-items:center}
@@ -61,9 +64,11 @@ img{max-width:100%;display:block}
 .section-head p{font-size:1.05rem;color:var(--muted);max-width:44rem;margin-top:.75rem;line-height:1.65}
 .section-head.center p{margin-left:auto;margin-right:auto}
 
-/* Hero Section (Light Themed, Editorial Full-Width) */
-.hero{display:flex;flex-direction:column;padding:calc(80px + 6vh) var(--g) 4.5rem;background:linear-gradient(180deg,#f8f6fd 0%,#fcfbfe 40%,#ffffff 100%);position:relative;border-bottom:1px solid var(--line)}
-.hero-inner{width:100%;margin:0}
+/* Hero Section (Cover Background Photo Blurred 10%, Entire Section Covered, Editorial Full-Width) */
+.hero{position:relative;display:flex;flex-direction:column;padding:calc(80px + 6vh) var(--g) 4.5rem;border-bottom:1px solid var(--line);overflow:hidden;background-color:#0a1628}
+.hero-bg{position:absolute;inset:-15px;width:calc(100% + 30px);height:calc(100% + 30px);object-fit:cover;object-position:center 32%;filter:blur(8px);transform:scale(1.05);pointer-events:none;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(248,246,253,.88) 0%,rgba(255,255,255,.94) 100%);pointer-events:none;z-index:1}
+.hero-inner{position:relative;z-index:2;width:100%;margin:0}
 .hero-content{max-width:56rem}
 .hero h1{font-family:var(--fd);font-weight:700;font-size:clamp(2.5rem,6.2vw,4.65rem);line-height:1.03;text-transform:uppercase;color:var(--ink);margin-bottom:1.4rem;letter-spacing:-.01em}
 .hero-desc{font-size:clamp(1.05rem,1.8vw,1.25rem);color:var(--muted);max-width:46rem;line-height:1.65;margin-bottom:2.25rem}
@@ -186,11 +191,28 @@ img{max-width:100%;display:block}
 .faq-item[open] summary::after{transform:rotate(45deg)}
 .faq-content{margin-top:1rem;font-size:.98rem;color:var(--muted);line-height:1.75}
 
-/* Section: Quote Block */
-.quote-block{max-width:50rem;margin:0 auto;text-align:center}
-.quote-mark{font-family:var(--fd);font-size:3rem;color:var(--purple);line-height:1;margin-bottom:.5rem}
-.quote-block blockquote{font-family:var(--fd);font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.4;margin-bottom:1.5rem;color:var(--ink);font-weight:600}
-.quote-block cite{font-style:normal;font-size:.9rem;color:var(--muted);display:block}
+/* Section: Testimonials Horizontal Slider */
+.testimonial-band{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative}
+.testimonial-wrap{max-width:54rem;margin:0 auto;text-align:center;position:relative}
+.testimonial-kicker{font-family:var(--fd);font-size:.8125rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:1.25rem}
+.testimonial-slider{overflow:hidden;width:100%;position:relative;padding:.5rem 0}
+.testimonial-track{display:flex;transition:transform .55s cubic-bezier(.2,.8,.2,1);width:100%}
+.testimonial-slide{flex:0 0 100%;min-width:100%;box-sizing:border-box;padding:0 clamp(.5rem,2vw,1.5rem);opacity:.35;transform:scale(.98);transition:opacity .45s ease,transform .45s ease}
+.testimonial-slide.active{opacity:1;transform:scale(1)}
+.quote-mark{font-family:var(--fd);font-size:3.5rem;color:var(--purple);line-height:1;margin-bottom:.5rem;user-select:none}
+.testimonial-slide blockquote{font-family:var(--fd);font-size:clamp(1.35rem,2.8vw,2.05rem);line-height:1.42;margin-bottom:1.75rem;color:var(--ink);font-weight:600}
+.testimonial-author{display:inline-flex;flex-direction:column;align-items:center;gap:.3rem}
+.testimonial-author cite{font-style:normal;font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.05em}
+.testimonial-author .author-role{font-size:.875rem;color:var(--muted);font-weight:500}
+.testimonial-controls{display:flex;align-items:center;justify-content:center;gap:1.25rem;margin-top:2.25rem}
+.testimonial-arrow{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;padding:0}
+.testimonial-arrow:hover{border-color:var(--purple);color:var(--purple);background:var(--purple-light);transform:scale(1.06)}
+.testimonial-arrow:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
+.testimonial-dots{display:flex;align-items:center;gap:.55rem}
+.testimonial-dot{width:10px;height:10px;border-radius:999px;background:var(--line);border:0;cursor:pointer;padding:0;transition:all .25s cubic-bezier(.16,1,.3,1)}
+.testimonial-dot:hover{background:var(--purple-border)}
+.testimonial-dot.active{width:30px;background:var(--purple)}
+.testimonial-dot:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
 
 /* Section: CTA Band */
 .cta-band{text-align:center;background:linear-gradient(135deg,#f4effe 0%,#ebe3fa 100%);border-top:1px solid var(--purple-border);border-bottom:1px solid var(--purple-border);color:var(--ink)}
@@ -260,6 +282,9 @@ img{max-width:100%;display:block}
 </head>
 <body>
 
+<!-- Scroll Progress Bar at the Very Top -->
+<div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
 <!-- Header Navigation -->
 <header class="nav">
   <a class="nav-brand" href="index.html">OPERAVA<span>.</span></a>
@@ -277,8 +302,11 @@ img{max-width:100%;display:block}
   </button>
 </header>
 
-<!-- Hero Section (Light Themed, Editorial Full-Width with Cover Photo) -->
+<!-- Hero Section (Cover Background Photo Blurred 10%, Entire Section Covered, Editorial Full-Width) -->
 <section class="hero">
+  <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=85" alt="Operava Global Operations Headquarters" class="hero-bg" fetchpriority="high">
+  <div class="hero-overlay"></div>
+
   <div class="hero-inner">
     <div class="hero-content">
       <h1>Enterprise technology, workforce, and BPO built for operational speed</h1>
@@ -291,19 +319,11 @@ img{max-width:100%;display:block}
     </div>
   </div>
 
-  <!-- Cover Photo Aligned to the Entire Page (Full-Bleed Edge-to-Edge) -->
-  <div class="hero-cover-wrap reveal" id="hero-cover-container">
-    <button type="button" class="hero-cover-btn news-img-btn" id="cover-photo-btn" aria-label="Expand cover photo: Operava Global Operations and Delivery Center" data-full-src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=85" data-caption="Operava Global Delivery Headquarters — Architecture & Technology Operations">
-      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=85" alt="Operava Global Operations and Delivery Headquarters" class="hero-cover-img" fetchpriority="high">
-      <span class="hero-cover-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-        Expand Cover Photo
-      </span>
-    </button>
-    <div class="hero-cover-bar">
+  <div class="hero-inner" style="margin-bottom:2rem">
+    <div class="hero-cover-bar" style="border-radius:4px;border:1px solid var(--line);background:rgba(255,255,255,.94)">
       <div class="cover-tag">
         <span class="cover-dot"></span>
-        <span>Operava Global Delivery Headquarters · Manila & Global Agile Pods</span>
+        <span>Operava Global Delivery Headquarters · Manila &amp; Global Agile Pods</span>
       </div>
       <span class="cover-loc">SEC-Registered · Follow-The-Sun Operational Hub</span>
     </div>
@@ -717,12 +737,63 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- Section: Quote Block -->
-<section class="band">
-  <div class="quote-block reveal">
-    <div class="quote-mark">“</div>
-    <blockquote>Operava delivered consistent, high-quality support. Communication was clear and the talent exceeded expectations.</blockquote>
-    <cite>— Technology Leader, Enterprise Partner</cite>
+<!-- Section: Testimonials Horizontal Slider -->
+<section class="band testimonial-band" id="testimonials" aria-label="Client Feedback">
+  <div class="testimonial-wrap reveal">
+    <div class="testimonial-kicker">CLIENT FEEDBACK</div>
+    <div class="testimonial-slider" id="testimonial-slider" tabindex="0" aria-roledescription="carousel" aria-label="Client feedback quotes">
+      <div class="testimonial-track" id="testimonial-track">
+        <div class="testimonial-slide active" data-index="0" role="group" aria-roledescription="slide" aria-label="1 of 5">
+          <div class="quote-mark">“</div>
+          <blockquote>Operava delivered consistent, high-quality engineering support. Communication was clear from day one, and the talent exceeded our velocity benchmarks.</blockquote>
+          <div class="testimonial-author">
+            <cite>Marcus Vance</cite>
+            <span class="author-role">VP of Engineering · Cloud Infrastructure Partner</span>
+          </div>
+        </div>
+        <div class="testimonial-slide" data-index="1" role="group" aria-roledescription="slide" aria-label="2 of 5">
+          <div class="quote-mark">“</div>
+          <blockquote>Scaling our technical customer support to 24/7 coverage seemed daunting until we integrated Operava's managed team. Our resolution SLA improved by 42% in the first quarter.</blockquote>
+          <div class="testimonial-author">
+            <cite>Elena Rostova</cite>
+            <span class="author-role">Chief Operating Officer · FinTech Global</span>
+          </div>
+        </div>
+        <div class="testimonial-slide" data-index="2" role="group" aria-roledescription="slide" aria-label="3 of 5">
+          <div class="quote-mark">“</div>
+          <blockquote>Their dedicated agile pod integrated directly into our Jira and Slack workflows. It didn't feel like an outsourced team—it felt like our own senior staff operating at full tilt.</blockquote>
+          <div class="testimonial-author">
+            <cite>David Tan</cite>
+            <span class="author-role">Head of Product Engineering · Enterprise SaaS</span>
+          </div>
+        </div>
+        <div class="testimonial-slide" data-index="3" role="group" aria-roledescription="slide" aria-label="4 of 5">
+          <div class="quote-mark">“</div>
+          <blockquote>The rigorous vetting and technical evaluation Operava applies is exceptional. We filled three mission-critical full-stack roles in under two weeks with zero attrition.</blockquote>
+          <div class="testimonial-author">
+            <cite>Sarah Jenkins</cite>
+            <span class="author-role">Director of Talent Acquisition · Digital Health Platform</span>
+          </div>
+        </div>
+        <div class="testimonial-slide" data-index="4" role="group" aria-roledescription="slide" aria-label="5 of 5">
+          <div class="quote-mark">“</div>
+          <blockquote>From complex data pipelines to back-office transaction verification, Operava provided the operational precision and security compliance our healthcare clients require.</blockquote>
+          <div class="testimonial-author">
+            <cite>Carlos Mendoza</cite>
+            <span class="author-role">Managing Director · Operational Analytics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-controls">
+      <button type="button" class="testimonial-arrow" id="slider-prev" aria-label="Previous testimonial">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="testimonial-dots" id="testimonial-dots" role="tablist" aria-label="Testimonial slides"></div>
+      <button type="button" class="testimonial-arrow" id="slider-next" aria-label="Next testimonial">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
   </div>
 </section>
 
@@ -810,10 +881,24 @@ img{max-width:100%;display:block}
     toggle.onclick = function(){ links.classList.toggle('open'); };
   }
 
-  // Nav Scroll State
-  window.addEventListener('scroll', function(){
-    if(nav) nav.classList.toggle('scrolled', window.scrollY > 20);
-  });
+  // Scroll Progress Bar & Nav Scroll State
+  var progressBar = document.getElementById('scroll-progress');
+  function updateScrollState(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if(progressBar){
+      var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      var clamped = Math.min(100, Math.max(0, pct));
+      progressBar.style.width = clamped + '%';
+      progressBar.setAttribute('aria-valuenow', Math.round(clamped));
+    }
+    if(nav){
+      nav.classList.toggle('scrolled', scrollTop > 15);
+    }
+  }
+  window.addEventListener('scroll', updateScrollState, { passive: true });
+  window.addEventListener('resize', updateScrollState, { passive: true });
+  updateScrollState();
 
   // Scroll Reveal Animations
   var els = document.querySelectorAll('.reveal');
@@ -887,6 +972,148 @@ img{max-width:100%;display:block}
       closeLightbox();
     }
   });
+
+  // Horizontal Testimonial Slider with Auto-Rotation & Navigation Dots
+  (function initTestimonialSlider(){
+    var slider = document.getElementById('testimonial-slider');
+    var track = document.getElementById('testimonial-track');
+    var dotsWrap = document.getElementById('testimonial-dots');
+    var prevBtn = document.getElementById('slider-prev');
+    var nextBtn = document.getElementById('slider-next');
+    if(!slider || !track) return;
+
+    var slides = track.querySelectorAll('.testimonial-slide');
+    var total = slides.length;
+    if(!total) return;
+
+    var current = 0;
+    var intervalMs = 5000;
+    var timer = null;
+    var startX = 0;
+
+    // Render Navigation Dots
+    if(dotsWrap){
+      dotsWrap.innerHTML = '';
+      for(var i = 0; i < total; i++){
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+        dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        (function(idx){
+          dot.addEventListener('click', function(){
+            goTo(idx);
+            resetTimer();
+          });
+        })(i);
+        dotsWrap.appendChild(dot);
+      }
+    }
+
+    function updateDots(){
+      if(!dotsWrap) return;
+      var dots = dotsWrap.querySelectorAll('.testimonial-dot');
+      dots.forEach(function(dot, idx){
+        var isActive = idx === current;
+        dot.classList.toggle('active', isActive);
+        dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+    }
+
+    function goTo(index){
+      if(index < 0) index = total - 1;
+      if(index >= total) index = 0;
+      current = index;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+
+      slides.forEach(function(slide, idx){
+        slide.classList.toggle('active', idx === current);
+      });
+
+      updateDots();
+    }
+
+    function next(){ goTo(current + 1); }
+    function prev(){ goTo(current - 1); }
+
+    if(prevBtn){
+      prevBtn.addEventListener('click', function(){
+        prev();
+        resetTimer();
+      });
+    }
+
+    if(nextBtn){
+      nextBtn.addEventListener('click', function(){
+        next();
+        resetTimer();
+      });
+    }
+
+    function startTimer(){
+      stopTimer();
+      timer = setInterval(next, intervalMs);
+    }
+
+    function stopTimer(){
+      if(timer){
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    function resetTimer(){
+      stopTimer();
+      startTimer();
+    }
+
+    // Pause on interaction
+    slider.addEventListener('mouseenter', stopTimer);
+    slider.addEventListener('mouseleave', startTimer);
+    slider.addEventListener('focusin', stopTimer);
+    slider.addEventListener('focusout', startTimer);
+
+    if(dotsWrap){
+      dotsWrap.addEventListener('mouseenter', stopTimer);
+      dotsWrap.addEventListener('mouseleave', startTimer);
+    }
+
+    // Keyboard navigation when slider is focused
+    slider.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowLeft'){
+        e.preventDefault();
+        prev();
+        resetTimer();
+      } else if(e.key === 'ArrowRight'){
+        e.preventDefault();
+        next();
+        resetTimer();
+      }
+    });
+
+    // Touch swipe support
+    slider.addEventListener('touchstart', function(e){
+      startX = e.changedTouches[0].clientX;
+      stopTimer();
+    }, { passive: true });
+
+    slider.addEventListener('touchend', function(e){
+      var endX = e.changedTouches[0].clientX;
+      var diff = startX - endX;
+      if(Math.abs(diff) > 40){
+        if(diff > 0){
+          next();
+        } else {
+          prev();
+        }
+      }
+      startTimer();
+    }, { passive: true });
+
+    // Begin auto-rotation
+    startTimer();
+  })();
 })();
 </script>
 </body>

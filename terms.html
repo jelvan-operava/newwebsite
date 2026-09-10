@@ -28,8 +28,12 @@ html{scroll-behavior:smooth}
 body{font-family:var(--fb);color:var(--ink);line-height:1.65;background:#fff}
 a{color:inherit;text-decoration:none}
 
+/* Scroll Progress Bar at the Very Top */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--purple) 0%,#7c3aed 100%);z-index:1001;pointer-events:none;transition:width .08s ease-out;box-shadow:0 0 8px rgba(75,32,201,.4)}
+
 /* Header & Navigation */
-.nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:transparent;border-bottom:1px solid rgba(226,230,238,.45);transition:background .25s,border-color .25s,box-shadow .25s}
+.nav.scrolled{box-shadow:0 4px 20px rgba(10,22,40,.04);background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-brand{font-family:var(--fd);font-weight:700;font-size:1.25rem;letter-spacing:.06em;color:var(--ink);text-transform:uppercase}
 .nav-links{display:flex;gap:clamp(14px,1.8vw,28px);flex-wrap:wrap}
 .nav-links a{font-family:var(--fd);font-size:.8125rem;font-weight:500;color:#384558;transition:color .2s}
@@ -38,7 +42,10 @@ a{color:inherit;text-decoration:none}
 .nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0}
 
 /* Page Hero */
-.page-hero{padding:calc(80px + 4.5vh) var(--g) 3.5rem;background:linear-gradient(180deg,#f7f5fd 0%,#fbfafd 50%,#ffffff 100%);color:var(--ink);border-bottom:1px solid var(--line)}
+.page-hero{position:relative;padding:calc(80px + 4.5vh) var(--g) 3.5rem;border-bottom:1px solid var(--line);overflow:hidden;background-color:#0a1628}
+.page-hero-bg{position:absolute;inset:-15px;width:calc(100% + 30px);height:calc(100% + 30px);object-fit:cover;object-position:center 32%;filter:blur(8px);transform:scale(1.05);pointer-events:none;z-index:0}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(247,245,253,.88) 0%,rgba(255,255,255,.94) 100%);pointer-events:none;z-index:1}
+.page-hero-content{position:relative;z-index:2}
 .page-hero .crumb{font-family:var(--fd);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
 .page-hero .crumb a{color:var(--purple)}
 .page-hero h1{font-family:var(--fd);font-weight:700;font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.06;text-transform:uppercase;margin-bottom:1rem;color:var(--ink);letter-spacing:-.01em}
@@ -143,6 +150,8 @@ a{color:inherit;text-decoration:none}
 </style>
 </head>
 <body>
+<!-- Scroll Progress Bar at the Very Top -->
+<div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 
 <header class="nav">
   <a class="nav-brand" href="index.html">OPERAVA</a>
@@ -159,15 +168,19 @@ a{color:inherit;text-decoration:none}
 </header>
 
 <section class="page-hero">
-  <p class="crumb"><a href="index.html">Home</a> / Terms and Conditions</p>
-  <h1>Terms and Conditions</h1>
-  <p>Official corporate framework governing websites, client commercial engagements, software engineering deliverables, employment candidate evaluations, and managed business process operations.</p>
-  <div class="meta-row">
-    <span><strong>Corporate Entity:</strong> Operava Global Solutions</span>
-    <span><strong>SEC Registration:</strong> 2026080262213-03</span>
-    <span><strong>Effective Date:</strong> August 17, 2026</span>
-    <span><strong>Jurisdiction:</strong> Republic of the Philippines</span>
-    <span><strong>Status:</strong> Active Legal Framework</span>
+  <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=85" alt="Operava Corporate Governance" class="page-hero-bg" fetchpriority="high">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="crumb"><a href="index.html">Home</a> / Terms and Conditions</p>
+    <h1>Terms and Conditions</h1>
+    <p>Official corporate framework governing websites, client commercial engagements, software engineering deliverables, employment candidate evaluations, and managed business process operations.</p>
+    <div class="meta-row">
+      <span><strong>Corporate Entity:</strong> Operava Global Solutions</span>
+      <span><strong>SEC Registration:</strong> 2026080262213-03</span>
+      <span><strong>Effective Date:</strong> August 17, 2026</span>
+      <span><strong>Jurisdiction:</strong> Republic of the Philippines</span>
+      <span><strong>Status:</strong> Active Legal Framework</span>
+    </div>
   </div>
 </section>
 
@@ -671,6 +684,25 @@ a{color:inherit;text-decoration:none}
   if(t && l) {
     t.onclick = function() { l.classList.toggle('open'); };
   }
+
+  var nav = document.querySelector('.nav');
+  var progressBar = document.getElementById('scroll-progress');
+  function updateScrollState(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if(progressBar){
+      var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      var clamped = Math.min(100, Math.max(0, pct));
+      progressBar.style.width = clamped + '%';
+      progressBar.setAttribute('aria-valuenow', Math.round(clamped));
+    }
+    if(nav){
+      nav.classList.toggle('scrolled', scrollTop > 15);
+    }
+  }
+  window.addEventListener('scroll', updateScrollState, { passive: true });
+  window.addEventListener('resize', updateScrollState, { passive: true });
+  updateScrollState();
 
   // Quick Table of Contents Filter
   var filterInput = document.getElementById('toc-filter');
