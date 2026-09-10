@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy | OPERAVA</title>
-<meta name="description" content="OPERAVA Privacy Policy. Comprehensive data protection framework under the Philippine Data Privacy Act of 2012. Effective August 17, 2026.">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="Operava Global Solutions Privacy Policy and Privacy Notice. Comprehensive data protection framework under the Philippine Data Privacy Act of 2012 (RA 10173). Effective August 17, 2026.">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#0a1628;
@@ -21,11 +21,14 @@
   --fd:'Roboto Condensed',system-ui,sans-serif;
   --fb:'Montserrat',system-ui,sans-serif;
   --g:clamp(20px,4.5vw,72px);
-  --m:48rem;
+  --m:54rem;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--fb);color:var(--ink);line-height:1.6;background:#fff}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);line-height:1.65;background:#fff}
 a{color:inherit;text-decoration:none}
+
+/* Header & Navigation */
 .nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-brand{font-family:var(--fd);font-weight:700;font-size:1.25rem;letter-spacing:.06em;color:var(--ink);text-transform:uppercase}
 .nav-links{display:flex;gap:clamp(14px,1.8vw,28px);flex-wrap:wrap}
@@ -33,30 +36,93 @@ a{color:inherit;text-decoration:none}
 .nav-links a:hover,.nav-links a.is-active{color:var(--purple)}
 .nav-toggle{display:none;background:0;border:0;cursor:pointer;padding:8px}
 .nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0}
-.page-hero{padding:calc(80px + 5vh) var(--g) 3.5rem;background:linear-gradient(180deg,#f7f5fd 0%,#ffffff 100%);color:var(--ink);border-bottom:1px solid var(--line)}
+
+/* Page Hero */
+.page-hero{padding:calc(80px + 4.5vh) var(--g) 3.5rem;background:linear-gradient(180deg,#f7f5fd 0%,#fbfafd 50%,#ffffff 100%);color:var(--ink);border-bottom:1px solid var(--line)}
 .page-hero .crumb{font-family:var(--fd);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
 .page-hero .crumb a{color:var(--purple)}
-.page-hero h1{font-family:var(--fd);font-weight:700;font-size:clamp(2.1rem,4.5vw,3.4rem);line-height:1.08;text-transform:uppercase;margin-bottom:1rem;color:var(--ink)}
-.page-hero p{font-size:1.05rem;color:var(--muted);max-width:var(--m)}
-.meta-row{display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;margin-top:1.5rem;font-size:.875rem;color:var(--muted)}
-.meta-row strong{color:var(--ink)}
-.band{padding:clamp(3.5rem,8vh,6rem) var(--g)}
-.notice{border-left:3px solid var(--purple);background:var(--purple-light);padding:1rem 1.25rem;margin-bottom:2rem;max-width:var(--m);border-radius:0 4px 4px 0}
+.page-hero h1{font-family:var(--fd);font-weight:700;font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.06;text-transform:uppercase;margin-bottom:1rem;color:var(--ink);letter-spacing:-.01em}
+.page-hero p{font-size:1.1rem;color:var(--muted);max-width:var(--m);line-height:1.6}
+.meta-row{display:flex;flex-wrap:wrap;gap:1.25rem 2.25rem;margin-top:1.5rem;font-size:.875rem;color:var(--muted);padding-top:1.25rem;border-top:1px solid var(--line)}
+.meta-row strong{color:var(--ink);font-weight:600}
+
+/* Main Content Area */
+.band{padding:clamp(2.5rem,6vh,4.5rem) var(--g)}
+.content-layout{max-width:var(--m);margin:0}
+
+/* Legal Documents Switcher */
+.doc-switcher{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid var(--line)}
+.doc-switcher a{display:inline-flex;align-items:center;padding:.5rem 1.1rem;border-radius:999px;font-family:var(--fd);font-size:.8125rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--line);background:var(--surface);color:var(--muted);transition:all .2s ease}
+.doc-switcher a:hover{border-color:var(--purple-border);color:var(--purple);background:var(--purple-light)}
+.doc-switcher a.is-current{background:var(--purple);color:#fff;border-color:var(--purple)}
+
+/* Compliance Notice */
+.notice{border-left:4px solid var(--purple);background:var(--purple-light);padding:1.25rem 1.5rem;margin-bottom:2.25rem;border-radius:0 6px 6px 0}
 .notice p{margin:0;font-size:.95rem;color:var(--ink);line-height:1.65}
-.legal-nav{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;margin-bottom:2.5rem;padding:1rem 1.25rem;background:var(--surface);border-radius:4px;border:1px solid var(--line);max-width:var(--m)}
-.legal-nav span{font-family:var(--fd);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);align-self:center}
-.legal-nav a{font-family:var(--fd);font-size:.8125rem;font-weight:600;color:var(--purple);text-transform:uppercase}
-.legal-nav a:hover{text-decoration:underline}
-.prose{max-width:var(--m)}
-.prose h2{font-family:var(--fd);font-weight:700;font-size:1.2rem;text-transform:uppercase;margin:2.5rem 0 .75rem;padding-top:1.25rem;border-top:1px solid var(--line);color:var(--ink)}
-.prose h2:first-of-type{border-top:0;padding-top:0;margin-top:0}
-.prose p{font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:1rem}
-.prose ul{margin:0 0 1.25rem 1.25rem;color:var(--muted)}
-.prose li{margin-bottom:.45rem;line-height:1.65;font-size:.98rem}
-.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.75rem 0}
-.principles div{padding:1.25rem;background:var(--surface);border:1px solid var(--line);border-radius:4px}
-.principles h3{font-family:var(--fd);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem;color:var(--purple)}
-.principles p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.55}
+.notice strong{color:var(--purple-deep)}
+
+/* Interactive Section Directory / Navigator */
+.toc-box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.5rem;margin-bottom:3rem}
+.toc-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
+.toc-title{font-family:var(--fd);font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);display:flex;align-items:center;gap:.65rem}
+.toc-badge{font-size:.75rem;padding:.2rem .65rem;border-radius:999px;background:var(--purple-light);color:var(--purple);border:1px solid var(--purple-border);font-weight:700}
+.toc-search{position:relative;width:100%;max-width:22rem}
+.toc-search input{width:100%;padding:.6rem 1rem .6rem 2.2rem;border:1px solid var(--line);border-radius:6px;font-family:var(--fb);font-size:.85rem;background:#fff;color:var(--ink);outline:none;transition:border-color .2s}
+.toc-search input:focus{border-color:var(--purple)}
+.toc-search svg{position:absolute;left:.75rem;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--muted);pointer-events:none}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem;max-height:280px;overflow-y:auto;padding-right:.4rem}
+.toc-grid::-webkit-scrollbar{width:5px}
+.toc-grid::-webkit-scrollbar-thumb{background:var(--purple-border);border-radius:4px}
+.toc-item{display:flex;align-items:center;gap:.55rem;padding:.4rem .65rem;border-radius:4px;font-size:.8125rem;color:var(--muted);transition:background .15s,color .15s;text-decoration:none}
+.toc-item:hover{background:#fff;color:var(--purple);box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.toc-num{font-family:var(--fd);font-weight:700;color:var(--purple);font-size:.75rem;min-width:1.5rem}
+
+/* Authoritative Legal Prose (Guaranteed 100% Opacity) */
+.prose{opacity:1 !important;transform:none !important;visibility:visible !important;display:block !important}
+.sec-block{margin-bottom:3rem;padding-top:1.5rem;border-top:1px solid var(--line);scroll-margin-top:95px;transition:background .3s ease}
+.sec-block:first-of-type{border-top:0;padding-top:0}
+.sec-block:target{animation:flashTarget 2s ease-out}
+@keyframes flashTarget{
+  0%{background:rgba(75,32,201,.08);outline:2px solid var(--purple)}
+  100%{background:transparent;outline:2px solid transparent}
+}
+.sec-head{display:flex;align-items:baseline;gap:.85rem;margin-bottom:1rem}
+.sec-num-badge{font-family:var(--fd);font-size:.85rem;font-weight:700;color:var(--purple);background:var(--purple-light);border:1px solid var(--purple-border);padding:.18rem .55rem;border-radius:4px;letter-spacing:.06em}
+.sec-title{font-family:var(--fd);font-weight:700;font-size:1.3rem;text-transform:uppercase;color:var(--ink);letter-spacing:.02em;line-height:1.2}
+.sec-body p{font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:1.1rem}
+.sec-body ul{margin:0 0 1.25rem 1.35rem;color:var(--muted)}
+.sec-body li{margin-bottom:.55rem;line-height:1.65;font-size:.98rem}
+.sec-body strong{color:var(--ink);font-weight:600}
+.sec-body a{color:var(--purple);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.sec-body a:hover{color:var(--purple-deep)}
+
+/* 5-Pillar Principles Grid */
+.principles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0}
+.principle-card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.25rem}
+.principle-card h4{font-family:var(--fd);font-size:.875rem;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:.35rem}
+.principle-card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.55}
+
+/* Callouts & Panels */
+.prose-callout{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--purple);padding:1.2rem 1.4rem;border-radius:0 6px 6px 0;margin:1.25rem 0}
+.prose-callout h4{font-family:var(--fd);font-size:.9rem;text-transform:uppercase;color:var(--ink);margin-bottom:.4rem;letter-spacing:.05em}
+.prose-callout p{margin:0;font-size:.925rem;color:var(--muted);line-height:1.6}
+
+/* Contact Block */
+.contact-panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:2rem;margin-top:3.5rem}
+.contact-panel h3{font-family:var(--fd);font-size:1.2rem;text-transform:uppercase;color:var(--ink);margin-bottom:.65rem}
+.contact-panel p{color:var(--muted);font-size:.95rem;margin-bottom:1.25rem;line-height:1.6}
+.contact-channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.25rem}
+.channel-item{background:#fff;padding:1rem;border-radius:6px;border:1px solid var(--line)}
+.channel-item span{display:block;font-family:var(--fd);font-size:.75rem;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;letter-spacing:.06em}
+.channel-item strong{color:var(--ink);font-size:.925rem;word-break:break-all}
+.channel-item strong a{color:var(--purple)}
+
+/* Floating Back-To-Top */
+.back-to-top{position:fixed;bottom:2rem;right:var(--g);background:#fff;border:1px solid var(--line);box-shadow:0 4px 14px rgba(10,22,40,.08);color:var(--ink);font-family:var(--fd);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.65rem 1rem;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem;z-index:90;transition:all .2s ease;opacity:0;pointer-events:none;transform:translateY(10px)}
+.back-to-top.is-shown{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:var(--purple);color:#fff;border-color:var(--purple)}
+
+/* Footer */
 .footer{background:var(--surface);color:var(--muted);padding:4.5rem var(--g) 2.5rem;border-top:1px solid var(--line)}
 .footer-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:clamp(2rem,4vw,3rem);margin-bottom:3rem}
 .footer-brand{font-family:var(--fd);font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:.75rem}
@@ -72,17 +138,18 @@ a{color:inherit;text-decoration:none}
 .footer-legal a:hover{color:var(--purple)}
 .footer-legal .sep{color:var(--line);user-select:none}
 .footer-copyright{font-size:.775rem;color:var(--muted)}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s,transform .65s}
-.reveal.in{opacity:1;transform:none}
+
 @media(max-width:960px){
   .nav-links{display:none;position:absolute;top:80px;left:0;right:0;flex-direction:column;background:#fff;padding:1.25rem var(--g);gap:1rem;border-bottom:1px solid var(--line)}
   .nav-links.open{display:flex}
   .nav-toggle{display:block}
   .footer-grid{grid-template-columns:1fr}
+  .toc-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
+
 <header class="nav">
   <a class="nav-brand" href="index.html">OPERAVA</a>
   <nav class="nav-links">
@@ -99,174 +166,523 @@ a{color:inherit;text-decoration:none}
 
 <section class="page-hero">
   <p class="crumb"><a href="index.html">Home</a> / Privacy Policy</p>
-  <h1>Privacy Policy</h1>
-  <p>Website visitors, job applicants, employees, clients, customers, and digital platform users. Comprehensive data privacy framework.</p>
+  <h1>Privacy Policy &amp; Privacy Notice</h1>
+  <p>Website visitors, job applicants, employees, independent contractors, commercial clients, customer service end-users, and digital platform consumers. Comprehensive data protection framework.</p>
   <div class="meta-row">
-    <span><strong>Entity</strong> Operava Global Solutions</span>
-    <span><strong>Effective Date</strong> August 17, 2026</span>
-    <span><strong>Jurisdiction</strong> Republic of the Philippines (RA 10173)</span>
-    <span><strong>Contact</strong> compliance@operavaglobal.com</span>
+    <span><strong>Entity:</strong> Operava Global Solutions</span>
+    <span><strong>Effective Date:</strong> August 17, 2026</span>
+    <span><strong>Governing Law:</strong> Philippine Data Privacy Act of 2012 (RA 10173)</span>
+    <span><strong>Regulatory Authority:</strong> National Privacy Commission (NPC)</span>
+    <span><strong>Privacy Contact:</strong> compliance@operavaglobal.com</span>
   </div>
 </section>
 
 <section class="band">
-  <div class="notice reveal">
-    <p><strong>Philippine Data Privacy Act of 2012 (RA 10173).</strong> Operava Global Solutions is committed to upholding rigorous standards of transparency, legitimate purpose, and proportionality across all personal data processing activities.</p>
-  </div>
+  <div class="content-layout">
 
-  <div class="legal-nav reveal">
-    <span>Related Documents:</span>
-    <a href="terms.html">Terms and Conditions</a>
-    <a href="refund-policy.html">Refund Policy</a>
-    <a href="contact.html">Contact Compliance</a>
-  </div>
+    <div class="doc-switcher">
+      <a href="terms.html">Terms and Conditions</a>
+      <a href="privacy-policy.html" class="is-current">Privacy Policy (RA 10173)</a>
+      <a href="refund-policy.html">Refund Policy (49 Sections)</a>
+      <a href="contact.html">Contact Legal &amp; Compliance</a>
+    </div>
 
-  <div class="prose reveal">
-    <h2>1. Organizational Commitment</h2>
-    <p>Operava Global Solutions ("Operava", "we", "us", or "our") respects the privacy and fundamental data rights of every individual. We collect only information reasonably necessary for identified and legitimate commercial purposes, handle data lawfully, safeguard information through technical and organizational controls, and retain it strictly for periods justified by law or business necessity.</p>
+    <div class="notice">
+      <p><strong>Philippine Data Privacy Act of 2012 (Republic Act No. 10173):</strong> Operava Global Solutions strictly adheres to statutory principles of Transparency, Legitimate Purpose, and Proportionality across all personal and sensitive personal data processing activities.</p>
+    </div>
 
-    <h2>2. Who This Policy Applies To</h2>
-    <p>This Policy applies to visitors of our websites, applicants seeking employment or contract placement, active employees and contractors, clients and prospective commercial partners, customer service end-users, and individuals utilizing our digital applications. Specific processing activities may be governed by supplemental project notices or data processing agreements (DPAs).</p>
-
-    <h2>3. Information We Collect</h2>
-    <ul>
-      <li><strong>Identification &amp; Contact:</strong> Full legal name, business title, email address, telephone numbers, and corporate mailing addresses.</li>
-      <li><strong>Government &amp; Regulatory Identifiers:</strong> Tax identification numbers, identity documentation, or work permits where lawfully required for payroll, statutory reporting, or compliance.</li>
-      <li><strong>Professional &amp; Career History:</strong> Resumes/CVs, educational credentials, certifications, technical skill assessments, interview evaluations, employment references, and work preferences.</li>
-      <li><strong>Commercial &amp; Billing Records:</strong> Company information, authorized signatories, billing addresses, purchase orders, milestone receipts, and payment logs.</li>
-      <li><strong>Technical &amp; Telemetry Data:</strong> IP addresses, browser specifications, operating system details, device fingerprints, access timestamps, referral URLs, and audit logs recorded during service interactions.</li>
-    </ul>
-
-    <h2>4. Sensitive Personal Information</h2>
-    <p>Sensitive personal information is processed exclusively when an explicit lawful basis exists under the Philippine Data Privacy Act of 2012, or with explicit data subject consent. We urge candidates and visitors not to submit unrequested sensitive personal data (such as health details or political opinions) through public submission channels.</p>
-
-    <h2>5. Methods of Data Collection</h2>
-    <p>We collect information directly from you when you complete forms on our website, submit your resume, schedule an interview, or execute a Statement of Work. Additional data may be received through authorized client representatives, third-party verification providers, or automated telemetry logs upon visiting our platforms.</p>
-
-    <h2>6. Legitimate Processing Purposes</h2>
-    <p>Personal data is processed to facilitate:</p>
-    <ul>
-      <li>Delivery of IT engineering, cloud solutions, and Business Process Outsourcing engagements.</li>
-      <li>Talent acquisition, AI-assisted candidate screening, technical evaluation, and assignment matching.</li>
-      <li>Customer support, incident response, ticket routing, and SLA tracking.</li>
-      <li>Invoicing, payment processing, tax compliance, and commercial auditing.</li>
-      <li>Platform cybersecurity, DDoS mitigation, intrusion detection, and access control.</li>
-      <li>Legal compliance under Philippine regulatory bodies and dispute resolution.</li>
-    </ul>
-
-    <h2>7. AI-Assisted Recruitment &amp; Evaluation</h2>
-    <p>Operava leverages automated and AI-assisted tooling to screen candidate resumes against role requirements, summarize applicant portfolios, and schedule technical interviews. AI tools are utilized as advisory aids for preliminary organization; critical hiring decisions and offers undergo human review by our talent acquisition team. Participation in screening does not create an employment obligation.</p>
-
-    <h2>8. Lawful Basis for Processing</h2>
-    <p>Under RA 10173 and international privacy frameworks, our processing relies on: (a) explicit data subject consent; (b) contractual necessity to deliver requested services; (c) compliance with statutory obligations under Philippine law; or (d) legitimate commercial interests that do not override personal fundamental rights.</p>
-
-    <h2>9. Client Data &amp; Outsourced Processing (Processor Role)</h2>
-    <p>In BPO and managed services contracts, Operava frequently acts as a Data Processor on behalf of our enterprise Clients (who serve as Data Controllers). We process end-user data strictly under contractual instructions, strict confidentiality agreements, and bilateral Data Processing Agreements (DPAs).</p>
-
-    <h2>10. Information Sharing &amp; Disclosure</h2>
-    <p>Operava does not sell, rent, or trade personal data to third parties. Information is disclosed solely to authorized internal personnel, trusted cloud hosting providers (e.g., AWS, GCP), vetted third-party payment gateways, legal counsel, and government authorities when compelled by lawful subpoena or court order.</p>
-
-    <h2>11. Cross-Border Data Transfers</h2>
-    <p>Because Operava operates a global, remote-first delivery model, personal information may be accessed or transferred across international borders. All cross-border transfers adhere to recognized international data transfer frameworks and standard contractual clauses to ensure parity of protection.</p>
-
-    <h2>12. Security Safeguards</h2>
-    <p>We maintain comprehensive administrative, physical, and technical safeguards. These include TLS 1.3 encryption in transit, AES-256 encryption at rest, role-based access control (RBAC), multi-factor authentication, endpoint protection, and routine vulnerability audits.</p>
-
-    <h2>13. Security Incident &amp; Breach Management</h2>
-    <p>In accordance with NPC Circular 16-03, Operava maintains an active Incident Response Protocol. In the event of a verified security incident affecting sensitive personal data, we will notify affected individuals and the National Privacy Commission (NPC) within statutory deadlines.</p>
-
-    <h2>14. Data Retention &amp; Disposal</h2>
-    <p>Personal data is retained only for the duration necessary to satisfy the commercial or statutory purposes for which it was gathered. Candidate profiles are maintained for active recruitment cycles; tax and financial logs are held in accordance with Philippine BIR statutory mandates (minimum 5–10 years). Upon expiration, records are securely scrubbed or anonymized.</p>
-
-    <h2>15. Cookies &amp; Tracking Technologies</h2>
-    <p>We employ essential session cookies to maintain platform security, preserve user preferences, and record traffic analytics. Visitors can manage or disable non-essential cookies via their browser configuration settings without compromising core website functionality.</p>
-
-    <h2>16. Candidate &amp; Applicant Rights</h2>
-    <p>Job applicants may request an update or withdrawal of their candidate files at any time. Submitting an application registers interest in our talent pool but does not constitute an offer or guarantee of permanent assignment.</p>
-
-    <h2>17. Employee &amp; Contractor Data</h2>
-    <p>Personnel records are gathered for payroll administration, benefits provision, performance monitoring, and statutory reporting under DOLE, SSS, PhilHealth, and Pag-IBIG regulations.</p>
-
-    <h2>18. Protection of Minors</h2>
-    <p>Operava does not knowingly solicit or collect information from children under the age of 18. If we discover that a minor's information has been collected without parental consent, we take immediate measures to delete that data from our production systems.</p>
-
-    <h2>19. Data Subject Rights</h2>
-    <p>Under the Philippine Data Privacy Act of 2012, individuals hold fundamental rights regarding their personal data:</p>
-    <ul>
-      <li><strong>Right to be Informed:</strong> To know whether personal data is being processed, and the details of such processing.</li>
-      <li><strong>Right to Access:</strong> To request reasonable access to your personal records in our custody.</li>
-      <li><strong>Right to Rectification:</strong> To dispute inaccuracies and have incomplete or erroneous information corrected.</li>
-      <li><strong>Right to Erasure or Blocking:</strong> To request suspension, withdrawal, or destruction of unauthorized or outdated data.</li>
-      <li><strong>Right to Object:</strong> To withhold consent or object to automated profiling or marketing communications.</li>
-      <li><strong>Right to Data Portability:</strong> To obtain an electronic copy of personal data in a standard, machine-readable format.</li>
-      <li><strong>Right to File a Complaint:</strong> To lodge formal complaints before the National Privacy Commission (NPC).</li>
-      <li><strong>Right to Indemnification:</strong> To seek damages for verified violations of statutory privacy rights.</li>
-    </ul>
-
-    <h2>20. How to Exercise Your Privacy Rights</h2>
-    <p>To exercise any of the rights enumerated above, submit a formal written request to our Data Protection Officer at <strong>compliance@operavaglobal.com</strong>. Please provide your full name, relationship with Operava, and a clear description of the records in question to enable identity verification.</p>
-
-    <h2>21. Designated Privacy Contacts</h2>
-    <p>Direct all privacy correspondence, regulatory notices, and data subject requests to:</p>
-    <p>
-      <strong>Data Compliance Office</strong><br>
-      Operava Global Solutions<br>
-      Pagudpud, Ilocos Norte 2919, Philippines<br>
-      Email: <a href="mailto:compliance@operavaglobal.com" style="color:var(--purple);font-weight:600">compliance@operavaglobal.com</a>
-    </p>
-
-    <h2>22. Client / Processor Coordination</h2>
-    <p>Where Operava acts as a data processor for a commercial Client, privacy requests concerning that Client’s end-user data will be forwarded to the respective Client controller for authoritative instruction.</p>
-
-    <h2>23. Third-Party Websites &amp; Integrations</h2>
-    <p>Our website may include links to external services, payment gateways, or client tools. We encourage users to review the privacy notices of external websites, as Operava is not responsible for independent third-party privacy practices.</p>
-
-    <h2>24. Marketing &amp; Communications</h2>
-    <p>We do not send unsolicited commercial spam. Any marketing emails or talent updates provide a direct, one-click opt-out link. Operational notifications regarding billing and active projects remain unaffected by marketing preferences.</p>
-
-    <h2>25. Data Accuracy &amp; Integrity</h2>
-    <p>We take reasonable steps to ensure that personal information in our possession remains accurate, complete, and current. Data subjects are invited to inform us of changes to their contact details or professional status.</p>
-
-    <h2>26. Organizational Accountability</h2>
-    <p>Operava enforces strict confidentiality obligations across all employees and contractors, conducts mandatory privacy awareness training, and enforces formal disciplinary consequences for privacy policy violations.</p>
-
-    <h2>27. Privacy by Design</h2>
-    <p>Our engineering teams incorporate Privacy by Design into all systems architecture, minimizing data payloads, segregating database tenants, and utilizing pseudonymization where appropriate.</p>
-
-    <h2>28. Policy Updates &amp; Amendments</h2>
-    <p>We may amend this Privacy Policy periodically to reflect technological advancements or legislative updates. Changes will be posted to this page with an updated Effective Date.</p>
-
-    <h2>29. Governing Law</h2>
-    <p>This Privacy Policy is governed by the laws of the Republic of the Philippines, in particular Republic Act No. 10173 (Data Privacy Act of 2012) and its Implementing Rules and Regulations.</p>
-
-    <h2>30. Compliance Documentation</h2>
-    <p>Operava maintains internal records of processing activities, risk assessments, and privacy impact evaluations as mandated for Philippine SEC-registered organizations.</p>
-
-    <h2>31. Core Privacy Principles</h2>
-    <div class="principles">
-      <div>
-        <h3>Transparency</h3>
-        <p>Individuals have the right to know how their personal data is collected, stored, and utilized.</p>
+    <!-- Interactive Table of Contents / Section Navigator -->
+    <div class="toc-box">
+      <div class="toc-head">
+        <div class="toc-title">
+          <span>Table of Contents</span>
+          <span class="toc-badge">31 Authoritative Sections</span>
+        </div>
+        <div class="toc-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="search" id="toc-filter" placeholder="Search section or keyword..." aria-label="Search sections">
+        </div>
       </div>
-      <div>
-        <h3>Legitimate Purpose</h3>
-        <p>Processing must be strictly tied to explicit, lawful, and declared business requirements.</p>
+      <div class="toc-grid" id="toc-grid">
+        <a href="#sec-1" class="toc-item"><span class="toc-num">01</span><span>Commitment</span></a>
+        <a href="#sec-2" class="toc-item"><span class="toc-num">02</span><span>Who This Applies To</span></a>
+        <a href="#sec-3" class="toc-item"><span class="toc-num">03</span><span>Information We Collect</span></a>
+        <a href="#sec-4" class="toc-item"><span class="toc-num">04</span><span>Sensitive Information</span></a>
+        <a href="#sec-5" class="toc-item"><span class="toc-num">05</span><span>Collection Methods</span></a>
+        <a href="#sec-6" class="toc-item"><span class="toc-num">06</span><span>Legitimate Purposes</span></a>
+        <a href="#sec-7" class="toc-item"><span class="toc-num">07</span><span>AI-Assisted Recruitment</span></a>
+        <a href="#sec-8" class="toc-item"><span class="toc-num">08</span><span>Lawful Basis</span></a>
+        <a href="#sec-9" class="toc-item"><span class="toc-num">09</span><span>Client Data / Processor Role</span></a>
+        <a href="#sec-10" class="toc-item"><span class="toc-num">10</span><span>Disclosure &amp; Sharing</span></a>
+        <a href="#sec-11" class="toc-item"><span class="toc-num">11</span><span>International Processing</span></a>
+        <a href="#sec-12" class="toc-item"><span class="toc-num">12</span><span>Security Safeguards</span></a>
+        <a href="#sec-13" class="toc-item"><span class="toc-num">13</span><span>Incidents &amp; Breaches</span></a>
+        <a href="#sec-14" class="toc-item"><span class="toc-num">14</span><span>Retention &amp; Disposal</span></a>
+        <a href="#sec-15" class="toc-item"><span class="toc-num">15</span><span>Cookies &amp; Telemetry</span></a>
+        <a href="#sec-16" class="toc-item"><span class="toc-num">16</span><span>Job Applicants</span></a>
+        <a href="#sec-17" class="toc-item"><span class="toc-num">17</span><span>Employees &amp; Contractors</span></a>
+        <a href="#sec-18" class="toc-item"><span class="toc-num">18</span><span>Protection of Minors</span></a>
+        <a href="#sec-19" class="toc-item"><span class="toc-num">19</span><span>Data Subject Rights</span></a>
+        <a href="#sec-20" class="toc-item"><span class="toc-num">20</span><span>Privacy Requests</span></a>
+        <a href="#sec-21" class="toc-item"><span class="toc-num">21</span><span>Privacy Contact &amp; DPO</span></a>
+        <a href="#sec-22" class="toc-item"><span class="toc-num">22</span><span>Processor Coordination</span></a>
+        <a href="#sec-23" class="toc-item"><span class="toc-num">23</span><span>Third-Party Services</span></a>
+        <a href="#sec-24" class="toc-item"><span class="toc-num">24</span><span>Marketing Communications</span></a>
+        <a href="#sec-25" class="toc-item"><span class="toc-num">25</span><span>Data Accuracy</span></a>
+        <a href="#sec-26" class="toc-item"><span class="toc-num">26</span><span>Accountability &amp; Training</span></a>
+        <a href="#sec-27" class="toc-item"><span class="toc-num">27</span><span>Privacy by Design</span></a>
+        <a href="#sec-28" class="toc-item"><span class="toc-num">28</span><span>Policy Changes</span></a>
+        <a href="#sec-29" class="toc-item"><span class="toc-num">29</span><span>Governing Law</span></a>
+        <a href="#sec-30" class="toc-item"><span class="toc-num">30</span><span>Compliance Documentation</span></a>
+        <a href="#sec-31" class="toc-item"><span class="toc-num">31</span><span>Core Privacy Principles</span></a>
       </div>
-      <div>
-        <h3>Proportionality</h3>
-        <p>Only data strictly relevant and necessary to the purpose shall be collected and processed.</p>
-      </div>
-      <div>
-        <h3>Security</h3>
-        <p>Rigorous organizational, physical, and technical safeguards prevent unauthorized disclosure.</p>
-      </div>
-      <div>
-        <h3>Accountability</h3>
-        <p>Operava remains fully responsible for demonstrating compliance with privacy regulations.</p>
-      </div>
+    </div>
+
+    <!-- Complete 31 Sections Authoritative Legal Prose -->
+    <div class="prose" id="privacy-prose">
+
+      <section class="sec-block" id="sec-1">
+        <div class="sec-head">
+          <span class="sec-num-badge">01</span>
+          <h2 class="sec-title">Organizational Commitment</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava Global Solutions ("Operava", "we", "us", or "our") is dedicated to protecting the privacy, confidentiality, and fundamental data rights of every individual whose personal data is entrusted to us. In conducting our technology engineering, workforce augmentation, and Business Process Outsourcing (BPO) operations, we collect only the personal information reasonably necessary for identified, lawful, and legitimate purposes.</p>
+          <p>We process all data strictly in accordance with statutory requirements, safeguard collected records through robust administrative, technical, and physical security measures, and retain data only for timeframes justified by legal mandate or business necessity.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-2">
+        <div class="sec-head">
+          <span class="sec-num-badge">02</span>
+          <h2 class="sec-title">Who This Policy Applies To</h2>
+        </div>
+        <div class="sec-body">
+          <p>This Privacy Policy and Notice applies comprehensively to:</p>
+          <ul>
+            <li><strong>Website Visitors:</strong> Individuals browsing our marketing websites, knowledge repositories, and public portals.</li>
+            <li><strong>Job Applicants &amp; Candidates:</strong> Individuals submitting resumes, CVs, portfolios, or applications for employment or contractor talent pools.</li>
+            <li><strong>Active Employees &amp; Contractors:</strong> Direct staff, augmented talent, and independent professionals engaged by Operava.</li>
+            <li><strong>Commercial Clients &amp; Partners:</strong> Authorized client representatives, billing administrators, and technical contacts.</li>
+            <li><strong>Customer Service End-Users:</strong> End-users interacting with customer support desks or managed back-office processes handled by Operava under contract.</li>
+            <li><strong>Digital Platform Users:</strong> Individuals accessing internal or client-facing project tools, dashboards, and APIs.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-3">
+        <div class="sec-head">
+          <span class="sec-num-badge">03</span>
+          <h2 class="sec-title">Categories of Information We Collect</h2>
+        </div>
+        <div class="sec-body">
+          <p>We may collect and process the following categories of personal data depending on your interaction with Operava:</p>
+          <ul>
+            <li><strong>Identification &amp; Contact Data:</strong> Full legal name, preferred name, job title, company name, corporate email address, telephone number, physical mailing address, and digital communication handles.</li>
+            <li><strong>Government &amp; Regulatory Identifiers:</strong> Tax Identification Number (TIN), Social Security System (SSS) number, PhilHealth number, Pag-IBIG HDMF number, passport copies, or government-issued photo IDs collected strictly where mandated by Philippine labor, tax, or immigration laws.</li>
+            <li><strong>Professional &amp; Career History:</strong> Detailed resumes/CVs, work history, educational credentials, certifications, technical code samples, language proficiencies, technical evaluation scores, interview notes, reference checks, and compensation expectations.</li>
+            <li><strong>Commercial &amp; Billing Records:</strong> Corporate billing addresses, authorized signatory credentials, bank account wiring instructions, purchase orders, milestone acceptance forms, and payment logs.</li>
+            <li><strong>Technical &amp; Telemetry Data:</strong> IP addresses, browser specifications, operating system versions, device identifiers, referral URLs, access timestamps, page interaction logs, and security audit trails.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-4">
+        <div class="sec-head">
+          <span class="sec-num-badge">04</span>
+          <h2 class="sec-title">Sensitive Personal Information</h2>
+        </div>
+        <div class="sec-body">
+          <p>Under Section 3 of RA 10173, sensitive personal information (including government-issued IDs, health records, or religious affiliations) is treated with heightened care. Operava does not solicit sensitive personal data unless strictly necessary to satisfy statutory employment obligations (e.g., mandatory government benefits and pre-employment medical clearances) or where the individual has given explicit, documented consent.</p>
+          <p>Job applicants and public visitors are advised never to submit unsolicited sensitive personal data through general contact forms.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-5">
+        <div class="sec-head">
+          <span class="sec-num-badge">05</span>
+          <h2 class="sec-title">Methods of Data Collection</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava collects personal information through three primary channels:</p>
+          <ul>
+            <li><strong>Direct Collection:</strong> Provided voluntarily when you fill out contact forms, submit a resume via our careers portal, schedule a consultation, or execute a commercial agreement.</li>
+            <li><strong>Client-Provisioned Data:</strong> Provided by commercial clients who engage Operava to execute BPO, customer support, or QA workflows under a signed Data Processing Agreement (DPA).</li>
+            <li><strong>Automated Telemetry:</strong> Gathered automatically through server logs, session cookies, and infrastructure monitoring tools when you interact with our digital platforms.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-6">
+        <div class="sec-head">
+          <span class="sec-num-badge">06</span>
+          <h2 class="sec-title">Legitimate Processing Purposes</h2>
+        </div>
+        <div class="sec-body">
+          <p>We process personal data exclusively for explicit, legitimate commercial purposes, including:</p>
+          <ul>
+            <li>Delivering contracted custom software engineering, web/mobile development, cloud DevOps, and managed BPO services.</li>
+            <li>Screening, evaluating, interviewing, and placing talent in accordance with client project requirements.</li>
+            <li>Managing employment contracts, processing payroll, and administering statutory benefits under DOLE, SSS, PhilHealth, and Pag-IBIG mandates.</li>
+            <li>Invoicing, fee collections, statutory tax compliance, and commercial accounting audits.</li>
+            <li>Resolving customer inquiries, managing support tickets, and fulfilling service level agreements (SLAs).</li>
+            <li>Protecting IT infrastructure from cybersecurity threats, DDoS attacks, unauthorized intrusion, and fraudulent activities.</li>
+            <li>Complying with lawful directives issued by Philippine regulatory agencies and law enforcement authorities.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-7">
+        <div class="sec-head">
+          <span class="sec-num-badge">07</span>
+          <h2 class="sec-title">AI-Assisted Recruitment &amp; Evaluation</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava employs modern recruitment technologies, including machine-learning models and artificial intelligence algorithms, to parse resumes, match technical proficiencies against open requisitions, and organize applicant pipelines.</p>
+          <div class="prose-callout">
+            <h4>Mandatory Human Oversight</h4>
+            <p>AI tools function exclusively as administrative screening aids. All critical candidate decisions—including shortlisting, interview selections, technical evaluations, compensation offers, and rejection notices—are determined by qualified human talent acquisition specialists. We do not engage in purely automated decision-making that produces legal effects on applicants without human intervention.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-8">
+        <div class="sec-head">
+          <span class="sec-num-badge">08</span>
+          <h2 class="sec-title">Lawful Basis for Processing</h2>
+        </div>
+        <div class="sec-body">
+          <p>In conformity with Section 12 and Section 13 of the Philippine Data Privacy Act of 2012, our processing is grounded in one or more recognized legal bases:</p>
+          <ul>
+            <li><strong>Consent:</strong> The data subject has given explicit, informed consent for specific processing operations.</li>
+            <li><strong>Contractual Necessity:</strong> Processing is required to perform our obligations under an employment contract, Statement of Work, or service agreement.</li>
+            <li><strong>Legal Obligation:</strong> Processing is mandated to comply with statutory laws, tax regulations (BIR), or labor codes (DOLE).</li>
+            <li><strong>Legitimate Interests:</strong> Processing is necessary for our legitimate commercial interests (e.g., maintaining platform security), except where overridden by the fundamental rights of the data subject.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-9">
+        <div class="sec-head">
+          <span class="sec-num-badge">09</span>
+          <h2 class="sec-title">Client Data &amp; Outsourced Processing (Processor Role)</h2>
+        </div>
+        <div class="sec-body">
+          <p>In many BPO, customer support, and QA testing engagements, Operava acts as a <strong>Personal Information Processor (PIP)</strong> on behalf of our enterprise Clients (who serve as <strong>Personal Information Controllers (PIC)</strong>). In such engagements:</p>
+          <ul>
+            <li>Operava processes client end-user data strictly under documented instructions from the Client.</li>
+            <li>We bind all personnel handling client data to strict, enforceable non-disclosure agreements.</li>
+            <li>We do not sub-contract processing or engage sub-processors without client notification and authorization.</li>
+            <li>Upon termination of the service contract, Operava deletes or returns all client-held data in accordance with the executed Data Processing Agreement.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-10">
+        <div class="sec-head">
+          <span class="sec-num-badge">10</span>
+          <h2 class="sec-title">Information Sharing &amp; Third-Party Disclosure</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava does not sell, lease, rent, or trade personal data to third-party brokers, advertisers, or telemarketers under any circumstances. Personal data is disclosed only to:</p>
+          <ul>
+            <li>Authorized Operava employees, contractors, and project team members on a strict need-to-know basis.</li>
+            <li>Trusted cloud infrastructure partners (e.g., Amazon Web Services, Google Cloud Platform) maintaining enterprise security certifications (ISO 27001, SOC 2).</li>
+            <li>Licensed financial institutions and payment gateways to execute authorized commercial disbursements.</li>
+            <li>External legal counsel, certified public accountants, and auditors bound by professional duties of confidentiality.</li>
+            <li>Philippine regulatory or judicial bodies when legally compelled by valid subpoena, search warrant, or court order.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-11">
+        <div class="sec-head">
+          <span class="sec-num-badge">11</span>
+          <h2 class="sec-title">Cross-Border Data Transfers &amp; International Processing</h2>
+        </div>
+        <div class="sec-body">
+          <p>As a global, remote-first technology solutions provider, Operava may store, access, or process personal data across international boundaries. All cross-border data transmissions are governed by contractual safeguards, including standard contractual clauses and bilateral DPAs, ensuring that transferred information receives a level of protection comparable to Philippine statutory standards.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-12">
+        <div class="sec-head">
+          <span class="sec-num-badge">12</span>
+          <h2 class="sec-title">Comprehensive Security Safeguards</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava enforces an enterprise-grade information security management system comprising:</p>
+          <ul>
+            <li><strong>Technical Measures:</strong> Industry-standard TLS 1.3 encryption for data in transit; AES-256 cryptographic encryption for data at rest; mandatory Multi-Factor Authentication (MFA); and automated intrusion prevention systems.</li>
+            <li><strong>Organizational Controls:</strong> Documented security policies; least-privilege Role-Based Access Controls (RBAC); mandatory background checks for technical personnel; and periodic privacy compliance training.</li>
+            <li><strong>Physical Safeguards:</strong> Encrypted endpoint device management; remote-wipe capabilities for lost or stolen hardware; and strict access limits to corporate physical and virtual infrastructure.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-13">
+        <div class="sec-head">
+          <span class="sec-num-badge">13</span>
+          <h2 class="sec-title">Security Incident &amp; Breach Management</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava maintains a formally documented Security Incident Response Protocol aligned with National Privacy Commission (NPC) Circular No. 16-03. In the event of a verified data breach involving sensitive personal data that poses a real risk of serious harm, Operava will notify affected data subjects and the NPC within seventy-two (72) hours of confirmed knowledge, outlining the nature of the breach, affected records, and remedial countermeasures taken.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-14">
+        <div class="sec-head">
+          <span class="sec-num-badge">14</span>
+          <h2 class="sec-title">Data Retention &amp; Secure Disposal</h2>
+        </div>
+        <div class="sec-body">
+          <p>Personal data is retained only for the duration necessary to satisfy the commercial, contractual, or statutory purposes for which it was gathered:</p>
+          <ul>
+            <li><strong>Candidate Profiles:</strong> Retained for active talent pipelining for up to twenty-four (24) months, after which records are archived or securely scrubbed unless renewed by the candidate.</li>
+            <li><strong>Tax &amp; Accounting Records:</strong> Retained for ten (10) years in compliance with Philippine Bureau of Internal Revenue (BIR) statutory audit requirements.</li>
+            <li><strong>Employee Personnel Records:</strong> Retained for statutory durations mandated by the Department of Labor and Employment (DOLE).</li>
+          </ul>
+          <p>Upon expiration of the retention window, digital records are purged using cryptographic erasure techniques, and physical files are destroyed via cross-cut shredding.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-15">
+        <div class="sec-head">
+          <span class="sec-num-badge">15</span>
+          <h2 class="sec-title">Cookies &amp; Tracking Technologies</h2>
+        </div>
+        <div class="sec-body">
+          <p>We utilize essential cookies to secure our websites, manage user authentication sessions, and maintain platform stability. We may also employ privacy-respecting analytics cookies to evaluate website traffic patterns and optimize user experience. Visitors may configure their web browser to reject cookies; however, certain interactive platform functions may be impaired as a result.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-16">
+        <div class="sec-head">
+          <span class="sec-num-badge">16</span>
+          <h2 class="sec-title">Candidate &amp; Job Applicant Rights</h2>
+        </div>
+        <div class="sec-body">
+          <p>Candidates submitting applications through our career portals maintain the right to inspect their application records, update their contact information, or request withdrawal of their candidacy at any time. Submitting an application registers candidate data in our talent pool for future placement opportunities without guaranteeing placement.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-17">
+        <div class="sec-head">
+          <span class="sec-num-badge">17</span>
+          <h2 class="sec-title">Employee &amp; Independent Contractor Records</h2>
+        </div>
+        <div class="sec-body">
+          <p>Personnel data collected during employment or contract engagements is processed for payroll disbursement, tax withholding, health coverage administration, performance evaluation, and workplace safety compliance. Access to personnel files is restricted to authorized human resources and finance personnel.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-18">
+        <div class="sec-head">
+          <span class="sec-num-badge">18</span>
+          <h2 class="sec-title">Protection of Minors</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava’s services, job openings, and platforms are intended exclusively for individuals aged eighteen (18) years and older. We do not knowingly solicit or collect personal information from minors. If we discover that personal data of a minor has been gathered without verified parental consent, we will promptly purge that information from our production databases.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-19">
+        <div class="sec-head">
+          <span class="sec-num-badge">19</span>
+          <h2 class="sec-title">Full Enumeration of Data Subject Rights</h2>
+        </div>
+        <div class="sec-body">
+          <p>Under Republic Act No. 10173, every data subject is entitled to exercise the following statutory rights:</p>
+          <ul>
+            <li><strong>Right to be Informed:</strong> To be notified whether personal data pertaining to you is being or has been processed.</li>
+            <li><strong>Right to Access:</strong> To request reasonable access to your personal data held in our systems, including the source, purpose, and recipients of such data.</li>
+            <li><strong>Right to Rectification:</strong> To dispute inaccuracies or errors in your data and have Operava correct them expeditiously.</li>
+            <li><strong>Right to Erasure or Blocking:</strong> To request the suspension, withdrawal, removal, or destruction of your personal data upon legitimate grounds established by law.</li>
+            <li><strong>Right to Object:</strong> To object to processing of personal data for direct marketing, automated profiling, or commercial research.</li>
+            <li><strong>Right to Data Portability:</strong> To obtain a copy of your electronic data in an open, commonly used, machine-readable format.</li>
+            <li><strong>Right to File a Complaint:</strong> To lodge a formal complaint with the National Privacy Commission (NPC) if your privacy rights have been violated.</li>
+            <li><strong>Right to Indemnification:</strong> To be indemnified for verified damages sustained due to inaccurate, incomplete, or unlawful processing.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-20">
+        <div class="sec-head">
+          <span class="sec-num-badge">20</span>
+          <h2 class="sec-title">How to Exercise Your Privacy Rights</h2>
+        </div>
+        <div class="sec-body">
+          <p>To exercise any of your statutory rights under RA 10173, submit a formal written request to our Data Compliance Office at <strong>compliance@operavaglobal.com</strong>. Please include:</p>
+          <ul>
+            <li>Your full legal name and primary contact information.</li>
+            <li>Your relationship with Operava (e.g., website visitor, job applicant, commercial client, contractor).</li>
+            <li>A precise specification of the right you wish to exercise and the specific records in question.</li>
+            <li>A copy of a valid government-issued ID to enable reliable identity verification.</li>
+          </ul>
+          <p>Operava will respond to verified privacy requests within thirty (30) business days from receipt.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-21">
+        <div class="sec-head">
+          <span class="sec-num-badge">21</span>
+          <h2 class="sec-title">Designated Privacy Contacts &amp; Data Protection Officer</h2>
+        </div>
+        <div class="sec-body">
+          <p>For all regulatory inquiries, data subject requests, or privacy concerns, contact our designated privacy compliance team:</p>
+          <div class="contact-panel">
+            <h3>Operava Global Solutions</h3>
+            <p>Data Protection &amp; Compliance Office<br>
+            Pagudpud, Ilocos Norte 2919, Republic of the Philippines<br>
+            SEC Registration: 2026080262213-03</p>
+            <div class="contact-channels">
+              <div class="channel-item">
+                <span>Data Protection Officer</span>
+                <strong><a href="mailto:compliance@operavaglobal.com">compliance@operavaglobal.com</a></strong>
+              </div>
+              <div class="channel-item">
+                <span>Customer Support</span>
+                <strong><a href="mailto:cs@operavaglobal.com">cs@operavaglobal.com</a></strong>
+              </div>
+              <div class="channel-item">
+                <span>Corporate Headquarters</span>
+                <strong><a href="mailto:hello@operavaglobal.com">hello@operavaglobal.com</a></strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-22">
+        <div class="sec-head">
+          <span class="sec-num-badge">22</span>
+          <h2 class="sec-title">Client / Processor Coordination</h2>
+        </div>
+        <div class="sec-body">
+          <p>Where Operava processes personal data solely as a Data Processor on behalf of a corporate Client, any data subject request submitted directly to Operava by the Client’s customer or end-user will be promptly forwarded to that Client’s designated Data Protection Officer for authoritative review and instruction.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-23">
+        <div class="sec-head">
+          <span class="sec-num-badge">23</span>
+          <h2 class="sec-title">Third-Party Websites &amp; Integrations</h2>
+        </div>
+        <div class="sec-body">
+          <p>Our website may contain hyperlinks to external third-party websites, developer repositories, or partner portals. Operava exercises no editorial control over the privacy policies or security standards of third-party domains. We advise visitors to review the independent privacy notices of any external site they visit.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-24">
+        <div class="sec-head">
+          <span class="sec-num-badge">24</span>
+          <h2 class="sec-title">Direct Marketing &amp; Operational Communications</h2>
+        </div>
+        <div class="sec-body">
+          <p>We do not engage in unsolicited promotional spam. Any marketing newsletters or industry updates sent by Operava include a direct, one-click unsubscribe mechanism. Operational notifications regarding active project sprints, milestone approvals, invoice receipts, and critical security advisories cannot be opted out of, as they are necessary to fulfill contractual obligations.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-25">
+        <div class="sec-head">
+          <span class="sec-num-badge">25</span>
+          <h2 class="sec-title">Data Accuracy &amp; Maintenance</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava takes reasonable operational measures to ensure that personal records in our custody remain accurate, current, and complete. Candidates, employees, and client representatives are encouraged to notify our administrative office of any changes to their contact details or professional status.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-26">
+        <div class="sec-head">
+          <span class="sec-num-badge">26</span>
+          <h2 class="sec-title">Organizational Accountability &amp; Staff Training</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava enforces organizational accountability through regular privacy awareness training for all employees, strict confidentiality clauses in employment agreements, routine internal audits of data access logs, and formal disciplinary procedures for any unauthorized disclosure or mishandling of personal data.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-27">
+        <div class="sec-head">
+          <span class="sec-num-badge">27</span>
+          <h2 class="sec-title">Privacy by Design &amp; System Architecture</h2>
+        </div>
+        <div class="sec-body">
+          <p>Our engineering teams incorporate Privacy by Design and Privacy by Default into our software development lifecycles. We enforce database tenant isolation, automated data pseudonymization, API rate limiting, and minimal payload transfers across all internal and client-facing digital architectures.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-28">
+        <div class="sec-head">
+          <span class="sec-num-badge">28</span>
+          <h2 class="sec-title">Policy Updates &amp; Amendments</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava reserves the right to amend this Privacy Policy periodically to reflect technological advancements, operational improvements, or updates in statutory legislation. Revisions will be published on this page with an updated "Effective Date". Continued interaction with our services following publication constitutes acknowledgment of the revised terms.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-29">
+        <div class="sec-head">
+          <span class="sec-num-badge">29</span>
+          <h2 class="sec-title">Governing Law &amp; Regulatory Oversight</h2>
+        </div>
+        <div class="sec-body">
+          <p>This Privacy Policy is governed by and construed in accordance with the laws of the Republic of the Philippines, in particular Republic Act No. 10173 (Data Privacy Act of 2012), its Implementing Rules and Regulations, and administrative issuances of the National Privacy Commission (NPC).</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-30">
+        <div class="sec-head">
+          <span class="sec-num-badge">30</span>
+          <h2 class="sec-title">Regulatory Compliance Documentation &amp; Audits</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava maintains internal Records of Processing Activities (ROPA), Privacy Impact Assessments (PIA) for high-risk data workflows, and documented security incident logs as required for SEC-registered Philippine corporate entities.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-31">
+        <div class="sec-head">
+          <span class="sec-num-badge">31</span>
+          <h2 class="sec-title">Core Privacy Principles</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava grounds every technical and operational workflow in the five core pillars of responsible data stewardship:</p>
+          <div class="principles-grid">
+            <div class="principle-card">
+              <h4>Transparency</h4>
+              <p>Individuals are fully informed regarding why, how, and by whom their personal data is collected, stored, and utilized.</p>
+            </div>
+            <div class="principle-card">
+              <h4>Legitimate Purpose</h4>
+              <p>Processing is strictly confined to explicitly declared, lawful, and necessary commercial and operational objectives.</p>
+            </div>
+            <div class="principle-card">
+              <h4>Proportionality</h4>
+              <p>We collect only the minimum data strictly necessary to achieve our stated business and engineering requirements.</p>
+            </div>
+            <div class="principle-card">
+              <h4>Security</h4>
+              <p>Rigorous administrative, physical, and technical controls protect data against unauthorized access, loss, or disclosure.</p>
+            </div>
+            <div class="principle-card">
+              <h4>Accountability</h4>
+              <p>Operava actively demonstrates compliance through documentation, audit trails, and strict internal governance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   </div>
 </section>
+
+<button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  <span>Top</span>
+</button>
 
 <footer class="footer" id="main-footer">
   <div class="footer-grid">
@@ -316,18 +732,45 @@ a{color:inherit;text-decoration:none}
 
 <script>
 (function(){
-  var t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');
-  if(t)t.onclick=function(){l.classList.toggle('open')};
-  var els=document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
-    },{threshold:.12});
-    els.forEach(function(el){io.observe(el)});
-  }else{
-    els.forEach(function(el){el.classList.add('in')});
+  // Mobile Nav
+  var t = document.querySelector('.nav-toggle'), l = document.querySelector('.nav-links');
+  if(t && l) {
+    t.onclick = function() { l.classList.toggle('open'); };
+  }
+
+  // Quick Table of Contents Filter
+  var filterInput = document.getElementById('toc-filter');
+  var tocItems = document.querySelectorAll('.toc-item');
+  if(filterInput && tocItems.length) {
+    filterInput.addEventListener('input', function() {
+      var q = (filterInput.value || '').toLowerCase().trim();
+      tocItems.forEach(function(item) {
+        var text = item.textContent.toLowerCase();
+        if(!q || text.indexOf(q) !== -1) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // Back To Top Button
+  var btt = document.getElementById('back-to-top');
+  if(btt) {
+    window.addEventListener('scroll', function() {
+      if(window.scrollY > 400) {
+        btt.classList.add('is-shown');
+      } else {
+        btt.classList.remove('is-shown');
+      }
+    }, { passive: true });
+    btt.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 })();
 </script>
+
 </body>
 </html>

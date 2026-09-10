@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Refund Policy | OPERAVA</title>
-<meta name="description" content="Operava Global Solutions authoritative refund rules, cancellation conditions, service credit allocations, and resolution frameworks. Effective August 25, 2026.">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="Operava Global Solutions authoritative refund rules, cancellation conditions, service credit allocations, and resolution frameworks. Complete 49-section legal standard. Effective August 25, 2026.">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#0a1628;
@@ -21,11 +21,14 @@
   --fd:'Roboto Condensed',system-ui,sans-serif;
   --fb:'Montserrat',system-ui,sans-serif;
   --g:clamp(20px,4.5vw,72px);
-  --m:48rem;
+  --m:54rem;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--fb);color:var(--ink);line-height:1.6;background:#fff}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);line-height:1.65;background:#fff}
 a{color:inherit;text-decoration:none}
+
+/* Header & Navigation */
 .nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-brand{font-family:var(--fd);font-weight:700;font-size:1.25rem;letter-spacing:.06em;color:var(--ink);text-transform:uppercase}
 .nav-links{display:flex;gap:clamp(14px,1.8vw,28px);flex-wrap:wrap}
@@ -33,36 +36,103 @@ a{color:inherit;text-decoration:none}
 .nav-links a:hover,.nav-links a.is-active{color:var(--purple)}
 .nav-toggle{display:none;background:0;border:0;cursor:pointer;padding:8px}
 .nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0}
-.page-hero{padding:calc(80px + 5vh) var(--g) 3.5rem;background:linear-gradient(180deg,#f7f5fd 0%,#ffffff 100%);color:var(--ink);border-bottom:1px solid var(--line)}
+
+/* Page Hero */
+.page-hero{padding:calc(80px + 4.5vh) var(--g) 3.5rem;background:linear-gradient(180deg,#f7f5fd 0%,#fbfafd 50%,#ffffff 100%);color:var(--ink);border-bottom:1px solid var(--line)}
 .page-hero .crumb{font-family:var(--fd);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
 .page-hero .crumb a{color:var(--purple)}
-.page-hero h1{font-family:var(--fd);font-weight:700;font-size:clamp(2.1rem,4.5vw,3.4rem);line-height:1.08;text-transform:uppercase;margin-bottom:1rem;color:var(--ink)}
-.page-hero p{font-size:1.05rem;color:var(--muted);max-width:var(--m)}
-.meta-row{display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;margin-top:1.5rem;font-size:.875rem;color:var(--muted)}
-.meta-row strong{color:var(--ink)}
-.band{padding:clamp(3.5rem,8vh,6rem) var(--g)}
-.notice{border-left:3px solid var(--purple);background:var(--purple-light);padding:1rem 1.25rem;margin-bottom:2rem;max-width:var(--m);border-radius:0 4px 4px 0}
+.page-hero h1{font-family:var(--fd);font-weight:700;font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.06;text-transform:uppercase;margin-bottom:1rem;color:var(--ink);letter-spacing:-.01em}
+.page-hero p{font-size:1.1rem;color:var(--muted);max-width:var(--m);line-height:1.6}
+.meta-row{display:flex;flex-wrap:wrap;gap:1.25rem 2.25rem;margin-top:1.5rem;font-size:.875rem;color:var(--muted);padding-top:1.25rem;border-top:1px solid var(--line)}
+.meta-row strong{color:var(--ink);font-weight:600}
+
+/* Main Content Area */
+.band{padding:clamp(2.5rem,6vh,4.5rem) var(--g)}
+.content-layout{max-width:var(--m);margin:0}
+
+/* Legal Documents Switcher */
+.doc-switcher{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid var(--line)}
+.doc-switcher a{display:inline-flex;align-items:center;padding:.5rem 1.1rem;border-radius:999px;font-family:var(--fd);font-size:.8125rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--line);background:var(--surface);color:var(--muted);transition:all .2s ease}
+.doc-switcher a:hover{border-color:var(--purple-border);color:var(--purple);background:var(--purple-light)}
+.doc-switcher a.is-current{background:var(--purple);color:#fff;border-color:var(--purple)}
+
+/* Compliance Notice */
+.notice{border-left:4px solid var(--purple);background:var(--purple-light);padding:1.25rem 1.5rem;margin-bottom:2.25rem;border-radius:0 6px 6px 0}
 .notice p{margin:0;font-size:.95rem;color:var(--ink);line-height:1.65}
-.legal-nav{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;margin-bottom:2.5rem;padding:1rem 1.25rem;background:var(--surface);border-radius:4px;border:1px solid var(--line);max-width:var(--m)}
-.legal-nav span{font-family:var(--fd);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);align-self:center}
-.legal-nav a{font-family:var(--fd);font-size:.8125rem;font-weight:600;color:var(--purple);text-transform:uppercase}
-.legal-nav a:hover{text-decoration:underline}
-.prose{max-width:var(--m)}
-.prose h2{font-family:var(--fd);font-weight:700;font-size:1.2rem;text-transform:uppercase;margin:2.5rem 0 .75rem;padding-top:1.25rem;border-top:1px solid var(--line);color:var(--ink)}
-.prose h2:first-of-type{border-top:0;padding-top:0;margin-top:0}
-.prose h3{font-family:var(--fd);font-weight:600;font-size:1.02rem;text-transform:uppercase;margin:1.5rem 0 .5rem;color:var(--purple)}
-.prose p{font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:1rem}
-.prose ul{margin:0 0 1.25rem 1.25rem;color:var(--muted)}
-.prose li{margin-bottom:.45rem;line-height:1.65;font-size:.98rem}
-.formula-box{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--purple);padding:1.25rem 1.5rem;margin:1.5rem 0;border-radius:0 4px 4px 0;font-family:var(--fd);font-size:1.05rem;color:var(--ink)}
-.contact-card{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1.5rem;margin-top:2rem;max-width:var(--m)}
-.contact-card h3{font-family:var(--fd);font-size:1.1rem;text-transform:uppercase;color:var(--ink);margin-bottom:.5rem}
-.contact-card p{color:var(--muted);font-size:.95rem;margin-bottom:.5rem}
-.btn{display:inline-flex;font-family:var(--fd);font-weight:600;font-size:.875rem;padding:.95rem 1.65rem;border-radius:999px;border:0;cursor:pointer;margin-right:.5rem;margin-top:1rem;transition:transform .2s,background .2s}
+.notice strong{color:var(--purple-deep)}
+
+/* Interactive Section Directory / Navigator */
+.toc-box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.5rem;margin-bottom:3rem}
+.toc-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
+.toc-title{font-family:var(--fd);font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);display:flex;align-items:center;gap:.65rem}
+.toc-badge{font-size:.75rem;padding:.2rem .65rem;border-radius:999px;background:var(--purple-light);color:var(--purple);border:1px solid var(--purple-border);font-weight:700}
+.toc-search{position:relative;width:100%;max-width:22rem}
+.toc-search input{width:100%;padding:.6rem 1rem .6rem 2.2rem;border:1px solid var(--line);border-radius:6px;font-family:var(--fb);font-size:.85rem;background:#fff;color:var(--ink);outline:none;transition:border-color .2s}
+.toc-search input:focus{border-color:var(--purple)}
+.toc-search svg{position:absolute;left:.75rem;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--muted);pointer-events:none}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem;max-height:300px;overflow-y:auto;padding-right:.4rem}
+.toc-grid::-webkit-scrollbar{width:5px}
+.toc-grid::-webkit-scrollbar-thumb{background:var(--purple-border);border-radius:4px}
+.toc-item{display:flex;align-items:center;gap:.55rem;padding:.4rem .65rem;border-radius:4px;font-size:.8125rem;color:var(--muted);transition:background .15s,color .15s;text-decoration:none}
+.toc-item:hover{background:#fff;color:var(--purple);box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.toc-num{font-family:var(--fd);font-weight:700;color:var(--purple);font-size:.75rem;min-width:1.5rem}
+
+/* Authoritative Legal Prose (Guaranteed 100% Opacity) */
+.prose{opacity:1 !important;transform:none !important;visibility:visible !important;display:block !important}
+.sec-block{margin-bottom:3rem;padding-top:1.5rem;border-top:1px solid var(--line);scroll-margin-top:95px;transition:background .3s ease}
+.sec-block:first-of-type{border-top:0;padding-top:0}
+.sec-block:target{animation:flashTarget 2s ease-out}
+@keyframes flashTarget{
+  0%{background:rgba(75,32,201,.08);outline:2px solid var(--purple)}
+  100%{background:transparent;outline:2px solid transparent}
+}
+.sec-head{display:flex;align-items:baseline;gap:.85rem;margin-bottom:1rem}
+.sec-num-badge{font-family:var(--fd);font-size:.85rem;font-weight:700;color:var(--purple);background:var(--purple-light);border:1px solid var(--purple-border);padding:.18rem .55rem;border-radius:4px;letter-spacing:.06em}
+.sec-title{font-family:var(--fd);font-weight:700;font-size:1.3rem;text-transform:uppercase;color:var(--ink);letter-spacing:.02em;line-height:1.2}
+.sec-body p{font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:1.1rem}
+.sec-body ul{margin:0 0 1.25rem 1.35rem;color:var(--muted)}
+.sec-body li{margin-bottom:.55rem;line-height:1.65;font-size:.98rem}
+.sec-body strong{color:var(--ink);font-weight:600}
+.sec-body a{color:var(--purple);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.sec-body a:hover{color:var(--purple-deep)}
+
+/* Calculation Formula Card */
+.formula-card{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--purple);padding:1.4rem 1.6rem;border-radius:0 6px 6px 0;margin:1.5rem 0}
+.formula-label{font-family:var(--fd);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--purple);margin-bottom:.4rem;font-weight:700}
+.formula-code{font-family:var(--fd);font-size:1.05rem;font-weight:600;color:var(--ink);line-height:1.4}
+
+/* Escalation Tiers Grid */
+.escalation-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+.escalation-card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.25rem}
+.escalation-badge{display:inline-block;font-family:var(--fd);font-size:.75rem;font-weight:700;text-transform:uppercase;color:var(--purple);background:var(--purple-light);border:1px solid var(--purple-border);padding:.15rem .5rem;border-radius:4px;margin-bottom:.5rem}
+.escalation-card h4{font-family:var(--fd);font-size:.95rem;text-transform:uppercase;color:var(--ink);margin-bottom:.35rem}
+.escalation-card p{font-size:.875rem;color:var(--muted);margin:0;line-height:1.5}
+.escalation-card a{color:var(--purple);font-weight:600}
+
+/* Buttons */
+.btn-group{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-weight:600;font-size:.875rem;letter-spacing:.04em;text-transform:uppercase;padding:.85rem 1.6rem;border-radius:999px;border:0;cursor:pointer;transition:transform .2s,background .2s;text-decoration:none}
 .btn-primary{background:var(--purple);color:#fff}
-.btn-primary:hover{background:var(--purple-deep);transform:translateY(-2px)}
+.btn-primary:hover{background:var(--purple-deep);transform:translateY(-2px);color:#fff}
 .btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
 .btn-line:hover{border-color:var(--purple);color:var(--purple);transform:translateY(-2px)}
+
+/* Contact Card */
+.contact-panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:2rem;margin-top:3.5rem}
+.contact-panel h3{font-family:var(--fd);font-size:1.2rem;text-transform:uppercase;color:var(--ink);margin-bottom:.65rem}
+.contact-panel p{color:var(--muted);font-size:.95rem;margin-bottom:1.25rem;line-height:1.6}
+.contact-channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.25rem}
+.channel-item{background:#fff;padding:1rem;border-radius:6px;border:1px solid var(--line)}
+.channel-item span{display:block;font-family:var(--fd);font-size:.75rem;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;letter-spacing:.06em}
+.channel-item strong{color:var(--ink);font-size:.925rem;word-break:break-all}
+.channel-item strong a{color:var(--purple)}
+
+/* Floating Back-To-Top */
+.back-to-top{position:fixed;bottom:2rem;right:var(--g);background:#fff;border:1px solid var(--line);box-shadow:0 4px 14px rgba(10,22,40,.08);color:var(--ink);font-family:var(--fd);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.65rem 1rem;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem;z-index:90;transition:all .2s ease;opacity:0;pointer-events:none;transform:translateY(10px)}
+.back-to-top.is-shown{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:var(--purple);color:#fff;border-color:var(--purple)}
+
+/* Footer */
 .footer{background:var(--surface);color:var(--muted);padding:4.5rem var(--g) 2.5rem;border-top:1px solid var(--line)}
 .footer-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:clamp(2rem,4vw,3rem);margin-bottom:3rem}
 .footer-brand{font-family:var(--fd);font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:.75rem}
@@ -78,17 +148,18 @@ a{color:inherit;text-decoration:none}
 .footer-legal a:hover{color:var(--purple)}
 .footer-legal .sep{color:var(--line);user-select:none}
 .footer-copyright{font-size:.775rem;color:var(--muted)}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s,transform .65s}
-.reveal.in{opacity:1;transform:none}
+
 @media(max-width:960px){
   .nav-links{display:none;position:absolute;top:80px;left:0;right:0;flex-direction:column;background:#fff;padding:1.25rem var(--g);gap:1rem;border-bottom:1px solid var(--line)}
   .nav-links.open{display:flex}
   .nav-toggle{display:block}
   .footer-grid{grid-template-columns:1fr}
+  .toc-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
+
 <header class="nav">
   <a class="nav-brand" href="index.html">OPERAVA</a>
   <nav class="nav-links">
@@ -106,224 +177,667 @@ a{color:inherit;text-decoration:none}
 <section class="page-hero">
   <p class="crumb"><a href="index.html">Home</a> / Refund Policy</p>
   <h1>Refund Policy</h1>
-  <p>Authoritative refund rules, cancellation conditions, service credit allocations, billing error remedies, and resolution frameworks.</p>
+  <p>Authoritative refund rules, cancellation conditions, service credit allocations, billing error remedies, and dispute escalation resolution frameworks for Operava Global Solutions.</p>
   <div class="meta-row">
-    <span><strong>Entity</strong> Operava Global Solutions</span>
-    <span><strong>Effective Date</strong> August 25, 2026</span>
-    <span><strong>Jurisdiction</strong> Republic of the Philippines</span>
-    <span><strong>Framework</strong> 49 Authoritative Sections</span>
+    <span><strong>Corporate Entity:</strong> Operava Global Solutions</span>
+    <span><strong>Effective Date:</strong> August 25, 2026</span>
+    <span><strong>Jurisdiction:</strong> Republic of the Philippines</span>
+    <span><strong>Scope:</strong> All 49 Authoritative Policy Sections</span>
+    <span><strong>Support:</strong> cs@operavaglobal.com</span>
   </div>
 </section>
 
 <section class="band">
-  <div class="notice reveal">
-    <p><strong>Mandatory Compliance Notice.</strong> Cancellation does not automatically generate a cash refund. Nothing in this Policy limits, excludes, or modifies statutory rights and remedies that cannot lawfully be waived under the laws of the Republic of the Philippines. Effective August 25, 2026.</p>
-  </div>
+  <div class="content-layout">
 
-  <div class="legal-nav reveal">
-    <span>Related Documents:</span>
-    <a href="terms.html">Terms and Conditions</a>
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="contact.html">Customer Support</a>
-  </div>
-
-  <div class="prose reveal">
-    <h2 id="sec-1">1. Purpose and Scope</h2>
-    <p>This Refund Policy (the “Policy”) explains how Operava Global Solutions OPC, an entity organized and operating under the laws of the Republic of the Philippines (“Operava,” “we,” “us,” or “our”), handles refund requests, cancellations, service credits, service-quality concerns, billing errors, payment disputes, and related contractual remedies.</p>
-    <p>This Policy governs all commercial arrangements under which Operava offers, sells, delivers, manages, or supports Technology Services, Business Process Outsourcing (BPO), dedicated staffing, SaaS platforms, digital deliverables, and consulting engagements.</p>
-
-    <h2 id="sec-2">2. Company and Service Overview</h2>
-    <p>Operava is an SEC-registered Philippine corporation providing Information Technology and BPO solutions to domestic and international clients under a remote-first operating model. Operava conducts business strictly within the bounds permitted by Philippine and international law and does not provide services to offshore gaming activities.</p>
-
-    <h2 id="sec-3">3. Definitions</h2>
-    <p>For the purposes of this Policy, the following definitions apply:</p>
-    <ul>
-      <li><strong>Agreement:</strong> The Master Services Agreement (MSA), Statement of Work (SOW), Order Form, or digital contract entered into between Operava and the Client.</li>
-      <li><strong>Billing Period:</strong> The recurring cycle (monthly, milestone, or upfront) for which services are invoiced.</li>
-      <li><strong>BPO Services:</strong> Business Process Outsourcing, customer experience, back-office data processing, and operational workflows.</li>
-      <li><strong>Business Client:</strong> Commercial entities, corporate enterprises, or professional clients entering into commercial engagements.</li>
-      <li><strong>Cancellation:</strong> Formal written notice by a Client terminating services prior to standard expiration.</li>
-      <li><strong>Chargeback:</strong> A transaction dispute initiated directly through a credit card issuer, bank, or payment processor.</li>
-      <li><strong>Defect / Material Deficiency:</strong> A verifiable failure of a deliverable to conform to documented, mutually agreed technical specifications.</li>
-      <li><strong>Deliverable:</strong> Work product, code, documentation, reports, or assets produced and delivered under an SOW.</li>
-      <li><strong>Service Credit:</strong> Non-cash credit applied toward future invoices or service hours with Operava.</li>
-      <li><strong>Staffing Services:</strong> Dedicated engineering, customer service, or operational personnel assigned to a Client engagement.</li>
-    </ul>
-
-    <h2 id="sec-4">4. General Refund Principles</h2>
-    <ul>
-      <li><strong>4.1 No Blanket Exclusion:</strong> Operava does not maintain an unlawful blanket “no refund” exclusion where consumer or contractual statutory rights apply.</li>
-      <li><strong>4.2 Mandatory Rights Preserved:</strong> Statutory rights under Republic Act No. 7394 (Consumer Act of the Philippines) and relevant commercial laws remain fully effective.</li>
-      <li><strong>4.3 Cancellation vs. Refund:</strong> Contract cancellation ends future obligations but does not automatically entitle the Client to a refund of work already properly executed.</li>
-      <li><strong>4.4 Case-Specific Assessment:</strong> Every claim is evaluated individually based on verified timesheets, server logs, code commits, and project acceptance milestones.</li>
-      <li><strong>4.5 Hierarchy of Remedies:</strong> Where a deficiency exists, the preferred remedy sequence is: (1) prompt correction/bug fix, (2) reperformance of service, (3) issuance of Service Credit, or (4) partial/full cash refund.</li>
-    </ul>
-
-    <h2 id="sec-5">5. Consumer and Business Client Transactions</h2>
-    <p>Where services are engaged by an individual for personal use, mandatory consumer-protection laws apply. Commercial B2B relationships with corporate entities are governed primarily by the signed Master Services Agreement, Statement of Work, and commercial terms.</p>
-
-    <h2 id="sec-6">6. Relationship With Other Agreements (Order of Precedence)</h2>
-    <p>In the event of conflict, the following order of precedence controls: (a) mandatory statutory law; (b) mutually signed Master Services Agreement; (c) Statement of Work (SOW) or Order Form; (d) Service Level Agreement (SLA); (e) this Refund Policy; and (f) general website Terms.</p>
-
-    <h2 id="sec-7">7. Refund Eligibility Conditions</h2>
-    <p>Refund claims are eligible for formal evaluation under the following verified circumstances:</p>
-    <ul>
-      <li>Documented duplicate billing or computational invoicing errors.</li>
-      <li>Unauthorized or fraudulent payments verified by merchant security protocols.</li>
-      <li>Valid cancellation before any work, resource reservation, or technical environment setup has commenced.</li>
-      <li>Material service deficiency that Operava fails to cure within the contractually defined cure window (typically 14–30 business days).</li>
-      <li>Prepaid retainers where hours or milestones remain wholly unperformed upon lawful contract termination.</li>
-    </ul>
-
-    <h2 id="sec-8">8. Full Refunds</h2>
-    <p>Full refunds are granted strictly where payment was processed erroneously, unauthorized, or where a project was cancelled within lawful grace periods prior to the commencement of any work or team allocation.</p>
-
-    <h2 id="sec-9">9. Partial Refunds</h2>
-    <p>Where work has begun, partial refunds are calculated by deducting the verified pro-rata value of properly performed services, accrued labor hours, and non-recoverable third-party commitments.</p>
-
-    <h2 id="sec-10">10. Service Credits &amp; Validity</h2>
-    <p>Service credits issued as commercial accommodations are non-transferable, non-cashable, and valid for twelve (12) months from the issuance date, after which they expire automatically unless extended in writing.</p>
-
-    <h2 id="sec-11">11. Custom Software &amp; Systems Development</h2>
-    <p>Software development follows phased milestone delivery. Once an engineering milestone is tested, demonstrated, and formally accepted (or deemed accepted under contract terms), payments allocated to that milestone are non-refundable.</p>
-
-    <h2 id="sec-12">12. Web, Mobile &amp; Platform Engineering</h2>
-    <p>Delivered source code and platform builds are backed by a standard 30-day warranty against undocumented critical bugs. Reported defects are remediated at Operava's expense; bugs do not warrant immediate cash refunds where prompt cure is provided.</p>
-
-    <h2 id="sec-13">13. SaaS &amp; Recurring Subscriptions</h2>
-    <p>Subscription fees for proprietary software tools or portal access are billed in advance. Cancellations take effect at the conclusion of the active billing cycle; mid-cycle pro-rata refunds are not issued except where statutory rights mandate.</p>
-
-    <h2 id="sec-14">14. IT Consulting &amp; Advisory Services</h2>
-    <p>Advisory hours, technical feasibility reviews, and architecture sessions delivered by senior technology executives represent time-expended expertise and are non-refundable once the consultation has concluded.</p>
-
-    <h2 id="sec-15">15. Cloud, Hosting &amp; Infrastructure Support</h2>
-    <p>Third-party cloud infrastructure charges (AWS, Google Cloud, Azure, domain registrars) incurred on the Client’s behalf are completely non-recoverable and strictly non-refundable.</p>
-
-    <h2 id="sec-16">16. Business Process Outsourcing (BPO)</h2>
-    <p>BPO engagements require reserved seat capacity, facilities, and dedicated staffing. Cancellation requires 30 days written notice to allow proper resource de-allocation. Unused prepaid agent hours are reconciled at contract termination.</p>
-
-    <h2 id="sec-17">17. Dedicated Staffing &amp; Resource Augmentation</h2>
-    <p>If an assigned specialist does not meet agreed performance benchmarks during the initial 14-day evaluation window, Operava provides an immediate replacement talent at no additional placement cost.</p>
-
-    <h2 id="sec-18">18. Recruitment Process Outsourcing (RPO)</h2>
-    <p>Retained recruitment search fees cover sourcing, talent marketing, and multi-tier technical screening. In the event a placed candidate departs within the guaranteed placement warranty period, Operava provides a replacement search at zero additional fee.</p>
-
-    <h2 id="sec-19">19. Data Processing &amp; Back-Office Operations</h2>
-    <p>Volume-based data processing, document OCR, and verification workflows are billed based on processed records. Disputed batches are subject to sampling and quality auditing prior to any credit determination.</p>
-
-    <h2 id="sec-20">20. Digital Products &amp; Deliverables</h2>
-    <p>Completed digital deliverables, blueprints, architectural documentation, and custom software repositories downloaded by the Client are considered delivered and are non-refundable.</p>
-
-    <h2 id="sec-21">21. Non-Refundable Items &amp; Categories</h2>
-    <p>Except where mandated by law, the following are strictly non-refundable:</p>
-    <ul>
-      <li>Completed work accepted by the Client or where the sign-off period has expired without written objection.</li>
-      <li>Discontinuation of services due to Client change of business strategy or change of mind.</li>
-      <li>Direct software licenses, API consumption, or third-party cloud costs purchased on Client behalf.</li>
-      <li>Initial technical setup, environment provisioning, and compliance onboarding fees.</li>
-    </ul>
-
-    <h2 id="sec-22">22. Client-Initiated Cancellations</h2>
-    <p>To cancel an active engagement, written notice must be submitted via email to <strong>cs@operavaglobal.com</strong>. The Client remains responsible for all fees and deliverables accrued through the effective termination date.</p>
-
-    <h2 id="sec-23">23. Service Deficiencies &amp; Remediation</h2>
-    <p>If a deliverable fails to meet contract specifications, the Client must furnish specific, reproducible evidence within ten (10) business days of delivery. Operava is entitled to a reasonable remediation window to correct non-conformances prior to any refund discussion.</p>
-
-    <h2 id="sec-24">24. Client-Caused Delays &amp; Non-Cooperation</h2>
-    <p>Operava is not liable, and refunds will not be issued, for project delays or deficiencies caused by delayed Client feedback, missing access credentials, third-party API outages outside Operava's control, or scope modifications.</p>
-
-    <h2 id="sec-25">25. Third-Party Costs &amp; Pass-Through Expenses</h2>
-    <p>All third-party disbursements (including cloud computing, telecommunications trunk lines, and commercial software licenses) are passed through at agreed rates and cannot be refunded once purchased.</p>
-
-    <h2 id="sec-26">26. Payment Processing &amp; Currency Conversions</h2>
-    <p>Approved refunds are processed in the original transaction currency (typically USD or PHP). Operava is not responsible for foreign exchange fluctuations or international intermediary banking wire fees imposed by the recipient bank.</p>
-
-    <h2 id="sec-27">27. Taxes &amp; Statutory Deductions</h2>
-    <p>Any Value Added Tax (VAT), withholding taxes, or statutory deductions remitted to the Philippine Bureau of Internal Revenue (BIR) will be accounted for in accordance with applicable tax regulations.</p>
-
-    <h2 id="sec-28">28. Refund Claim Submission Procedure</h2>
-    <p>All refund requests must be formally submitted in writing to <strong>cs@operavaglobal.com</strong> with the subject line <code>Refund Request — [Client / Account Name] — [Invoice #]</code>. The request must include: (a) transaction date and payment proof; (b) relevant Statement of Work and invoice number; (c) detailed factual explanation of the grounds for refund; and (d) supporting evidence, logs, or communications.</p>
-
-    <h2 id="sec-29">29. Review &amp; Investigation Timeline</h2>
-    <p>Operava acknowledges claims within two (2) business days. An investigation into work logs, timesheets, and technical deliverables is completed within thirty (30) business days of submission.</p>
-
-    <h2 id="sec-30">30. Determination Factors</h2>
-    <p>Claim assessments evaluate contractual SOW terms, Git repository commit logs, verified timesheets, communication records, defect severity, and the opportunity granted to Operava to remediate issues.</p>
-
-    <h2 id="sec-31">31. Calculation Formula</h2>
-    <p>Where a partial refund is determined appropriate, the formula utilized is:</p>
-    <div class="formula-box">
-      <strong>Refundable Amount</strong> = Total Amount Paid − Value of Properly Executed Services − Non-Recoverable Third-Party Disbursements − Lawful Administrative / Merchant Fees
+    <div class="doc-switcher">
+      <a href="terms.html">Terms and Conditions</a>
+      <a href="privacy-policy.html">Privacy Policy (RA 10173)</a>
+      <a href="refund-policy.html" class="is-current">Refund Policy (49 Sections)</a>
+      <a href="contact.html">Contact Customer Support</a>
     </div>
 
-    <h2 id="sec-32">32. Method &amp; Timeline of Payment</h2>
-    <p>Approved refunds are disbursed within fifteen (15) business days following formal written approval, utilizing the original method of payment (bank transfer, wire, or payment gateway).</p>
+    <div class="notice">
+      <p><strong>Mandatory Compliance Notice:</strong> Contract cancellation does not automatically entitle a Client to a cash refund. Nothing in this Policy limits, excludes, or modifies statutory rights and remedies that cannot lawfully be waived under the laws of the Republic of the Philippines. Ratified and effective August 25, 2026.</p>
+    </div>
 
-    <h2 id="sec-33">33. Chargebacks &amp; Inappropriate Payment Disputes</h2>
-    <p>Clients agree to engage Operava's formal dispute resolution channels prior to initiating chargebacks. Unwarranted chargebacks that bypass this Policy are subject to billing administrative fees, immediate service suspension, and collection actions.</p>
+    <!-- Interactive Table of Contents / Section Navigator -->
+    <div class="toc-box">
+      <div class="toc-head">
+        <div class="toc-title">
+          <span>Table of Contents</span>
+          <span class="toc-badge">49 Authoritative Sections</span>
+        </div>
+        <div class="toc-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="search" id="toc-filter" placeholder="Search section or keyword..." aria-label="Search sections">
+        </div>
+      </div>
+      <div class="toc-grid" id="toc-grid">
+        <a href="#sec-1" class="toc-item"><span class="toc-num">01</span><span>Purpose and Scope</span></a>
+        <a href="#sec-2" class="toc-item"><span class="toc-num">02</span><span>Company &amp; Service Overview</span></a>
+        <a href="#sec-3" class="toc-item"><span class="toc-num">03</span><span>Key Definitions</span></a>
+        <a href="#sec-4" class="toc-item"><span class="toc-num">04</span><span>General Refund Principles</span></a>
+        <a href="#sec-5" class="toc-item"><span class="toc-num">05</span><span>Consumer vs Business</span></a>
+        <a href="#sec-6" class="toc-item"><span class="toc-num">06</span><span>Hierarchy of Agreements</span></a>
+        <a href="#sec-7" class="toc-item"><span class="toc-num">07</span><span>Refund Eligibility</span></a>
+        <a href="#sec-8" class="toc-item"><span class="toc-num">08</span><span>Full Refunds</span></a>
+        <a href="#sec-9" class="toc-item"><span class="toc-num">09</span><span>Partial Refunds</span></a>
+        <a href="#sec-10" class="toc-item"><span class="toc-num">10</span><span>Service Credits &amp; Validity</span></a>
+        <a href="#sec-11" class="toc-item"><span class="toc-num">11</span><span>Custom Software Engineering</span></a>
+        <a href="#sec-12" class="toc-item"><span class="toc-num">12</span><span>Web/Mobile QA Warranty</span></a>
+        <a href="#sec-13" class="toc-item"><span class="toc-num">13</span><span>SaaS &amp; Subscriptions</span></a>
+        <a href="#sec-14" class="toc-item"><span class="toc-num">14</span><span>IT Consulting &amp; Advisory</span></a>
+        <a href="#sec-15" class="toc-item"><span class="toc-num">15</span><span>Cloud &amp; Hosting Infra</span></a>
+        <a href="#sec-16" class="toc-item"><span class="toc-num">16</span><span>BPO Services &amp; 30-Day Notice</span></a>
+        <a href="#sec-17" class="toc-item"><span class="toc-num">17</span><span>Dedicated Staffing (14-Day)</span></a>
+        <a href="#sec-18" class="toc-item"><span class="toc-num">18</span><span>RPO Placement Guarantee</span></a>
+        <a href="#sec-19" class="toc-item"><span class="toc-num">19</span><span>Data Processing Audits</span></a>
+        <a href="#sec-20" class="toc-item"><span class="toc-num">20</span><span>Digital Products Delivered</span></a>
+        <a href="#sec-21" class="toc-item"><span class="toc-num">21</span><span>Non-Refundable Categories</span></a>
+        <a href="#sec-22" class="toc-item"><span class="toc-num">22</span><span>Client Cancellations</span></a>
+        <a href="#sec-23" class="toc-item"><span class="toc-num">23</span><span>Service Deficiencies &amp; Cure</span></a>
+        <a href="#sec-24" class="toc-item"><span class="toc-num">24</span><span>Client-Caused Delays</span></a>
+        <a href="#sec-25" class="toc-item"><span class="toc-num">25</span><span>Third-Party Pass-Through</span></a>
+        <a href="#sec-26" class="toc-item"><span class="toc-num">26</span><span>Payment &amp; FX Conversions</span></a>
+        <a href="#sec-27" class="toc-item"><span class="toc-num">27</span><span>Taxes &amp; BIR Deductions</span></a>
+        <a href="#sec-28" class="toc-item"><span class="toc-num">28</span><span>Claim Submission Protocol</span></a>
+        <a href="#sec-29" class="toc-item"><span class="toc-num">29</span><span>Investigation Timelines</span></a>
+        <a href="#sec-30" class="toc-item"><span class="toc-num">30</span><span>Determination Factors</span></a>
+        <a href="#sec-31" class="toc-item"><span class="toc-num">31</span><span>Calculation Formula</span></a>
+        <a href="#sec-32" class="toc-item"><span class="toc-num">32</span><span>Disbursement Timeline</span></a>
+        <a href="#sec-33" class="toc-item"><span class="toc-num">33</span><span>Chargebacks &amp; Penalties</span></a>
+        <a href="#sec-34" class="toc-item"><span class="toc-num">34</span><span>Fraudulent Claims</span></a>
+        <a href="#sec-35" class="toc-item"><span class="toc-num">35</span><span>Service Interruptions</span></a>
+        <a href="#sec-36" class="toc-item"><span class="toc-num">36</span><span>Force Majeure</span></a>
+        <a href="#sec-37" class="toc-item"><span class="toc-num">37</span><span>Cross-Border Engagements</span></a>
+        <a href="#sec-38" class="toc-item"><span class="toc-num">38</span><span>Data Privacy in Disputes</span></a>
+        <a href="#sec-39" class="toc-item"><span class="toc-num">39</span><span>IP Rights Revocation</span></a>
+        <a href="#sec-40" class="toc-item"><span class="toc-num">40</span><span>Limitation of Liability</span></a>
+        <a href="#sec-41" class="toc-item"><span class="toc-num">41</span><span>Escalation Level 1 (CS)</span></a>
+        <a href="#sec-42" class="toc-item"><span class="toc-num">42</span><span>Escalation Level 2 (Exec)</span></a>
+        <a href="#sec-43" class="toc-item"><span class="toc-num">43</span><span>Escalation Level 3 (Legal)</span></a>
+        <a href="#sec-44" class="toc-item"><span class="toc-num">44</span><span>Governing Law &amp; Venue</span></a>
+        <a href="#sec-45" class="toc-item"><span class="toc-num">45</span><span>Amendments to Policy</span></a>
+        <a href="#sec-46" class="toc-item"><span class="toc-num">46</span><span>Severability</span></a>
+        <a href="#sec-47" class="toc-item"><span class="toc-num">47</span><span>Official Support Channels</span></a>
+        <a href="#sec-48" class="toc-item"><span class="toc-num">48</span><span>Effective Date</span></a>
+        <a href="#sec-49" class="toc-item"><span class="toc-num">49</span><span>Client Acknowledgment</span></a>
+      </div>
+    </div>
 
-    <h2 id="sec-34">34. Fraudulent &amp; Bad-Faith Claims</h2>
-    <p>Claims containing fabricated information or intended to unjustly retain proprietary work product without payment will result in immediate termination of all accounts and referral to legal counsel.</p>
+    <!-- Complete 49 Sections Authoritative Legal Prose -->
+    <div class="prose" id="refund-prose">
 
-    <h2 id="sec-35">35. Service Interruptions &amp; Maintenance</h2>
-    <p>Temporary downtime for routine maintenance or upstream ISP interruptions does not constitute a breach of contract and does not entitle the Client to refunds, provided reasonable notice is given.</p>
+      <section class="sec-block" id="sec-1">
+        <div class="sec-head">
+          <span class="sec-num-badge">01</span>
+          <h2 class="sec-title">Purpose and Scope</h2>
+        </div>
+        <div class="sec-body">
+          <p>This Refund Policy (the “Policy”) establishes the definitive contractual terms and operational protocols under which Operava Global Solutions (“Operava,” “we,” “us,” or “our”) processes refund claims, cancellations, service credits, billing reconciliations, and payment disputes.</p>
+          <p>This Policy applies universally to all software systems, IT consulting, workforce augmentation pods, recruitment services, SaaS platforms, back-office BPO operations, and digital deliverables provided by Operava, whether delivered via project milestone, monthly retainer, or fixed-fee engagement.</p>
+        </div>
+      </section>
 
-    <h2 id="sec-36">36. Force Majeure &amp; Uncontrollable Events</h2>
-    <p>Neither party is deemed in default for delays or non-performance caused by acts of God, typhoons, severe power grid failures, warfare, civil disturbances, or government embargoes.</p>
+      <section class="sec-block" id="sec-2">
+        <div class="sec-head">
+          <span class="sec-num-badge">02</span>
+          <h2 class="sec-title">Company and Service Overview</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava is a duly registered Philippine corporation providing information technology, custom software engineering, and business process outsourcing solutions to commercial clients in the Philippines and internationally. In compliance with Philippine statutory regulations, Operava does not render services to offshore gaming entities and operates in strict conformity with national and international commercial standards.</p>
+        </div>
+      </section>
 
-    <h2 id="sec-37">37. International Clients &amp; Cross-Border Engagements</h2>
-    <p>International clients are subject to cross-border wire rules. Approved refunds will reflect net funds received after standard cross-border banking fees.</p>
+      <section class="sec-block" id="sec-3">
+        <div class="sec-head">
+          <span class="sec-num-badge">03</span>
+          <h2 class="sec-title">Key Definitions</h2>
+        </div>
+        <div class="sec-body">
+          <p>For the purposes of this Policy, the following terms hold the explicit meanings assigned below:</p>
+          <ul>
+            <li><strong>Agreement:</strong> The legally binding contract, Master Services Agreement (MSA), Statement of Work (SOW), or digital order form entered into between Operava and the Client.</li>
+            <li><strong>Billing Period:</strong> The recurring cycle (e.g., monthly billing, bi-weekly sprint, or upfront milestone) for which services are invoiced.</li>
+            <li><strong>BPO Services:</strong> Business Process Outsourcing, customer support helpdesk, back-office data processing, and document verification operations.</li>
+            <li><strong>Business Client:</strong> Commercial corporations, partnerships, or sole proprietors engaging Operava for business purposes.</li>
+            <li><strong>Cancellation:</strong> Formal written notice transmitted by the Client terminating services prior to the scheduled expiration of the contract.</li>
+            <li><strong>Chargeback:</strong> A transaction reversal initiated directly through a card issuer, bank, or payment gateway that bypasses agreed dispute channels.</li>
+            <li><strong>Defect / Material Deficiency:</strong> A verifiable, reproducible failure of a software build or service deliverable to conform to documented contract specifications.</li>
+            <li><strong>Deliverable:</strong> Discrete work products, source code repositories, technical documentation, or reports produced under an SOW.</li>
+            <li><strong>Service Credit:</strong> A monetary credit applied against future invoices or billable hours with Operava.</li>
+            <li><strong>Staffing Services:</strong> Dedicated engineering, QA, or customer service personnel embedded into a client's daily development workflows.</li>
+          </ul>
+        </div>
+      </section>
 
-    <h2 id="sec-38">38. Data Privacy &amp; Confidentiality in Disputes</h2>
-    <p>All documentation submitted during refund assessments is handled in strict compliance with the Philippine Data Privacy Act of 2012 (RA 10173) and our Privacy Policy.</p>
+      <section class="sec-block" id="sec-4">
+        <div class="sec-head">
+          <span class="sec-num-badge">04</span>
+          <h2 class="sec-title">General Refund Principles</h2>
+        </div>
+        <div class="sec-body">
+          <ul>
+            <li><strong>4.1 No Unlawful Blanket Exclusion:</strong> Operava does not assert an unlawful blanket “no refund under any circumstance” exclusion where statutory consumer protection rights apply.</li>
+            <li><strong>4.2 Mandatory Rights Preserved:</strong> Consumer rights guaranteed under Republic Act No. 7394 (Consumer Act of the Philippines) remain fully operative and uncompromised.</li>
+            <li><strong>4.3 Cancellation vs. Refund:</strong> Notice of cancellation terminates future billing cycles but does not automatically entitle the Client to a cash refund for work properly performed prior to termination.</li>
+            <li><strong>4.4 Case-Specific Assessment:</strong> Each claim is investigated independently against verified timesheets, Git commit histories, server logs, and deliverable acceptance forms.</li>
+            <li><strong>4.5 Hierarchy of Remedies:</strong> Where a service deficiency is verified, the agreed order of remediation is: (1) prompt bug correction/remedial engineering; (2) reperformance of deficient services; (3) allocation of Service Credits; or (4) partial or full cash refund.</li>
+          </ul>
+        </div>
+      </section>
 
-    <h2 id="sec-39">39. Intellectual Property in Refund Situations</h2>
-    <p>If a deliverable is refunded in full, all licenses, code ownership, and usage rights granted to the Client are immediately revoked. The Client must permanently delete and cease all use of the unpurchased assets.</p>
+      <section class="sec-block" id="sec-5">
+        <div class="sec-head">
+          <span class="sec-num-badge">05</span>
+          <h2 class="sec-title">Consumer and Business Client Transactions</h2>
+        </div>
+        <div class="sec-body">
+          <p>Where services are procured by an individual consumer for personal, non-commercial purposes, mandatory statutory consumer rights apply. Commercial enterprise transactions are governed strictly by the executed Master Services Agreement and commercial terms agreed upon by the business entities.</p>
+        </div>
+      </section>
 
-    <h2 id="sec-40">40. Limitation of Liability</h2>
-    <p>Operava’s aggregate liability arising out of any refund claim or service dispute is strictly capped at the net fees actually paid by the Client for the specific deliverable giving rise to the claim.</p>
+      <section class="sec-block" id="sec-6">
+        <div class="sec-head">
+          <span class="sec-num-badge">06</span>
+          <h2 class="sec-title">Hierarchy of Agreements (Order of Precedence)</h2>
+        </div>
+        <div class="sec-body">
+          <p>In the event of an irreconcilable conflict between documents, the following hierarchy controls: (1) mandatory statutory Philippine law; (2) mutually executed Master Services Agreement; (3) Statement of Work (SOW); (4) Service Level Agreement (SLA); (5) this Refund Policy; and (6) general website Terms.</p>
+        </div>
+      </section>
 
-    <h2 id="sec-41">41. Dispute Escalation Level 1 (Customer Support)</h2>
-    <p>Submit claim to <strong>cs@operavaglobal.com</strong> for initial review and operational assessment by your dedicated account team.</p>
+      <section class="sec-block" id="sec-7">
+        <div class="sec-head">
+          <span class="sec-num-badge">07</span>
+          <h2 class="sec-title">Refund Eligibility Conditions</h2>
+        </div>
+        <div class="sec-body">
+          <p>Refund claims are eligible for formal administrative review under the following verified circumstances:</p>
+          <ul>
+            <li>Documented billing duplicates, payment processor errors, or overbilling calculations.</li>
+            <li>Unauthorized payments verified by financial fraud protection systems.</li>
+            <li>Valid cancellation submitted before any project work, environment provisioning, or resource reservation has begun.</li>
+            <li>Material service non-conformance that Operava fails to cure within the contractually defined remediation window.</li>
+            <li>Prepaid advance retainers where unexpended hours remain upon mutual, orderly contract termination.</li>
+          </ul>
+        </div>
+      </section>
 
-    <h2 id="sec-42">42. Dispute Escalation Level 2 (Executive Operations)</h2>
-    <p>If unresolved at Level 1, escalate in writing to <strong>cs-escalation2@operavaglobal.com</strong> for executive management review within ten (10) business days.</p>
+      <section class="sec-block" id="sec-8">
+        <div class="sec-head">
+          <span class="sec-num-badge">08</span>
+          <h2 class="sec-title">Full Refunds</h2>
+        </div>
+        <div class="sec-body">
+          <p>Full refunds are granted strictly where payment was taken erroneously without authorization, or where a project was formally cancelled within statutory or contractually agreed initial cooling-off windows prior to the expenditure of labor or infrastructure costs.</p>
+        </div>
+      </section>
 
-    <h2 id="sec-43">43. Dispute Escalation Level 3 (Formal Mediation &amp; Arbitration)</h2>
-    <p>Matters not resolved at Level 2 shall be submitted to confidential mediation in the Republic of the Philippines prior to instituting legal proceedings.</p>
+      <section class="sec-block" id="sec-9">
+        <div class="sec-head">
+          <span class="sec-num-badge">09</span>
+          <h2 class="sec-title">Partial Refunds</h2>
+        </div>
+        <div class="sec-body">
+          <p>Where work has commenced, any refund granted will be partial and calculated by deducting the verified pro-rata value of properly completed milestones, verified billable labor hours, and non-recoverable pass-through third-party expenses.</p>
+        </div>
+      </section>
 
-    <h2 id="sec-44">44. Governing Law &amp; Jurisdiction</h2>
-    <p>This Policy is governed by and construed in accordance with the laws of the Republic of the Philippines. The competent courts of the Philippines have exclusive jurisdiction over all disputes.</p>
+      <section class="sec-block" id="sec-10">
+        <div class="sec-head">
+          <span class="sec-num-badge">10</span>
+          <h2 class="sec-title">Service Credits &amp; Validity</h2>
+        </div>
+        <div class="sec-body">
+          <p>Service Credits issued as a commercial accommodation are non-cashable and non-transferable. Service Credits remain valid for twelve (12) months from the date of issuance, after which any unutilized credit balance expires automatically.</p>
+        </div>
+      </section>
 
-    <h2 id="sec-45">45. Amendments &amp; Updates</h2>
-    <p>Operava reserves the right to modify this Policy periodically. Updates take effect upon posting to this URL with an updated Effective Date. Ongoing use of services constitutes acceptance of revised terms.</p>
+      <section class="sec-block" id="sec-11">
+        <div class="sec-head">
+          <span class="sec-num-badge">12</span>
+          <h2 class="sec-title">Custom Software &amp; Systems Development</h2>
+        </div>
+        <div class="sec-body">
+          <p>Custom software engineering is delivered against progressive milestones. Once a milestone has been reviewed, tested, demonstrated, and accepted by the Client (or deemed accepted under the review window), milestone fees are fully earned and non-refundable.</p>
+        </div>
+      </section>
 
-    <h2 id="sec-46">46. Severability &amp; Construction</h2>
-    <p>If any clause of this Policy is deemed unenforceable by a court of competent jurisdiction, the remaining provisions remain in full force and effect.</p>
+      <section class="sec-block" id="sec-12">
+        <div class="sec-head">
+          <span class="sec-num-badge">12</span>
+          <h2 class="sec-title">Web, Mobile &amp; Platform Engineering (QA Warranty)</h2>
+        </div>
+        <div class="sec-body">
+          <p>Delivered software applications include a standard thirty (30) calendar-day QA warranty covering reproducible software bugs that deviate from agreed specifications. Operava will remediate identified defects at zero additional engineering expense; bug reports do not warrant cash refunds where timely cure is provided.</p>
+        </div>
+      </section>
 
-    <h2 id="sec-47">47. Official Support Contacts &amp; Channels</h2>
-    <p>For inquiries, support tickets, and formal submissions:</p>
-    <ul>
-      <li>Customer Support: <a href="mailto:cs@operavaglobal.com">cs@operavaglobal.com</a></li>
-      <li>Executive Escalations: <a href="mailto:cs-escalation2@operavaglobal.com">cs-escalation2@operavaglobal.com</a></li>
-      <li>Compliance Team: <a href="mailto:compliance@operavaglobal.com">compliance@operavaglobal.com</a></li>
-      <li>General Communications: <a href="mailto:hello@operavaglobal.com">hello@operavaglobal.com</a></li>
-    </ul>
+      <section class="sec-block" id="sec-13">
+        <div class="sec-head">
+          <span class="sec-num-badge">13</span>
+          <h2 class="sec-title">SaaS &amp; Recurring Subscriptions</h2>
+        </div>
+        <div class="sec-body">
+          <p>Subscriptions for proprietary tools and hosted platforms are billed in advance on a recurring monthly or annual basis. Cancellations take effect at the conclusion of the active billing cycle; mid-cycle pro-rata refunds are not issued unless mandated by consumer statute.</p>
+        </div>
+      </section>
 
-    <h2 id="sec-48">48. Effective Date</h2>
-    <p>This Policy was officially ratified and entered into full legal effect on <strong>August 25, 2026</strong>.</p>
+      <section class="sec-block" id="sec-14">
+        <div class="sec-head">
+          <span class="sec-num-badge">14</span>
+          <h2 class="sec-title">IT Consulting &amp; Advisory Services</h2>
+        </div>
+        <div class="sec-body">
+          <p>Advisory workshops, technical architecture assessments, and security posture consultations represent time-expended executive expertise. Consulting hours delivered are non-refundable once the scheduled consultation sessions have concluded.</p>
+        </div>
+      </section>
 
-    <h2 id="sec-49">49. Client Acknowledgment &amp; Agreement</h2>
-    <p>By engaging Operava Global Solutions, issuing a purchase order, paying an invoice, or executing a Statement of Work, the Client affirms that they have read, understood, and agreed to be bound by all 49 sections of this Refund Policy.</p>
+      <section class="sec-block" id="sec-15">
+        <div class="sec-head">
+          <span class="sec-num-badge">15</span>
+          <h2 class="sec-title">Cloud Infrastructure, Hosting &amp; Pass-Through Support</h2>
+        </div>
+        <div class="sec-body">
+          <p>Third-party cloud infrastructure expenses (including AWS, GCP, Microsoft Azure, domain registrations, SSL certificates, and third-party SaaS APIs) incurred on the Client’s behalf are non-recoverable and strictly non-refundable.</p>
+        </div>
+      </section>
 
-    <div class="contact-card">
-      <h3>Need Assistance With An Invoice?</h3>
-      <p>Our client services and accounting teams are ready to help clarify any billing item or milestone deliverable.</p>
-      <a class="btn btn-primary" href="mailto:cs@operavaglobal.com">Email Customer Support</a>
-      <a class="btn btn-line" href="terms.html">View Terms and Conditions</a>
+      <section class="sec-block" id="sec-16">
+        <div class="sec-head">
+          <span class="sec-num-badge">16</span>
+          <h2 class="sec-title">Business Process Outsourcing (BPO)</h2>
+        </div>
+        <div class="sec-body">
+          <p>Managed BPO contracts require dedicated infrastructure, workstation allocation, and dedicated staffing. Cancellation requires thirty (30) calendar days written notice. Unused prepaid agent hours are reconciled and adjusted upon formal contract conclusion.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-17">
+        <div class="sec-head">
+          <span class="sec-num-badge">17</span>
+          <h2 class="sec-title">Dedicated Staffing &amp; 14-Day Replacement Warranty</h2>
+        </div>
+        <div class="sec-body">
+          <p>Dedicated engineers and support personnel work under the Client's day-to-day workflow direction. If an assigned resource fails to satisfy performance standards within the initial fourteen (14) calendar days of deployment, Operava will provide an alternative qualified candidate at no additional sourcing charge.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-18">
+        <div class="sec-head">
+          <span class="sec-num-badge">18</span>
+          <h2 class="sec-title">Recruitment Process Outsourcing (RPO)</h2>
+        </div>
+        <div class="sec-body">
+          <p>Direct placement and retained search fees cover sourcing, talent marketing, and technical evaluations. Placed candidates carry a replacement warranty (typically 60–90 days); if a candidate departs within this period, Operava executes a priority replacement search at zero placement fee.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-19">
+        <div class="sec-head">
+          <span class="sec-num-badge">19</span>
+          <h2 class="sec-title">Data Processing &amp; Back-Office Operations</h2>
+        </div>
+        <div class="sec-body">
+          <p>Volume-based document OCR, data entry, and verification workflows are invoiced on a per-unit basis. Disputed processing batches are audited against documented accuracy thresholds prior to issuing credit adjustments.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-20">
+        <div class="sec-head">
+          <span class="sec-num-badge">20</span>
+          <h2 class="sec-title">Digital Products &amp; Downloaded Deliverables</h2>
+        </div>
+        <div class="sec-body">
+          <p>Digital architecture blueprints, technical documentation packages, and custom source code repositories downloaded or accessed by the Client are considered delivered in full and are non-refundable.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-21">
+        <div class="sec-head">
+          <span class="sec-num-badge">21</span>
+          <h2 class="sec-title">Non-Refundable Items &amp; Categories</h2>
+        </div>
+        <div class="sec-body">
+          <p>Except where mandated by statutory law, the following categories are strictly non-refundable:</p>
+          <ul>
+            <li>Milestones or deliverables accepted in writing or deemed accepted due to expiration of the review period.</li>
+            <li>Termination resulting from Client change of business strategy, commercial pivot, or change of mind.</li>
+            <li>Third-party cloud infrastructure, telecommunication trunks, or software licenses procured on Client behalf.</li>
+            <li>Non-recurring setup fees, compliance onboarding, and dedicated network provisioning costs.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-22">
+        <div class="sec-head">
+          <span class="sec-num-badge">22</span>
+          <h2 class="sec-title">Client-Initiated Cancellations</h2>
+        </div>
+        <div class="sec-body">
+          <p>To cancel an active service engagement, the Client must deliver formal written notice to <strong>cs@operavaglobal.com</strong>. The Client remains obligated to pay all fees for work performed and expenses incurred up to the effective termination date.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-23">
+        <div class="sec-head">
+          <span class="sec-num-badge">23</span>
+          <h2 class="sec-title">Service Deficiencies &amp; Cure Periods</h2>
+        </div>
+        <div class="sec-body">
+          <p>If the Client identifies a deliverable that deviates from agreed specifications, the Client must submit specific, reproducible evidence within ten (10) business days of delivery. Operava is entitled to a reasonable cure window (typically 14–30 business days) to remediate the deficiency before any refund claim is considered.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-24">
+        <div class="sec-head">
+          <span class="sec-num-badge">24</span>
+          <h2 class="sec-title">Client-Caused Delays &amp; Non-Cooperation</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava is not liable, and no refunds or fee reductions will be issued, for project delivery delays or quality issues caused by delayed Client feedback, missing access credentials, third-party API dependencies, or scope modifications made mid-sprint.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-25">
+        <div class="sec-head">
+          <span class="sec-num-badge">25</span>
+          <h2 class="sec-title">Third-Party Costs &amp; Pass-Through Disbursements</h2>
+        </div>
+        <div class="sec-body">
+          <p>Disbursements made to third-party vendors (such as AWS, Google Cloud, Twilio, or licensed software vendors) are non-recoverable once transacted and are strictly excluded from refund calculations.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-26">
+        <div class="sec-head">
+          <span class="sec-num-badge">26</span>
+          <h2 class="sec-title">Payment Processing &amp; Currency Conversions</h2>
+        </div>
+        <div class="sec-body">
+          <p>Approved refunds are disbursed in the original currency of payment (USD or PHP). Operava is not liable for currency conversion fluctuations, exchange rate spreads, or intermediary international banking fees charged by the receiving financial institution.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-27">
+        <div class="sec-head">
+          <span class="sec-num-badge">27</span>
+          <h2 class="sec-title">Taxes &amp; Statutory Deductions</h2>
+        </div>
+        <div class="sec-body">
+          <p>Refunds are calculated on net service revenues. Any statutory Value Added Tax (VAT) or withholding taxes remitted to the Philippine Bureau of Internal Revenue (BIR) will be adjusted in accordance with applicable BIR tax regulations and credit memos.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-28">
+        <div class="sec-head">
+          <span class="sec-num-badge">28</span>
+          <h2 class="sec-title">Refund Claim Submission Procedure</h2>
+        </div>
+        <div class="sec-body">
+          <p>To initiate a formal refund review, the Client must email <strong>cs@operavaglobal.com</strong> with the subject line <code>Refund Claim — [Account Name] — [Invoice #]</code>, including:</p>
+          <ul>
+            <li>Proof of transaction and invoice number.</li>
+            <li>Governing Statement of Work (SOW) reference.</li>
+            <li>A comprehensive, factual explanation of the grounds for the claim.</li>
+            <li>Supporting documentation, such as reproducible bug tickets, Git commit logs, or communications.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-29">
+        <div class="sec-head">
+          <span class="sec-num-badge">29</span>
+          <h2 class="sec-title">Review &amp; Investigation Timeline</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava acknowledges refund claims within two (2) business days. An operational investigation—examining project timesheets, code commits, deliverable sign-offs, and communication records—is targeted for completion within thirty (30) business days from submission.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-30">
+        <div class="sec-head">
+          <span class="sec-num-badge">30</span>
+          <h2 class="sec-title">Determination Factors</h2>
+        </div>
+        <div class="sec-body">
+          <p>Claims are determined based on: (a) executed SOW terms; (b) Git commit records and timesheets; (c) defect severity and impact; (d) responsiveness of both parties; and (e) whether Operava was afforded a fair opportunity to cure defects within contractual timelines.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-31">
+        <div class="sec-head">
+          <span class="sec-num-badge">31</span>
+          <h2 class="sec-title">Calculation Formula</h2>
+        </div>
+        <div class="sec-body">
+          <p>Where a partial refund is deemed appropriate, the financial reconciliation follows this definitive standard formula:</p>
+          <div class="formula-card">
+            <div class="formula-label">Official Illustrative Formula</div>
+            <div class="formula-code">Refundable Amount = Total Fees Paid − Value of Properly Rendered Services − Non-Recoverable Third-Party Disbursements − Lawful Merchant / Bank Fees</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-32">
+        <div class="sec-head">
+          <span class="sec-num-badge">32</span>
+          <h2 class="sec-title">Method &amp; Timeline of Payment</h2>
+        </div>
+        <div class="sec-body">
+          <p>Approved cash refunds are disbursed within fifteen (15) business days following formal written determination, issued through the original method of payment (bank wire transfer or commercial payment gateway).</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-33">
+        <div class="sec-head">
+          <span class="sec-num-badge">33</span>
+          <h2 class="sec-title">Chargebacks &amp; Inappropriate Payment Disputes</h2>
+        </div>
+        <div class="sec-body">
+          <p>Clients agree to utilize Operava’s dispute resolution escalation framework prior to initiating bank chargebacks. Any unilateral chargeback initiated in circumvention of this Policy will result in immediate suspension of active services and may incur administrative dispute processing fees.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-34">
+        <div class="sec-head">
+          <span class="sec-num-badge">34</span>
+          <h2 class="sec-title">Fraudulent &amp; Bad-Faith Claims</h2>
+        </div>
+        <div class="sec-body">
+          <p>Submission of claims containing intentionally fabricated information, or attempts to unjustly acquire custom software code without payment, will result in immediate termination of the client relationship, revocation of all intellectual property licenses, and referral to legal counsel for damages.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-35">
+        <div class="sec-head">
+          <span class="sec-num-badge">35</span>
+          <h2 class="sec-title">Service Interruptions &amp; Scheduled Maintenance</h2>
+        </div>
+        <div class="sec-body">
+          <p>Temporary platform downtime resulting from scheduled infrastructure maintenance or upstream ISP disruptions does not constitute a contractual breach and does not entitle the Client to refunds, provided advance maintenance notice was issued.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-36">
+        <div class="sec-head">
+          <span class="sec-num-badge">36</span>
+          <h2 class="sec-title">Force Majeure &amp; Uncontrollable Events</h2>
+        </div>
+        <div class="sec-body">
+          <p>Neither party will be held liable for failure or delay caused by catastrophic natural disasters, major typhoons, national power grid failures, warfare, acts of terrorism, civil unrest, global pandemics, or governmental embargoes.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-37">
+        <div class="sec-head">
+          <span class="sec-num-badge">37</span>
+          <h2 class="sec-title">International Clients &amp; Cross-Border Engagements</h2>
+        </div>
+        <div class="sec-body">
+          <p>International clients are subject to cross-border banking regulations and international anti-money laundering compliance. Approved refunds will reflect net funds received after standard international wire and intermediary correspondent bank fees.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-38">
+        <div class="sec-head">
+          <span class="sec-num-badge">38</span>
+          <h2 class="sec-title">Data Privacy &amp; Confidentiality in Disputes</h2>
+        </div>
+        <div class="sec-body">
+          <p>All records, invoices, emails, and technical evidence exchanged in the course of a refund assessment are treated with strict confidentiality under our <a href="privacy-policy.html">Privacy Policy</a> and the Philippine Data Privacy Act of 2012 (RA 10173).</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-39">
+        <div class="sec-head">
+          <span class="sec-num-badge">39</span>
+          <h2 class="sec-title">Intellectual Property Rights in Refund Situations</h2>
+        </div>
+        <div class="sec-body">
+          <p>In the event that a deliverable is refunded in full, all licenses, copyright assignments, and usage permissions granted to the Client for that deliverable are immediately revoked. The Client must permanently delete and cease all use of unpurchased software builds or design assets.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-40">
+        <div class="sec-head">
+          <span class="sec-num-badge">40</span>
+          <h2 class="sec-title">Limitation of Liability</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava’s aggregate financial liability arising out of any refund claim or service dispute is strictly capped at the net fees actually paid by the Client to Operava for the specific deliverable or service month giving rise to the dispute.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-41">
+        <div class="sec-head">
+          <span class="sec-num-badge">41</span>
+          <h2 class="sec-title">Dispute Escalation Level 1 (Customer Support)</h2>
+        </div>
+        <div class="sec-body">
+          <p>Initial refund claims must be submitted to <strong>cs@operavaglobal.com</strong>. Your dedicated account manager and client services team will review logs, timesheets, and deliverables to reach a mutually agreeable operational solution.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-42">
+        <div class="sec-head">
+          <span class="sec-num-badge">42</span>
+          <h2 class="sec-title">Dispute Escalation Level 2 (Executive Operations)</h2>
+        </div>
+        <div class="sec-body">
+          <p>If a claim remains unresolved at Level 1, the Client may escalate the dispute in writing to <strong>cs-escalation2@operavaglobal.com</strong> for formal review by Operava executive management within ten (10) business days.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-43">
+        <div class="sec-head">
+          <span class="sec-num-badge">43</span>
+          <h2 class="sec-title">Dispute Escalation Level 3 (Formal Mediation &amp; Legal Resolution)</h2>
+        </div>
+        <div class="sec-body">
+          <p>Disputes that cannot be resolved through Level 2 executive escalation shall be submitted to confidential mediation in the Republic of the Philippines prior to the commencement of any formal legal proceedings.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-44">
+        <div class="sec-head">
+          <span class="sec-num-badge">44</span>
+          <h2 class="sec-title">Governing Law &amp; Jurisdiction</h2>
+        </div>
+        <div class="sec-body">
+          <p>This Refund Policy is governed by and construed in accordance with the substantive laws of the Republic of the Philippines. The competent courts of the Philippines shall have exclusive jurisdiction over any legal actions arising hereunder.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-45">
+        <div class="sec-head">
+          <span class="sec-num-badge">45</span>
+          <h2 class="sec-title">Amendments &amp; Policy Updates</h2>
+        </div>
+        <div class="sec-body">
+          <p>Operava reserves the right to amend this Policy periodically. Updated versions become effective immediately upon publication to this URL with a revised Effective Date. Continued engagement with our services constitutes acceptance of revised terms.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-46">
+        <div class="sec-head">
+          <span class="sec-num-badge">46</span>
+          <h2 class="sec-title">Severability &amp; Construction</h2>
+        </div>
+        <div class="sec-body">
+          <p>If any clause of this Policy is determined by a court of competent jurisdiction to be invalid or unenforceable, that provision will be severed, and the remaining clauses will continue in full force and effect.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-47">
+        <div class="sec-head">
+          <span class="sec-num-badge">47</span>
+          <h2 class="sec-title">Official Support Contacts &amp; Resolution Channels</h2>
+        </div>
+        <div class="sec-body">
+          <p>For all billing questions, invoice verifications, and refund inquiries, our support channels are available:</p>
+          <div class="escalation-grid">
+            <div class="escalation-card">
+              <span class="escalation-badge">Level 1 Support</span>
+              <h4>Customer Support</h4>
+              <p>Primary billing reviews, timesheet reconciliations, and ticket resolution.<br>
+              <strong><a href="mailto:cs@operavaglobal.com">cs@operavaglobal.com</a></strong></p>
+            </div>
+            <div class="escalation-card">
+              <span class="escalation-badge">Level 2 Support</span>
+              <h4>Executive Escalations</h4>
+              <p>Executive management review for unresolved billing or contract disputes.<br>
+              <strong><a href="mailto:cs-escalation2@operavaglobal.com">cs-escalation2@operavaglobal.com</a></strong></p>
+            </div>
+            <div class="escalation-card">
+              <span class="escalation-badge">Governance</span>
+              <h4>Compliance &amp; Legal</h4>
+              <p>Statutory compliance, contract terms, and regulatory documentation.<br>
+              <strong><a href="mailto:compliance@operavaglobal.com">compliance@operavaglobal.com</a></strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-48">
+        <div class="sec-head">
+          <span class="sec-num-badge">48</span>
+          <h2 class="sec-title">Effective Date</h2>
+        </div>
+        <div class="sec-body">
+          <p>This Refund Policy was officially ratified and entered into full legal effect on <strong>August 25, 2026</strong>.</p>
+        </div>
+      </section>
+
+      <section class="sec-block" id="sec-49">
+        <div class="sec-head">
+          <span class="sec-num-badge">49</span>
+          <h2 class="sec-title">Client Acknowledgment &amp; Agreement</h2>
+        </div>
+        <div class="sec-body">
+          <p>By engaging Operava Global Solutions, issuing a purchase order, submitting payment for an invoice, or executing a Statement of Work, the Client affirms that they have read, understood, and agreed to be bound by all 49 sections of this Refund Policy.</p>
+
+          <div class="contact-panel">
+            <h3>Need Assistance With An Invoice or Project Milestone?</h3>
+            <p>Our client services and accounting teams are ready to help clarify any billing item, milestone deliverable, or contract schedule.</p>
+            <div class="btn-group">
+              <a class="btn btn-primary" href="mailto:cs@operavaglobal.com">Email Customer Support</a>
+              <a class="btn btn-line" href="terms.html">View Terms and Conditions</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   </div>
 </section>
+
+<button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  <span>Top</span>
+</button>
 
 <footer class="footer" id="main-footer">
   <div class="footer-grid">
@@ -373,18 +887,45 @@ a{color:inherit;text-decoration:none}
 
 <script>
 (function(){
-  var t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');
-  if(t)t.onclick=function(){l.classList.toggle('open')};
-  var els=document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
-    },{threshold:.12});
-    els.forEach(function(el){io.observe(el)});
-  }else{
-    els.forEach(function(el){el.classList.add('in')});
+  // Mobile Nav
+  var t = document.querySelector('.nav-toggle'), l = document.querySelector('.nav-links');
+  if(t && l) {
+    t.onclick = function() { l.classList.toggle('open'); };
+  }
+
+  // Quick Table of Contents Filter
+  var filterInput = document.getElementById('toc-filter');
+  var tocItems = document.querySelectorAll('.toc-item');
+  if(filterInput && tocItems.length) {
+    filterInput.addEventListener('input', function() {
+      var q = (filterInput.value || '').toLowerCase().trim();
+      tocItems.forEach(function(item) {
+        var text = item.textContent.toLowerCase();
+        if(!q || text.indexOf(q) !== -1) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // Back To Top Button
+  var btt = document.getElementById('back-to-top');
+  if(btt) {
+    window.addEventListener('scroll', function() {
+      if(window.scrollY > 400) {
+        btt.classList.add('is-shown');
+      } else {
+        btt.classList.remove('is-shown');
+      }
+    }, { passive: true });
+    btt.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 })();
 </script>
+
 </body>
 </html>
