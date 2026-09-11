@@ -8,6 +8,7 @@
 <meta property="og:title" content="OPERAVA | Technology, Workforce and Talent Solutions">
 <meta property="og:description" content="Technology is our focus, and quality is our commitment.">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/public/css/operava-privacy.css">
 <style>
 :root{
   --ink:#0a1628;
@@ -240,25 +241,19 @@ img{max-width:100%;display:block}
 .footer-legal .sep{color:var(--line);user-select:none}
 .footer-copyright{font-size:.775rem;color:var(--muted)}
 
-/* Hero Badges */
-.hero-badges{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-bottom:1.5rem}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);background:var(--purple-light);border:1px solid var(--purple-border);padding:.35rem .85rem;border-radius:999px}
-.hero-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--purple);display:inline-block}
-.hero-badge-sub{font-family:var(--fd);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-
-/* Dedicated Animation Section 1: Kinetic Scrolling Marquee Ribbons */
-.marquee-band{overflow:hidden;background:#fff;border-bottom:1px solid var(--line);padding:1.15rem 0;user-select:none;display:flex;flex-direction:column;gap:.75rem}
-.marquee-band.band-accent{background:var(--surface);border-top:1px solid var(--line)}
-.marquee-wrap{display:flex;width:100%;overflow:hidden;position:relative}
-.marquee-wrap::before,.marquee-wrap::after{content:"";position:absolute;top:0;bottom:0;width:clamp(30px,6vw,90px);z-index:2;pointer-events:none}
-.marquee-wrap::before{left:0;background:linear-gradient(90deg,rgba(255,255,255,1),transparent)}
-.marquee-wrap::after{right:0;background:linear-gradient(270deg,rgba(255,255,255,1),transparent)}
-.marquee-band.band-accent .marquee-wrap::before{background:linear-gradient(90deg,var(--surface),transparent)}
-.marquee-band.band-accent .marquee-wrap::after{background:linear-gradient(270deg,var(--surface),transparent)}
-.marquee-track{display:flex;flex-shrink:0;min-width:100%;align-items:center;gap:2rem;will-change:transform}
-.marquee-track.track-left{animation:marquee-scroll-left 42s linear infinite}
-.marquee-track.track-right{animation:marquee-scroll-right 46s linear infinite}
-.marquee-band:hover .marquee-track{animation-play-state:paused}
+/* Dedicated Animation Section 1: Kinetic Scrolling Platforms Logos (Grayed Theme) */
+.platform-marquee-band{overflow:hidden;background:var(--surface);border-bottom:1px solid var(--line);padding:1.25rem 0;user-select:none;display:flex;flex-direction:column;gap:.85rem}
+.platform-marquee-header{display:flex;align-items:center;justify-content:center;gap:.75rem;padding:0 var(--g)}
+.platform-marquee-label{font-family:var(--fd);font-size:.6875rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#64748b;display:inline-flex;align-items:center;gap:.75rem}
+.platform-marquee-label::before,.platform-marquee-label::after{content:"";height:1px;width:32px;background:var(--line);display:inline-block}
+.platform-marquee-wrap{display:flex;width:100%;overflow:hidden;position:relative}
+.platform-marquee-wrap::before,.platform-marquee-wrap::after{content:"";position:absolute;top:0;bottom:0;width:clamp(30px,6vw,90px);z-index:2;pointer-events:none}
+.platform-marquee-wrap::before{left:0;background:linear-gradient(90deg,var(--surface),transparent)}
+.platform-marquee-wrap::after{right:0;background:linear-gradient(270deg,var(--surface),transparent)}
+.platform-marquee-track{display:flex;flex-shrink:0;min-width:100%;align-items:center;gap:1.25rem;will-change:transform}
+.platform-marquee-track.track-left{animation:marquee-scroll-left 44s linear infinite}
+.platform-marquee-track.track-right{animation:marquee-scroll-right 48s linear infinite}
+.platform-marquee-band:hover .platform-marquee-track{animation-play-state:paused}
 @keyframes marquee-scroll-left{
   0%{transform:translateX(0)}
   100%{transform:translateX(-50%)}
@@ -267,10 +262,11 @@ img{max-width:100%;display:block}
   0%{transform:translateX(-50%)}
   100%{transform:translateX(0)}
 }
-.marquee-item{display:inline-flex;align-items:center;gap:1.75rem;white-space:nowrap;font-family:var(--fd);font-weight:700;font-size:clamp(.8rem,1.3vw,.925rem);letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
-.marquee-item .sep{color:var(--purple);font-size:1.15rem;font-weight:900}
-.marquee-item .hl{color:var(--purple)}
-.marquee-pill{background:var(--purple-light);color:var(--purple);padding:.25rem .65rem;border-radius:999px;border:1px solid var(--purple-border);font-size:.75rem}
+.platform-item{display:inline-flex;align-items:center;gap:.7rem;padding:.5rem 1.15rem;border-radius:6px;background:#fff;border:1px solid var(--line);color:#64748b;filter:grayscale(100%);opacity:.78;white-space:nowrap;transition:all .25s ease;box-shadow:0 1px 3px rgba(10,22,40,.02)}
+.platform-item:hover{filter:grayscale(0%);opacity:1;color:var(--ink);border-color:var(--purple-border);box-shadow:0 4px 14px rgba(10,22,40,.06);transform:translateY(-1px)}
+.platform-icon{width:20px;height:20px;flex-shrink:0;color:currentColor;display:block}
+.platform-name{font-family:var(--fd);font-size:.8125rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:currentColor}
+.platform-tag{font-family:var(--fd);font-size:.625rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#f1f5f9;color:#64748b;padding:.15rem .45rem;border-radius:4px}
 
 /* Dedicated Animation Section 2: Animated Metric Counters Band */
 .metrics-band{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(3.5rem,7vh,5.5rem) var(--g)}
@@ -376,13 +372,92 @@ img{max-width:100%;display:block}
 .pod-role-box p{font-size:.825rem;color:var(--muted);line-height:1.5}
 .pod-role-badge{font-family:var(--fd);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);display:inline-block}
 
+/* ================================================================= */
+/* INTERACTIVE SERVICES SHOWCASE (5-STATE HALF-CIRCLE NAV) */
+/* ================================================================= */
+.services-showcase-band{position:relative;height:300vh;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.services-showcase-sticky{position:sticky;top:80px;height:calc(100vh - 80px);min-height:580px;display:flex;align-items:center;justify-content:center;padding:clamp(1.5rem,3vh,2.5rem) var(--g);overflow:hidden}
+.services-showcase-inner{width:100%;max-width:1400px;margin:0 auto;display:flex;flex-direction:column;height:100%;justify-content:center}
+.services-showcase-header{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:clamp(1.25rem,2.2vh,2rem);padding-bottom:1.15rem;border-bottom:1px solid var(--line)}
+.svc-header-left h2{font-family:var(--fd);font-size:clamp(1.6rem,2.4vw,2.3rem);font-weight:700;letter-spacing:-.02em;color:var(--ink);line-height:1.15;margin:0}
+.svc-header-right{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.svc-header-right p{font-size:.875rem;color:var(--muted);max-width:26rem;line-height:1.5;margin:0}
+.services-showcase-layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:clamp(1.75rem,3.2vw,3rem);align-items:center;position:relative;min-height:460px}
+.svc-nav-col{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;user-select:none}
+.svc-dial-container{position:relative;width:280px;height:380px}
+.svc-half-circle-svg{position:absolute;top:0;left:0;width:170px;height:380px;overflow:visible;pointer-events:none}
+.svc-arc-fg{transition:stroke-dashoffset .4s cubic-bezier(.25,1,.5,1)}
+.svc-dial-center-badge{position:absolute;top:50%;left:110px;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-start;pointer-events:none}
+.svc-dial-caption{font-family:var(--fd);font-size:.6875rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.svc-dial-num{font-family:var(--fd);font-size:2.8rem;font-weight:700;line-height:1;color:var(--purple);letter-spacing:-.03em;transition:color .3s}
+.svc-dial-total{font-family:var(--fd);font-size:.75rem;font-weight:600;letter-spacing:.1em;color:var(--muted)}
+.svc-nodes-wrap{position:absolute;inset:0}
+.svc-nav-node{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:.65rem;background:transparent;border:none;cursor:pointer;padding:0;outline:none;text-align:left;transition:transform .25s ease;z-index:2}
+.svc-nav-node:focus-visible .svc-node-circle{outline:2px solid var(--purple);outline-offset:3px}
+.svc-node-circle{width:36px;height:36px;border-radius:50%;background:#fff;border:1.5px solid var(--line);color:var(--muted);font-family:var(--fd);font-size:.875rem;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(10,22,40,.06);transition:all .25s ease}
+.svc-nav-node:hover .svc-node-circle{border-color:var(--purple);color:var(--purple);transform:scale(1.08)}
+.svc-nav-node.active .svc-node-circle{background:var(--purple);border-color:var(--purple);color:#fff;box-shadow:0 4px 14px rgba(109,40,217,.35);transform:scale(1.15)}
+.svc-node-text{display:flex;flex-direction:column;opacity:.75;white-space:nowrap;transition:all .25s ease}
+.svc-node-index{font-size:.65rem;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.svc-node-title{font-family:var(--fd);font-size:.8125rem;font-weight:600;color:var(--ink);letter-spacing:.02em}
+.svc-nav-node.active .svc-node-text{opacity:1}
+.svc-nav-node.active .svc-node-title{color:var(--purple);font-weight:700}
+.svc-scroll-hint{display:flex;align-items:center;gap:.5rem;font-size:.725rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:.75rem}
+.svc-scroll-dot{width:6px;height:6px;border-radius:50%;background:var(--purple);animation:svcPulse 2s infinite ease-in-out}
+@keyframes svcPulse{0%,100%{opacity:.4;transform:scale(.9)}50%{opacity:1;transform:scale(1.3)}}
+.svc-stage-col{position:relative;background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 8px 30px rgba(10,22,40,.04);overflow:hidden;min-height:450px}
+.svc-panel{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(1.5rem,2.8vw,2.5rem);align-items:center;padding:clamp(1.75rem,3vw,2.5rem);opacity:0;transform:translateY(14px);pointer-events:none;position:absolute;inset:0;transition:opacity .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1);overflow-y:auto}
+.svc-panel.active{opacity:1;transform:translateY(0);pointer-events:auto;position:relative;z-index:1}
+.svc-panel-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;flex-wrap:wrap}
+.svc-tag{font-family:var(--fd);font-size:.725rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);background:var(--purple-light);padding:.22rem .65rem;border-radius:4px}
+.svc-discipline{font-size:.8rem;font-weight:600;color:var(--muted)}
+.svc-title{font-family:var(--fd);font-size:clamp(1.55rem,2.2vw,2.1rem);font-weight:700;color:var(--ink);line-height:1.15;letter-spacing:-.02em;margin-bottom:.75rem}
+.svc-lead{font-size:.95rem;color:var(--muted);line-height:1.6;margin-bottom:1.15rem;max-width:36rem}
+.svc-info-block{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1rem 1.15rem;margin-bottom:1.35rem}
+.svc-info-heading{font-family:var(--fd);font-size:.725rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:.65rem}
+.svc-info-list{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin:0;padding:0}
+.svc-info-list li{font-size:.84rem;color:var(--ink);line-height:1.45;padding-left:1.25rem;position:relative}
+.svc-info-list li::before{content:"→";position:absolute;left:0;top:0;color:var(--purple);font-weight:700}
+.svc-info-list li strong{color:var(--ink)}
+.svc-actions{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
+.svc-panel-visual{position:relative;width:100%;height:100%;min-height:280px;display:flex;align-items:center}
+.svc-visual-card{position:relative;width:100%;height:100%;max-height:360px;min-height:280px;border-radius:6px;overflow:hidden;background:var(--ink);box-shadow:0 10px 24px rgba(10,22,40,.12)}
+.svc-visual-card img{width:100%;height:100%;object-fit:cover;opacity:.88;transition:transform .6s ease}
+.svc-visual-card:hover img{transform:scale(1.04)}
+.svc-visual-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,20,.1) 0%,rgba(12,10,20,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.35rem}
+.svc-visual-pill{align-self:flex-start;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--purple);padding:.2rem .55rem;border-radius:999px;margin-bottom:.45rem}
+.svc-visual-caption{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:#fff;letter-spacing:-.01em}
+
+@media(max-width:1024px){
+  .services-showcase-layout{grid-template-columns:250px minmax(0,1fr);gap:1.5rem}
+  .svc-panel{grid-template-columns:1fr;max-height:calc(100vh - 220px)}
+  .svc-panel-visual{display:none}
+}
+@media(max-width:860px){
+  .services-showcase-band{height:auto;padding:3rem 0}
+  .services-showcase-sticky{position:static;height:auto;min-height:0;padding:0 var(--g);overflow:visible}
+  .services-showcase-header{flex-direction:column;align-items:flex-start;gap:1rem}
+  .services-showcase-layout{grid-template-columns:1fr;gap:1.25rem}
+  .svc-nav-col{width:100%}
+  .svc-dial-container{width:100%;height:auto;display:flex;justify-content:center}
+  .svc-half-circle-svg,.svc-dial-center-badge,.svc-scroll-hint{display:none}
+  .svc-nodes-wrap{position:static;display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;width:100%}
+  .svc-nav-node{position:static!important;transform:none!important;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.4rem .85rem}
+  .svc-nav-node .svc-node-text{display:none}
+  .svc-nav-node.active{background:var(--purple);border-color:var(--purple)}
+  .svc-nav-node.active .svc-node-circle{box-shadow:none;transform:none}
+  .svc-stage-col{min-height:460px}
+  .svc-panel{position:static;display:none}
+  .svc-panel.active{display:block}
+}
+
 /* Animations */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
 
 @media(prefers-reduced-motion:reduce){
   .reveal,.pillar-card,.practice-item{opacity:1!important;transform:none!important;transition:none!important}
-  .marquee-track{animation:none!important}
+  .marquee-track,.platform-marquee-track{animation:none!important}
 }
 
 /* Responsive */
@@ -421,7 +496,7 @@ img{max-width:100%;display:block}
 
 <!-- Header Navigation -->
 <header class="nav">
-  <a class="nav-brand" href="index.html">OPERAVA<span>.</span></a>
+  <a class="nav-brand" href="index.html">OPERAVA</a>
   <nav class="nav-links">
     <a href="solutions.html">Services</a>
     <a href="about.html">About</a>
@@ -437,17 +512,13 @@ img{max-width:100%;display:block}
   </button>
 </header>
 
-<!-- Hero Section (Cover Background Photo Visible, Balanced Contrast, SEC & 100% Remote Messaging) -->
+<!-- Hero Section (Cover Background Photo Visible, Balanced Contrast, Clean & Uncluttered Headline) -->
 <section class="hero">
   <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=85" alt="Operava Global Operations Headquarters" class="hero-bg" fetchpriority="high">
   <div class="hero-overlay"></div>
 
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-badges">
-        <span class="hero-badge">Philippine SEC-Registered Corporation</span>
-        <span class="hero-badge-sub">SEC Reg. No. 2026080262213-03 · All Roles 100% Remote</span>
-      </div>
       <h1>Technology, Workforce and Talent Solutions</h1>
       <p class="hero-desc">Technology is our focus, and quality is our commitment.</p>
       <div class="hero-actions">
@@ -459,73 +530,200 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- DEDICATED ANIMATION SECTION 1: Dual Kinetic Scrolling Marquee Ribbons -->
-<div class="marquee-band" aria-label="Operava Credentials Marquee">
-  <div class="marquee-wrap">
-    <div class="marquee-track track-left">
-      <div class="marquee-item">
-        <span class="marquee-pill">SEC Registered</span>
-        <span>Philippine Corporation Reg. No. 2026080262213-03</span>
-        <span class="sep">/</span>
-        <span class="hl">All Roles Are 100% Remote</span>
-        <span class="sep">/</span>
-        <span>Enterprise Cloud Architecture</span>
-        <span class="sep">/</span>
-        <span>Dedicated Agile Pods</span>
-        <span class="sep">/</span>
-        <span>24/7 Follow-The-Sun Handover</span>
-        <span class="sep">/</span>
-        <span>Full IP Assignment</span>
-        <span class="sep">/</span>
+<!-- DEDICATED ANIMATION SECTION 1: IT & BPO Software Platforms Kinetic Marquee (Grayed Theme) -->
+<div class="platform-marquee-band" aria-label="Enterprise IT and BPO Software Platforms">
+  <div class="platform-marquee-header">
+    <span class="platform-marquee-label">Enterprise IT &amp; BPO Software Platforms</span>
+  </div>
+
+  <!-- Row 1: IT & Cloud Platforms (Scroll Left) -->
+  <div class="platform-marquee-wrap">
+    <div class="platform-marquee-track track-left">
+      <!-- Item 1: AWS -->
+      <div class="platform-item" title="Amazon Web Services">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.8 17.5c-3.8 2-8.4 1.7-12.2-.6-.2-.1-.3-.5-.1-.7l1.1-1c.2-.2.5-.1.7 0 2.9 1.8 6.5 2 9.4.5.3-.2.7 0 .8.3l.5 1.1c.1.2 0 .4-.2.4zm2.5-1.8c-.2-.3-1.5-.2-2.1 0-.2.1-.2-.2-.1-.3 1-1.1 2.7-.8 3-.5.3.3.2 2.1-.7 3.3-.2.2-.3.2-.2-.1.3-.7.3-2.1.1-2.4zM6.5 6.2h2.2l3.4 9.1h-2l-.7-2.1H6.1l-.7 2.1h-2l3.1-9.1zm1.1 2.2L6.7 11.6h2.1L7.6 8.4zm5.8-2.2h1.9l1.5 5.9 1.6-5.9h1.9l1.6 5.9 1.5-5.9h1.9l-2.4 9.1h-1.9l-1.6-5.8-1.6 5.8h-1.9l-2.5-9.1z"/></svg>
+        <span class="platform-name">AWS</span>
+        <span class="platform-tag">Cloud</span>
       </div>
-      <div class="marquee-item" aria-hidden="true">
-        <span class="marquee-pill">SEC Registered</span>
-        <span>Philippine Corporation Reg. No. 2026080262213-03</span>
-        <span class="sep">/</span>
-        <span class="hl">All Roles Are 100% Remote</span>
-        <span class="sep">/</span>
-        <span>Enterprise Cloud Architecture</span>
-        <span class="sep">/</span>
-        <span>Dedicated Agile Pods</span>
-        <span class="sep">/</span>
-        <span>24/7 Follow-The-Sun Handover</span>
-        <span class="sep">/</span>
-        <span>Full IP Assignment</span>
-        <span class="sep">/</span>
+      <!-- Item 2: Microsoft Azure -->
+      <div class="platform-item" title="Microsoft Azure">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14.8 3L7.1 17.5l-4.7-4.1 6-10.4h6.4zm-6.6 15.7l2.6 2.3h10.7l-7.5-13.1-5.8 10.8z"/></svg>
+        <span class="platform-name">Azure</span>
+        <span class="platform-tag">Cloud</span>
+      </div>
+      <!-- Item 3: Google Cloud -->
+      <div class="platform-item" title="Google Cloud Platform">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.3 10.5a6 6 0 0 0-11.3-2.2A5.2 5.2 0 0 0 2.7 13.5C2.7 16.4 5 18.7 8 18.7h11.2a4.8 4.8 0 0 0 .1-9.6v1.4z"/></svg>
+        <span class="platform-name">Google Cloud</span>
+        <span class="platform-tag">Infrastructure</span>
+      </div>
+      <!-- Item 4: GitHub -->
+      <div class="platform-item" title="GitHub">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path fill-rule="evenodd" d="M12 2C6.5 2 2 6.5 2 12c0 4.4 2.9 8.2 6.8 9.5.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.8 1a9.8 9.8 0 0 1 5.2 0c1.9-1.3 2.8-1 2.8-1 .6 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5 4-1.3 6.8-5.1 6.8-9.5 0-5.5-4.5-10-10-10z"/></svg>
+        <span class="platform-name">GitHub</span>
+        <span class="platform-tag">DevOps</span>
+      </div>
+      <!-- Item 5: Docker -->
+      <div class="platform-item" title="Docker">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22.5 10.4c-.4-.3-1.1-.3-1.7-.1-.2-.5-.6-.9-1.2-1.1l-.6-.3-.3.5c-.5.8-.5 1.8-.2 2.7-.7.4-1.6.6-2.6.6H2.7c-.6 0-1.1.5-1.1 1.1.4 3.4 3.2 6.1 6.8 6.1 4.9 0 8.9-3.1 10.3-7.4.5.1 1.1.1 1.7-.2.8-.4 1.5-1.1 2-2zm-11.1-.8h2.3v2.3h-2.3zm-3.2 0h2.3v2.3H8.2zm-3.2 0h2.3v2.3H5zm6.4-3.2h2.3v2.3h-2.3zm-3.2 0h2.3v2.3H8.2zm6.4 0h2.3v2.3h-2.3zm-3.2-3.2h2.3v2.3h-2.3z"/></svg>
+        <span class="platform-name">Docker</span>
+        <span class="platform-tag">Containers</span>
+      </div>
+      <!-- Item 6: Kubernetes -->
+      <div class="platform-item" title="Kubernetes">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2l8.8 5.1v10.1L12 22.3 3.2 17.2V7.1L12 2zm0 2.5L5.4 8.3v7.7L12 19.8l6.6-3.8V8.3L12 4.5zm0 4.1a3.6 3.6 0 1 1 0 7.2 3.6 3.6 0 0 1 0-7.2zm0 1.8a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6z"/></svg>
+        <span class="platform-name">Kubernetes</span>
+        <span class="platform-tag">Orchestration</span>
+      </div>
+      <!-- Item 7: PostgreSQL -->
+      <div class="platform-item" title="PostgreSQL">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.7C7.3 2.7 3.7 6 3.7 10.2c0 2.4 1.1 4.5 2.9 5.8v3.2l2.9-1.7c.8.3 1.7.5 2.6.5 4.7 0 8.3-3.2 8.3-7.8S16.7 2.7 12 2.7zm0 13.6c-.8 0-1.5-.1-2.2-.4l-1.6 1v-1.7C6.9 14.2 6 12.3 6 10.2c0-3.1 2.7-5.6 6-5.6s6 2.5 6 5.6-2.7 6.1-6 6.1z"/></svg>
+        <span class="platform-name">PostgreSQL</span>
+        <span class="platform-tag">Database</span>
+      </div>
+      <!-- Item 8: Snowflake -->
+      <div class="platform-item" title="Snowflake">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2v5.4l-3.8-3.2-1 1.2 4.8 4v2.7h-2.7l-4-4.8-1.2 1 3.2 3.8-3.2 3.8 1.2 1 4-4.8h2.7v2.7l-4.8 4 1 1.2 3.8-3.2V22h1.5v-5.4l3.8 3.2 1-1.2-4.8-4v-2.7h2.7l4 4.8 1.2-1-3.2-3.8 3.2-3.8-1.2-1-4 4.8h-2.7V9.4l4.8-4-1-1.2-3.8 3.2V2H12z"/></svg>
+        <span class="platform-name">Snowflake</span>
+        <span class="platform-tag">Data Platform</span>
+      </div>
+
+      <!-- Duplicate for seamless continuous kinetic scroll -->
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.8 17.5c-3.8 2-8.4 1.7-12.2-.6-.2-.1-.3-.5-.1-.7l1.1-1c.2-.2.5-.1.7 0 2.9 1.8 6.5 2 9.4.5.3-.2.7 0 .8.3l.5 1.1c.1.2 0 .4-.2.4zm2.5-1.8c-.2-.3-1.5-.2-2.1 0-.2.1-.2-.2-.1-.3 1-1.1 2.7-.8 3-.5.3.3.2 2.1-.7 3.3-.2.2-.3.2-.2-.1.3-.7.3-2.1.1-2.4zM6.5 6.2h2.2l3.4 9.1h-2l-.7-2.1H6.1l-.7 2.1h-2l3.1-9.1zm1.1 2.2L6.7 11.6h2.1L7.6 8.4zm5.8-2.2h1.9l1.5 5.9 1.6-5.9h1.9l1.6 5.9 1.5-5.9h1.9l-2.4 9.1h-1.9l-1.6-5.8-1.6 5.8h-1.9l-2.5-9.1z"/></svg>
+        <span class="platform-name">AWS</span>
+        <span class="platform-tag">Cloud</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14.8 3L7.1 17.5l-4.7-4.1 6-10.4h6.4zm-6.6 15.7l2.6 2.3h10.7l-7.5-13.1-5.8 10.8z"/></svg>
+        <span class="platform-name">Azure</span>
+        <span class="platform-tag">Cloud</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.3 10.5a6 6 0 0 0-11.3-2.2A5.2 5.2 0 0 0 2.7 13.5C2.7 16.4 5 18.7 8 18.7h11.2a4.8 4.8 0 0 0 .1-9.6v1.4z"/></svg>
+        <span class="platform-name">Google Cloud</span>
+        <span class="platform-tag">Infrastructure</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path fill-rule="evenodd" d="M12 2C6.5 2 2 6.5 2 12c0 4.4 2.9 8.2 6.8 9.5.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.8 1a9.8 9.8 0 0 1 5.2 0c1.9-1.3 2.8-1 2.8-1 .6 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5 4-1.3 6.8-5.1 6.8-9.5 0-5.5-4.5-10-10-10z"/></svg>
+        <span class="platform-name">GitHub</span>
+        <span class="platform-tag">DevOps</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22.5 10.4c-.4-.3-1.1-.3-1.7-.1-.2-.5-.6-.9-1.2-1.1l-.6-.3-.3.5c-.5.8-.5 1.8-.2 2.7-.7.4-1.6.6-2.6.6H2.7c-.6 0-1.1.5-1.1 1.1.4 3.4 3.2 6.1 6.8 6.1 4.9 0 8.9-3.1 10.3-7.4.5.1 1.1.1 1.7-.2.8-.4 1.5-1.1 2-2zm-11.1-.8h2.3v2.3h-2.3zm-3.2 0h2.3v2.3H8.2zm-3.2 0h2.3v2.3H5zm6.4-3.2h2.3v2.3h-2.3zm-3.2 0h2.3v2.3H8.2zm6.4 0h2.3v2.3h-2.3zm-3.2-3.2h2.3v2.3h-2.3z"/></svg>
+        <span class="platform-name">Docker</span>
+        <span class="platform-tag">Containers</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2l8.8 5.1v10.1L12 22.3 3.2 17.2V7.1L12 2zm0 2.5L5.4 8.3v7.7L12 19.8l6.6-3.8V8.3L12 4.5zm0 4.1a3.6 3.6 0 1 1 0 7.2 3.6 3.6 0 0 1 0-7.2zm0 1.8a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6z"/></svg>
+        <span class="platform-name">Kubernetes</span>
+        <span class="platform-tag">Orchestration</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.7C7.3 2.7 3.7 6 3.7 10.2c0 2.4 1.1 4.5 2.9 5.8v3.2l2.9-1.7c.8.3 1.7.5 2.6.5 4.7 0 8.3-3.2 8.3-7.8S16.7 2.7 12 2.7zm0 13.6c-.8 0-1.5-.1-2.2-.4l-1.6 1v-1.7C6.9 14.2 6 12.3 6 10.2c0-3.1 2.7-5.6 6-5.6s6 2.5 6 5.6-2.7 6.1-6 6.1z"/></svg>
+        <span class="platform-name">PostgreSQL</span>
+        <span class="platform-tag">Database</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2v5.4l-3.8-3.2-1 1.2 4.8 4v2.7h-2.7l-4-4.8-1.2 1 3.2 3.8-3.2 3.8 1.2 1 4-4.8h2.7v2.7l-4.8 4 1 1.2 3.8-3.2V22h1.5v-5.4l3.8 3.2 1-1.2-4.8-4v-2.7h2.7l4 4.8 1.2-1-3.2-3.8 3.2-3.8-1.2-1-4 4.8h-2.7V9.4l4.8-4-1-1.2-3.8 3.2V2H12z"/></svg>
+        <span class="platform-name">Snowflake</span>
+        <span class="platform-tag">Data Platform</span>
       </div>
     </div>
   </div>
-  <div class="marquee-wrap">
-    <div class="marquee-track track-right">
-      <div class="marquee-item">
-        <span class="marquee-pill">Statutory Governance</span>
-        <span>Revised Corporation Code RA 11232</span>
-        <span class="sep">/</span>
-        <span class="hl">Zero-Trust Managed Hardware</span>
-        <span class="sep">/</span>
-        <span>Philippine Data Privacy Act RA 10173</span>
-        <span class="sep">/</span>
-        <span>High-Velocity Managed BPO</span>
-        <span class="sep">/</span>
-        <span>DOLE &amp; BIR Registered</span>
-        <span class="sep">/</span>
-        <span>&lt; 14-Day Placement SLA</span>
-        <span class="sep">/</span>
+
+  <!-- Row 2: BPO, CRM & Enterprise Operations (Scroll Right) -->
+  <div class="platform-marquee-wrap">
+    <div class="platform-marquee-track track-right">
+      <!-- Item 1: Salesforce -->
+      <div class="platform-item" title="Salesforce">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M10.2 5.5a6.4 6.4 0 0 1 5.4 2.9 5.1 5.1 0 0 1 4.4 5.1c0 2.8-2.3 5.1-5.1 5.1H6.8a4.9 4.9 0 0 1-1.7-9.5 6.4 6.4 0 0 1 5.1-3.6z"/></svg>
+        <span class="platform-name">Salesforce</span>
+        <span class="platform-tag">CRM</span>
       </div>
-      <div class="marquee-item" aria-hidden="true">
-        <span class="marquee-pill">Statutory Governance</span>
-        <span>Revised Corporation Code RA 11232</span>
-        <span class="sep">/</span>
-        <span class="hl">Zero-Trust Managed Hardware</span>
-        <span class="sep">/</span>
-        <span>Philippine Data Privacy Act RA 10173</span>
-        <span class="sep">/</span>
-        <span>High-Velocity Managed BPO</span>
-        <span class="sep">/</span>
-        <span>DOLE &amp; BIR Registered</span>
-        <span class="sep">/</span>
-        <span>&lt; 14-Day Placement SLA</span>
-        <span class="sep">/</span>
+      <!-- Item 2: Zendesk -->
+      <div class="platform-item" title="Zendesk">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3.8 4.5h8.2l-8.2 8.2zm8.2 0c0 4.6-3.7 8.2-8.2 8.2v-8.2zm0 15H3.8l8.2-8.2zm0 0c0-4.6 3.7-8.2 8.2-8.2v8.2z"/></svg>
+        <span class="platform-name">Zendesk</span>
+        <span class="platform-tag">CX &amp; Support</span>
+      </div>
+      <!-- Item 3: ServiceNow -->
+      <div class="platform-item" title="ServiceNow">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 3a9 9 0 0 0-6.4 15.4l2.4-2.4a5.6 5.6 0 1 1 8 0h3.4A9 9 0 0 0 12 3zm0 4.9a4.1 4.1 0 1 0 4.1 4.1h-2.2a1.9 1.9 0 1 1-1.9-1.9v-2.2z"/></svg>
+        <span class="platform-name">ServiceNow</span>
+        <span class="platform-tag">ITSM</span>
+      </div>
+      <!-- Item 4: Jira Software -->
+      <div class="platform-item" title="Jira Software">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.6 2.6l-5.1 5.1a3.8 3.8 0 0 0 0 5.3l5.1 5.1V2.6zm.8 5.4l3.6 3.6a2.6 2.6 0 0 1 0 3.7l-3.6 3.6V8z"/></svg>
+        <span class="platform-name">Jira</span>
+        <span class="platform-tag">Workflows</span>
+      </div>
+      <!-- Item 5: HubSpot -->
+      <div class="platform-item" title="HubSpot">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16.9 8.6V6.2a1.6 1.6 0 1 0-1.5 0v2.5a5.1 5.1 0 0 0-2.6 1.6l-5-3.2a1.7 1.7 0 1 0-1 1.2l4.9 3.1a5.1 5.1 0 1 0 5.2-2.8zm-.8 7.1a3.1 3.1 0 1 1 0-6.3 3.1 3.1 0 0 1 0 6.3z"/></svg>
+        <span class="platform-name">HubSpot</span>
+        <span class="platform-tag">CRM</span>
+      </div>
+      <!-- Item 6: Slack -->
+      <div class="platform-item" title="Slack">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M5.8 13.4a1.9 1.9 0 1 1-1.9-1.9h1.9zm1 0a1.9 1.9 0 0 1 3.8 0v4.7a1.9 1.9 0 1 1-3.8 0zm3.8-6.6a1.9 1.9 0 1 1-1.9-1.9v1.9zm0 1a1.9 1.9 0 0 1 0 3.8H5.9a1.9 1.9 0 0 1 0-3.8zm6.6 3.8a1.9 1.9 0 1 1 1.9 1.9h-1.9zm-1 0a1.9 1.9 0 0 1-3.8 0V6.9a1.9 1.9 0 1 1 3.8 0zm-3.8 6.6a1.9 1.9 0 1 1 1.9 1.9v-1.9zm0-1a1.9 1.9 0 0 1 0-3.8h4.7a1.9 1.9 0 0 1 0 3.8z"/></svg>
+        <span class="platform-name">Slack</span>
+        <span class="platform-tag">Operations</span>
+      </div>
+      <!-- Item 7: Intercom -->
+      <div class="platform-item" title="Intercom">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6 6.4c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1v11.2c0 .6-.5 1.1-1.1 1.1S6 18.2 6 17.6zm3.6-1.5c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1v14.2c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1zm3.6 0c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1v14.2c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1zm3.6 1.5c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1v11.2c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1z"/></svg>
+        <span class="platform-name">Intercom</span>
+        <span class="platform-tag">Help Desk</span>
+      </div>
+      <!-- Item 8: Workday -->
+      <div class="platform-item" title="Workday">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 6.8a6.8 6.8 0 0 0-6.8 6.8h2.3a4.5 4.5 0 0 1 9 0h2.3A6.8 6.8 0 0 0 12 6.8zm0-3.4a10.2 10.2 0 0 0-10.2 10.2h2.3a7.9 7.9 0 0 1 15.8 0h2.3A10.2 10.2 0 0 0 12 3.4z"/></svg>
+        <span class="platform-name">Workday</span>
+        <span class="platform-tag">Back-Office</span>
+      </div>
+
+      <!-- Duplicate for seamless continuous kinetic scroll -->
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M10.2 5.5a6.4 6.4 0 0 1 5.4 2.9 5.1 5.1 0 0 1 4.4 5.1c0 2.8-2.3 5.1-5.1 5.1H6.8a4.9 4.9 0 0 1-1.7-9.5 6.4 6.4 0 0 1 5.1-3.6z"/></svg>
+        <span class="platform-name">Salesforce</span>
+        <span class="platform-tag">CRM</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3.8 4.5h8.2l-8.2 8.2zm8.2 0c0 4.6-3.7 8.2-8.2 8.2v-8.2zm0 15H3.8l8.2-8.2zm0 0c0-4.6 3.7-8.2 8.2-8.2v8.2z"/></svg>
+        <span class="platform-name">Zendesk</span>
+        <span class="platform-tag">CX &amp; Support</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 3a9 9 0 0 0-6.4 15.4l2.4-2.4a5.6 5.6 0 1 1 8 0h3.4A9 9 0 0 0 12 3zm0 4.9a4.1 4.1 0 1 0 4.1 4.1h-2.2a1.9 1.9 0 1 1-1.9-1.9v-2.2z"/></svg>
+        <span class="platform-name">ServiceNow</span>
+        <span class="platform-tag">ITSM</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.6 2.6l-5.1 5.1a3.8 3.8 0 0 0 0 5.3l5.1 5.1V2.6zm.8 5.4l3.6 3.6a2.6 2.6 0 0 1 0 3.7l-3.6 3.6V8z"/></svg>
+        <span class="platform-name">Jira</span>
+        <span class="platform-tag">Workflows</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16.9 8.6V6.2a1.6 1.6 0 1 0-1.5 0v2.5a5.1 5.1 0 0 0-2.6 1.6l-5-3.2a1.7 1.7 0 1 0-1 1.2l4.9 3.1a5.1 5.1 0 1 0 5.2-2.8zm-.8 7.1a3.1 3.1 0 1 1 0-6.3 3.1 3.1 0 0 1 0 6.3z"/></svg>
+        <span class="platform-name">HubSpot</span>
+        <span class="platform-tag">CRM</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M5.8 13.4a1.9 1.9 0 1 1-1.9-1.9h1.9zm1 0a1.9 1.9 0 0 1 3.8 0v4.7a1.9 1.9 0 1 1-3.8 0zm3.8-6.6a1.9 1.9 0 1 1-1.9-1.9v1.9zm0 1a1.9 1.9 0 0 1 0 3.8H5.9a1.9 1.9 0 0 1 0-3.8zm6.6 3.8a1.9 1.9 0 1 1 1.9 1.9h-1.9zm-1 0a1.9 1.9 0 0 1-3.8 0V6.9a1.9 1.9 0 1 1 3.8 0zm-3.8 6.6a1.9 1.9 0 1 1 1.9 1.9v-1.9zm0-1a1.9 1.9 0 0 1 0-3.8h4.7a1.9 1.9 0 0 1 0 3.8z"/></svg>
+        <span class="platform-name">Slack</span>
+        <span class="platform-tag">Operations</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6 6.4c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1v11.2c0 .6-.5 1.1-1.1 1.1S6 18.2 6 17.6zm3.6-1.5c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1v14.2c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1zm3.6 0c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1v14.2c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1zm3.6 1.5c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1v11.2c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1z"/></svg>
+        <span class="platform-name">Intercom</span>
+        <span class="platform-tag">Help Desk</span>
+      </div>
+      <div class="platform-item" aria-hidden="true">
+        <svg class="platform-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 6.8a6.8 6.8 0 0 0-6.8 6.8h2.3a4.5 4.5 0 0 1 9 0h2.3A6.8 6.8 0 0 0 12 6.8zm0-3.4a10.2 10.2 0 0 0-10.2 10.2h2.3a7.9 7.9 0 0 1 15.8 0h2.3A10.2 10.2 0 0 0 12 3.4z"/></svg>
+        <span class="platform-name">Workday</span>
+        <span class="platform-tag">Back-Office</span>
       </div>
     </div>
   </div>
@@ -835,41 +1033,289 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- Section: Solutions Overview (Cards with Clickable Links) -->
-<section class="band band-surface">
-  <div class="section-head center reveal">
-    <p class="kicker">Services &amp; Solutions</p>
-    <h2>Tailored for modern enterprise demands</h2>
-    <p>Comprehensive workforce and technology delivery across our core practices. All roles are 100% remote.</p>
-  </div>
-  <div class="solutions-grid">
-    <article class="sol-card reveal">
-      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80" alt="Professional services and technical architecture">
-      <div class="sol-body">
-        <h3>Complete Services Directory</h3>
-        <p>Full suite of software development, systems integration, and business process outsourcing solutions.</p>
-        <a href="solutions.html">View complete services →</a>
+<!-- ================================================================= -->
+<!-- SERVICES SHOWCASE SECTION — INTERACTIVE 5-STATE SCROLL EXPERIENCE -->
+<!-- ================================================================= -->
+<section class="services-showcase-band" id="services-showcase" aria-label="Interactive Enterprise Services Showcase">
+  <div class="services-showcase-sticky">
+    <div class="services-showcase-inner">
+      
+      <!-- Section Header -->
+      <div class="services-showcase-header reveal">
+        <div class="svc-header-left">
+          <p class="kicker">SERVICES &amp; ENTERPRISE DISCIPLINES</p>
+          <h2>Tailored for modern enterprise demands</h2>
+        </div>
+        <div class="svc-header-right">
+          <p>Progress through our five core technology and operational services. All roles and delivery squads operate 100% remotely.</p>
+          <a class="btn btn-line btn-sm" href="solutions.html">Explore Complete Directory →</a>
+        </div>
       </div>
-    </article>
-    <article class="sol-card reveal">
-      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="Technology talent and engineering teams">
-      <div class="sol-body">
-        <h3>Technology &amp; IT Services</h3>
-        <p>Custom software, web &amp; mobile apps, SaaS platforms, systems development, consulting, and databases.</p>
-        <a href="solutions.html#it-services">View all IT services →</a>
+
+      <!-- Interactive 2-Column Split Showcase Layout -->
+      <div class="services-showcase-layout">
+
+        <!-- LEFT COLUMN: Circular 1–5 Half-Circle Navigation -->
+        <aside class="svc-nav-col" aria-label="Service navigation by states 1 to 5">
+          <div class="svc-dial-container">
+            <!-- Half-Circle Track SVG -->
+            <svg class="svc-half-circle-svg" viewBox="0 0 170 380" aria-hidden="true">
+              <!-- Background half-circle arc -->
+              <path class="svc-arc-bg" d="M 135 25 A 175 175 0 0 0 135 355" fill="none" stroke="var(--line)" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Active progress stroke along the arc -->
+              <path id="svc-arc-progress" class="svc-arc-fg" d="M 135 25 A 175 175 0 0 0 135 355" fill="none" stroke="var(--purple)" stroke-width="4.5" stroke-linecap="round"/>
+            </svg>
+
+            <!-- Center dial indicator badge -->
+            <div class="svc-dial-center-badge">
+              <span class="svc-dial-caption">SERVICE</span>
+              <span class="svc-dial-num" id="svc-active-number-display">01</span>
+              <span class="svc-dial-total">OF 05</span>
+            </div>
+
+            <!-- 5 Circular Nav Nodes positioned along the arc -->
+            <div class="svc-nodes-wrap" role="tablist" aria-label="Services 1 to 5">
+              <button type="button" class="svc-nav-node active" data-service-index="0" role="tab" aria-selected="true" id="svc-node-0" style="top: 25px; left: 135px;" aria-controls="svc-panel-0">
+                <span class="svc-node-circle">1</span>
+                <span class="svc-node-text">
+                  <span class="svc-node-index">01</span>
+                  <span class="svc-node-title">Software Development</span>
+                </span>
+              </button>
+
+              <button type="button" class="svc-nav-node" data-service-index="1" role="tab" aria-selected="false" id="svc-node-1" style="top: 89px; left: 50px;" aria-controls="svc-panel-1">
+                <span class="svc-node-circle">2</span>
+                <span class="svc-node-text">
+                  <span class="svc-node-index">02</span>
+                  <span class="svc-node-title">Web &amp; Mobile Apps</span>
+                </span>
+              </button>
+
+              <button type="button" class="svc-nav-node" data-service-index="2" role="tab" aria-selected="false" id="svc-node-2" style="top: 190px; left: 18px;" aria-controls="svc-panel-2">
+                <span class="svc-node-circle">3</span>
+                <span class="svc-node-text">
+                  <span class="svc-node-index">03</span>
+                  <span class="svc-node-title">SaaS &amp; Platforms</span>
+                </span>
+              </button>
+
+              <button type="button" class="svc-nav-node" data-service-index="3" role="tab" aria-selected="false" id="svc-node-3" style="top: 291px; left: 50px;" aria-controls="svc-panel-3">
+                <span class="svc-node-circle">4</span>
+                <span class="svc-node-text">
+                  <span class="svc-node-index">04</span>
+                  <span class="svc-node-title">IT Systems &amp; Integration</span>
+                </span>
+              </button>
+
+              <button type="button" class="svc-nav-node" data-service-index="4" role="tab" aria-selected="false" id="svc-node-4" style="top: 355px; left: 135px;" aria-controls="svc-panel-4">
+                <span class="svc-node-circle">5</span>
+                <span class="svc-node-text">
+                  <span class="svc-node-index">05</span>
+                  <span class="svc-node-title">Customer Service (BPO)</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Helper scroll prompt -->
+          <div class="svc-scroll-hint" aria-hidden="true">
+            <span class="svc-scroll-dot"></span>
+            <span>Scroll or click 1–5 to explore</span>
+          </div>
+        </aside>
+
+        <!-- RIGHT COLUMN: Service Content Stage (5 Transitions) -->
+        <main class="svc-stage-col" aria-live="polite">
+
+          <!-- STATE 1: Software Development -->
+          <article class="svc-panel active" id="svc-panel-0" data-index="0" role="tabpanel" aria-labelledby="svc-node-0">
+            <div class="svc-panel-content">
+              <div class="svc-panel-meta">
+                <span class="svc-tag">STATE 1 · SERVICE 01</span>
+                <span class="svc-discipline">Technology Solutions · IT Services</span>
+              </div>
+              <h3 class="svc-title">Software Development</h3>
+              <p class="svc-lead">Custom software solutions designed around your business requirements, workflows, integrations, and long-term enterprise growth.</p>
+              
+              <div class="svc-info-block">
+                <h4 class="svc-info-heading">Relevant Service Information</h4>
+                <ul class="svc-info-list">
+                  <li><strong>Enterprise Architecture:</strong> Microservices, modular distributed systems, and resilient event-driven backends.</li>
+                  <li><strong>REST &amp; GraphQL APIs:</strong> High-throughput, documented, secure application interfaces with robust rate limiting.</li>
+                  <li><strong>Database &amp; CI/CD Pipelines:</strong> Scalable relational and NoSQL data modeling with automated unit test suites.</li>
+                  <li><strong>Statutory IP Assignment:</strong> 100% client code and intellectual property ownership under Philippine SEC regulations.</li>
+                </ul>
+              </div>
+
+              <div class="svc-actions">
+                <a class="btn btn-primary btn-sm" href="service-detail.html?service=software-development">View Service Details →</a>
+                <a class="btn btn-line btn-sm" href="talent.html?discipline=software-development">Request Dedicated Team</a>
+              </div>
+            </div>
+
+            <div class="svc-panel-visual">
+              <div class="svc-visual-card">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80" alt="Software development and systems architecture" loading="lazy">
+                <div class="svc-visual-overlay">
+                  <span class="svc-visual-pill">100% Remote Delivery</span>
+                  <span class="svc-visual-caption">Enterprise Architecture &amp; Custom Software</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- STATE 2: Web & Mobile Application Development -->
+          <article class="svc-panel" id="svc-panel-1" data-index="1" role="tabpanel" aria-labelledby="svc-node-1">
+            <div class="svc-panel-content">
+              <div class="svc-panel-meta">
+                <span class="svc-tag">STATE 2 · SERVICE 02</span>
+                <span class="svc-discipline">Digital Applications · IT Services</span>
+              </div>
+              <h3 class="svc-title">Web &amp; Mobile Application Development</h3>
+              <p class="svc-lead">Modern websites, web applications, and cross-platform mobile experiences designed for performance, usability, security, and scale.</p>
+              
+              <div class="svc-info-block">
+                <h4 class="svc-info-heading">Relevant Service Information</h4>
+                <ul class="svc-info-list">
+                  <li><strong>Responsive Web Applications:</strong> High-performance React, Next.js, and Vue interfaces engineered for sub-second speeds.</li>
+                  <li><strong>Cross-Platform Mobile Apps:</strong> Native iOS and Android builds utilizing Flutter and React Native toolchains.</li>
+                  <li><strong>Progressive Web Apps (PWA):</strong> Service workers, offline functionality, and app-like installation capabilities.</li>
+                  <li><strong>Accessibility &amp; Standards:</strong> Strict WCAG AA contrast compliance and Google Core Web Vitals optimization.</li>
+                </ul>
+              </div>
+
+              <div class="svc-actions">
+                <a class="btn btn-primary btn-sm" href="service-detail.html?service=web-mobile-development">View Service Details →</a>
+                <a class="btn btn-line btn-sm" href="talent.html?discipline=web-mobile-development">Request Dedicated Team</a>
+              </div>
+            </div>
+
+            <div class="svc-panel-visual">
+              <div class="svc-visual-card">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="Web and mobile digital engineering team" loading="lazy">
+                <div class="svc-visual-overlay">
+                  <span class="svc-visual-pill">100% Remote Delivery</span>
+                  <span class="svc-visual-caption">Multi-Device Digital Applications</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- STATE 3: SaaS & Platform Development -->
+          <article class="svc-panel" id="svc-panel-2" data-index="2" role="tabpanel" aria-labelledby="svc-node-2">
+            <div class="svc-panel-content">
+              <div class="svc-panel-meta">
+                <span class="svc-tag">STATE 3 · SERVICE 03</span>
+                <span class="svc-discipline">Cloud Product Engineering · IT Services</span>
+              </div>
+              <h3 class="svc-title">SaaS &amp; Platform Development</h3>
+              <p class="svc-lead">Scalable software-as-a-service products and digital platforms built for recurring operations, subscriptions, and continuous commercial growth.</p>
+              
+              <div class="svc-info-block">
+                <h4 class="svc-info-heading">Relevant Service Information</h4>
+                <ul class="svc-info-list">
+                  <li><strong>Multi-Tenant Cloud Design:</strong> Secure tenant data isolation, zero-downtime rolling deploys, and elastic auto-scaling.</li>
+                  <li><strong>Subscription &amp; Payment Engines:</strong> Automated recurring billing, invoicing pipelines, and Stripe/Adyen gateways.</li>
+                  <li><strong>Enterprise Security &amp; RBAC:</strong> Role-based permissions, SSO SAML/OAuth, and auditable operational access traces.</li>
+                  <li><strong>Telemetry &amp; User Analytics:</strong> Automated tenant provisioning, conversion telemetry, and real-time dashboard analytics.</li>
+                </ul>
+              </div>
+
+              <div class="svc-actions">
+                <a class="btn btn-primary btn-sm" href="service-detail.html?service=saas-platform">View Service Details →</a>
+                <a class="btn btn-line btn-sm" href="talent.html?discipline=saas-platform">Request Dedicated Team</a>
+              </div>
+            </div>
+
+            <div class="svc-panel-visual">
+              <div class="svc-visual-card">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Cloud SaaS and product development workspace" loading="lazy">
+                <div class="svc-visual-overlay">
+                  <span class="svc-visual-pill">100% Remote Delivery</span>
+                  <span class="svc-visual-caption">Multi-Tenant Platform Systems</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- STATE 4: IT Systems & Systems Integration -->
+          <article class="svc-panel" id="svc-panel-3" data-index="3" role="tabpanel" aria-labelledby="svc-node-3">
+            <div class="svc-panel-content">
+              <div class="svc-panel-meta">
+                <span class="svc-tag">STATE 4 · SERVICE 04</span>
+                <span class="svc-discipline">Enterprise Operations · IT Services</span>
+              </div>
+              <h3 class="svc-title">IT Systems &amp; Systems Integration</h3>
+              <p class="svc-lead">Business systems designed to automate workflows, connect operational functions, integrate disparate tools, and eliminate organizational friction.</p>
+              
+              <div class="svc-info-block">
+                <h4 class="svc-info-heading">Relevant Service Information</h4>
+                <ul class="svc-info-list">
+                  <li><strong>Internal Executive Portals:</strong> Custom admin dashboards, operational control centers, and real-time KPI monitors.</li>
+                  <li><strong>Automated Business Logic:</strong> Multi-tier approval engines, paperless workflow routing, and automated webhook triggers.</li>
+                  <li><strong>Legacy Modernization:</strong> Refactoring legacy monoliths into cloud services with data preservation and migration safety.</li>
+                  <li><strong>Disparate Tool Connectors:</strong> Bidirectional synchronization across ERPs, CRMs, relational databases, and third-party APIs.</li>
+                </ul>
+              </div>
+
+              <div class="svc-actions">
+                <a class="btn btn-primary btn-sm" href="service-detail.html?service=it-systems">View Service Details →</a>
+                <a class="btn btn-line btn-sm" href="talent.html?discipline=it-systems">Request Dedicated Team</a>
+              </div>
+            </div>
+
+            <div class="svc-panel-visual">
+              <div class="svc-visual-card">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Enterprise systems and infrastructure workflows" loading="lazy">
+                <div class="svc-visual-overlay">
+                  <span class="svc-visual-pill">100% Remote Delivery</span>
+                  <span class="svc-visual-caption">Workflow Systems Integration</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- STATE 5: Customer Service & Technical Support (BPO) -->
+          <article class="svc-panel" id="svc-panel-4" data-index="4" role="tabpanel" aria-labelledby="svc-node-4">
+            <div class="svc-panel-content">
+              <div class="svc-panel-meta">
+                <span class="svc-tag">STATE 5 · SERVICE 05</span>
+                <span class="svc-discipline">Business Process Outsourcing · BPO</span>
+              </div>
+              <h3 class="svc-title">Customer Service &amp; Technical Support</h3>
+              <p class="svc-lead">Omnichannel frontline support, technical helpdesk operations, and customer experience management delivered by dedicated 100% remote specialists.</p>
+              
+              <div class="svc-info-block">
+                <h4 class="svc-info-heading">Relevant Service Information</h4>
+                <ul class="svc-info-list">
+                  <li><strong>Tier 1–3 Technical Helpdesk:</strong> Rapid incident triage, troubleshooting, and enterprise resolution with ticket lifecycle tracking.</li>
+                  <li><strong>Omnichannel Customer Operations:</strong> 24/7 or custom timezone coverage across Email, Live Chat, Voice, and Social channels.</li>
+                  <li><strong>SLA &amp; QA Governance:</strong> First-contact resolution targets, customer satisfaction scores (CSAT), and continuous supervisor QA.</li>
+                  <li><strong>Managed Team Pods:</strong> Dedicated team leads, operational compliance, and turnkey onboarding to client helpdesk systems.</li>
+                </ul>
+              </div>
+
+              <div class="svc-actions">
+                <a class="btn btn-primary btn-sm" href="service-detail.html?service=customer-service">View Service Details →</a>
+                <a class="btn btn-line btn-sm" href="talent.html?discipline=customer-service">Request Dedicated Team</a>
+              </div>
+            </div>
+
+            <div class="svc-panel-visual">
+              <div class="svc-visual-card">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Customer support and business process outsourcing team" loading="lazy">
+                <div class="svc-visual-overlay">
+                  <span class="svc-visual-pill">100% Remote Delivery</span>
+                  <span class="svc-visual-caption">Omnichannel Support Operations</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </main>
       </div>
-    </article>
-    <article class="sol-card reveal">
-      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Business operations and BPO support">
-      <div class="sol-body">
-        <h3>Business Process &amp; BPO</h3>
-        <p>Customer service, technical support, help desk, back-office operations, data and document processing.</p>
-        <a href="solutions.html#bpo-services">View all BPO services →</a>
-      </div>
-    </article>
-  </div>
-  <div style="text-align:center;margin-top:2.5rem" class="reveal">
-    <a class="btn btn-primary" href="solutions.html">Explore Complete Services Directory →</a>
+
+    </div>
   </div>
 </section>
 
@@ -1468,6 +1914,8 @@ img{max-width:100%;display:block}
       <a href="terms.html">Terms and Conditions</a>
       <span class="sep">·</span>
       <a href="refund-policy.html">Refund Policy</a>
+      <span class="sep">·</span>
+      <button type="button" class="privacy-settings-trigger" id="footer-privacy-btn" data-operava-privacy-trigger>Cookie &amp; Privacy Preferences</button>
     </div>
     <div class="footer-copyright">
       © 2026 Operava Global Solutions. All rights reserved.
@@ -1885,7 +2333,176 @@ img{max-width:100%;display:block}
       });
     });
   })();
+
+  // 4. Interactive Services Showcase (5-State Half-Circle Navigation)
+  (function initServicesShowcase(){
+    var showcase = document.getElementById('services-showcase');
+    if(!showcase) return;
+
+    var navNodes = showcase.querySelectorAll('.svc-nav-node');
+    var panels = showcase.querySelectorAll('.svc-panel');
+    var arcProgress = document.getElementById('svc-arc-progress');
+    var dialNum = document.getElementById('svc-active-number-display');
+    var totalStates = 5;
+    var currentState = 0;
+    var isProgrammaticScroll = false;
+    var scrollTimeout = null;
+
+    // Calculate arc length
+    var arcLength = 430;
+    if(arcProgress && arcProgress.getTotalLength){
+      try {
+        var computedLen = arcProgress.getTotalLength();
+        if(computedLen > 0) arcLength = computedLen;
+      } catch(e){}
+    }
+    if(arcProgress){
+      arcProgress.style.strokeDasharray = arcLength;
+      arcProgress.style.strokeDashoffset = arcLength;
+    }
+
+    function setServiceState(index, updateScroll){
+      if(index < 0 || index >= totalStates) return;
+      currentState = index;
+
+      // Update 1-5 circular navigation nodes
+      navNodes.forEach(function(node, i){
+        var isActive = (i === index);
+        node.classList.toggle('active', isActive);
+        node.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+
+      // Update service content panels on the right
+      panels.forEach(function(panel, i){
+        var isCurrent = (i === index);
+        panel.classList.toggle('active', isCurrent);
+        panel.setAttribute('aria-hidden', isCurrent ? 'false' : 'true');
+      });
+
+      // Update active number in the center of the half-circle dial
+      if(dialNum){
+        dialNum.textContent = '0' + (index + 1);
+      }
+
+      // Update half-circle arc progress stroke
+      if(arcProgress){
+        var progressFraction = index / (totalStates - 1);
+        arcProgress.style.strokeDashoffset = arcLength * (1 - progressFraction);
+      }
+
+      // Handle smooth window scroll if user clicked a node in desktop sticky view
+      if(updateScroll && window.innerWidth > 860){
+        isProgrammaticScroll = true;
+        clearTimeout(scrollTimeout);
+
+        var rect = showcase.getBoundingClientRect();
+        var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        var showcaseTop = rect.top + currentScrollY;
+        var maxScroll = showcase.offsetHeight - window.innerHeight;
+
+        var targetY = showcaseTop + (index / (totalStates - 1)) * maxScroll + 4;
+
+        window.scrollTo({
+          top: targetY,
+          behavior: 'smooth'
+        });
+
+        scrollTimeout = setTimeout(function(){
+          isProgrammaticScroll = false;
+        }, 850);
+      }
+    }
+
+    // Attach click events to circular 1-5 navigation
+    navNodes.forEach(function(node){
+      node.addEventListener('click', function(e){
+        e.preventDefault();
+        var idx = parseInt(node.getAttribute('data-service-index'), 10);
+        setServiceState(idx, true);
+      });
+
+      // Keyboard navigation support
+      node.addEventListener('keydown', function(e){
+        var idx = parseInt(node.getAttribute('data-service-index'), 10);
+        if(e.key === 'ArrowDown' || e.key === 'ArrowRight'){
+          e.preventDefault();
+          var nextIdx = (idx + 1) % totalStates;
+          navNodes[nextIdx].focus();
+          setServiceState(nextIdx, true);
+        } else if(e.key === 'ArrowUp' || e.key === 'ArrowLeft'){
+          e.preventDefault();
+          var prevIdx = (idx - 1 + totalStates) % totalStates;
+          navNodes[prevIdx].focus();
+          setServiceState(prevIdx, true);
+        }
+      });
+    });
+
+    // Scroll listener for sticky container progression: 1 -> 2 -> 3 -> 4 -> 5
+    var ticking = false;
+    function onWindowScroll(){
+      if(isProgrammaticScroll) return;
+      if(window.innerWidth <= 860) return; // In mobile view, user taps 1-5 nodes directly
+
+      var rect = showcase.getBoundingClientRect();
+      var windowH = window.innerHeight;
+      var maxScroll = showcase.offsetHeight - windowH;
+
+      if(maxScroll <= 0) return;
+
+      if(rect.top <= 80 && rect.bottom >= windowH){
+        var scrolledDistance = 80 - rect.top;
+        var rawFraction = scrolledDistance / maxScroll;
+        var clampedFraction = Math.max(0, Math.min(1, rawFraction));
+
+        // Partition progress into 5 equal states (0 to 4)
+        var targetIndex = Math.min(totalStates - 1, Math.floor(clampedFraction * totalStates));
+        if(targetIndex !== currentState){
+          setServiceState(targetIndex, false);
+        }
+      } else if(rect.top > 80){
+        if(currentState !== 0){
+          setServiceState(0, false);
+        }
+      } else if(rect.bottom < windowH){
+        if(currentState !== totalStates - 1){
+          setServiceState(totalStates - 1, false);
+        }
+      }
+    }
+
+    window.addEventListener('scroll', function(){
+      if(!ticking){
+        window.requestAnimationFrame(function(){
+          onWindowScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Initialize in State 0 (Service 1)
+    setServiceState(0, false);
+  })();
 })();
+</script>
+
+<!-- OPERAVA Privacy, Storage & Cache Architecture -->
+<script src="/public/js/operava-storage.js"></script>
+<script src="/public/js/operava-cookies.js"></script>
+<script src="/public/js/operava-cache.js"></script>
+<script src="/public/js/operava-consent.js"></script>
+<script src="/public/js/operava-telemetry.js"></script>
+<script src="/public/js/operava-diagnostics.js"></script>
+<script>
+  if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function(){});
+    });
+  }
+  (function initSession() {
+    fetch('/api/session', { credentials: 'same-origin' }).catch(function(){});
+  })();
 </script>
 </body>
 </html>

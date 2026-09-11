@@ -6,6 +6,7 @@
 <title>Solutions &amp; Complete Services | OPERAVA</title>
 <meta name="description" content="Operava Global Solutions complete services directory: Technology solutions and business process outsourcing delivered 100% remotely by dedicated Philippine specialists.">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/public/css/operava-privacy.css">
 <style>
 :root{
   --ink:#0a1628;
@@ -121,24 +122,6 @@ img{max-width:100%;display:block}
 .sec-stat-code{font-family:var(--fd);font-size:.7rem;font-weight:700;color:var(--purple);background:var(--purple-light);padding:.15rem .45rem;border-radius:4px}
 .sec-stat-desc{font-size:.8125rem;color:var(--muted);line-height:1.5}
 
-/* Interactive Detail Modal Dialog */
-.service-modal-overlay{position:fixed;inset:0;background:rgba(6,16,31,.72);backdrop-filter:blur(6px);z-index:2000;display:none;align-items:center;justify-content:center;padding:clamp(1rem,3vw,2.5rem);overflow-y:auto}
-.service-modal-overlay.active{display:flex}
-.service-modal-dialog{background:#fff;border-radius:14px;max-width:44rem;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.25);position:relative;padding:clamp(2rem,3.5vw,2.75rem);animation:modalIn .25s ease-out}
-@keyframes modalIn{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
-.modal-close-btn{position:absolute;top:1.5rem;right:1.5rem;background:var(--surface);border:1px solid var(--line);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;color:var(--ink);transition:background .2s,color .2s}
-.modal-close-btn:hover{background:var(--purple);color:#fff;border-color:var(--purple)}
-.modal-kicker{font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--purple);margin-bottom:.5rem}
-.modal-title{font-family:var(--fd);font-size:clamp(1.5rem,2.2vw,2rem);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:1rem}
-.modal-desc{font-size:1.05rem;color:#334155;line-height:1.65;margin-bottom:1.5rem}
-.modal-section-heading{font-family:var(--fd);font-size:.875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:.75rem}
-.modal-deliverables-list{list-style:none;margin-bottom:1.75rem}
-.modal-deliverables-list li{font-size:.9rem;color:#475569;margin-bottom:.55rem;padding-left:1.35rem;position:relative}
-.modal-deliverables-list li::before{content:"✓";position:absolute;left:0;color:var(--purple);font-weight:700}
-.modal-standards-box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1rem 1.25rem;margin-bottom:2rem}
-.modal-standards-box p{font-size:.8125rem;color:var(--muted);line-height:1.55}
-.modal-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
-
 /* Footer Component */
 .footer{background:var(--navy);color:#fff;padding:clamp(4rem,7vh,5.5rem) var(--g) 2rem;border-top:1px solid rgba(255,255,255,.08)}
 .footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:clamp(2rem,3.5vw,3.5rem);margin-bottom:3rem}
@@ -176,7 +159,7 @@ img{max-width:100%;display:block}
 
 <!-- Header Navigation -->
 <header class="nav" id="main-nav">
-  <a class="nav-brand" href="index.html">OPERAVA<span>.</span></a>
+  <a class="nav-brand" href="index.html">OPERAVA</a>
   <nav class="nav-links">
     <a href="solutions.html" class="is-active">Services</a>
     <a href="about.html">About</a>
@@ -247,7 +230,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="Software Development" data-category="Technology Solutions" data-desc="Custom software solutions designed around your business requirements, workflows, integrations, and long-term growth." data-items="Custom domain architecture;End-to-end SDLC ownership;Code review & quality gates;Complete IP assignment under Philippine SEC law">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=software-development">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=software-development">Request Team</a>
       </div>
     </article>
@@ -266,7 +249,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="Web & Mobile Application Development" data-category="Technology Solutions" data-desc="Modern websites, web applications, and mobile experiences designed for performance, usability, security, and scale." data-items="Multi-device UI/UX precision;App Store & Google Play lifecycle deployment;Sub-second load times & SEO engineering;Accessibility (WCAG AA) compliance">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=web-mobile-development">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=web-mobile-development">Request Team</a>
       </div>
     </article>
@@ -285,7 +268,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="SaaS & Platform Development" data-category="Technology Solutions" data-desc="Scalable software-as-a-service products and digital platforms built for recurring operations, subscriptions, and growth." data-items="Zero-downtime scaling pipelines;Multi-tenant database tenancy strategies;Stripe/Adyen payment engine wiring;Self-service user administration portals">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=saas-platform">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=saas-platform">Request Team</a>
       </div>
     </article>
@@ -304,7 +287,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="IT Systems Development" data-category="Technology Solutions" data-desc="Business systems designed to automate workflows, connect operational functions, and increase efficiency." data-items="Custom enterprise ERP/CRM components;Paperless approval workflows;Business logic refactoring;High-throughput processing pipelines">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=it-systems">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=it-systems">Request Team</a>
       </div>
     </article>
@@ -323,7 +306,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="Computer Programming" data-category="Technology Solutions" data-desc="Professional programming services across modern technologies, APIs, scripts, automation, and applications." data-items="Polyglot programming specialists;Headless automation scripts;Custom parser & scraper engines;Strict adherence to type safety & clean code">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=programming">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=programming">Request Team</a>
       </div>
     </article>
@@ -342,7 +325,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="IT Consulting" data-category="Technology Solutions" data-desc="Strategic technology guidance connecting business objectives with practical, modern technology solutions." data-items="Cloud spend reduction audits;Disaster recovery & business continuity plans;Security compliance roadmaps;Technical due diligence for acquisitions">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=it-consulting">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="contact.html?subject=it-consulting">Schedule Consultation</a>
       </div>
     </article>
@@ -361,7 +344,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="Systems Integration" data-category="Technology Solutions" data-desc="Connect applications, platforms, databases, APIs, and business systems into one coordinated environment." data-items="Reliable message broker setups;Fault-tolerant retry mechanisms;Zero data duplication guarantees;Complete transaction audit logging">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=systems-integration">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=systems-integration">Request Team</a>
       </div>
     </article>
@@ -380,7 +363,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="Database Services" data-category="Technology Solutions" data-desc="Reliable database design, management, optimization, migration, and administration supporting your operations." data-items="Performance bottleneck elimination;High availability clustering;Strict data encryption at rest and in transit;Data warehouse modeling">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=database-services">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=database-services">Request Team</a>
       </div>
     </article>
@@ -415,7 +398,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="Customer Service" data-category="Business Process Outsourcing" data-desc="Professional customer experience delivered by dedicated staff or coordinated multi-channel teams." data-items="24/7/365 follow-the-sun shifts;Rigorous weekly QA audits;Custom tone-of-voice training;Real-time CSAT and NPS tracking">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=customer-service">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=customer-service">Request Team</a>
       </div>
     </article>
@@ -434,7 +417,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="Technical Support" data-category="Business Process Outsourcing" data-desc="Knowledgeable technical support professionals for products, applications, devices, and systems." data-items="Experienced technical specialists;SLA-backed escalation processes;API error reproduction & ticket triage;Strict security protocols with customer credentials">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=technical-support">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=technical-support">Request Team</a>
       </div>
     </article>
@@ -453,7 +436,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="Help Desk" data-category="Business Process Outsourcing" data-desc="Reliable front-line support for internal users, employees, and clients covering tickets and queues." data-items="Dedicated incident ticket managers;Strict verification before credential updates;ServiceNow & Jira Service Desk integration;Guaranteed response SLA under 5 minutes">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=help-desk">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=help-desk">Request Team</a>
       </div>
     </article>
@@ -472,7 +455,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="Back-Office Operations" data-category="Business Process Outsourcing" data-desc="Administrative, order, claims, and operational workloads handled by dedicated execution teams." data-items="High-precision execution workflows;Standard Operating Procedure (SOP) rigor;Continuous throughput monitoring;Data security governed by RA 10173">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=back-office">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=back-office">Request Team</a>
       </div>
     </article>
@@ -491,7 +474,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="Data Processing" data-category="Business Process Outsourcing" data-desc="Convert operational data into organized, validated, and usable business information." data-items="99.8% precision benchmark;Automated validation rules;Audit trail preservation;Strict zero-trust local download restrictions">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=data-processing">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=data-processing">Request Team</a>
       </div>
     </article>
@@ -510,7 +493,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="Data Entry" data-category="Business Process Outsourcing" data-desc="Delegate repetitive data entry to trained professionals while your core team focuses on value." data-items="Fast turnaround times;Trained touch-typists with high accuracy;Zero storage on unauthorized personal devices;Encrypted remote desktop infrastructure">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=data-entry">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=data-entry">Request Team</a>
       </div>
     </article>
@@ -529,7 +512,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="Document Processing" data-category="Business Process Outsourcing" data-desc="Intake, classification, extraction, indexing, verification, and records organization." data-items="Multi-point verification protocols;Redaction of sensitive personal identifiers;High-speed document turnaround;Full compliance with Philippine RA 10173">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=document-processing">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=document-processing">Request Team</a>
       </div>
     </article>
@@ -548,7 +531,7 @@ img{max-width:100%;display:block}
         </ul>
       </div>
       <div class="service-card-footer">
-        <button type="button" class="btn-learn-more" data-service="Virtual Assistance" data-category="Business Process Outsourcing" data-desc="Skilled remote professionals supporting administrative, operational, customer, research, and executive tasks." data-items="University-educated professionals;Timezone-aligned dedicated hours;Slack / Teams direct real-time integration;Bilateral confidentiality agreements">LEARN MORE →</button>
+        <a class="btn-learn-more" href="service-detail.html?service=virtual-assistance">LEARN MORE →</a>
         <a class="btn btn-subtle btn-sm" href="talent.html?discipline=virtual-assistance">Request Assistant</a>
       </div>
     </article>
@@ -620,32 +603,6 @@ img{max-width:100%;display:block}
 </section>
 
 <!-- ================================================================= -->
-<!-- INTERACTIVE SERVICE DETAIL MODAL (FOR "LEARN MORE") -->
-<!-- ================================================================= -->
-<div class="service-modal-overlay" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-service-title" tabindex="-1">
-  <div class="service-modal-dialog">
-    <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">✕</button>
-    <p class="modal-kicker" id="modal-service-category">Technology Solutions</p>
-    <h2 class="modal-title" id="modal-service-title">Service Details</h2>
-    <p class="modal-desc" id="modal-service-desc">Detailed service scope overview.</p>
-
-    <h3 class="modal-section-heading">Key Deliverables &amp; Enterprise Governance</h3>
-    <ul class="modal-deliverables-list" id="modal-service-items">
-      <!-- Injected by JavaScript -->
-    </ul>
-
-    <div class="modal-standards-box">
-      <p><strong>100% Remote Delivery Standard:</strong> Deployed specialists work directly in your tools (GitHub, Jira, Slack, ERP) with guaranteed timezone overlap. All commercial engagements are governed by bilateral NDAs, 100% client intellectual property ownership, and Philippine SEC Corporation legal standing (Reg. #2026080262213-03).</p>
-    </div>
-
-    <div class="modal-actions">
-      <a class="btn btn-primary" id="modal-action-btn" href="talent.html">Engage This Service →</a>
-      <a class="btn btn-line" href="contact.html">Request Consultation</a>
-    </div>
-  </div>
-</div>
-
-<!-- ================================================================= -->
 <!-- REUSABLE FOOTER COMPONENT -->
 <!-- ================================================================= -->
 <footer class="footer" id="main-footer">
@@ -688,12 +645,32 @@ img{max-width:100%;display:block}
       <a href="terms.html">Terms and Conditions</a>
       <span class="sep">·</span>
       <a href="refund-policy.html">Refund Policy</a>
+      <span class="sep">·</span>
+      <button type="button" class="privacy-settings-trigger" id="footer-privacy-btn" data-operava-privacy-trigger>Cookie &amp; Privacy Preferences</button>
     </div>
     <div class="footer-copyright">
       © 2026 Operava Global Solutions. All rights reserved.
     </div>
   </div>
 </footer>
+
+<!-- OPERAVA Privacy, Storage & Cache Architecture -->
+<script src="/public/js/operava-storage.js"></script>
+<script src="/public/js/operava-cookies.js"></script>
+<script src="/public/js/operava-cache.js"></script>
+<script src="/public/js/operava-consent.js"></script>
+<script src="/public/js/operava-telemetry.js"></script>
+<script src="/public/js/operava-diagnostics.js"></script>
+<script>
+  if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function(){});
+    });
+  }
+  (function initSession() {
+    fetch('/api/session', { credentials: 'same-origin' }).catch(function(){});
+  })();
+</script>
 
 <script>
 (function(){
@@ -747,72 +724,6 @@ img{max-width:100%;display:block}
   } else {
     reveals.forEach(function(el){ el.classList.add('in'); });
   }
-
-  // 5. Interactive "LEARN MORE" Modal
-  var modal = document.getElementById('service-modal');
-  var modalClose = document.getElementById('modal-close-btn');
-  var modalCategory = document.getElementById('modal-service-category');
-  var modalTitle = document.getElementById('modal-service-title');
-  var modalDesc = document.getElementById('modal-service-desc');
-  var modalItems = document.getElementById('modal-service-items');
-  var modalActionBtn = document.getElementById('modal-action-btn');
-
-  function openModal(btn){
-    var svc = btn.getAttribute('data-service') || 'Enterprise Service';
-    var cat = btn.getAttribute('data-category') || 'Solutions';
-    var desc = btn.getAttribute('data-desc') || '';
-    var rawItems = btn.getAttribute('data-items') || '';
-
-    modalCategory.textContent = cat;
-    modalTitle.textContent = svc;
-    modalDesc.textContent = desc;
-
-    modalItems.innerHTML = '';
-    var items = rawItems.split(';');
-    items.forEach(function(item){
-      var trimmed = item.trim();
-      if(trimmed){
-        var li = document.createElement('li');
-        li.textContent = trimmed;
-        modalItems.appendChild(li);
-      }
-    });
-
-    var slug = svc.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-    modalActionBtn.href = 'talent.html?service=' + encodeURIComponent(slug);
-    modalActionBtn.textContent = 'Engage ' + svc + ' →';
-
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    if(modalClose) modalClose.focus();
-  }
-
-  function closeModal(){
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('.btn-learn-more').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      openModal(btn);
-    });
-  });
-
-  if(modalClose){
-    modalClose.addEventListener('click', closeModal);
-  }
-
-  if(modal){
-    modal.addEventListener('click', function(e){
-      if(e.target === modal) closeModal();
-    });
-  }
-
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && modal && modal.classList.contains('active')){
-      closeModal();
-    }
-  });
 })();
 </script>
 </body>

@@ -10,7 +10,7 @@ You are editing the OPERAVA website repository. **Follow this file and `DESIGN.m
 
 ## Architecture & Directory Layout
 
-- HTML Pages organized in `/pages/`: `index.html`, `solutions.html`, `about.html`, `careers.html`, `jobs-global.html`, `jobs-us.html`, `talent.html`, `resume.html`, `referral.html`, `contact.html`, `privacy-policy.html`, `refund-policy.html`, `terms.html`
+- HTML Pages organized in `/pages/`: `index.html`, `solutions.html`, `service-detail.html`, `about.html`, `careers.html`, `jobs-global.html`, `jobs-us.html`, `talent.html`, `resume.html`, `referral.html`, `contact.html`, `privacy-policy.html`, `refund-policy.html`, `terms.html`
 - Static Assets in `/public/`: media, images (`/public/images/`), icons (`/public/icons/`)
 - Backend API in `/api/`: modular Express handlers (`/api/contact`, `/api/talent`, `/api/resume`, `/api/referral`, `/api/health`)
 - Server: Express in `server.js` serving `/pages`, `/public`, and `/api` on port 3000

@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Specifications | OPERAVA Global Solutions</title>
+<meta name="description" content="Comprehensive enterprise service specifications, delivery process, and operational FAQs for OPERAVA technology and business process solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/public/css/operava-privacy.css">
+<style>
+/* ================================================================= */
+/* CORE DESIGN TOKENS & SYSTEM */
+/* ================================================================= */
+:root {
+  --navy: #06101f;
+  --purple: #6d28d9;
+  --purple-dark: #5b21b6;
+  --purple-light: #f5f0ff;
+  --ink: #0a1628;
+  --surface: #f7f5fa;
+  --line: #e2daf0;
+  --muted: #5a6880;
+  --g: clamp(1.25rem, 5vw, 4.5rem);
+  --fd: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  --fb: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--fb);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--purple);
+  width: 0%;
+  z-index: 9999;
+  transition: width .1s ease-out;
+}
+
+/* Header Navigation */
+.nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, .96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem var(--g);
+  height: 80px;
+}
+.nav-brand {
+  font-family: var(--fd);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--ink);
+}
+.nav-brand span { color: var(--purple); }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a {
+  font-size: .875rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: var(--muted);
+  transition: color .2s ease;
+  position: relative;
+}
+.nav-links a:hover, .nav-links a.is-active { color: var(--purple); font-weight: 600; }
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: .5rem;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--ink);
+  margin-bottom: 5px;
+  transition: .3s;
+}
+
+/* Layout bands */
+.band { padding: clamp(3.5rem, 6vh, 5.5rem) var(--g); }
+.band-surface { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-family: var(--fd);
+  font-size: .925rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .85rem 1.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .25s ease;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--purple); color: #fff; border: 1px solid var(--purple); }
+.btn-primary:hover { background: var(--purple-dark); border-color: var(--purple-dark); box-shadow: 0 4px 14px rgba(109, 40, 217, .25); }
+.btn-line { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.btn-line:hover { border-color: var(--purple); color: var(--purple); background: #fff; }
+.btn-sm { font-size: .78rem; padding: .55rem 1.1rem; }
+
+/* Page Header / Breadcrumb */
+.svc-detail-hero {
+  padding: clamp(2.5rem, 5vh, 4rem) var(--g) clamp(2rem, 4vh, 3rem);
+  background: var(--navy);
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+.svc-crumb {
+  font-size: .8125rem;
+  color: rgba(255, 255, 255, .6);
+  margin-bottom: 1.25rem;
+}
+.svc-crumb a { color: rgba(255, 255, 255, .8); transition: color .2s; }
+.svc-crumb a:hover { color: #fff; }
+.svc-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: .85rem;
+  flex-wrap: wrap;
+}
+.svc-cat-badge {
+  font-family: var(--fd);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--purple);
+  padding: .25rem .75rem;
+  border-radius: 4px;
+}
+.svc-discipline-tag {
+  font-size: .85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, .7);
+}
+.svc-hero-title {
+  font-family: var(--fd);
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.svc-hero-lead {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, .8);
+  max-width: 54rem;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+.svc-stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+}
+.svc-stat-item strong {
+  display: block;
+  font-family: var(--fd);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: .25rem;
+}
+.svc-stat-item span {
+  font-size: .8125rem;
+  color: rgba(255, 255, 255, .6);
+}
+
+/* Two-column layout */
+.svc-detail-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: clamp(2rem, 4vw, 4rem);
+  padding: clamp(3rem, 5vh, 4.5rem) var(--g);
+  align-items: flex-start;
+}
+
+/* Section styling */
+.svc-section-block {
+  margin-bottom: clamp(2.5rem, 4.5vh, 3.75rem);
+  padding-bottom: clamp(2.5rem, 4.5vh, 3.75rem);
+  border-bottom: 1px solid var(--line);
+}
+.svc-section-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.svc-section-kicker {
+  font-family: var(--fd);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: .5rem;
+}
+.svc-section-title {
+  font-family: var(--fd);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+.svc-section-lead {
+  font-size: .975rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+  max-width: 52rem;
+}
+
+/* Deliverables Grid */
+.svc-deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.svc-deliverable-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.25rem 1.4rem;
+}
+.svc-deliverable-item h4 {
+  font-family: var(--fd);
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: .45rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.svc-deliverable-item h4::before {
+  content: "✓";
+  color: var(--purple);
+  font-weight: 700;
+}
+.svc-deliverable-item p {
+  font-size: .84rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* 4-Step Process Flow */
+.process-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.process-step-card {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 1.5rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: border-color .2s;
+}
+.process-step-card:hover {
+  border-color: var(--purple);
+}
+.process-step-num {
+  font-family: var(--fd);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--purple);
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: .25rem;
+}
+.process-step-num span {
+  font-size: .65rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.process-step-body h4 {
+  font-family: var(--fd);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: .4rem;
+}
+.process-step-body p {
+  font-size: .875rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: .75rem;
+}
+.process-step-deliverables {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.25rem;
+  padding-top: .65rem;
+  border-top: 1px dashed var(--line);
+}
+.process-step-deliverables li {
+  font-size: .775rem;
+  font-weight: 600;
+  color: var(--ink);
+  position: relative;
+  padding-left: 1rem;
+}
+.process-step-deliverables li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--purple);
+}
+
+/* FAQ Accordion */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  margin-top: 1.5rem;
+}
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+  transition: border-color .2s;
+}
+.faq-item.active {
+  border-color: var(--purple);
+}
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 1.15rem 1.35rem;
+  font-family: var(--fd);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq-icon {
+  font-size: 1.25rem;
+  color: var(--purple);
+  font-weight: 400;
+  transition: transform .25s ease;
+}
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  display: none;
+  padding: 0 1.35rem 1.25rem;
+  font-size: .875rem;
+  color: var(--muted);
+  line-height: 1.65;
+  border-top: 1px solid var(--surface);
+  padding-top: .85rem;
+}
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* Sidebar / Under-services Directory */
+.svc-sidebar {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.svc-sidebar-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+.svc-sidebar-card h3 {
+  font-family: var(--fd);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: .85rem;
+}
+.svc-sidebar-card p {
+  font-size: .84rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+.svc-dir-nav {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: .35rem;
+}
+.svc-dir-item {
+  padding: .65rem .85rem;
+  border-radius: 4px;
+  font-size: .8125rem;
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all .2s;
+  background: #fff;
+  border: 1px solid transparent;
+}
+.svc-dir-item:hover {
+  border-color: var(--purple);
+  color: var(--purple);
+}
+.svc-dir-item.is-current {
+  background: var(--purple);
+  color: #fff;
+  font-weight: 700;
+  border-color: var(--purple);
+}
+.svc-dir-item.is-current span {
+  color: rgba(255, 255, 255, .8);
+}
+.svc-dir-item span {
+  font-size: .7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.svc-sec-box {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+.svc-sec-box h4 {
+  font-family: var(--fd);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: .5rem;
+}
+.svc-sec-box p {
+  font-size: .78rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Reusable Footer */
+.footer {
+  background: var(--navy);
+  color: #fff;
+  padding: clamp(4rem, 7vh, 5.5rem) var(--g) 2rem;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  margin-bottom: 3rem;
+}
+.footer-brand {
+  font-family: var(--fd);
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: .04em;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.footer p {
+  color: rgba(255, 255, 255, .65);
+  font-size: .875rem;
+  line-height: 1.65;
+  max-width: 26rem;
+}
+.footer h4 {
+  font-family: var(--fd);
+  font-size: .8125rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .95);
+  margin-bottom: 1.25rem;
+}
+.footer ul { list-style: none; }
+.footer li { margin-bottom: .65rem; }
+.footer a {
+  color: rgba(255, 255, 255, .65);
+  font-size: .875rem;
+  transition: color .2s;
+}
+.footer a:hover { color: #fff; }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  font-size: .8125rem;
+  color: rgba(255, 255, 255, .5);
+}
+.footer-legal { display: flex; gap: 1rem; align-items: center; }
+.footer-legal a { color: rgba(255, 255, 255, .5); }
+.footer-legal a:hover { color: #fff; }
+.footer-legal .sep { color: rgba(255, 255, 255, .25); }
+
+@media(max-width: 960px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #fff;
+    padding: 1.25rem var(--g);
+    gap: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+  .svc-detail-body { grid-template-columns: 1fr; }
+  .svc-sidebar { position: static; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .process-step-card { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+<!-- Header Navigation -->
+<header class="nav" id="main-nav">
+  <a class="nav-brand" href="index.html">OPERAVA</a>
+  <nav class="nav-links">
+    <a href="solutions.html" class="is-active">Services</a>
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="jobs-global.html">Global Jobs</a>
+    <a href="resume.html">Submit Resume</a>
+    <a href="talent.html">Request Talent</a>
+    <a href="referral.html">Referral</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle navigation menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Dynamic Service Hero -->
+<section class="svc-detail-hero" id="svc-hero" aria-label="Service Overview">
+  <div class="svc-crumb">
+    <a href="index.html">Home</a> / <a href="solutions.html">Services &amp; Solutions</a> / <span id="hero-crumb-name">Software Development</span>
+  </div>
+  <div class="svc-hero-meta">
+    <span class="svc-cat-badge" id="hero-category-badge">Technology Solutions</span>
+    <span class="svc-discipline-tag" id="hero-discipline-tag">Enterprise Engineering</span>
+  </div>
+  <h1 class="svc-hero-title" id="hero-title">Software Development</h1>
+  <p class="svc-hero-lead" id="hero-desc">Custom software solutions designed around your business requirements, workflows, integrations, and long-term enterprise growth.</p>
+
+  <div class="svc-stat-row">
+    <div class="svc-stat-item">
+      <strong>100% Remote Squads</strong>
+      <span>Dedicated remote talent &amp; managed pods</span>
+    </div>
+    <div class="svc-stat-item">
+      <strong>SEC Reg. #2026080262213-03</strong>
+      <span>Statutory Philippine corporate entity</span>
+    </div>
+    <div class="svc-stat-item">
+      <strong>Full Statutory IP Rights</strong>
+      <span>100% assignment of all code and work product</span>
+    </div>
+    <div class="svc-stat-item">
+      <strong>SLA &amp; QA Benchmark</strong>
+      <span>Guaranteed uptime, code coverage &amp; milestones</span>
+    </div>
+  </div>
+</section>
+
+<!-- Main Service Body: Content + Sidebar -->
+<main class="svc-detail-body" id="service-main-content">
+  
+  <!-- Main Column -->
+  <div class="svc-content-col">
+
+    <!-- Block 1: Overview & Scope -->
+    <section class="svc-section-block" id="svc-overview">
+      <p class="svc-section-kicker">EXACT SERVICE SPECIFICATIONS</p>
+      <h2 class="svc-section-title">Core Deliverables &amp; Enterprise Scope</h2>
+      <p class="svc-section-lead" id="svc-scope-lead">Every deployment is structured for enterprise rigor, strict data security, and transparent operational execution.</p>
+
+      <div class="svc-deliverables-grid" id="svc-deliverables-container">
+        <!-- Injected via JavaScript from data dictionary -->
+      </div>
+    </section>
+
+    <!-- Block 2: Delivery Process -->
+    <section class="svc-section-block" id="svc-process">
+      <p class="svc-section-kicker">DELIVERY METHODOLOGY</p>
+      <h2 class="svc-section-title">End-to-End Execution Process</h2>
+      <p class="svc-section-lead">A battle-tested four-phase lifecycle designed for rapid ramp-up, transparent velocity, and guaranteed intellectual property protection.</p>
+
+      <div class="process-steps-list" id="svc-process-container">
+        <!-- Injected via JavaScript from data dictionary -->
+      </div>
+    </section>
+
+    <!-- Block 3: Frequently Asked Questions -->
+    <section class="svc-section-block" id="svc-faq">
+      <p class="svc-section-kicker">COMMERCIAL &amp; TECHNICAL FAQ</p>
+      <h2 class="svc-section-title">Frequently Asked Questions</h2>
+      <p class="svc-section-lead">Clear, definitive answers regarding team deployment, statutory IP ownership, billing, and operational communication.</p>
+
+      <div class="faq-accordion" id="svc-faq-container">
+        <!-- Injected via JavaScript from data dictionary -->
+      </div>
+    </section>
+
+    <!-- Block 4: Action Banner -->
+    <section class="svc-section-block" style="border-bottom:none;">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:clamp(1.75rem,3vw,2.5rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;">
+        <div>
+          <h3 style="font-family:var(--fd);font-size:1.4rem;font-weight:700;margin-bottom:.4rem;color:var(--ink);">Ready to deploy this capability?</h3>
+          <p style="font-size:.9rem;color:var(--muted);margin:0;max-width:32rem;">Staff augmentation, dedicated pods, or managed outcome delivery. Onboarding begins in 5–10 business days.</p>
+        </div>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+          <a class="btn btn-primary" id="btn-engage-talent" href="talent.html">Request Dedicated Squad →</a>
+          <a class="btn btn-line" id="btn-schedule-consult" href="contact.html">Schedule Consultation</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Right Sidebar: All Under-Services Directory -->
+  <aside class="svc-sidebar" aria-label="Services Navigation">
+    
+    <div class="svc-sidebar-card">
+      <h3>All Under-Services</h3>
+      <p>Select any discipline below to view its complete technical deliverables, execution process, and operational FAQ.</p>
+      
+      <div class="svc-dir-nav" id="svc-directory-list" role="list">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+
+    <div class="svc-sec-box">
+      <h4>Statutory IP &amp; Legal Warranty</h4>
+      <p>Under Philippine SEC Corporation Registration No. 2026080262213-03 and Republic Act No. 10173 (Data Privacy Act of 2012), 100% of all software, scripts, documentation, and work products are irrevocably assigned to the client.</p>
+    </div>
+
+    <div class="svc-sidebar-card" style="text-align:center;">
+      <h3 style="margin-bottom:.5rem;">Need a Custom Blend?</h3>
+      <p style="margin-bottom:1rem;">We configure cross-functional agile pods combining engineers, QA leads, and operations support.</p>
+      <a class="btn btn-line btn-sm" href="solutions.html#governance-statement" style="width:100%;">View Governance Standards →</a>
+    </div>
+
+  </aside>
+
+</main>
+
+<!-- Reusable Footer Component -->
+<footer class="footer" id="main-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Operava Global Solutions</div>
+      <p>Technology is our focus, and quality is our commitment. Philippine SEC-registered corporation · All roles are 100% remote.</p>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="solutions.html">Complete Services Directory</a></li>
+        <li><a href="solutions.html#it-services">Technology &amp; IT Services</a></li>
+        <li><a href="solutions.html#bpo-services">Business Process &amp; BPO</a></li>
+        <li><a href="talent.html">Request Dedicated Talent</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="jobs-global.html">Global Jobs</a></li>
+        <li><a href="jobs-us.html">U.S. Jobs</a></li>
+        <li><a href="resume.html">Submit Resume</a></li>
+        <li><a href="referral.html">Referral Program</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>&copy; 2026 Operava Global Solutions. All rights reserved. SEC Reg. #2026080262213-03.</div>
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <span class="sep">|</span>
+      <a href="terms.html">Terms of Service</a>
+      <span class="sep">|</span>
+      <a href="refund-policy.html">Refund Policy</a>
+      <span class="sep">|</span>
+      <button type="button" class="privacy-settings-trigger" id="footer-privacy-btn" data-operava-privacy-trigger>Cookie &amp; Privacy Preferences</button>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Complete registry of all 16 exact services from the website's source of truth
+  var SERVICES_DATA = {
+    "software-development": {
+      id: "software-development",
+      name: "Software Development",
+      category: "Technology Solutions",
+      discipline: "Engineering & Architecture",
+      lead: "Custom software solutions designed around your business requirements, workflows, integrations, and long-term enterprise growth.",
+      deliverables: [
+        { title: "Enterprise Backend Architecture", desc: "Microservices, distributed domain architectures, and resilient event-driven systems built for high fault tolerance." },
+        { title: "REST & GraphQL APIs", desc: "Strictly typed, versioned, documented application interfaces with automated rate limiting and OAuth2/JWT security." },
+        { title: "Scalable Database Modeling", desc: "Optimized relational (PostgreSQL, MySQL) and document-store schemas engineered for caching and indexing speed." },
+        { title: "CI/CD & Quality Gates", desc: "Automated test suites, unit coverage thresholds, Docker containerization, and automated pull request validation." },
+        { title: "Statutory IP Transfer", desc: "Complete, irrevocable legal assignment of all source code, git commits, and architectural diagrams under Philippine law." },
+        { title: "Clean Code & Type Safety", desc: "Modern TypeScript, Go, Python, and Java standards with static analysis, linting, and automated dependency scanning." }
+      ],
+      process: [
+        { phase: "01", title: "Discovery & Architecture Alignment", desc: "We review your functional specifications, existing codebases, and infrastructure targets to draft an explicit architecture blueprint and Pod SLA.", items: ["Technical requirements document", "Pod topology & role definitions", "Security & bilateral NDA execution"] },
+        { phase: "02", title: "Dedicated Squad Allocation", desc: "We deploy vetted, senior remote engineers calibrated precisely to your stack. Environments, Slack/Teams, Jira, and GitHub access are configured.", items: ["Tooling & SSO access setup", "Initial sprint backlog refinement", "Coding standards alignment"] },
+        { phase: "03", title: "Agile Sprint Execution & QA", desc: "Bi-weekly sprint iterations featuring daily async or live standups, continuous pull-request code reviews, and automated CI/CD pipeline tests.", items: ["Bi-weekly sprint demos", "Continuous automated regression tests", "Real-time velocity tracking"] },
+        { phase: "04", title: "Production Deployment & Governance", desc: "Zero-downtime deployment to your cloud clusters followed by post-launch telemetry, documentation handoff, and full statutory IP warranty.", items: ["Production rollout & monitoring", "Comprehensive handover docs", "100% source code ownership signed"] }
+      ],
+      faqs: [
+        { q: "Who owns the intellectual property and source code produced?", a: "You own 100% of the intellectual property, copyright, and source code. Operava Global Solutions is a registered Philippine corporation (SEC Reg. #2026080262213-03), and our master service agreements include unambiguous statutory assignment clauses transferring all code, commits, and assets to your company upon creation." },
+        { q: "What programming languages and frameworks do your teams specialize in?", a: "Our engineering pods specialize in modern enterprise stacks including TypeScript, Node.js, Python (FastAPI/Django), Go, Java (Spring Boot), React, Next.js, Vue, Flutter, React Native, PostgreSQL, MySQL, Redis, and AWS/GCP cloud architectures." },
+        { q: "How do your remote engineers manage timezone differences with US and global clients?", a: "Our squads offer guaranteed 4 to 8 hours of daily overlap with your core operational timezone (including US Eastern, Pacific, and European working hours). Daily async standups in Slack and sprint boards in Jira keep workflows synchronous without lag." },
+        { q: "Can we scale our software development pod up or down as project demands change?", a: "Yes. We offer flexible engagement terms allowing you to scale engineering headcount up or transition roles with a standard 30-day notice period, providing enterprise elasticity without traditional hiring overhead." },
+        { q: "How quickly can a dedicated software squad onboard and begin writing code?", a: "Typical onboarding takes between 5 to 10 business days. Because our talent is pre-vetted and accustomed to our standardized remote pod protocol, your team can be committing pull requests during the first sprint." }
+      ]
+    },
+
+    "web-mobile-development": {
+      id: "web-mobile-development",
+      name: "Web & Mobile Application Development",
+      category: "Technology Solutions",
+      discipline: "Digital Applications",
+      lead: "Modern websites, web applications, and mobile experiences designed for performance, usability, security, and scale.",
+      deliverables: [
+        { title: "Responsive React & Next.js Frontends", desc: "Server-side rendered, sub-second web applications optimized for SEO, Core Web Vitals, and smooth client transitions." },
+        { title: "Cross-Platform iOS & Android Apps", desc: "Native-performing mobile apps built using Flutter and React Native with unified single codebases and platform-specific styling." },
+        { title: "Progressive Web Apps (PWA)", desc: "Offline service workers, local caching, and app-like installation capabilities for seamless desktop and mobile experiences." },
+        { title: "WCAG AA Accessibility Compliance", desc: "High-contrast, screen-reader friendly, accessible digital interfaces meeting international digital accessibility laws." },
+        { title: "App Store & Play Store Lifecycle", desc: "Full submission, provisioning profile management, beta distribution via TestFlight, and Google Play compliance review." },
+        { title: "Performance & Sub-Second Speeds", desc: "Asset optimization, dynamic code-splitting, tree-shaking, and edge CDN distribution for blazing user load speeds." }
+      ],
+      process: [
+        { phase: "01", title: "UI/UX & Architecture Planning", desc: "We review your Figma prototypes, user journeys, API specifications, and device requirements to map component architecture.", items: ["Component design system mapping", "API contract definition", "Platform compatibility matrix"] },
+        { phase: "02", title: "Frontend Framework & Tooling Setup", desc: "We initialize clean repository structures with strict ESLint, Prettier, TypeScript typing, and CI test harnesses.", items: ["Design token configuration", "State management architecture", "CI/CD automated build pipeline"] },
+        { phase: "03", title: "Iterative Feature Sprints", desc: "Two-week agile sprints focusing on feature completion, cross-device testing, responsive breakpoints, and accessibility audits.", items: ["Sprint builds in TestFlight/Vercel", "Cross-browser regression testing", "User experience QA verification"] },
+        { phase: "04", title: "Store Submission & Launch Handover", desc: "Preparation of production release builds, submission to Apple App Store and Google Play, and delivery of production bundles.", items: ["Store approval management", "Core Web Vitals verification", "Source code & asset transfer"] }
+      ],
+      faqs: [
+        { q: "Do you build native mobile apps or cross-platform applications?", a: "We primarily utilize cross-platform toolchains like Flutter and React Native, which provide native 60fps performance and access to native device APIs (camera, push notifications, biometric auth) while cutting development and maintenance costs in half." },
+        { q: "How do you ensure our web applications load quickly and rank well in search engines?", a: "We utilize modern server-side rendering (SSR) and static generation (SSG) with Next.js or Astro, lazy-load assets, compress media into WebP/AVIF formats, and enforce strict Core Web Vitals performance budgets under 1.2s Largest Contentful Paint." },
+        { q: "Do you handle the App Store and Google Play submission process?", a: "Yes. Our mobile delivery pods handle certificates, provisioning profiles, store listing metadata, privacy declarations, TestFlight beta distribution, and store review responses until your app is live." },
+        { q: "Who is responsible for ongoing app updates and OS compatibility?", a: "We offer ongoing retainer and pod support models that handle annual iOS/Android OS updates, dependency upgrades, third-party API deprecations, and bug remediation." }
+      ]
+    },
+
+    "saas-platform": {
+      id: "saas-platform",
+      name: "SaaS & Platform Development",
+      category: "Technology Solutions",
+      discipline: "Cloud Product Engineering",
+      lead: "Scalable software-as-a-service products and digital platforms built for recurring operations, subscriptions, and commercial growth.",
+      deliverables: [
+        { title: "Multi-Tenant Cloud Architecture", desc: "Complete data isolation strategies, tenant schema routing, and elastic cloud infrastructure scaling." },
+        { title: "Subscription Billing & Stripe Gateways", desc: "Automated recurring billing, tiered pricing, invoice generation, tax handling, and webhook reconciliation." },
+        { title: "Enterprise RBAC & SSO SAML/OAuth", desc: "Granular user permissions, enterprise single sign-on (Okta, Google Workspace, Azure AD), and security audit logs." },
+        { title: "Automated Tenant Onboarding", desc: "Frictionless self-service sign-up flows, automated workspace provisioning, and email verification pipelines." },
+        { title: "Usage Analytics & Telemetry", desc: "Customer usage tracking, feature adoption metrics, churn monitoring, and operational reporting dashboards." },
+        { title: "Zero-Downtime Rolling Deploys", desc: "Blue-green deployment strategies, automated database migration safeguards, and continuous uptime monitoring." }
+      ],
+      process: [
+        { phase: "01", title: "Tenancy & Billing Architecture", desc: "Architecting the data segregation model, billing state machine, authentication flows, and API rate limiting tiers.", items: ["Multi-tenancy isolation plan", "Stripe billing lifecycle spec", "Data privacy & compliance audit"] },
+        { phase: "02", title: "Core Platform Engine Build", desc: "Developing the foundational tenant workspace engine, authentication middleware, permission matrices, and payment webhooks.", items: ["RBAC & team management engine", "Payment checkout & portal integration", "Automated email & webhook pipeline"] },
+        { phase: "03", title: "Feature Sprints & Tenant Telemetry", desc: "Implementing core SaaS business logic, administrative oversight dashboards, subscription upgrade flows, and analytics.", items: ["Superadmin command center", "End-to-end billing test suites", "Load testing under concurrent tenants"] },
+        { phase: "04", title: "Commercial Rollout & Monitoring", desc: "Deploying production infrastructure with automated backups, APM monitoring (Datadog/Sentry), and comprehensive API docs.", items: ["Production DNS & SSL configuration", "Alerting & incident runbooks", "Complete platform IP transfer"] }
+      ],
+      faqs: [
+        { q: "How do you handle multi-tenant data privacy and security?", a: "We enforce strict tenant isolation using either row-level security (RLS) with tenant IDs in PostgreSQL or isolated tenant schemas. Cross-tenant data leakage is prevented via automated middleware assertions and integration tests." },
+        { q: "Can your team integrate enterprise single sign-on (SSO)?", a: "Yes. We implement SAML 2.0 and OpenID Connect (OIDC) protocols for Okta, Microsoft Entra ID (Azure AD), Google Workspace, and OneLogin to allow your SaaS to win enterprise tier contracts." },
+        { q: "What payment engines do you build for subscription billing?", a: "We work primarily with Stripe Billing, Paddle, and Adyen, building support for monthly/annual plans, per-seat tiers, usage-based metered billing, coupons, self-service customer portals, and automatic dunning recovery." },
+        { q: "Do we retain full ownership of our SaaS customer data and code?", a: "Absolutely. All databases, cloud accounts, and source repositories are created in your enterprise cloud environment. Operava operates under strict Philippine SEC and Data Privacy Act RA 10173 regulations." }
+      ]
+    },
+
+    "it-systems": {
+      id: "it-systems",
+      name: "IT Systems Development",
+      category: "Technology Solutions",
+      discipline: "Enterprise Operations",
+      lead: "Business systems designed to automate workflows, connect operational functions, and eliminate organizational friction.",
+      deliverables: [
+        { title: "Internal Admin Portals & Dashboards", desc: "Custom executive operational command centers, real-time KPI monitors, and intuitive data management tools." },
+        { title: "Automated Approval Engines", desc: "Paperless multi-tier approval routing, escalation triggers, and automated notification webhooks across Slack and email." },
+        { title: "Legacy System Modernization", desc: "Refactoring legacy monoliths, deprecating spreadsheet workarounds, and safely migrating legacy database tables." },
+        { title: "Auditable Operational Logs", desc: "Tamper-evident system activity logging, role permission enforcement, and compliance traceability." }
+      ],
+      process: [
+        { phase: "01", title: "Workflow Audit & Requirement Mapping", desc: "Interviewing operational stakeholders to identify manual bottlenecks, approval hierarchies, and system touchpoints.", items: ["Operational workflow diagram", "Data security boundaries", "Target system specifications"] },
+        { phase: "02", title: "System Prototype & Data Design", desc: "Drafting user interfaces and structuring relational data schemas that reflect actual corporate approval paths.", items: ["Clickable portal prototypes", "Database schema modeling", "Role permission matrix"] },
+        { phase: "03", title: "Module Development & Validation", desc: "Building internal portals, automated routing logic, and status lifecycle machines with thorough automated testing.", items: ["Paperless workflow modules", "Admin analytics dashboard", "Internal user acceptance testing"] },
+        { phase: "04", title: "Enterprise Deployment & Training", desc: "Rolling out the system internally, connecting enterprise SSO, providing staff training materials, and full handover.", items: ["Staff user documentation", "Audit logging verification", "Full system IP transfer"] }
+      ],
+      faqs: [
+        { q: "Can you replace our internal spreadsheet-heavy processes with a custom portal?", a: "Yes. That is one of our most common systems engagements. We ingest legacy spreadsheets, structure a relational database, build role-restricted web forms, and automate routing so your team eliminates human copy-paste errors." },
+        { q: "How do you protect internal company data inside these portals?", a: "All portals are protected behind corporate SSO, role-based access control (RBAC), TLS encryption, and comprehensive audit logs detailing which user viewed or modified every single record." }
+      ]
+    },
+
+    "programming": {
+      id: "programming",
+      name: "Computer Programming",
+      category: "Technology Solutions",
+      discipline: "Core Engineering",
+      lead: "Professional programming services across modern technologies, APIs, scripts, automation, and applications.",
+      deliverables: [
+        { title: "Polyglot Language Specialists", desc: "Experienced software engineers proficient in TypeScript, Python, Go, Java, C#, and PHP." },
+        { title: "ETL & Batch Scripting", desc: "Headless data processing workers, scheduled cron jobs, and high-throughput data pipelines." },
+        { title: "Custom Parser & Scraper Engines", desc: "Automated document ingestion, data normalization, web extractors, and feed aggregators." },
+        { title: "Algorithmic & Performance Tuning", desc: "Profiling code bottlenecks, memory leak remediation, query execution optimization, and caching." }
+      ],
+      process: [
+        { phase: "01", title: "Technical Specification Review", desc: "Analyzing algorithmic requirements, input/output structures, performance benchmarks, and execution runtime constraints.", items: ["Script/component specifications", "Benchmark throughput metrics", "Repository & branch strategy"] },
+        { phase: "02", title: "Algorithm Design & Prototyping", desc: "Writing clean, functional, strictly-typed code with dedicated unit test coverage and edge case assertions.", items: ["Prototype validation", "Type definition contracts", "Unit test scaffolding"] },
+        { phase: "03", title: "Refining & Integration Testing", desc: "Running heavy load tests, validating memory profiles, profiling execution speed, and optimizing resource overhead.", items: ["Memory profile audit", "Concurrent execution testing", "Lint and code review sign-off"] },
+        { phase: "04", title: "Deployment & Packaging", desc: "Packaging into Docker containers, serverless functions, or executable binaries with documentation and IP transfer.", items: ["Docker images & run scripts", "Automated execution logs", "Full source code transfer"] }
+      ],
+      faqs: [
+        { q: "Can we hire individual developers or do we need a full squad?", a: "You can hire individual programmers on a staff augmentation basis to join your in-house team, or deploy a complete managed pod including a Tech Lead and QA engineer." },
+        { q: "How do your developers integrate into our existing git repository?", a: "Our programmers work directly inside your GitHub, GitLab, or Bitbucket repositories, following your branch conventions, PR review standards, and commit guidelines." }
+      ]
+    },
+
+    "it-consulting": {
+      id: "it-consulting",
+      name: "IT Consulting",
+      category: "Technology Solutions",
+      discipline: "Strategy & Roadmap",
+      lead: "Strategic technology guidance connecting business objectives with practical, modern technology solutions.",
+      deliverables: [
+        { title: "Cloud Spend Audits (AWS, GCP, Azure)", desc: "Deep-dive analysis of cloud instances, reserved capacity, idle resources, and egress charges to reduce overhead." },
+        { title: "Architecture & Risk Assessments", desc: "Independent evaluations of codebase maintainability, technical debt, security posture, and scaling limits." },
+        { title: "Disaster Recovery & Business Continuity", desc: "Multi-region failover plans, automated backup verification, recovery time objective (RTO) planning." },
+        { title: "Technical Due Diligence", desc: "In-depth codebase, architecture, and team evaluations for mergers, acquisitions, and private equity investments." }
+      ],
+      process: [
+        { phase: "01", title: "Discovery & Infrastructure Access", desc: "Executing bilateral NDAs, collecting architecture diagrams, reviewing cloud bills, and interviewing key stakeholders.", items: ["Non-disclosure agreement execution", "Cloud billing & APM access", "Stakeholder interview schedule"] },
+        { phase: "02", title: "Technical Audit & Deep Dive", desc: "Inspecting source repositories, network topologies, database configurations, and security access policies.", items: ["Vulnerability & risk scanning", "Cloud cost optimization matrix", "Codebase health assessment"] },
+        { phase: "03", title: "Strategic Roadmap Formulation", desc: "Synthesizing findings into actionable, prioritized executive recommendations with projected ROI and effort estimates.", items: ["Executive presentation deck", "Detailed technical audit report", "Milestone implementation roadmap"] },
+        { phase: "04", title: "Executive Briefing & Implementation", desc: "Presenting findings to C-suite leadership and providing optional hands-on engineering pods to execute the remediation.", items: ["Board-level briefing session", "Remediation checklists", "Ongoing advisory availability"] }
+      ],
+      faqs: [
+        { q: "What deliverables do we receive at the conclusion of an IT consulting engagement?", a: "You receive an executive summary presentation, a comprehensive technical findings report, an architecture diagram depicting recommended targets, and a prioritized sprint-by-sprint implementation roadmap." },
+        { q: "Can Operava help implement the recommendations after the audit?", a: "Yes. Many clients choose to retain an Operava engineering or infrastructure pod to execute the remediation roadmap directly." }
+      ]
+    },
+
+    "systems-integration": {
+      id: "systems-integration",
+      name: "Systems Integration",
+      category: "Technology Solutions",
+      discipline: "Data & Middleware",
+      lead: "Connect applications, platforms, databases, APIs, and business systems into one coordinated, resilient environment.",
+      deliverables: [
+        { title: "Bidirectional CRM & ERP Synchronization", desc: "Real-time, resilient synchronization between Salesforce, HubSpot, NetSuite, SAP, and custom internal databases." },
+        { title: "Message Brokers & Event Streaming", desc: "Kafka, RabbitMQ, and AWS SQS event-driven middleware preventing request timeouts and data loss." },
+        { title: "Legacy to Cloud Bridge Connectors", desc: "Secure API proxies and micro-services bridging on-premises legacy infrastructure to cloud platforms." },
+        { title: "Zero Data Duplication Guarantees", desc: "Idempotent transaction pipelines, deduplication keys, and reconciliation audit logging." }
+      ],
+      process: [
+        { phase: "01", title: "API & Data Schema Mapping", desc: "Cataloging all disparate endpoints, payload structures, auth methods, rate limits, and transformation rules.", items: ["Source-to-target field mapping", "Rate limit & webhook analysis", "Data integrity validation plan"] },
+        { phase: "02", title: "Middleware & Broker Architecture", desc: "Designing fault-tolerant event queues, retry backoff strategies, and dead-letter queues (DLQ) for failed payloads.", items: ["Message broker topology", "Idempotency mechanism design", "Security & credential vault setup"] },
+        { phase: "03", title: "Connector Sprints & Staging Runs", desc: "Building API connectors, running dry-run synchronizations, and testing synthetic network dropouts.", items: ["Bidirectional data pipeline build", "Reconciliation engine validation", "High-volume load stress tests"] },
+        { phase: "04", title: "Live Production Cutover", desc: "Phased rollout with real-time discrepancy monitoring, automated alert channels, and zero downtime.", items: ["Production event pipeline launch", "Audit log verification dashboard", "Complete connector IP handover"] }
+      ],
+      faqs: [
+        { q: "How do you prevent data loss when an external API service goes down?", a: "We utilize persistent message queues (such as Kafka or AWS SQS) and exponential backoff retry mechanisms. If an external API is offline, incoming payloads are safely buffered in the dead-letter queue until connectivity is restored." },
+        { q: "Can you connect proprietary internal systems with modern third-party SaaS tools?", a: "Yes. We regularly build secure, encrypted middleware bridges that expose legacy databases or internal endpoints to webhooks from modern SaaS platforms." }
+      ]
+    },
+
+    "database-services": {
+      id: "database-services",
+      name: "Database Services",
+      category: "Technology Solutions",
+      discipline: "Data Infrastructure",
+      lead: "Reliable database design, management, optimization, migration, and administration supporting your operations.",
+      deliverables: [
+        { title: "Relational & Document Databases", desc: "Expert administration and design across PostgreSQL, MySQL, Google Cloud SQL, AWS RDS, MongoDB, and Redis." },
+        { title: "Query Optimization & Indexing", desc: "Analyzing slow-query logs, refactoring complex SQL queries, and designing composite indexes for 10x throughput gains." },
+        { title: "Zero-Downtime Database Migrations", desc: "Dual-write pipelines, CDC (Change Data Capture), and phased replica cutovers without operational interruptions." },
+        { title: "High Availability & Disaster Recovery", desc: "Read replica clustering, automated point-in-time recovery (PITR), and encrypted off-site backup schedules." }
+      ],
+      process: [
+        { phase: "01", title: "Database Audit & Performance Profiling", desc: "Examining connection pools, slow query logs, table lock contentions, disk I/O, and replication lag metrics.", items: ["Slow query execution audit", "Schema normalization review", "Backup & disaster recovery plan"] },
+        { phase: "02", title: "Indexing & Query Refactoring", desc: "Creating targeted B-Tree/GIN indexes, rewriting N+1 queries, tuning memory buffer allocations, and connection pool sizing.", items: ["Index optimization execution", "Query execution plan benchmarks", "Connection pooling configuration"] },
+        { phase: "03", title: "Migration Scaffolding & Dual-Write", desc: "When migrating schemas or cloud providers, standing up CDC replication streams and testing non-blocking data synchronization.", items: ["CDC stream configuration", "Dry-run data integrity checks", "Automated rollback harness"] },
+        { phase: "04", title: "Production Cutover & Monitoring", desc: "Executing zero-downtime cutover during low-traffic windows, validating read/write latency, and setting up APM alerts.", items: ["Production cluster verification", "Point-in-time recovery test", "Full documentation & credentials"] }
+      ],
+      faqs: [
+        { q: "How do you achieve zero downtime during a major database migration?", a: "We establish a live replication stream from the old database to the new database using Change Data Capture (CDC). Once both databases are synchronized in real-time, we execute a seamless connection string DNS switchover that takes mere seconds." },
+        { q: "Do your database engineers sign non-disclosure agreements?", a: "Yes. All database specialists are direct employees of our SEC-registered Philippine corporation and sign strict bilateral confidentiality and data handling agreements under the Philippine Data Privacy Act RA 10173." }
+      ]
+    },
+
+    "customer-service": {
+      id: "customer-service",
+      name: "Customer Service",
+      category: "Business Process Outsourcing",
+      discipline: "Customer Experience",
+      lead: "Professional customer experience delivered by dedicated staff or coordinated multi-channel teams.",
+      deliverables: [
+        { title: "Omnichannel Frontline Coverage", desc: "Seamless customer support delivered across live chat, email ticketing, voice, SMS, and social media channels." },
+        { title: "High First-Contact Resolution (FCR)", desc: "Empowered, well-trained agents focused on solving customer inquiries on the very first touchpoint." },
+        { title: "Native-Level English Communication", desc: "University-educated specialists in the Philippines renowned globally for cultural empathy, neutral accents, and professionalism." },
+        { title: "Zendesk & CRM Tooling Mastery", desc: "Deep operational experience inside Zendesk, Salesforce Service Cloud, Freshdesk, Intercom, and Gorgias." }
+      ],
+      process: [
+        { phase: "01", title: "SOP & Brand Voice Intake", desc: "We absorb your knowledge bases, customer dispute policies, brand tone guidelines, and escalation workflows.", items: ["Standard operating procedure (SOP) manual", "Brand voice & empathy guide", "Escalation contact matrix"] },
+        { phase: "02", title: "Agent Onboarding & Shadowing", desc: "Selected support specialists undergo rigorous brand-specific training, mock ticket grading, and live ticket shadowing.", items: ["CRM toolchain provisioning", "Simulated inquiry examinations", "Quality assurance benchmark tests"] },
+        { phase: "03", title: "Live Shift Deployment & QA", desc: "Agents begin live coverage. Supervisors conduct weekly QA audits scoring response speed, accuracy, and customer empathy.", items: ["Weekly supervisor QA scorecards", "CSAT & Net Promoter tracking", "Daily shift attendance logs"] },
+        { phase: "04", title: "Operational Scaling & Optimization", desc: "Continuous feedback loops refine canned responses, build self-service help center articles, and scale staffing capacity.", items: ["Knowledge base expansion", "SLA compliance reporting", "Quarterly operational reviews"] }
+      ],
+      faqs: [
+        { q: "What working hours can our customer service pod cover?", a: "We support 24/7/365 continuous coverage, follow-the-sun shift handovers, or dedicated timezone alignment (e.g. 9 AM to 6 PM US Eastern / Pacific)." },
+        { q: "How do you monitor and ensure quality across remote agents?", a: "Our dedicated Quality Assurance (QA) managers audit a percentage of every agent's tickets weekly against a standardized scorecard measuring resolution accuracy, tone, compliance, and CSAT scores." },
+        { q: "Can we provide our own internal training materials?", a: "Yes. During Phase 1, we absorb your exact SOPs, knowledge base docs, and past ticket samples to train our dedicated pod to reflect your company's voice." }
+      ]
+    },
+
+    "technical-support": {
+      id: "technical-support",
+      name: "Technical Support",
+      category: "Business Process Outsourcing",
+      discipline: "Specialized CX",
+      lead: "Knowledgeable technical support professionals for products, applications, devices, and enterprise SaaS systems.",
+      deliverables: [
+        { title: "Tier 1, 2, and 3 Issue Resolution", desc: "Structured escalation hierarchies handling everything from login errors to complex API troubleshooting and log analysis." },
+        { title: "Bug Replication & Engineering Handoffs", desc: "Detailed Jira bug reports containing clear reproduction steps, browser network HAR files, and device logs." },
+        { title: "SaaS Configuration Guidance", desc: "Helping business clients properly configure software settings, integrations, permissions, and webhook endpoints." },
+        { title: "Knowledge Base Article Authorship", desc: "Transforming solved technical issues into searchable technical documentation for customer self-service." }
+      ],
+      process: [
+        { phase: "01", title: "Technical Product Deep-Dive", desc: "Engineers and technical leads train support specialists on product architecture, known edge cases, and API error codes.", items: ["Product technical manual review", "Sandbox environment provisioning", "Escalation rules to core engineers"] },
+        { phase: "02", title: "Tooling & Sandbox Certification", desc: "Agents test in staging sandboxes, learning to extract log files, run diagnostic scripts, and replicate reported defects.", items: ["Diagnostic tool certifications", "Jira bug ticket templates", "Test ticket simulation"] },
+        { phase: "03", title: "Tiered Queue Management", desc: "Active ticket triage, rapidly resolving Tier 1 issues while routing verified software bugs directly into engineering sprints.", items: ["First response SLA under 5 minutes", "Ticket escalation velocity tracking", "Weekly engineering alignment sync"] },
+        { phase: "04", title: "Telemetry & Product Feedback Loops", desc: "Categorizing support drivers to inform your product managers which features require UX improvements or stability fixes.", items: ["Root-cause error categorization", "Self-service doc updates", "Continuous CSAT monitoring"] }
+      ],
+      faqs: [
+        { q: "Do your technical support agents have software backgrounds?", a: "Yes. Our technical support specialists are graduates in computer science, information technology, or engineering who understand APIs, JSON, browser dev tools, and server responses." },
+        { q: "How do agents hand off bugs to our core engineering team?", a: "Agents draft structured tickets directly in your Jira or Linear boards with complete reproduction steps, console logs, and screen recordings, eliminating engineering back-and-forth." }
+      ]
+    },
+
+    "help-desk": {
+      id: "help-desk",
+      name: "Help Desk",
+      category: "Business Process Outsourcing",
+      discipline: "Front-Line Support",
+      lead: "Reliable front-line support for internal users, employees, and corporate clients covering tickets and queues.",
+      deliverables: [
+        { title: "Employee IT Onboarding & Access", desc: "Creating corporate accounts, assigning license seats, setting up VPN profiles, and granting group permissions." },
+        { title: "Password & MFA Resets", desc: "Secure, identity-verified credentials and multi-factor authentication resets following strict anti-social-engineering checks." },
+        { title: "ServiceNow & Jira Service Management", desc: "Comprehensive incident queue triage, priority categorization, and rapid resolution tracking." },
+        { title: "Hardware & Software Asset Tracking", desc: "Maintaining company asset inventories, tracking remote worker laptops, and logging software license usage." }
+      ],
+      process: [
+        { phase: "01", title: "Identity & Verification Protocol", desc: "Establishing strict identity verification checklists to prevent unauthorized account access or fraudulent credential updates.", items: ["Identity verification checklist", "Service catalog integration", "SLA response time targets"] },
+        { phase: "02", title: "Help Desk Console Integration", desc: "Connecting agents to your ServiceNow, Jira Service Desk, or Zendesk instances with appropriate role privileges.", items: ["Console permissions setup", "Quick response templates", "Mock ticket drills"] },
+        { phase: "03", title: "Queue Triage & Resolution", desc: "Resolving user access requests, software installation tickets, and hardware troubleshooting with fast SLAs.", items: ["Under 5-minute first response", "First-contact resolution tracking", "Supervisor ticket reviews"] },
+        { phase: "04", title: "Reporting & Security Audits", desc: "Delivering monthly reports on ticket volumes, common failure modes, and user satisfaction metrics.", items: ["Access reset audit logs", "Monthly IT incident digest", "Continuous SOP updates"] }
+      ],
+      faqs: [
+        { q: "How do you protect against social engineering and unauthorized account resets?", a: "Our help desk specialists follow strict verification protocols, such as requiring secondary manager approval or video/SMS confirmation, before resetting credentials or granting access." }
+      ]
+    },
+
+    "back-office": {
+      id: "back-office",
+      name: "Back-Office Operations",
+      category: "Business Process Outsourcing",
+      discipline: "Workflow Execution",
+      lead: "Administrative, order, claims, and operational workloads handled with rigor by dedicated execution teams.",
+      deliverables: [
+        { title: "Order Fulfillment Verification", desc: "Cross-checking purchase orders against inventory, billing status, and shipping logs to eliminate fulfillment errors." },
+        { title: "Claims Adjudication & Processing", desc: "Reviewing insurance, reimbursement, or commercial warranty claims against policy rules and documentation." },
+        { title: "Account Reconciliation & Invoicing", desc: "Matching invoices against bank receipts, flagging discrepancies, and maintaining clean financial records." },
+        { title: "Regulatory Compliance Checks", desc: "Validating customer submissions against statutory requirements, KYC standards, and data completeness checklists." }
+      ],
+      process: [
+        { phase: "01", title: "Process Mapping & Rule Codification", desc: "Documenting every operational step, decision branch, exception handling criteria, and expected throughput velocity.", items: ["Standard operating procedure manual", "Decision tree logic", "Accuracy tolerance targets"] },
+        { phase: "02", title: "Pilot Run & Double-Verification", desc: "A dedicated team executes a sample batch of transactions with 100% secondary review to establish high baseline accuracy.", items: ["ERP/CRM sandbox provisioning", "Pilot batch execution", "Discrepancy analysis"] },
+        { phase: "03", title: "Full Operational Production", desc: "Teams handle daily transaction queues with continuous throughput monitoring and real-time error logging.", items: ["Daily throughput dashboards", "Daily SLA verification", "Weekly management syncs"] },
+        { phase: "04", title: "Workflow Automation & Handover", desc: "Identifying recurring manual steps that can be automated with scripts to continuously lower operational cost per transaction.", items: ["Automation suggestions", "Monthly volume reconciliation", "Ongoing governance"] }
+      ],
+      faqs: [
+        { q: "What error rates do you guarantee for back-office processing?", a: "We benchmark our dedicated back-office pods at a minimum 99.5% accuracy rate, enforced by secondary spot checks and automated validation scripts." }
+      ]
+    },
+
+    "data-processing": {
+      id: "data-processing",
+      name: "Data Processing",
+      category: "Business Process Outsourcing",
+      discipline: "Data Management",
+      lead: "Convert operational data into organized, validated, and usable business information.",
+      deliverables: [
+        { title: "High-Volume Transaction Normalization", desc: "Converting multi-source operational data into unified schema formats for analytics and reporting." },
+        { title: "Data Cleansing & Deduplication", desc: "Identifying orphaned records, standardizing date/address formats, and removing duplicate entity profiles." },
+        { title: "Custom Tagging & Structuring", desc: "Categorizing raw unstructured inputs, tagging content, and preparing clean training datasets for AI/ML." },
+        { title: "Automated Relational Export", desc: "Validating data integrity and exporting cleaned tables directly into your PostgreSQL, Snowflake, or BigQuery systems." }
+      ],
+      process: [
+        { phase: "01", title: "Schema Analysis & Transformation Rules", desc: "Reviewing raw datasets, identifying anomalies, defining validation rules, and establishing target formats.", items: ["Data dictionary & schema spec", "Transformation rulebook", "Sample batch approval"] },
+        { phase: "02", title: "Tooling & Script Scaffolding", desc: "Setting up secure remote desktop environments with zero local download capabilities to protect sensitive records.", items: ["Zero-trust remote access", "Validation script setup", "Privacy compliance signoff"] },
+        { phase: "03", title: "Execution & Dual-Pass Validation", desc: "Processing records in batched queues with automated regex validation and human spot-audits.", items: ["Batch processing velocity", "99.8% precision check", "Error log remediation"] },
+        { phase: "04", title: "Secure Export & Destruction", desc: "Loading validated records into your database and executing cryptographic wiping of temporary staging tables.", items: ["Direct database push", "Certificate of temporary data purge", "Final delivery report"] }
+      ],
+      faqs: [
+        { q: "How do you protect sensitive company data during data processing?", a: "All data processing occurs inside secure virtual desktop infrastructure (VDI) with USB, print, and local download restrictions disabled. No data touches local worker drives." }
+      ]
+    },
+
+    "data-entry": {
+      id: "data-entry",
+      name: "Data Entry",
+      category: "Business Process Outsourcing",
+      discipline: "Information Entry",
+      lead: "Delegate repetitive data entry to trained professionals while your core team focuses on high-value business objectives.",
+      deliverables: [
+        { title: "Direct-to-CRM & ERP Entry", desc: "Trained specialists entering records directly into Salesforce, NetSuite, HubSpot, SAP, and custom portals." },
+        { title: "E-Commerce Catalog & SKU Updates", desc: "Adding new products, writing descriptions, updating inventory pricing, and assigning taxonomy tags across Shopify/Magento." },
+        { title: "Medical & Financial Records Entry", desc: "High-accuracy transcription and digital entry of patient records, bills, and receipts with strict confidentiality." },
+        { title: "Double-Entry Verification", desc: "Double-blind data entry methodologies ensuring 99.9% character-level accuracy on critical compliance files." }
+      ],
+      process: [
+        { phase: "01", title: "Field Definition & Template Setup", desc: "Defining mandatory fields, input formats, validation constraints, and turnaround deadlines.", items: ["Field mapping dictionary", "Typing accuracy benchmarks", "Source document samples"] },
+        { phase: "02", title: "Agent Speed & Accuracy Testing", desc: "Typists pass strict speed (>65 WPM) and zero-error tests using your exact forms and keyboard shortcuts.", items: ["Form navigation training", "Speed certification", "Security policy review"] },
+        { phase: "03", title: "Batched Entry & Spot Checks", desc: "Continuous daily entry with supervisor spot checks on every 20th record to maintain accuracy quotas.", items: ["Daily batch logs", "Typing accuracy audits", "Throughput reports"] },
+        { phase: "04", title: "Delivery Verification & Signoff", desc: "Reviewing completed batches, confirming database sync, and archiving source files securely.", items: ["Batch completion signoff", "Error reconciliation report", "Client feedback review"] }
+      ],
+      faqs: [
+        { q: "How fast can your team process large volumes of data entry?", a: "Depending on your batch size, we can deploy dedicated typists scaling from 2 to 20+ operators, capable of processing tens of thousands of records per week with same-day turnaround." }
+      ]
+    },
+
+    "document-processing": {
+      id: "document-processing",
+      name: "Document Processing",
+      category: "Business Process Outsourcing",
+      discipline: "Records & Verification",
+      lead: "Intake, classification, extraction, indexing, verification, and organization for mission-critical enterprise records.",
+      deliverables: [
+        { title: "OCR Intake & Verification", desc: "Reviewing computer-extracted OCR text against original PDF/scanned images to correct misidentified characters." },
+        { title: "KYC & Identity Verification", desc: "Inspecting government IDs, utility bills, and incorporation filings for validity and fraud indicators." },
+        { title: "Invoice & Contract Indexing", desc: "Extracting contract terms, effective dates, line-item pricing, and vendor tax IDs into searchable metadata." },
+        { title: "PII Redaction & Compliance", desc: "Masking social security numbers, credit card details, and personal identifiers to comply with privacy laws." }
+      ],
+      process: [
+        { phase: "01", title: "Document Taxonomy & Extraction Rules", desc: "Cataloging all document types, required metadata fields, redaction mandates, and validation criteria.", items: ["Document classification guide", "Field extraction schema", "Privacy redaction guidelines"] },
+        { phase: "02", title: "OCR & Queue Integration", desc: "Hooking into your document intake pipelines (AWS Textract, Google Document AI, or custom FTP).", items: ["OCR platform integration", "Staging queue configuration", "Reviewer credentialing"] },
+        { phase: "03", title: "Extraction, Review & Redaction", desc: "Trained document specialists verify extracted fields, redact PII, and mark documents as verified.", items: ["Under 2-hour turnaround time", "Multi-point verification", "PII redaction verification"] },
+        { phase: "04", title: "Archival & Audit Certification", desc: "Indexed files are pushed to your secure document management system with full audit trails.", items: ["Cloud archive ingestion", "Audit verification certificate", "Purge of staging files"] }
+      ],
+      faqs: [
+        { q: "Do you comply with global privacy regulations when handling documents?", a: "Yes. Our operations strictly comply with the Philippine Data Privacy Act (RA 10173), which mirrors GDPR and international privacy principles, ensuring full PII redaction and encrypted handling." }
+      ]
+    },
+
+    "virtual-assistance": {
+      id: "virtual-assistance",
+      name: "Virtual Assistance",
+      category: "Business Process Outsourcing",
+      discipline: "Executive Operations",
+      lead: "Skilled remote professionals supporting administrative, operational, customer, research, and executive workflows.",
+      deliverables: [
+        { title: "Calendar & Meeting Coordination", desc: "Managing executive schedules, coordinating across global timezones, and prioritizing meeting requests." },
+        { title: "Executive Inbox Management", desc: "Triaging email inboxes, drafting professional replies, flagging urgent client communications, and archiving spam." },
+        { title: "Travel & Itinerary Planning", desc: "Booking flights, hotel accommodations, airport transfers, and assembling detailed digital itineraries." },
+        { title: "Market Research & Deck Preparation", desc: "Compiling competitor research, vendor pricing comparisons, and drafting clean executive slide presentations." }
+      ],
+      process: [
+        { phase: "01", title: "Executive Profile & Preferences Intake", desc: "Understanding the executive's working style, communication preferences, meeting cadence, and confidential parameters.", items: ["Executive preference profile", "Calendar scheduling rules", "Bilateral NDA execution"] },
+        { phase: "02", title: "Handshake & Delegation Calibration", desc: "Assistant begins shadowing emails, practicing draft approvals, and learning key customer and internal stakeholder names.", items: ["Delegated access setup", "Draft review calibration", "Slack/Teams communication channel"] },
+        { phase: "03", title: "Full Autonomous Executive Support", desc: "Assistant autonomously manages the calendar, screens incoming emails, and prepares briefings ahead of meetings.", items: ["Daily morning executive briefing", "Real-time calendar management", "Weekly task digest"] },
+        { phase: "04", title: "Ongoing Workflow Optimization", desc: "Expanding assistant capabilities into vendor negotiations, expense reporting, and operational task delegation.", items: ["Expense reconciliation", "Vendor follow-ups", "Continuous executive alignment"] }
+      ],
+      faqs: [
+        { q: "Are your virtual assistants college educated with professional experience?", a: "Yes. All Operava virtual assistants hold university degrees, speak native-fluent English, and possess experience supporting C-suite executives and remote business leaders." },
+        { q: "How is confidentiality protected?", a: "Every virtual assistant signs comprehensive bilateral non-disclosure agreements with criminal liability clauses under Philippine law, backed by Operava's SEC corporate registration." }
+      ]
+    }
+  };
+
+  // Get active service from URL query parameter (e.g. ?service=software-development) or pathname
+  function getRequestedServiceSlug(){
+    var urlParams = new URLSearchParams(window.location.search);
+    var slug = urlParams.get('service');
+    if(slug && SERVICES_DATA[slug]) return slug;
+
+    // Check pathname: /service/software-development or similar
+    var pathParts = window.location.pathname.split('/');
+    var lastPart = pathParts[pathParts.length - 1].replace('.html', '');
+    if(SERVICES_DATA[lastPart]) return lastPart;
+
+    // Default to software-development
+    return 'software-development';
+  }
+
+  var currentSlug = getRequestedServiceSlug();
+  var currentData = SERVICES_DATA[currentSlug];
+
+  function renderService(slug){
+    var data = SERVICES_DATA[slug];
+    if(!data) return;
+    currentSlug = slug;
+    currentData = data;
+
+    // Update document title
+    document.title = data.name + ' | Detailed Service Specifications | OPERAVA';
+
+    // Hero elements
+    document.getElementById('hero-crumb-name').textContent = data.name;
+    document.getElementById('hero-category-badge').textContent = data.category;
+    document.getElementById('hero-discipline-tag').textContent = data.discipline;
+    document.getElementById('hero-title').textContent = data.name;
+    document.getElementById('hero-desc').textContent = data.lead;
+
+    // CTA links
+    document.getElementById('btn-engage-talent').href = 'talent.html?discipline=' + encodeURIComponent(data.id);
+    document.getElementById('btn-schedule-consult').href = 'contact.html?subject=' + encodeURIComponent(data.name);
+
+    // Render Deliverables
+    var deliverablesContainer = document.getElementById('svc-deliverables-container');
+    deliverablesContainer.innerHTML = '';
+    data.deliverables.forEach(function(item){
+      var card = document.createElement('div');
+      card.className = 'svc-deliverable-item';
+      card.innerHTML = '<h4>' + item.title + '</h4><p>' + item.desc + '</p>';
+      deliverablesContainer.appendChild(card);
+    });
+
+    // Render 4-step process
+    var processContainer = document.getElementById('svc-process-container');
+    processContainer.innerHTML = '';
+    data.process.forEach(function(step){
+      var stepEl = document.createElement('div');
+      stepEl.className = 'process-step-card';
+      
+      var deliverablesHtml = '';
+      if(step.items && step.items.length){
+        deliverablesHtml = '<ul class="process-step-deliverables">' +
+          step.items.map(function(it){ return '<li>' + it + '</li>'; }).join('') +
+          '</ul>';
+      }
+
+      stepEl.innerHTML = 
+        '<div class="process-step-num">' + step.phase + '<span>PHASE</span></div>' +
+        '<div class="process-step-body">' +
+          '<h4>' + step.title + '</h4>' +
+          '<p>' + step.desc + '</p>' +
+          deliverablesHtml +
+        '</div>';
+      processContainer.appendChild(stepEl);
+    });
+
+    // Render FAQs
+    var faqContainer = document.getElementById('svc-faq-container');
+    faqContainer.innerHTML = '';
+    data.faqs.forEach(function(faq, idx){
+      var faqEl = document.createElement('div');
+      faqEl.className = 'faq-item' + (idx === 0 ? ' active' : '');
+      faqEl.innerHTML = 
+        '<button type="button" class="faq-question" id="faq-btn-' + idx + '" aria-expanded="' + (idx === 0 ? 'true' : 'false') + '">' +
+          '<span>' + faq.q + '</span>' +
+          '<span class="faq-icon" aria-hidden="true">+</span>' +
+        '</button>' +
+        '<div class="faq-answer" id="faq-ans-' + idx + '" role="region" aria-labelledby="faq-btn-' + idx + '">' +
+          '<p>' + faq.a + '</p>' +
+        '</div>';
+      
+      var qBtn = faqEl.querySelector('.faq-question');
+      qBtn.addEventListener('click', function(){
+        var isActive = faqEl.classList.contains('active');
+        faqContainer.querySelectorAll('.faq-item').forEach(function(f){
+          f.classList.remove('active');
+          var b = f.querySelector('.faq-question');
+          if(b) b.setAttribute('aria-expanded', 'false');
+        });
+        if(!isActive){
+          faqEl.classList.add('active');
+          qBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      faqContainer.appendChild(faqEl);
+    });
+
+    // Update Directory Sidebar active states
+    renderDirectory();
+
+    // Scroll to top of content smoothly if switching
+    var mainContent = document.getElementById('svc-hero');
+    if(mainContent && window.scrollY > 150){
+      mainContent.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function renderDirectory(){
+    var dirList = document.getElementById('svc-directory-list');
+    dirList.innerHTML = '';
+
+    Object.keys(SERVICES_DATA).forEach(function(key){
+      var svc = SERVICES_DATA[key];
+      var isCur = (key === currentSlug);
+
+      var a = document.createElement('a');
+      a.className = 'svc-dir-item' + (isCur ? ' is-current' : '');
+      a.href = 'service-detail.html?service=' + key;
+      a.innerHTML = '<span>' + svc.name + '</span><span>' + (svc.category === 'Technology Solutions' ? 'IT' : 'BPO') + '</span>';
+      
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        history.pushState(null, '', 'service-detail.html?service=' + key);
+        renderService(key);
+      });
+
+      dirList.appendChild(a);
+    });
+  }
+
+  // Handle browser back/forward buttons
+  window.addEventListener('popstate', function(){
+    var slug = getRequestedServiceSlug();
+    renderService(slug);
+  });
+
+  // Mobile navigation toggle
+  var navToggle = document.querySelector('.nav-toggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(){
+      navLinks.classList.toggle('open');
+    });
+  }
+
+  // Scroll Progress indicator
+  window.addEventListener('scroll', function(){
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    var pBar = document.getElementById('scroll-progress');
+    if(pBar) pBar.style.width = scrolled + '%';
+  }, { passive: true });
+
+  // Initial render
+  renderService(currentSlug);
+})();
+</script>
+
+<!-- OPERAVA Privacy, Storage & Cache Architecture -->
+<script src="/public/js/operava-storage.js"></script>
+<script src="/public/js/operava-cookies.js"></script>
+<script src="/public/js/operava-cache.js"></script>
+<script src="/public/js/operava-consent.js"></script>
+<script src="/public/js/operava-telemetry.js"></script>
+<script src="/public/js/operava-diagnostics.js"></script>
+<script>
+  if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function(){});
+    });
+  }
+  (function initSession() {
+    fetch('/api/session', { credentials: 'same-origin' }).catch(function(){});
+  })();
+</script>
+</body>
+</html>

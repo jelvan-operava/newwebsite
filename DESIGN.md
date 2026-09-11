@@ -33,6 +33,7 @@ The repository is organized into distinct, purposeful directories:
 |-------------------|-------------|---------|
 | `index.html` | `/` | Home — Technology, Workforce & Talent Solutions overview |
 | `solutions.html` | `/solutions` | Complete Services Directory (IT & BPO services) |
+| `service-detail.html` | `/service-detail` or `/service/:slug` | Deep-dive service architecture, deliverables, 4-step delivery process, FAQs, and talent engagement |
 | `about.html` | `/about` | About Operava Global Solutions & SEC Corporate Governance |
 | `careers.html` | `/careers` | Careers & Core Professional Role Tracks |
 | `jobs-global.html` | `/jobs-global` | Global 100% Remote Opportunities |

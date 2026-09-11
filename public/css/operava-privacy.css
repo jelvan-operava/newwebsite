@@ -1,0 +1,516 @@
+/**
+ * OPERAVA Global Solutions — Privacy & Consent System Stylesheet
+ * Native to OPERAVA design system: Plus Jakarta Sans, refined purple accents,
+ * high-contrast typography, fluid spacing, and accessibility-first focus states.
+ */
+
+:root {
+  --op-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --op-ink: #0A1628;
+  --op-surface: #FFFFFF;
+  --op-surface-alt: #F7F8FC;
+  --op-line: #E2E8F0;
+  --op-line-focus: #5A32E8;
+  --op-purple: #5A32E8;
+  --op-purple-deep: #431FCA;
+  --op-purple-light: #F0EBFF;
+  --op-muted: #4A5568;
+  --op-shadow: 0 16px 40px rgba(10, 22, 40, 0.16), 0 4px 12px rgba(10, 22, 40, 0.08);
+  --op-radius: 14px;
+}
+
+/* ==========================================================================
+   Bottom Consent Banner
+   ========================================================================== */
+.operava-consent-banner {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  z-index: 99990;
+  background: #0A1628;
+  color: #FFFFFF;
+  border-radius: var(--op-radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.42), 0 4px 16px rgba(0, 0, 0, 0.2);
+  padding: 1.35rem 1.65rem;
+  box-sizing: border-box;
+  font-family: var(--op-font);
+  opacity: 0;
+  transform: translateY(24px);
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.operava-consent-banner.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.operava-consent-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.operava-consent-text {
+  flex: 1 1 60%;
+}
+
+.operava-consent-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.35rem 0;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.operava-consent-desc {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+.operava-consent-desc a {
+  color: #B59FFF;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.operava-consent-desc a:hover {
+  color: #FFFFFF;
+}
+
+.operava-consent-actions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+/* Base Buttons */
+.operava-btn {
+  font-family: var(--op-font);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.65rem 1.15rem;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  line-height: 1.25;
+}
+
+.operava-btn:focus-visible {
+  outline: 2px solid #A78BFA;
+  outline-offset: 2px;
+}
+
+.operava-btn-primary {
+  background: var(--op-purple);
+  color: #FFFFFF;
+  border-color: var(--op-purple);
+}
+
+.operava-btn-primary:hover {
+  background: var(--op-purple-deep);
+  border-color: var(--op-purple-deep);
+}
+
+.operava-btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.operava-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.operava-btn-text {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  border-color: transparent;
+}
+
+.operava-btn-text:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ==========================================================================
+   Preference Center Modal
+   ========================================================================== */
+.operava-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99995;
+  background: rgba(10, 22, 40, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.operava-modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.operava-modal-dialog {
+  background: #FFFFFF;
+  color: var(--op-ink);
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  border-radius: var(--op-radius);
+  box-shadow: var(--op-shadow);
+  border: 1px solid var(--op-line);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--op-font);
+  transform: scale(0.96);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.operava-modal-backdrop.is-open .operava-modal-dialog {
+  transform: scale(1);
+}
+
+.operava-modal-header {
+  padding: 1.5rem 1.75rem 1.25rem;
+  border-bottom: 1px solid var(--op-line);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.operava-modal-header-text h2 {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--op-ink);
+  letter-spacing: -0.015em;
+}
+
+.operava-modal-header-text p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--op-muted);
+  line-height: 1.5;
+}
+
+.operava-modal-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--op-muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.operava-modal-close-btn:hover {
+  background: var(--op-surface-alt);
+  color: var(--op-ink);
+}
+
+.operava-modal-close-btn:focus-visible {
+  outline: 2px solid var(--op-purple);
+  outline-offset: 2px;
+}
+
+.operava-modal-body {
+  padding: 1.25rem 1.75rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Category Item */
+.operava-pref-category {
+  padding: 1.15rem;
+  background: var(--op-surface-alt);
+  border: 1px solid var(--op-line);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.operava-pref-category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.operava-pref-category-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--op-ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.operava-pref-category-desc {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--op-muted);
+  margin: 0;
+}
+
+.operava-badge-always-active {
+  background: #E2E8F0;
+  color: #4A5568;
+  font-size: 0.725rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Accessible Toggle Switch */
+.operava-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.operava-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.operava-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #CBD5E1;
+  transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 24px;
+}
+
+.operava-switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #FFFFFF;
+  transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.operava-switch input:checked + .operava-switch-slider {
+  background-color: var(--op-purple);
+}
+
+.operava-switch input:checked + .operava-switch-slider:before {
+  transform: translateX(20px);
+}
+
+.operava-switch input:focus-visible + .operava-switch-slider {
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px var(--op-purple);
+}
+
+.operava-modal-footer {
+  padding: 1.15rem 1.75rem;
+  border-top: 1px solid var(--op-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background: #FAFAFD;
+}
+
+.operava-modal-footer-left {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.operava-modal-footer-right {
+  display: flex;
+  gap: 0.65rem;
+}
+
+/* Light buttons inside modal */
+.operava-modal-footer .operava-btn-secondary {
+  background: #FFFFFF;
+  color: var(--op-ink);
+  border-color: var(--op-line);
+}
+
+.operava-modal-footer .operava-btn-secondary:hover {
+  background: var(--op-surface-alt);
+  border-color: #CBD5E1;
+}
+
+/* ==========================================================================
+   Footer Privacy Trigger Button
+   ========================================================================== */
+.privacy-settings-trigger {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.privacy-settings-trigger:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.privacy-settings-trigger:focus-visible {
+  outline: 2px solid var(--op-purple);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Subtle Floating Privacy Badge */
+.operava-privacy-floating-badge {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 99980;
+  background: rgba(10, 22, 40, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+  font-family: var(--op-font);
+}
+
+.operava-privacy-floating-badge:hover {
+  background: #0A1628;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.operava-privacy-floating-badge:focus-visible {
+  outline: 2px solid var(--op-purple);
+  outline-offset: 2px;
+}
+
+.operava-privacy-floating-badge svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Hide floating badge when banner is active */
+body.operava-consent-active .operava-privacy-floating-badge {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 860px) {
+  .operava-consent-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.15rem;
+  }
+
+  .operava-consent-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .operava-consent-actions .operava-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .operava-modal-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .operava-modal-footer-left,
+  .operava-modal-footer-right {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .operava-modal-footer .operava-btn {
+    width: 100%;
+  }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .operava-consent-banner,
+  .operava-modal-backdrop,
+  .operava-modal-dialog,
+  .operava-switch-slider,
+  .operava-switch-slider:before {
+    transition: none !important;
+    transform: none !important;
+  }
+}

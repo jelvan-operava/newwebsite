@@ -24,6 +24,7 @@ The codebase is organized cleanly at the root:
 ├── pages/                  # All HTML pages grouped in one place
 │   ├── index.html          # Homepage — Technology, Workforce & Talent Solutions
 │   ├── solutions.html      # Complete Services Directory (IT & BPO services)
+│   ├── service-detail.html # Dedicated Service Detail View (Deliverables, Process, FAQs)
 │   ├── about.html          # Corporate governance & SEC registration
 │   ├── careers.html        # Core role tracks & career pathways
 │   ├── jobs-global.html    # Global 100% remote job opportunities
@@ -66,8 +67,9 @@ The Express server (`server.js`) maps requests to the `/pages/` folder, supporti
 
 | Page File in `/pages/` | Clean URL Route | Description |
 |------------------------|-----------------|-------------|
-| `index.html` | `/` | Hero section, interactive talent pod switcher, services snapshot, global delivery hub. |
-| `solutions.html` | `/solutions` | Full services catalog covering 8 Technology (IT) disciplines and 8 Business Process (BPO) operations. |
+| `index.html` | `/` | Hero section, interactive 5-state Services Showcase (circular 1–5 half-circle scroll navigation), autonomous pod switcher, statutory legal statements. |
+| `solutions.html` | `/solutions` | Full services catalog covering 8 Technology (IT) disciplines and 8 Business Process (BPO) operations with direct deep links to dedicated service pages. |
+| `service-detail.html` | `/service-detail` or `/service/:slug` | Dedicated service view featuring comprehensive deliverables, 4-step execution process, FAQ accordion, and direct talent deployment integration. |
 | `about.html` | `/about` | Corporate governance, SEC registration verification, operating model, leadership standards. |
 | `careers.html` | `/careers` | Three broad corporate positions: Technology Executive, Customer Service Executive, Business Operations Executive. |
 | `jobs-global.html` | `/jobs-global` | 100% remote global engineering and support positions. |
@@ -79,6 +81,19 @@ The Express server (`server.js`) maps requests to the `/pages/` folder, supporti
 | `privacy-policy.html` | `/privacy-policy` | Comprehensive privacy documentation aligned with the Philippine Data Privacy Act of 2012 (RA 10173). |
 | `refund-policy.html` | `/refund-policy` | Strict milestones, deliverable acceptance criteria, and refund dispute guidelines. |
 | `terms.html` | `/terms` | Official Terms and Conditions governing commercial use and client engagements. |
+
+### 3.1 Service Detail Architecture & Navigation
+
+When users click **"LEARN MORE →"** on any service card in `solutions.html` or in the homepage Services Showcase, the platform navigates to a dedicated page (`/service-detail.html?service=<slug>` or clean route `/service/<slug>`).
+
+- **Centralized Service Registry (`SERVICES_DATA`):** All 16 corporate services (8 Technology/IT and 8 BPO) are defined with full editorial depth:
+  - **Meta kicker & category:** Distinction between Technology Solutions (IT) and Business Process Outsourcing (BPO).
+  - **Executive Summary:** Clear, concise service statement and value proposition.
+  - **Deliverables Grid (6 items per service):** Numbered, detailed technical and operational deliverables.
+  - **4-Step Execution Process:** Chronological delivery workflow (Phase 01 through 04) with estimated durations, milestones, and deliverables.
+  - **Service FAQ Accordion (4 questions per service):** Interactive Q&A covering onboarding timelines, security standards, tool integrations, and IP ownership.
+  - **Statutory & Remote Assurance Band:** Built-in verification of bilateral NDAs, 100% client code ownership, RA 10173 data privacy compliance, and Philippine SEC Corporation credentials (Reg. #2026080262213-03).
+  - **Context-Aware Actions:** "Engage This Service" pre-fills `/talent.html?service=<slug>` to streamline client pod requests.
 
 ---
 

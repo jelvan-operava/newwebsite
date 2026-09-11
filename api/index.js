@@ -4,11 +4,20 @@ import { handleContact } from './contact.js';
 import { handleTalentRequest } from './talent.js';
 import { handleResumeSubmission } from './resume.js';
 import { handleReferral } from './referral.js';
+import { handleGetSession, handleRefreshSession, handleLogout, verifyCsrf } from './session.js';
 
 const router = Router();
 
 // System status & verification
 router.get('/health', getHealth);
+
+// Session & CSRF lifecycle
+router.get('/session', handleGetSession);
+router.post('/session/refresh', handleRefreshSession);
+router.post('/session/logout', handleLogout);
+
+// Apply CSRF validation middleware to state-changing forms
+router.use(verifyCsrf);
 
 // Inquiries & forms
 router.post('/contact', handleContact);
