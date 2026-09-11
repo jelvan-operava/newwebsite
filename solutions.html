@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solutions &amp; Complete Services | OPERAVA</title>
+<meta name="description" content="Operava Global Solutions complete services directory: Technology solutions and business process outsourcing delivered 100% remotely by dedicated Philippine specialists.">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a1628;
+  --muted:#505e73;
+  --line:#e2e6ee;
+  --surface:#f7f8fc;
+  --surface-2:#f0f2f9;
+  --purple:#4B20C9;
+  --purple-deep:#37169c;
+  --purple-light:#f3effc;
+  --purple-border:#dcd3f8;
+  --navy:#06101f;
+  --fd:'Roboto Condensed',system-ui,sans-serif;
+  --fb:'Montserrat',system-ui,sans-serif;
+  --g:clamp(20px,4.5vw,72px);
+  --m:48rem;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);line-height:1.6;background:#fff;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* Scroll Progress Bar at the Very Top */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--purple) 0%,#7c3aed 100%);z-index:1001;pointer-events:none;transition:width .08s ease-out;box-shadow:0 0 8px rgba(75,32,201,.4)}
+
+/* Header & Nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:background .25s,box-shadow .25s}
+.nav.scrolled{box-shadow:0 4px 20px rgba(10,22,40,.04)}
+.nav-brand{font-family:var(--fd);font-weight:700;font-size:1.3rem;letter-spacing:.08em;color:var(--ink);text-transform:uppercase;display:inline-flex;align-items:center;gap:.35rem}
+.nav-brand span{color:var(--purple)}
+.nav-links{display:flex;gap:clamp(14px,1.8vw,28px);flex-wrap:wrap;align-items:center}
+.nav-links a{font-family:var(--fd);font-size:.8125rem;font-weight:600;color:#384558;transition:color .2s;letter-spacing:.02em}
+.nav-links a:hover,.nav-links a.is-active{color:var(--purple)}
+.nav-toggle{display:none;background:0;border:0;cursor:pointer;padding:8px}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:600;font-size:.875rem;padding:.9rem 1.75rem;border-radius:999px;border:0;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,color .2s;letter-spacing:.03em;text-transform:uppercase}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--purple);color:#fff}
+.btn-primary:hover{background:var(--purple-deep);color:#fff}
+.btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn-line:hover{border-color:var(--purple);color:var(--purple)}
+.btn-subtle{background:var(--purple-light);color:var(--purple);border:1px solid var(--purple-border)}
+.btn-subtle:hover{background:#ebe3fa}
+.btn-sm{padding:.6rem 1.25rem;font-size:.78rem}
+
+/* Layout Bands */
+.band{padding:clamp(4rem,7vh,6.5rem) var(--g);position:relative}
+.band-surface{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band-purple-light{background:linear-gradient(180deg,#faf8fe 0%,#ffffff 100%);border-top:1px solid var(--purple-border);border-bottom:1px solid var(--line)}
+
+.kicker{font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--purple);margin-bottom:.75rem;display:inline-block}
+
+/* Page Hero */
+.page-hero{position:relative;padding:clamp(7.5rem,14vh,10.5rem) var(--g) clamp(3.5rem,6vh,5rem);background:var(--navy);color:#fff;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.1)}
+.page-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.28;filter:saturate(.7)}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,16,31,.92) 0%,rgba(10,22,40,.82) 60%,rgba(75,32,201,.4) 100%)}
+.page-hero-content{position:relative;z-index:2;max-width:54rem}
+.crumb{font-family:var(--fd);font-size:.8125rem;letter-spacing:.08em;color:rgba(255,255,255,.65);text-transform:uppercase;margin-bottom:1rem}
+.crumb a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.page-hero h1{font-family:var(--fd);font-size:clamp(2.4rem,4.5vw,4.2rem);font-weight:700;line-height:1.06;letter-spacing:-.02em;margin-bottom:1.25rem}
+.page-hero p.lead{font-size:clamp(1rem,1.4vw,1.25rem);color:rgba(255,255,255,.82);line-height:1.65;max-width:44rem;margin-bottom:2rem}
+.hero-pills{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+
+/* Quick Nav Ribbon */
+.services-ribbon{display:flex;gap:1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:1.25rem var(--g);background:#fff;border-bottom:1px solid var(--line)}
+.ribbon-anchors{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.ribbon-link{font-family:var(--fd);font-size:.875rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .85rem;border-radius:6px;background:var(--surface);transition:background .2s,color .2s}
+.ribbon-link:hover{background:var(--purple-light);color:var(--purple)}
+.ribbon-stat{font-size:.8125rem;color:var(--muted);font-weight:500}
+.ribbon-stat strong{color:var(--ink)}
+
+/* Section Editorial Header */
+.section-head{margin-bottom:clamp(2.5rem,4vh,3.75rem);max-width:52rem}
+.section-head h2{font-family:var(--fd);font-size:clamp(1.9rem,3vw,2.75rem);font-weight:700;line-height:1.15;letter-spacing:-.01em;color:var(--ink);margin-bottom:1rem}
+.section-head p{font-size:clamp(1rem,1.15vw,1.15rem);color:var(--muted);line-height:1.6;margin-bottom:1.25rem}
+
+/* Services Grid */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(1.25rem,2vw,1.75rem)}
+
+/* Service Card — Editorial, High-contrast, mathematically spaced */
+.service-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:clamp(1.75rem,2.5vw,2.25rem);display:flex;flex-direction:column;justify-content:space-between;transition:border-color .25s,transform .25s,box-shadow .25s;position:relative}
+.service-card:hover{border-color:var(--purple-border);transform:translateY(-3px);box-shadow:0 12px 30px rgba(10,22,40,.06)}
+.service-card-top{margin-bottom:1.5rem}
+.service-meta-badge{display:inline-block;font-family:var(--fd);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);background:var(--purple-light);border:1px solid var(--purple-border);padding:.25rem .65rem;border-radius:999px;margin-bottom:.85rem}
+.service-card h3{font-family:var(--fd);font-size:1.375rem;font-weight:700;color:var(--ink);line-height:1.25;margin-bottom:.75rem}
+.service-card p{font-size:.9375rem;color:var(--muted);line-height:1.6}
+.service-deliverables{list-style:none;margin-top:1.1rem;padding-top:1.1rem;border-top:1px dashed var(--line)}
+.service-deliverables li{font-size:.8125rem;color:#435062;padding-left:1.1rem;position:relative;margin-bottom:.45rem}
+.service-deliverables li::before{content:"→";position:absolute;left:0;color:var(--purple);font-weight:700}
+.service-card-footer{padding-top:1.25rem;border-top:1px solid var(--surface-2);display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:auto}
+
+/* Interactive Learn More Button */
+.btn-learn-more{background:transparent;border:0;cursor:pointer;font-family:var(--fd);font-size:.8125rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 0;transition:color .2s,gap .2s}
+.btn-learn-more:hover{color:var(--purple-deep);gap:.65rem}
+
+/* Corporate Statutory Statement Band */
+.sec-statement-box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:clamp(1.75rem,3vw,2.5rem);margin-bottom:2rem}
+.sec-seal-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-bottom:1.25rem;border-bottom:1px solid var(--line);margin-bottom:1.5rem}
+.sec-seal-left{display:flex;align-items:center;gap:.85rem}
+.sec-seal-icon{width:42px;height:42px;background:var(--purple);color:#fff;font-family:var(--fd);font-weight:700;font-size:1rem;display:flex;align-items:center;justify-content:center;border-radius:8px}
+.sec-seal-text h3{font-family:var(--fd);font-size:1.15rem;font-weight:700;color:var(--ink)}
+.sec-seal-text p{font-size:.8125rem;color:var(--muted)}
+.sec-reg-number-pill{background:var(--purple-light);border:1px solid var(--purple-border);color:var(--purple);font-family:var(--fd);font-size:.8125rem;font-weight:700;letter-spacing:.08em;padding:.4rem .9rem;border-radius:999px}
+.sec-legal-content{display:grid;grid-template-columns:1.5fr 1fr;gap:2rem}
+.sec-statement-prose p{font-size:.9375rem;color:#334155;line-height:1.7;margin-bottom:1rem}
+.sec-statutory-grid{display:grid;grid-template-columns:1fr;gap:.85rem}
+.sec-stat-badge-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1rem 1.15rem}
+.sec-stat-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem}
+.sec-stat-title{font-family:var(--fd);font-weight:700;font-size:.875rem;color:var(--ink)}
+.sec-stat-code{font-family:var(--fd);font-size:.7rem;font-weight:700;color:var(--purple);background:var(--purple-light);padding:.15rem .45rem;border-radius:4px}
+.sec-stat-desc{font-size:.8125rem;color:var(--muted);line-height:1.5}
+
+/* Interactive Detail Modal Dialog */
+.service-modal-overlay{position:fixed;inset:0;background:rgba(6,16,31,.72);backdrop-filter:blur(6px);z-index:2000;display:none;align-items:center;justify-content:center;padding:clamp(1rem,3vw,2.5rem);overflow-y:auto}
+.service-modal-overlay.active{display:flex}
+.service-modal-dialog{background:#fff;border-radius:14px;max-width:44rem;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.25);position:relative;padding:clamp(2rem,3.5vw,2.75rem);animation:modalIn .25s ease-out}
+@keyframes modalIn{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-close-btn{position:absolute;top:1.5rem;right:1.5rem;background:var(--surface);border:1px solid var(--line);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;color:var(--ink);transition:background .2s,color .2s}
+.modal-close-btn:hover{background:var(--purple);color:#fff;border-color:var(--purple)}
+.modal-kicker{font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--purple);margin-bottom:.5rem}
+.modal-title{font-family:var(--fd);font-size:clamp(1.5rem,2.2vw,2rem);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:1rem}
+.modal-desc{font-size:1.05rem;color:#334155;line-height:1.65;margin-bottom:1.5rem}
+.modal-section-heading{font-family:var(--fd);font-size:.875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:.75rem}
+.modal-deliverables-list{list-style:none;margin-bottom:1.75rem}
+.modal-deliverables-list li{font-size:.9rem;color:#475569;margin-bottom:.55rem;padding-left:1.35rem;position:relative}
+.modal-deliverables-list li::before{content:"✓";position:absolute;left:0;color:var(--purple);font-weight:700}
+.modal-standards-box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1rem 1.25rem;margin-bottom:2rem}
+.modal-standards-box p{font-size:.8125rem;color:var(--muted);line-height:1.55}
+.modal-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+
+/* Footer Component */
+.footer{background:var(--navy);color:#fff;padding:clamp(4rem,7vh,5.5rem) var(--g) 2rem;border-top:1px solid rgba(255,255,255,.08)}
+.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:clamp(2rem,3.5vw,3.5rem);margin-bottom:3rem}
+.footer-brand{font-family:var(--fd);font-weight:700;font-size:1.35rem;letter-spacing:.04em;margin-bottom:1rem;color:#fff}
+.footer p{color:rgba(255,255,255,.65);font-size:.875rem;line-height:1.65;max-width:26rem}
+.footer h4{font-family:var(--fd);font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.95);margin-bottom:1.25rem}
+.footer ul{list-style:none}
+.footer li{margin-bottom:.65rem}
+.footer a{color:rgba(255,255,255,.65);font-size:.875rem;transition:color .2s}
+.footer a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.25rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);font-size:.8125rem;color:rgba(255,255,255,.5)}
+.footer-legal{display:flex;gap:1rem;align-items:center}
+.footer-legal a{color:rgba(255,255,255,.5)}
+.footer-legal a:hover{color:#fff}
+.footer-legal .sep{color:rgba(255,255,255,.25)}
+
+/* Reveal on Scroll */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s,transform .65s}
+.reveal.in{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:960px){
+  .nav-links{display:none;position:absolute;top:80px;left:0;right:0;flex-direction:column;background:#fff;padding:1.25rem var(--g);gap:1rem;border-bottom:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .footer-grid{grid-template-columns:1fr}
+  .sec-legal-content{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress Bar at the Very Top -->
+<div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+<!-- Header Navigation -->
+<header class="nav" id="main-nav">
+  <a class="nav-brand" href="index.html">OPERAVA<span>.</span></a>
+  <nav class="nav-links">
+    <a href="solutions.html" class="is-active">Services</a>
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="jobs-global.html">Global Jobs</a>
+    <a href="resume.html">Submit Resume</a>
+    <a href="talent.html">Request Talent</a>
+    <a href="referral.html">Referral</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle navigation menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2400&q=85" alt="Operava Technology and Operations Infrastructure" class="page-hero-bg" fetchpriority="high">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="crumb"><a href="index.html">Home</a> / Solutions &amp; Services</p>
+    <h1>Technology and operations, connected.</h1>
+    <p class="lead">Complete directory of enterprise IT engineering, modern digital systems, and managed business process outsourcing. All roles and pods operate 100% remotely with Philippine SEC corporate governance.</p>
+    <div class="hero-pills">
+      <a class="btn btn-primary" href="#it-services">Explore IT Services</a>
+      <a class="btn btn-line" style="color:#fff;border-color:rgba(255,255,255,.6)" href="#bpo-services">Explore BPO Services</a>
+      <a class="btn btn-subtle" href="talent.html">Request Dedicated Talent</a>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Nav Ribbon -->
+<div class="services-ribbon" aria-label="Services directory quick anchors">
+  <div class="ribbon-anchors">
+    <a class="ribbon-link" href="#it-services">01 Technology Solutions (IT) ↓</a>
+    <a class="ribbon-link" href="#bpo-services">02 Business Process Outsourcing (BPO) ↓</a>
+    <a class="ribbon-link" href="#governance-statement">03 Corporate Governance &amp; SEC ↓</a>
+  </div>
+  <div class="ribbon-stat">
+    <strong>16 Enterprise Disciplines</strong>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<!-- SECTION 1: TECHNOLOGY SOLUTIONS (IT SERVICES) -->
+<!-- ================================================================= -->
+<section class="band band-surface" id="it-services">
+  <div class="section-head reveal">
+    <p class="kicker">TECHNOLOGY SOLUTIONS · IT SERVICES</p>
+    <h2>Technology and operations, connected.</h2>
+    <p>Technology solutions that help organizations build digital products, modernize infrastructure, connect systems and operate securely at scale.</p>
+    <a class="btn btn-subtle btn-sm" href="#it-services-grid">View all IT services</a>
+  </div>
+
+  <div class="services-grid" id="it-services-grid">
+
+    <!-- IT Service 1: Software Development -->
+    <article class="service-card reveal" id="svc-software-development">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Engineering &amp; Architecture</span>
+        <h3>Software Development</h3>
+        <p>Custom software solutions designed around your business requirements, workflows, integrations, and long-term growth.</p>
+        <ul class="service-deliverables">
+          <li>Enterprise web &amp; backend architecture</li>
+          <li>Microservices, REST &amp; GraphQL APIs</li>
+          <li>Scalable database modeling &amp; caching</li>
+          <li>CI/CD pipeline automation &amp; unit test suites</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="Software Development" data-category="Technology Solutions" data-desc="Custom software solutions designed around your business requirements, workflows, integrations, and long-term growth." data-items="Custom domain architecture;End-to-end SDLC ownership;Code review & quality gates;Complete IP assignment under Philippine SEC law">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=software-development">Request Team</a>
+      </div>
+    </article>
+
+    <!-- IT Service 2: Web & Mobile Application Development -->
+    <article class="service-card reveal" id="svc-web-mobile">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Digital Applications</span>
+        <h3>Web &amp; Mobile Application Development</h3>
+        <p>Modern websites, web applications, and mobile experiences designed for performance, usability, security, and scale.</p>
+        <ul class="service-deliverables">
+          <li>Responsive React, Next.js &amp; Vue frontends</li>
+          <li>Cross-platform iOS &amp; Android development (Flutter / React Native)</li>
+          <li>Progressive Web Apps (PWA) with offline support</li>
+          <li>Core Web Vitals &amp; performance tuning</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="Web & Mobile Application Development" data-category="Technology Solutions" data-desc="Modern websites, web applications, and mobile experiences designed for performance, usability, security, and scale." data-items="Multi-device UI/UX precision;App Store & Google Play lifecycle deployment;Sub-second load times & SEO engineering;Accessibility (WCAG AA) compliance">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=web-mobile-development">Request Team</a>
+      </div>
+    </article>
+
+    <!-- IT Service 3: SaaS & Platform Development -->
+    <article class="service-card reveal" id="svc-saas-platform">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Cloud Product Engineering</span>
+        <h3>SaaS &amp; Platform Development</h3>
+        <p>Scalable software-as-a-service products and digital platforms built for recurring operations, subscriptions, and growth.</p>
+        <ul class="service-deliverables">
+          <li>Multi-tenant cloud architecture &amp; isolation</li>
+          <li>Subscription billing &amp; payment gateway integration</li>
+          <li>Role-based access control (RBAC) &amp; SSO</li>
+          <li>Usage analytics &amp; automated customer onboarding</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="SaaS & Platform Development" data-category="Technology Solutions" data-desc="Scalable software-as-a-service products and digital platforms built for recurring operations, subscriptions, and growth." data-items="Zero-downtime scaling pipelines;Multi-tenant database tenancy strategies;Stripe/Adyen payment engine wiring;Self-service user administration portals">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=saas-platform">Request Team</a>
+      </div>
+    </article>
+
+    <!-- IT Service 4: IT Systems Development -->
+    <article class="service-card reveal" id="svc-it-systems">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Enterprise Operations</span>
+        <h3>IT Systems Development</h3>
+        <p>Business systems designed to automate workflows, connect operational functions, and increase efficiency.</p>
+        <ul class="service-deliverables">
+          <li>Internal admin portals &amp; executive dashboards</li>
+          <li>Automated approval engines &amp; routing logic</li>
+          <li>Legacy system modernizations &amp; data refactoring</li>
+          <li>Auditable operational logs &amp; security tracing</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="IT Systems Development" data-category="Technology Solutions" data-desc="Business systems designed to automate workflows, connect operational functions, and increase efficiency." data-items="Custom enterprise ERP/CRM components;Paperless approval workflows;Business logic refactoring;High-throughput processing pipelines">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=it-systems">Request Team</a>
+      </div>
+    </article>
+
+    <!-- IT Service 5: Computer Programming -->
+    <article class="service-card reveal" id="svc-programming">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Core Engineering</span>
+        <h3>Computer Programming</h3>
+        <p>Professional programming services across modern technologies, APIs, scripts, automation, and applications.</p>
+        <ul class="service-deliverables">
+          <li>TypeScript, JavaScript, Python, Go, and Java</li>
+          <li>Automated ETL scripting &amp; batch workers</li>
+          <li>Third-party API clients &amp; webhook consumers</li>
+          <li>Algorithmic optimization &amp; test harness creation</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="Computer Programming" data-category="Technology Solutions" data-desc="Professional programming services across modern technologies, APIs, scripts, automation, and applications." data-items="Polyglot programming specialists;Headless automation scripts;Custom parser & scraper engines;Strict adherence to type safety & clean code">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=programming">Request Team</a>
+      </div>
+    </article>
+
+    <!-- IT Service 6: IT Consulting -->
+    <article class="service-card reveal" id="svc-it-consulting">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Strategy &amp; Roadmap</span>
+        <h3>IT Consulting</h3>
+        <p>Strategic technology guidance connecting business objectives with practical, modern technology solutions.</p>
+        <ul class="service-deliverables">
+          <li>Cloud infrastructure audits (AWS, GCP, Azure)</li>
+          <li>Architecture design &amp; technical risk evaluation</li>
+          <li>Cost optimization &amp; resource right-sizing</li>
+          <li>Technology stack evaluation &amp; migration planning</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="IT Consulting" data-category="Technology Solutions" data-desc="Strategic technology guidance connecting business objectives with practical, modern technology solutions." data-items="Cloud spend reduction audits;Disaster recovery & business continuity plans;Security compliance roadmaps;Technical due diligence for acquisitions">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="contact.html?subject=it-consulting">Schedule Consultation</a>
+      </div>
+    </article>
+
+    <!-- IT Service 7: Systems Integration -->
+    <article class="service-card reveal" id="svc-systems-integration">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Data &amp; Middleware</span>
+        <h3>Systems Integration</h3>
+        <p>Connect applications, platforms, databases, APIs, and business systems into one coordinated environment.</p>
+        <ul class="service-deliverables">
+          <li>Bidirectional CRM &amp; ERP synchronization</li>
+          <li>Enterprise Service Bus &amp; Kafka event streaming</li>
+          <li>Legacy to cloud bridge connectors</li>
+          <li>Data validation &amp; transaction reconciliation</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="Systems Integration" data-category="Technology Solutions" data-desc="Connect applications, platforms, databases, APIs, and business systems into one coordinated environment." data-items="Reliable message broker setups;Fault-tolerant retry mechanisms;Zero data duplication guarantees;Complete transaction audit logging">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=systems-integration">Request Team</a>
+      </div>
+    </article>
+
+    <!-- IT Service 8: Database Services -->
+    <article class="service-card reveal" id="svc-database-services">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Data Infrastructure</span>
+        <h3>Database Services</h3>
+        <p>Reliable database design, management, optimization, migration, and administration supporting your operations.</p>
+        <ul class="service-deliverables">
+          <li>PostgreSQL, MySQL, Cloud SQL, and MongoDB</li>
+          <li>Query optimization, indexing &amp; schema design</li>
+          <li>Automated backups, replication &amp; failover</li>
+          <li>Zero-downtime database migrations &amp; partitioning</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="Database Services" data-category="Technology Solutions" data-desc="Reliable database design, management, optimization, migration, and administration supporting your operations." data-items="Performance bottleneck elimination;High availability clustering;Strict data encryption at rest and in transit;Data warehouse modeling">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=database-services">Request Team</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- SECTION 2: BUSINESS PROCESS OUTSOURCING (BPO SERVICES) -->
+<!-- ================================================================= -->
+<section class="band" id="bpo-services">
+  <div class="section-head reveal">
+    <p class="kicker">BUSINESS PROCESS OUTSOURCING · MANAGED WORKFORCE</p>
+    <h2>Extend your capabilities. Scale your operations.</h2>
+    <p>Flexible business process services that help organizations extend their capabilities, improve efficiency and scale operations without unnecessary overhead.</p>
+    <a class="btn btn-subtle btn-sm" href="#bpo-services-grid">View all BPO services</a>
+  </div>
+
+  <div class="services-grid" id="bpo-services-grid">
+
+    <!-- BPO Service 1: Customer Service -->
+    <article class="service-card reveal" id="svc-customer-service">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Customer Experience</span>
+        <h3>Customer Service</h3>
+        <p>Professional customer experience delivered by dedicated staff or coordinated multi-channel teams.</p>
+        <ul class="service-deliverables">
+          <li>Omni-channel coverage: Live chat, email &amp; voice</li>
+          <li>High first-contact resolution (FCR) rates</li>
+          <li>Empathetic, native-level English communication</li>
+          <li>Zendesk, Salesforce Service Cloud &amp; Freshdesk mastery</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="Customer Service" data-category="Business Process Outsourcing" data-desc="Professional customer experience delivered by dedicated staff or coordinated multi-channel teams." data-items="24/7/365 follow-the-sun shifts;Rigorous weekly QA audits;Custom tone-of-voice training;Real-time CSAT and NPS tracking">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=customer-service">Request Team</a>
+      </div>
+    </article>
+
+    <!-- BPO Service 2: Technical Support -->
+    <article class="service-card reveal" id="svc-technical-support">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Specialized CX</span>
+        <h3>Technical Support</h3>
+        <p>Knowledgeable technical support professionals for products, applications, devices, and systems.</p>
+        <ul class="service-deliverables">
+          <li>Tier 1, 2, and 3 technical issue resolution</li>
+          <li>Bug replication, log collection &amp; engineering handoffs</li>
+          <li>SaaS troubleshooting &amp; user configuration guidance</li>
+          <li>Detailed internal knowledge base maintenance</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="Technical Support" data-category="Business Process Outsourcing" data-desc="Knowledgeable technical support professionals for products, applications, devices, and systems." data-items="Experienced technical specialists;SLA-backed escalation processes;API error reproduction & ticket triage;Strict security protocols with customer credentials">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=technical-support">Request Team</a>
+      </div>
+    </article>
+
+    <!-- BPO Service 3: Help Desk -->
+    <article class="service-card reveal" id="svc-help-desk">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Front-Line Support</span>
+        <h3>Help Desk</h3>
+        <p>Reliable front-line support for internal users, employees, and clients covering tickets and queues.</p>
+        <ul class="service-deliverables">
+          <li>Employee IT onboarding &amp; identity provisioning</li>
+          <li>Password resets, MFA resets &amp; access tickets</li>
+          <li>Hardware/software triage &amp; asset tracking</li>
+          <li>Queue balancing &amp; fast initial response SLAs</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="Help Desk" data-category="Business Process Outsourcing" data-desc="Reliable front-line support for internal users, employees, and clients covering tickets and queues." data-items="Dedicated incident ticket managers;Strict verification before credential updates;ServiceNow & Jira Service Desk integration;Guaranteed response SLA under 5 minutes">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=help-desk">Request Team</a>
+      </div>
+    </article>
+
+    <!-- BPO Service 4: Back-Office Operations -->
+    <article class="service-card reveal" id="svc-back-office">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Workflow Execution</span>
+        <h3>Back-Office Operations</h3>
+        <p>Administrative, order, claims, and operational workloads handled by dedicated execution teams.</p>
+        <ul class="service-deliverables">
+          <li>Order fulfillment verification &amp; tracking</li>
+          <li>Insurance and commercial claims adjudication</li>
+          <li>Account reconciliation &amp; invoicing workflows</li>
+          <li>Compliance checks against statutory guidelines</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="Back-Office Operations" data-category="Business Process Outsourcing" data-desc="Administrative, order, claims, and operational workloads handled by dedicated execution teams." data-items="High-precision execution workflows;Standard Operating Procedure (SOP) rigor;Continuous throughput monitoring;Data security governed by RA 10173">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=back-office">Request Team</a>
+      </div>
+    </article>
+
+    <!-- BPO Service 5: Data Processing -->
+    <article class="service-card reveal" id="svc-data-processing">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Data Management</span>
+        <h3>Data Processing</h3>
+        <p>Convert operational data into organized, validated, and usable business information.</p>
+        <ul class="service-deliverables">
+          <li>High-volume transaction normalization</li>
+          <li>Data cleansing, deduplication &amp; validation</li>
+          <li>Custom tagging, categorization &amp; structuring</li>
+          <li>Automated export into relational and cloud systems</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="Data Processing" data-category="Business Process Outsourcing" data-desc="Convert operational data into organized, validated, and usable business information." data-items="99.8% precision benchmark;Automated validation rules;Audit trail preservation;Strict zero-trust local download restrictions">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=data-processing">Request Team</a>
+      </div>
+    </article>
+
+    <!-- BPO Service 6: Data Entry -->
+    <article class="service-card reveal" id="svc-data-entry">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Information Entry</span>
+        <h3>Data Entry</h3>
+        <p>Delegate repetitive data entry to trained professionals while your core team focuses on value.</p>
+        <ul class="service-deliverables">
+          <li>Direct-into-CRM &amp; ERP digital entry</li>
+          <li>E-commerce catalog management &amp; SKU updates</li>
+          <li>Medical, legal, and financial records entry</li>
+          <li>Speed-checked and double-verified inputs</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="Data Entry" data-category="Business Process Outsourcing" data-desc="Delegate repetitive data entry to trained professionals while your core team focuses on value." data-items="Fast turnaround times;Trained touch-typists with high accuracy;Zero storage on unauthorized personal devices;Encrypted remote desktop infrastructure">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=data-entry">Request Team</a>
+      </div>
+    </article>
+
+    <!-- BPO Service 7: Document Processing -->
+    <article class="service-card reveal" id="svc-document-processing">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Records &amp; Verification</span>
+        <h3>Document Processing</h3>
+        <p>Intake, classification, extraction, indexing, verification, and records organization.</p>
+        <ul class="service-deliverables">
+          <li>OCR intake review and validation</li>
+          <li>KYC and identity document inspection</li>
+          <li>Invoice, PO &amp; contract metadata indexing</li>
+          <li>Secure cloud archive classification</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="Document Processing" data-category="Business Process Outsourcing" data-desc="Intake, classification, extraction, indexing, verification, and records organization." data-items="Multi-point verification protocols;Redaction of sensitive personal identifiers;High-speed document turnaround;Full compliance with Philippine RA 10173">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=document-processing">Request Team</a>
+      </div>
+    </article>
+
+    <!-- BPO Service 8: Virtual Assistance -->
+    <article class="service-card reveal" id="svc-virtual-assistance">
+      <div class="service-card-top">
+        <span class="service-meta-badge">Executive Operations</span>
+        <h3>Virtual Assistance</h3>
+        <p>Skilled remote professionals supporting administrative, operational, customer, research, and executive tasks.</p>
+        <ul class="service-deliverables">
+          <li>Calendar, scheduling &amp; inbox management</li>
+          <li>Executive travel booking &amp; itinerary planning</li>
+          <li>Market research, vendor coordination &amp; reporting</li>
+          <li>Discreet executive support under bilateral NDAs</li>
+        </ul>
+      </div>
+      <div class="service-card-footer">
+        <button type="button" class="btn-learn-more" data-service="Virtual Assistance" data-category="Business Process Outsourcing" data-desc="Skilled remote professionals supporting administrative, operational, customer, research, and executive tasks." data-items="University-educated professionals;Timezone-aligned dedicated hours;Slack / Teams direct real-time integration;Bilateral confidentiality agreements">LEARN MORE →</button>
+        <a class="btn btn-subtle btn-sm" href="talent.html?discipline=virtual-assistance">Request Assistant</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- SECTION 3: CORPORATE STATUTORY STATEMENT BAND -->
+<!-- ================================================================= -->
+<section class="band band-surface" id="governance-statement">
+  <div class="sec-statement-box reveal">
+    <div class="sec-seal-bar">
+      <div class="sec-seal-left">
+        <div class="sec-seal-icon">SEC</div>
+        <div class="sec-seal-text">
+          <h3>Official Corporate Statutory Statement</h3>
+          <p>Republic of the Philippines · Securities and Exchange Commission</p>
+        </div>
+      </div>
+      <div class="sec-reg-number-pill">
+        SEC REG. NO. 2026080262213-03
+      </div>
+    </div>
+
+    <div class="sec-legal-content">
+      <div class="sec-statement-prose">
+        <p><strong>Operava Global Solutions</strong> is duly organized and legally existing under the corporate laws of the Republic of the Philippines as a <strong>registered corporation</strong>, having been formally issued Company Registration Number <strong>2026080262213-03</strong> pursuant to Title III of the Revised Corporation Code of the Philippines (Republic Act No. 11232).</p>
+        
+        <p>All technology engineering services and business process outsourcing practices across Operava Global Solutions are delivered under an <strong>exclusive 100% remote operational mandate</strong>. We maintain zero centralized physical reporting, operating through an enterprise zero-trust hardware and managed digital infrastructure that guarantees complete data isolation and client IP protection.</p>
+      </div>
+
+      <div class="sec-statutory-grid">
+        <div class="sec-stat-badge-card">
+          <div class="sec-stat-head">
+            <span class="sec-stat-title">Corporate Registration</span>
+            <span class="sec-stat-code">RA 11232</span>
+          </div>
+          <div class="sec-stat-desc">Duly registered Philippine corporation under Title III of the Revised Corporation Code. Official Reg. #2026080262213-03.</div>
+        </div>
+
+        <div class="sec-stat-badge-card">
+          <div class="sec-stat-head">
+            <span class="sec-stat-title">100% Remote Delivery</span>
+            <span class="sec-stat-code">Zero Commute</span>
+          </div>
+          <div class="sec-stat-desc">All roles across engineering, operations, and support are 100% remote with managed zero-trust hardware endpoints.</div>
+        </div>
+
+        <div class="sec-stat-badge-card">
+          <div class="sec-stat-head">
+            <span class="sec-stat-title">Data Privacy Act</span>
+            <span class="sec-stat-code">RA 10173</span>
+          </div>
+          <div class="sec-stat-desc">Full compliance with the National Privacy Commission regulations with designated Data Protection Officers.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head center reveal" style="margin:2rem auto 0;text-align:center">
+    <h2>Ready to extend your technology and operations?</h2>
+    <p>Engage our dedicated remote pods or request tailored workforce solutions defined by written quotation and SOW.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem">
+      <a class="btn btn-primary" href="talent.html">Request Dedicated Talent</a>
+      <a class="btn btn-line" href="contact.html">Speak With Solutions Advisory</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- INTERACTIVE SERVICE DETAIL MODAL (FOR "LEARN MORE") -->
+<!-- ================================================================= -->
+<div class="service-modal-overlay" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-service-title" tabindex="-1">
+  <div class="service-modal-dialog">
+    <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">✕</button>
+    <p class="modal-kicker" id="modal-service-category">Technology Solutions</p>
+    <h2 class="modal-title" id="modal-service-title">Service Details</h2>
+    <p class="modal-desc" id="modal-service-desc">Detailed service scope overview.</p>
+
+    <h3 class="modal-section-heading">Key Deliverables &amp; Enterprise Governance</h3>
+    <ul class="modal-deliverables-list" id="modal-service-items">
+      <!-- Injected by JavaScript -->
+    </ul>
+
+    <div class="modal-standards-box">
+      <p><strong>100% Remote Delivery Standard:</strong> Deployed specialists work directly in your tools (GitHub, Jira, Slack, ERP) with guaranteed timezone overlap. All commercial engagements are governed by bilateral NDAs, 100% client intellectual property ownership, and Philippine SEC Corporation legal standing (Reg. #2026080262213-03).</p>
+    </div>
+
+    <div class="modal-actions">
+      <a class="btn btn-primary" id="modal-action-btn" href="talent.html">Engage This Service →</a>
+      <a class="btn btn-line" href="contact.html">Request Consultation</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<!-- REUSABLE FOOTER COMPONENT -->
+<!-- ================================================================= -->
+<footer class="footer" id="main-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Operava Global Solutions</div>
+      <p>Technology is our focus, and quality is our commitment. Philippine SEC-registered corporation · All roles are 100% remote.</p>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="solutions.html">Complete Services Directory</a></li>
+        <li><a href="solutions.html#it-services">Technology &amp; IT Services</a></li>
+        <li><a href="solutions.html#bpo-services">Business Process &amp; BPO</a></li>
+        <li><a href="talent.html">Request Dedicated Talent</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="jobs-global.html">Global Jobs</a></li>
+        <li><a href="jobs-us.html">U.S. Jobs</a></li>
+        <li><a href="resume.html">Submit Resume</a></li>
+        <li><a href="referral.html">Referral Program</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <span class="sep">·</span>
+      <a href="terms.html">Terms and Conditions</a>
+      <span class="sep">·</span>
+      <a href="refund-policy.html">Refund Policy</a>
+    </div>
+    <div class="footer-copyright">
+      © 2026 Operava Global Solutions. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // 1. Scroll Progress Bar
+  var scrollBar = document.getElementById('scroll-progress');
+  function updateScrollProgress(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if(scrollBar){
+      scrollBar.style.width = Math.min(100, Math.max(0, pct)) + '%';
+    }
+  }
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+  // 2. Navigation Scrolled Shadow
+  var nav = document.getElementById('main-nav');
+  function checkNavScroll(){
+    if(!nav) return;
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }
+  window.addEventListener('scroll', checkNavScroll, { passive: true });
+  checkNavScroll();
+
+  // 3. Mobile Navigation Menu Toggle
+  var navToggle = document.querySelector('.nav-toggle');
+  var navLinks = document.querySelector('.nav-links');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(){
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        navLinks.classList.remove('open');
+      });
+    });
+  }
+
+  // 4. Scroll Reveal Animations
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(function(el){ observer.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // 5. Interactive "LEARN MORE" Modal
+  var modal = document.getElementById('service-modal');
+  var modalClose = document.getElementById('modal-close-btn');
+  var modalCategory = document.getElementById('modal-service-category');
+  var modalTitle = document.getElementById('modal-service-title');
+  var modalDesc = document.getElementById('modal-service-desc');
+  var modalItems = document.getElementById('modal-service-items');
+  var modalActionBtn = document.getElementById('modal-action-btn');
+
+  function openModal(btn){
+    var svc = btn.getAttribute('data-service') || 'Enterprise Service';
+    var cat = btn.getAttribute('data-category') || 'Solutions';
+    var desc = btn.getAttribute('data-desc') || '';
+    var rawItems = btn.getAttribute('data-items') || '';
+
+    modalCategory.textContent = cat;
+    modalTitle.textContent = svc;
+    modalDesc.textContent = desc;
+
+    modalItems.innerHTML = '';
+    var items = rawItems.split(';');
+    items.forEach(function(item){
+      var trimmed = item.trim();
+      if(trimmed){
+        var li = document.createElement('li');
+        li.textContent = trimmed;
+        modalItems.appendChild(li);
+      }
+    });
+
+    var slug = svc.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    modalActionBtn.href = 'talent.html?service=' + encodeURIComponent(slug);
+    modalActionBtn.textContent = 'Engage ' + svc + ' →';
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if(modalClose) modalClose.focus();
+  }
+
+  function closeModal(){
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.btn-learn-more').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      openModal(btn);
+    });
+  });
+
+  if(modalClose){
+    modalClose.addEventListener('click', closeModal);
+  }
+
+  if(modal){
+    modal.addEventListener('click', function(e){
+      if(e.target === modal) closeModal();
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modal && modal.classList.contains('active')){
+      closeModal();
+    }
+  });
+})();
+</script>
+</body>
+</html>

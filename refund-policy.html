@@ -34,7 +34,8 @@ a{color:inherit;text-decoration:none}
 /* Header & Navigation */
 .nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);height:80px;background:transparent;border-bottom:1px solid rgba(226,230,238,.45);transition:background .25s,border-color .25s,box-shadow .25s}
 .nav.scrolled{box-shadow:0 4px 20px rgba(10,22,40,.04);background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav-brand{font-family:var(--fd);font-weight:700;font-size:1.25rem;letter-spacing:.06em;color:var(--ink);text-transform:uppercase}
+.nav-brand{font-family:var(--fd);font-weight:700;font-size:1.3rem;letter-spacing:.08em;color:var(--ink);text-transform:uppercase;display:inline-flex;align-items:center;gap:.35rem}
+.nav-brand span{color:var(--purple)}
 .nav-links{display:flex;gap:clamp(14px,1.8vw,28px);flex-wrap:wrap}
 .nav-links a{font-family:var(--fd);font-size:.8125rem;font-weight:500;color:#384558;transition:color .2s}
 .nav-links a:hover,.nav-links a.is-active{color:var(--purple)}
@@ -42,9 +43,9 @@ a{color:inherit;text-decoration:none}
 .nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0}
 
 /* Page Hero */
-.page-hero{position:relative;padding:calc(80px + 4.5vh) var(--g) 3.5rem;border-bottom:1px solid var(--line);overflow:hidden;background-color:#0a1628}
-.page-hero-bg{position:absolute;inset:-15px;width:calc(100% + 30px);height:calc(100% + 30px);object-fit:cover;object-position:center 32%;filter:blur(8px);transform:scale(1.05);pointer-events:none;z-index:0}
-.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(247,245,253,.88) 0%,rgba(255,255,255,.94) 100%);pointer-events:none;z-index:1}
+.page-hero{position:relative;padding:calc(80px + 4.5vh) var(--g) 3.5rem;border-bottom:1px solid var(--line);overflow:hidden;background-color:#fff}
+.page-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;pointer-events:none;z-index:0}
+.page-hero-overlay{position:absolute;inset:0;background:rgba(255,255,255,.7);pointer-events:none;z-index:1}
 .page-hero-content{position:relative;z-index:2}
 .page-hero .crumb{font-family:var(--fd);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
 .page-hero .crumb a{color:var(--purple)}
@@ -170,8 +171,9 @@ a{color:inherit;text-decoration:none}
 <div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 
 <header class="nav">
-  <a class="nav-brand" href="index.html">OPERAVA</a>
+  <a class="nav-brand" href="index.html">OPERAVA<span>.</span></a>
   <nav class="nav-links">
+    <a href="solutions.html">Services</a>
     <a href="about.html">About</a>
     <a href="careers.html">Careers</a>
     <a href="jobs-global.html">Global Jobs</a>
@@ -299,7 +301,7 @@ a{color:inherit;text-decoration:none}
           <h2 class="sec-title">Company and Service Overview</h2>
         </div>
         <div class="sec-body">
-          <p>Operava is a duly registered Philippine corporation providing information technology, custom software engineering, and business process outsourcing solutions to commercial clients in the Philippines and internationally. In compliance with Philippine statutory regulations, Operava does not render services to offshore gaming entities and operates in strict conformity with national and international commercial standards.</p>
+          <p>Operava Global Solutions is a duly organized and existing Philippine Corporation registered with the Securities and Exchange Commission (SEC Registration Number: <strong>2026080262213-03</strong>), providing enterprise technology architecture, custom software systems development, dedicated workforce augmentation pods, and managed business process outsourcing solutions. All technical and operational roles across Operava are conducted 100% remotely with global delivery standards. In compliance with Philippine statutory regulations, Operava does not render services to offshore gaming entities and operates in strict conformity with national and international commercial standards.</p>
         </div>
       </section>
 
@@ -856,7 +858,7 @@ a{color:inherit;text-decoration:none}
   <div class="footer-grid">
     <div>
       <div class="footer-brand">Operava Global Solutions</div>
-      <p>Technology is our focus, and quality is our commitment. Philippine-based · remote-first · global operations.</p>
+      <p>Technology is our focus, and quality is our commitment. Philippine SEC-registered corporation · All roles are 100% remote.</p>
     </div>
     <div>
       <h4>Company</h4>
@@ -869,9 +871,10 @@ a{color:inherit;text-decoration:none}
     <div>
       <h4>Solutions</h4>
       <ul>
-        <li><a href="talent.html">Technology Talent</a></li>
-        <li><a href="talent.html">Business Talent</a></li>
-        <li><a href="about.html">Professional Services</a></li>
+        <li><a href="solutions.html">Complete Services Directory</a></li>
+        <li><a href="solutions.html#it-services">Technology &amp; IT Services</a></li>
+        <li><a href="solutions.html#bpo-services">Business Process &amp; BPO</a></li>
+        <li><a href="talent.html">Request Dedicated Talent</a></li>
       </ul>
     </div>
     <div>

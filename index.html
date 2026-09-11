@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPERAVA | Enterprise Technology, Global Workforce & BPO</title>
-<meta name="description" content="Operava Global Solutions — Enterprise technology, dedicated global engineering talent, and managed BPO delivered from the Philippines to high-growth companies worldwide.">
+<title>OPERAVA | Technology, Workforce and Talent Solutions</title>
+<meta name="description" content="Technology is our focus, and quality is our commitment.">
+<meta property="og:title" content="OPERAVA | Technology, Workforce and Talent Solutions">
+<meta property="og:description" content="Technology is our focus, and quality is our commitment.">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -64,49 +66,37 @@ img{max-width:100%;display:block}
 .section-head p{font-size:1.05rem;color:var(--muted);max-width:44rem;margin-top:.75rem;line-height:1.65}
 .section-head.center p{margin-left:auto;margin-right:auto}
 
-/* Hero Section (Cover Background Photo Blurred 10%, Entire Section Covered, Editorial Full-Width) */
-.hero{position:relative;display:flex;flex-direction:column;padding:calc(80px + 6vh) var(--g) 4.5rem;border-bottom:1px solid var(--line);overflow:hidden;background-color:#0a1628}
-.hero-bg{position:absolute;inset:-15px;width:calc(100% + 30px);height:calc(100% + 30px);object-fit:cover;object-position:center 32%;filter:blur(8px);transform:scale(1.05);pointer-events:none;z-index:0}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(248,246,253,.88) 0%,rgba(255,255,255,.94) 100%);pointer-events:none;z-index:1}
+/* Hero Section (Cover Background Photo Visible, Subtle Blur & Balanced Editorial Contrast) */
+.hero{position:relative;display:flex;flex-direction:column;padding:calc(80px + 6vh) var(--g) clamp(4.5rem,8vh,6.5rem);border-bottom:1px solid var(--line);overflow:hidden;background-color:#fff}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;pointer-events:none;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:rgba(255,255,255,.7);pointer-events:none;z-index:1}
 .hero-inner{position:relative;z-index:2;width:100%;margin:0}
 .hero-content{max-width:56rem}
 .hero h1{font-family:var(--fd);font-weight:700;font-size:clamp(2.5rem,6.2vw,4.65rem);line-height:1.03;text-transform:uppercase;color:var(--ink);margin-bottom:1.4rem;letter-spacing:-.01em}
 .hero-desc{font-size:clamp(1.05rem,1.8vw,1.25rem);color:var(--muted);max-width:46rem;line-height:1.65;margin-bottom:2.25rem}
-.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-bottom:2.75rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
 
-/* Hero Cover Photo — Aligned with the Entire Page (Full-Bleed Edge-to-Edge) */
-.hero-cover-wrap{margin:0 calc(-1 * var(--g)) 3.5rem;width:calc(100% + (2 * var(--g)));position:relative;background:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
-.hero-cover-btn{display:block;width:100%;padding:0;margin:0;border:0;background:transparent;cursor:zoom-in;position:relative;text-align:left;outline:none;overflow:hidden}
-.hero-cover-btn:focus-visible{outline:3px solid var(--purple);outline-offset:-3px}
-.hero-cover-img{width:100%;height:clamp(360px,54vh,600px);object-fit:cover;object-position:center 32%;display:block;transition:transform .5s cubic-bezier(.16,1,.3,1),filter .3s ease}
-.hero-cover-btn:hover .hero-cover-img{transform:scale(1.02)}
-.hero-cover-badge{position:absolute;bottom:1.25rem;right:var(--g);background:rgba(10,22,40,.85);backdrop-filter:blur(10px);color:#fff;font-family:var(--fd);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.45rem .95rem;border-radius:999px;border:1px solid rgba(255,255,255,.25);display:inline-flex;align-items:center;gap:.45rem;opacity:.92;transition:opacity .2s,transform .2s,background .2s;pointer-events:none}
-.hero-cover-btn:hover .hero-cover-badge{opacity:1;transform:translateY(-2px);background:var(--purple);border-color:var(--purple)}
-.hero-cover-bar{display:flex;align-items:center;justify-content:space-between;padding:.9rem var(--g);background:#ffffff;border-top:1px solid var(--line);font-family:var(--fd);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.hero-cover-bar .cover-tag{display:inline-flex;align-items:center;gap:.55rem;color:var(--ink)}
-.hero-cover-bar .cover-dot{width:8px;height:8px;border-radius:50%;background:var(--purple);box-shadow:0 0 0 3px rgba(75,32,201,.18)}
-.hero-cover-bar .cover-loc{color:var(--purple);letter-spacing:.06em}
-
-.hero-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(1.25rem,2.5vw,2.5rem);padding-top:2.5rem;border-top:1px solid var(--line);width:100%}
-.hero-metric-item strong{display:block;font-family:var(--fd);font-weight:700;font-size:clamp(1.75rem,3.2vw,2.5rem);color:var(--purple);line-height:1.05}
-.hero-metric-item span{display:block;font-size:.8125rem;color:var(--muted);margin-top:.4rem;text-transform:uppercase;letter-spacing:.06em;font-family:var(--fd);font-weight:600}
-
-/* Section: Value Pillars */
+/* Section: Value Pillars (Smooth Viewport Fade-In) */
 .pillars-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,3vw,2.5rem)}
-.pillar-card{padding:2.25rem 2rem;background:#fff;border:1px solid var(--line);border-radius:4px;transition:border-color .25s,transform .25s}
-.pillar-card:hover{border-color:var(--purple);transform:translateY(-4px)}
+.pillar-card{padding:2.25rem 2rem;background:#fff;border:1px solid var(--line);border-radius:4px;opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1),border-color .25s,box-shadow .25s;will-change:opacity,transform}
+.pillar-card.in{opacity:1;transform:translateY(0)}
+.pillar-card.in:hover{border-color:var(--purple);transform:translateY(-4px);box-shadow:0 12px 28px rgba(109,40,217,.08)}
+.pillars-grid .pillar-card:nth-child(1){transition-delay:.06s}
+.pillars-grid .pillar-card:nth-child(2){transition-delay:.16s}
+.pillars-grid .pillar-card:nth-child(3){transition-delay:.26s}
 .pillar-num{font-family:var(--fd);font-size:.875rem;font-weight:700;color:var(--purple);letter-spacing:.1em;margin-bottom:1rem;display:inline-block}
 .pillar-card h3{font-family:var(--fd);font-weight:700;font-size:1.25rem;text-transform:uppercase;color:var(--ink);margin-bottom:.75rem}
 .pillar-card p{font-size:.95rem;color:var(--muted);line-height:1.65}
 
-/* Section: Practice Areas (Asymmetric Split Layout) */
+/* Section: Practice Areas (Smooth Viewport Fade-In) */
 .practice-split{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.8fr);gap:clamp(2.5rem,6vw,5rem);align-items:start}
 .practice-sticky{position:sticky;top:110px}
 .practice-sticky h2{font-family:var(--fd);font-weight:700;font-size:clamp(1.85rem,3.5vw,2.75rem);text-transform:uppercase;color:var(--ink);line-height:1.1;margin-bottom:1.25rem}
 .practice-sticky p{font-size:1.02rem;color:var(--muted);line-height:1.7;margin-bottom:2rem}
 .practice-list{display:flex;flex-direction:column}
-.practice-item{padding:2rem 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:1.5rem}
+.practice-item{padding:2rem 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:1.5rem;opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1);will-change:opacity,transform}
 .practice-item:last-child{border-bottom:1px solid var(--line)}
+.practice-item.in{opacity:1;transform:translateY(0)}
 .practice-index{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--purple);padding-top:.15rem}
 .practice-body h3{font-family:var(--fd);font-weight:700;font-size:1.25rem;text-transform:uppercase;color:var(--ink);margin-bottom:.5rem}
 .practice-body p{font-size:.95rem;color:var(--muted);line-height:1.65;margin-bottom:.85rem}
@@ -250,17 +240,160 @@ img{max-width:100%;display:block}
 .footer-legal .sep{color:var(--line);user-select:none}
 .footer-copyright{font-size:.775rem;color:var(--muted)}
 
+/* Hero Badges */
+.hero-badges{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-bottom:1.5rem}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);background:var(--purple-light);border:1px solid var(--purple-border);padding:.35rem .85rem;border-radius:999px}
+.hero-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--purple);display:inline-block}
+.hero-badge-sub{font-family:var(--fd);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* Dedicated Animation Section 1: Kinetic Scrolling Marquee Ribbons */
+.marquee-band{overflow:hidden;background:#fff;border-bottom:1px solid var(--line);padding:1.15rem 0;user-select:none;display:flex;flex-direction:column;gap:.75rem}
+.marquee-band.band-accent{background:var(--surface);border-top:1px solid var(--line)}
+.marquee-wrap{display:flex;width:100%;overflow:hidden;position:relative}
+.marquee-wrap::before,.marquee-wrap::after{content:"";position:absolute;top:0;bottom:0;width:clamp(30px,6vw,90px);z-index:2;pointer-events:none}
+.marquee-wrap::before{left:0;background:linear-gradient(90deg,rgba(255,255,255,1),transparent)}
+.marquee-wrap::after{right:0;background:linear-gradient(270deg,rgba(255,255,255,1),transparent)}
+.marquee-band.band-accent .marquee-wrap::before{background:linear-gradient(90deg,var(--surface),transparent)}
+.marquee-band.band-accent .marquee-wrap::after{background:linear-gradient(270deg,var(--surface),transparent)}
+.marquee-track{display:flex;flex-shrink:0;min-width:100%;align-items:center;gap:2rem;will-change:transform}
+.marquee-track.track-left{animation:marquee-scroll-left 42s linear infinite}
+.marquee-track.track-right{animation:marquee-scroll-right 46s linear infinite}
+.marquee-band:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee-scroll-left{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+@keyframes marquee-scroll-right{
+  0%{transform:translateX(-50%)}
+  100%{transform:translateX(0)}
+}
+.marquee-item{display:inline-flex;align-items:center;gap:1.75rem;white-space:nowrap;font-family:var(--fd);font-weight:700;font-size:clamp(.8rem,1.3vw,.925rem);letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.marquee-item .sep{color:var(--purple);font-size:1.15rem;font-weight:900}
+.marquee-item .hl{color:var(--purple)}
+.marquee-pill{background:var(--purple-light);color:var(--purple);padding:.25rem .65rem;border-radius:999px;border:1px solid var(--purple-border);font-size:.75rem}
+
+/* Dedicated Animation Section 2: Animated Metric Counters Band */
+.metrics-band{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(3.5rem,7vh,5.5rem) var(--g)}
+.metrics-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(1.5rem,3vw,2.5rem)}
+.metric-item{display:flex;flex-direction:column;border-left:2px solid var(--purple-border);padding-left:1.5rem;transition:border-color .25s,transform .25s}
+.metric-item:hover{border-color:var(--purple);transform:translateX(4px)}
+.metric-value-wrap{font-family:var(--fd);font-weight:700;font-size:clamp(2.2rem,4.2vw,3.4rem);line-height:1;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.02em;display:flex;align-items:baseline;gap:.15rem}
+.metric-value-wrap .metric-suffix{color:var(--purple);font-size:clamp(1.2rem,2.2vw,1.8rem);font-weight:700}
+.metric-label{font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:.35rem}
+.metric-desc{font-size:.875rem;color:var(--muted);line-height:1.55}
+
+/* Dedicated Animation Section 3: Interactive Horizontal Scroll-Snap Stage */
+.hscroll-band{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(4.5rem,9vh,7.5rem) var(--g);overflow:hidden}
+.hscroll-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1.5rem}
+.hscroll-controls{display:flex;align-items:center;gap:.75rem}
+.hscroll-btn{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);background:#fff;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;padding:0}
+.hscroll-btn:hover{border-color:var(--purple);color:var(--purple);background:var(--purple-light);transform:scale(1.06)}
+.hscroll-btn:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
+.hscroll-step-indicator{font-family:var(--fd);font-size:.8125rem;font-weight:700;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;min-width:64px;text-align:center}
+
+.hscroll-progress-line{width:100%;height:3px;background:var(--line);border-radius:999px;margin-bottom:1.75rem;position:relative;overflow:hidden}
+.hscroll-progress-fill{height:100%;background:linear-gradient(90deg,var(--purple) 0%,#7c3aed 100%);width:20%;transition:width .25s ease-out;border-radius:999px}
+
+.hscroll-pills-nav{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.5rem;margin-bottom:1.5rem;scrollbar-width:none}
+.hscroll-pills-nav::-webkit-scrollbar{display:none}
+.hscroll-pill-btn{white-space:nowrap;font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 1rem;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;transition:all .2s ease}
+.hscroll-pill-btn:hover{border-color:var(--purple-border);color:var(--purple)}
+.hscroll-pill-btn.active{background:var(--purple);color:#fff;border-color:var(--purple)}
+.hscroll-pill-btn:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
+
+.hscroll-rail{display:flex;gap:clamp(1.25rem,2.5vw,2rem);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:1rem 0 2rem;scrollbar-width:thin;scrollbar-color:var(--purple-border) transparent}
+.hscroll-rail::-webkit-scrollbar{height:6px}
+.hscroll-rail::-webkit-scrollbar-track{background:var(--line);border-radius:3px}
+.hscroll-rail::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px}
+
+.hscroll-card{flex:0 0 clamp(320px,36vw,440px);scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:2.5rem 2rem;display:flex;flex-direction:column;position:relative;transition:border-color .25s,transform .25s,box-shadow .25s}
+.hscroll-card:hover{border-color:var(--purple);transform:translateY(-4px);box-shadow:0 12px 28px rgba(10,22,40,.06)}
+.hscroll-card.is-active-step{border-color:var(--purple);background:#fff}
+.hscroll-card-step{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
+.hscroll-step-badge{font-family:var(--fd);font-weight:700;font-size:.875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--purple)}
+.hscroll-step-tag{font-family:var(--fd);font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--purple-light);color:var(--purple);padding:.25rem .6rem;border-radius:999px;border:1px solid var(--purple-border)}
+.hscroll-card h3{font-family:var(--fd);font-weight:700;font-size:1.35rem;text-transform:uppercase;color:var(--ink);margin-bottom:.75rem;line-height:1.2}
+.hscroll-card p{font-size:.95rem;color:var(--muted);line-height:1.65;margin-bottom:1.5rem}
+.hscroll-specs{list-style:none;margin-top:auto;padding-top:1.25rem;border-top:1px solid var(--line)}
+.hscroll-specs li{font-size:.85rem;color:var(--ink);padding:.35rem 0;display:flex;align-items:flex-start;gap:.6rem;line-height:1.5}
+.hscroll-specs li::before{content:"→";color:var(--purple);font-weight:700;flex-shrink:0}
+
+/* Dedicated Statutory & SEC Corporate Statement Band */
+.sec-statement-band{background:linear-gradient(180deg,#faf8fe 0%,#ffffff 100%);border-top:1px solid var(--purple-border);border-bottom:1px solid var(--line);padding:clamp(4.5rem,9vh,7.5rem) var(--g)}
+.sec-statement-box{background:#fff;border:1.5px solid var(--purple-border);border-radius:4px;padding:clamp(2rem,4vw,3.5rem);box-shadow:0 12px 36px rgba(75,32,201,.04);position:relative}
+.sec-seal-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem;padding-bottom:1.75rem;margin-bottom:2rem;border-bottom:1px solid var(--line)}
+.sec-seal-left{display:flex;align-items:center;gap:1rem}
+.sec-seal-icon{width:52px;height:52px;border-radius:50%;background:var(--purple-light);border:2px solid var(--purple);display:flex;align-items:center;justify-content:center;color:var(--purple);font-family:var(--fd);font-weight:800;font-size:.95rem;letter-spacing:.05em;flex-shrink:0}
+.sec-seal-text h3{font-family:var(--fd);font-weight:700;font-size:1.25rem;text-transform:uppercase;color:var(--ink)}
+.sec-seal-text p{font-size:.875rem;color:var(--purple);font-weight:600}
+.sec-reg-number-pill{font-family:var(--fd);font-size:.9rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--navy);color:#fff;padding:.5rem 1.15rem;border-radius:999px;box-shadow:0 4px 14px rgba(6,16,31,.15)}
+.sec-legal-content{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,1.1fr);gap:clamp(2rem,4vw,3.5rem);align-items:start}
+.sec-statement-prose p{font-size:1.02rem;line-height:1.8;color:var(--muted);margin-bottom:1.25rem}
+.sec-statement-prose p strong{color:var(--ink)}
+.sec-statutory-grid{display:flex;flex-direction:column;gap:1rem}
+.sec-stat-badge-card{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1.15rem 1.25rem;transition:border-color .2s,transform .2s}
+.sec-stat-badge-card:hover{border-color:var(--purple);transform:translateX(3px)}
+.sec-stat-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem}
+.sec-stat-title{font-family:var(--fd);font-weight:700;font-size:.875rem;text-transform:uppercase;color:var(--ink)}
+.sec-stat-code{font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.08em;color:var(--purple);background:var(--purple-light);padding:.15rem .5rem;border-radius:4px}
+.sec-stat-desc{font-size:.8125rem;color:var(--muted);line-height:1.5}
+
+/* Scroll-Activated Comparison Matrix */
+.comparison-band{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(4.5rem,9vh,7.5rem) var(--g)}
+.comparison-table-wrap{width:100%;overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:4px;box-shadow:0 8px 24px rgba(10,22,40,.03)}
+.comparison-table{width:100%;border-collapse:collapse;min-width:720px;text-align:left}
+.comparison-table th{background:var(--surface);font-family:var(--fd);font-size:.8125rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:1.25rem 1.5rem;border-bottom:2px solid var(--line)}
+.comparison-table th.th-operava{background:var(--purple-light);color:var(--purple);border-bottom-color:var(--purple-border)}
+.comparison-table td{padding:1.25rem 1.5rem;border-bottom:1px solid var(--line);font-size:.925rem;color:var(--muted);line-height:1.55}
+.comparison-table tr:last-child td{border-bottom:0}
+.comparison-table tr:hover td{background:rgba(247,248,252,.5)}
+.comparison-table td.td-feature{font-family:var(--fd);font-weight:700;font-size:.95rem;text-transform:uppercase;color:var(--ink)}
+.comparison-table td.td-traditional{color:#6c7a8f}
+.comparison-table td.td-operava{background:rgba(243,239,252,.35);color:var(--ink);font-weight:500}
+.comparison-table td.td-operava strong{color:var(--purple)}
+
+/* Interactive 100% Remote Pod Switcher */
+.pod-switcher-band{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(4.5rem,9vh,7.5rem) var(--g)}
+.pod-tabs-bar{display:flex;justify-content:center;gap:.75rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.pod-tab-btn{font-family:var(--fd);font-weight:700;font-size:.875rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.65rem;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;transition:all .2s ease}
+.pod-tab-btn:hover{border-color:var(--purple-border);color:var(--purple)}
+.pod-tab-btn.active{background:var(--purple);color:#fff;border-color:var(--purple);box-shadow:0 4px 16px rgba(75,32,201,.25)}
+.pod-tab-btn:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
+.pod-panel{display:none;animation:panelFadeIn .35s ease-out forwards}
+.pod-panel.active{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.7fr);gap:clamp(2rem,4vw,3.5rem);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:clamp(2rem,3.5vw,3rem)}
+@keyframes panelFadeIn{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:none}
+}
+.pod-panel-left h3{font-family:var(--fd);font-weight:700;font-size:1.6rem;text-transform:uppercase;color:var(--ink);margin-bottom:.75rem;line-height:1.2}
+.pod-panel-left .pod-lead{font-size:1.02rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+.pod-panel-left .pod-meta-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
+.pod-panel-left .pod-meta-list li{font-size:.875rem;color:var(--ink);display:flex;align-items:center;gap:.65rem}
+.pod-panel-left .pod-meta-list li strong{color:var(--purple)}
+.pod-panel-right{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.pod-role-box{background:#fff;border:1px solid var(--line);border-radius:4px;padding:1.25rem 1.15rem;display:flex;flex-direction:column;justify-content:space-between;gap:.5rem}
+.pod-role-box h4{font-family:var(--fd);font-weight:700;font-size:.95rem;text-transform:uppercase;color:var(--ink)}
+.pod-role-box p{font-size:.825rem;color:var(--muted);line-height:1.5}
+.pod-role-badge{font-family:var(--fd);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);display:inline-block}
+
 /* Animations */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
 
+@media(prefers-reduced-motion:reduce){
+  .reveal,.pillar-card,.practice-item{opacity:1!important;transform:none!important;transition:none!important}
+  .marquee-track{animation:none!important}
+}
+
 /* Responsive */
 @media(max-width:1024px){
-  .hero-metrics{grid-template-columns:repeat(2,1fr)}
   .practice-split{grid-template-columns:1fr;gap:2.5rem}
   .practice-sticky{position:static}
   .timeline-grid{grid-template-columns:repeat(2,1fr)}
   .gov-grid{grid-template-columns:repeat(2,1fr)}
+  .metrics-grid{grid-template-columns:repeat(3,1fr)}
+  .sec-legal-content{grid-template-columns:1fr}
+  .pod-panel.active{grid-template-columns:1fr}
 }
 @media(max-width:960px){
   .nav-links{display:none;position:absolute;top:80px;left:0;right:0;flex-direction:column;background:#fff;padding:1.25rem var(--g);gap:1rem;border-bottom:1px solid var(--line)}
@@ -268,13 +401,14 @@ img{max-width:100%;display:block}
   .nav-toggle{display:block}
   .pillars-grid,.models-grid,.solutions-grid,.delivery-grid,.news-grid,.footer-grid{grid-template-columns:1fr}
   .job-row{grid-template-columns:1fr}
+  .metrics-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:640px){
-  .hero-metrics{grid-template-columns:1fr}
-  .hero-cover-bar{flex-direction:column;align-items:flex-start;gap:.4rem}
-  .hero-cover-badge{display:none}
+  .hero-actions{flex-direction:column;align-items:stretch}
   .timeline-grid{grid-template-columns:1fr}
   .gov-grid{grid-template-columns:1fr}
+  .metrics-grid{grid-template-columns:1fr}
+  .pod-panel-right{grid-template-columns:1fr}
   .lightbox-bar{flex-direction:column;align-items:flex-start;gap:.3rem}
   .lightbox-close{top:-3rem}
 }
@@ -289,6 +423,7 @@ img{max-width:100%;display:block}
 <header class="nav">
   <a class="nav-brand" href="index.html">OPERAVA<span>.</span></a>
   <nav class="nav-links">
+    <a href="solutions.html">Services</a>
     <a href="about.html">About</a>
     <a href="careers.html">Careers</a>
     <a href="jobs-global.html">Global Jobs</a>
@@ -302,54 +437,99 @@ img{max-width:100%;display:block}
   </button>
 </header>
 
-<!-- Hero Section (Cover Background Photo Blurred 10%, Entire Section Covered, Editorial Full-Width) -->
+<!-- Hero Section (Cover Background Photo Visible, Balanced Contrast, SEC & 100% Remote Messaging) -->
 <section class="hero">
   <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=85" alt="Operava Global Operations Headquarters" class="hero-bg" fetchpriority="high">
   <div class="hero-overlay"></div>
 
   <div class="hero-inner">
     <div class="hero-content">
-      <h1>Enterprise technology, workforce, and BPO built for operational speed</h1>
-      <p class="hero-desc">Operava Global Solutions deploys dedicated engineering pods, senior technical leaders, and resilient business process teams from the Philippines to high-growth organizations worldwide.</p>
+      <div class="hero-badges">
+        <span class="hero-badge">Philippine SEC-Registered Corporation</span>
+        <span class="hero-badge-sub">SEC Reg. No. 2026080262213-03 · All Roles 100% Remote</span>
+      </div>
+      <h1>Technology, Workforce and Talent Solutions</h1>
+      <p class="hero-desc">Technology is our focus, and quality is our commitment.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="contact.html">Partner With Operava</a>
+        <a class="btn btn-primary" href="solutions.html">Explore Complete Services</a>
         <a class="btn btn-line" href="talent.html">Request Dedicated Talent</a>
-        <a class="btn btn-subtle" href="careers.html">Explore Open Roles</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-inner" style="margin-bottom:2rem">
-    <div class="hero-cover-bar" style="border-radius:4px;border:1px solid var(--line);background:rgba(255,255,255,.94)">
-      <div class="cover-tag">
-        <span class="cover-dot"></span>
-        <span>Operava Global Delivery Headquarters · Manila &amp; Global Agile Pods</span>
-      </div>
-      <span class="cover-loc">SEC-Registered · Follow-The-Sun Operational Hub</span>
-    </div>
-  </div>
-
-  <div class="hero-inner">
-    <div class="hero-metrics">
-      <div class="hero-metric-item">
-        <strong>99.4%</strong>
-        <span>Client Retention SLA</span>
-      </div>
-      <div class="hero-metric-item">
-        <strong>&lt; 14 Days</strong>
-        <span>Avg. Placement SLA</span>
-      </div>
-      <div class="hero-metric-item">
-        <strong>24/7</strong>
-        <span>Follow-The-Sun Delivery</span>
-      </div>
-      <div class="hero-metric-item">
-        <strong>40+</strong>
-        <span>Enterprise Deployments</span>
+        <a class="btn btn-subtle" href="contact.html">Contact Operava</a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- DEDICATED ANIMATION SECTION 1: Dual Kinetic Scrolling Marquee Ribbons -->
+<div class="marquee-band" aria-label="Operava Credentials Marquee">
+  <div class="marquee-wrap">
+    <div class="marquee-track track-left">
+      <div class="marquee-item">
+        <span class="marquee-pill">SEC Registered</span>
+        <span>Philippine Corporation Reg. No. 2026080262213-03</span>
+        <span class="sep">/</span>
+        <span class="hl">All Roles Are 100% Remote</span>
+        <span class="sep">/</span>
+        <span>Enterprise Cloud Architecture</span>
+        <span class="sep">/</span>
+        <span>Dedicated Agile Pods</span>
+        <span class="sep">/</span>
+        <span>24/7 Follow-The-Sun Handover</span>
+        <span class="sep">/</span>
+        <span>Full IP Assignment</span>
+        <span class="sep">/</span>
+      </div>
+      <div class="marquee-item" aria-hidden="true">
+        <span class="marquee-pill">SEC Registered</span>
+        <span>Philippine Corporation Reg. No. 2026080262213-03</span>
+        <span class="sep">/</span>
+        <span class="hl">All Roles Are 100% Remote</span>
+        <span class="sep">/</span>
+        <span>Enterprise Cloud Architecture</span>
+        <span class="sep">/</span>
+        <span>Dedicated Agile Pods</span>
+        <span class="sep">/</span>
+        <span>24/7 Follow-The-Sun Handover</span>
+        <span class="sep">/</span>
+        <span>Full IP Assignment</span>
+        <span class="sep">/</span>
+      </div>
+    </div>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee-track track-right">
+      <div class="marquee-item">
+        <span class="marquee-pill">Statutory Governance</span>
+        <span>Revised Corporation Code RA 11232</span>
+        <span class="sep">/</span>
+        <span class="hl">Zero-Trust Managed Hardware</span>
+        <span class="sep">/</span>
+        <span>Philippine Data Privacy Act RA 10173</span>
+        <span class="sep">/</span>
+        <span>High-Velocity Managed BPO</span>
+        <span class="sep">/</span>
+        <span>DOLE &amp; BIR Registered</span>
+        <span class="sep">/</span>
+        <span>&lt; 14-Day Placement SLA</span>
+        <span class="sep">/</span>
+      </div>
+      <div class="marquee-item" aria-hidden="true">
+        <span class="marquee-pill">Statutory Governance</span>
+        <span>Revised Corporation Code RA 11232</span>
+        <span class="sep">/</span>
+        <span class="hl">Zero-Trust Managed Hardware</span>
+        <span class="sep">/</span>
+        <span>Philippine Data Privacy Act RA 10173</span>
+        <span class="sep">/</span>
+        <span>High-Velocity Managed BPO</span>
+        <span class="sep">/</span>
+        <span>DOLE &amp; BIR Registered</span>
+        <span class="sep">/</span>
+        <span>&lt; 14-Day Placement SLA</span>
+        <span class="sep">/</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Section: Value Pillars -->
 <section class="band">
@@ -377,6 +557,47 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
+<!-- DEDICATED ANIMATION SECTION 2: Scroll-Triggered Animated Metric Counters Band -->
+<section class="metrics-band" aria-label="Key Operational Performance Metrics">
+  <div class="metrics-grid">
+    <div class="metric-item reveal" id="metric-item-1">
+      <div class="metric-label">Operational Architecture</div>
+      <div class="metric-value-wrap">
+        <span class="counter-num" data-target="100">100</span><span class="metric-suffix">%</span>
+      </div>
+      <div class="metric-desc">All roles across Operava are 100% remote with managed zero-trust hardware and zero geographic boundaries.</div>
+    </div>
+    <div class="metric-item reveal" id="metric-item-2">
+      <div class="metric-label">Corporate Inception</div>
+      <div class="metric-value-wrap" style="font-size:clamp(1.6rem,2.4vw,2.15rem);letter-spacing:0">
+        <span style="font-size:.85em;color:var(--purple);font-weight:800">SEC</span><span style="font-size:.7em;color:var(--muted);margin:0 .25rem">#</span><span style="font-size:.75em;color:var(--ink);letter-spacing:.02em">2026080262213-03</span>
+      </div>
+      <div class="metric-desc">Registered Philippine Corporation under Title III of the Revised Corporation Code (RA 11232).</div>
+    </div>
+    <div class="metric-item reveal" id="metric-item-3">
+      <div class="metric-label">Rapid Pod Ramp-Up</div>
+      <div class="metric-value-wrap">
+        <span style="font-size:.75em;color:var(--purple);margin-right:.15rem">&lt;</span><span class="counter-num" data-target="14">14</span><span class="metric-suffix" style="font-size:.55em;margin-left:.35rem">DAYS</span>
+      </div>
+      <div class="metric-desc">Average placement SLA from calibration to technical interview, credentialing, and sprint kickoff.</div>
+    </div>
+    <div class="metric-item reveal" id="metric-item-4">
+      <div class="metric-label">Follow-The-Sun Handover</div>
+      <div class="metric-value-wrap">
+        <span class="counter-num" data-target="24">24</span><span class="metric-suffix">/7</span>
+      </div>
+      <div class="metric-desc">Synchronous shift coverage ensuring 4–6 hours of direct overlap with US and European agile cycles.</div>
+    </div>
+    <div class="metric-item reveal" id="metric-item-5">
+      <div class="metric-label">Contract SLA Delivery</div>
+      <div class="metric-value-wrap">
+        <span class="counter-num" data-target="99.4" data-decimals="1">99.4</span><span class="metric-suffix">%</span>
+      </div>
+      <div class="metric-desc">Verified client retention and sprint delivery rate across engineering and managed BPO programs.</div>
+    </div>
+  </div>
+</section>
+
 <!-- NEW SECTION: Practice Areas & Capabilities (Asymmetric Split Layout) -->
 <section class="band band-surface">
   <div class="practice-split">
@@ -386,8 +607,8 @@ img{max-width:100%;display:block}
       <p>Operava structures cross-functional teams around specialized technical practices. Each pod is equipped with senior architectural guidance, continuous QA protocols, and dedicated account leadership.</p>
       <a class="btn btn-primary" href="talent.html">Build Your Pod</a>
     </div>
-    <div class="practice-list reveal">
-      <div class="practice-item">
+    <div class="practice-list">
+      <div class="practice-item reveal">
         <span class="practice-index">01</span>
         <div class="practice-body">
           <h3>Cloud Infrastructure &amp; DevOps Engineering</h3>
@@ -401,7 +622,7 @@ img{max-width:100%;display:block}
           </div>
         </div>
       </div>
-      <div class="practice-item">
+      <div class="practice-item reveal">
         <span class="practice-index">02</span>
         <div class="practice-body">
           <h3>Full-Stack &amp; Systems Architecture</h3>
@@ -415,7 +636,7 @@ img{max-width:100%;display:block}
           </div>
         </div>
       </div>
-      <div class="practice-item">
+      <div class="practice-item reveal">
         <span class="practice-index">03</span>
         <div class="practice-body">
           <h3>AI Systems &amp; Data Operations</h3>
@@ -428,7 +649,7 @@ img{max-width:100%;display:block}
           </div>
         </div>
       </div>
-      <div class="practice-item">
+      <div class="practice-item reveal">
         <span class="practice-index">04</span>
         <div class="practice-body">
           <h3>Customer Experience &amp; Technical Helpdesk</h3>
@@ -441,7 +662,7 @@ img{max-width:100%;display:block}
           </div>
         </div>
       </div>
-      <div class="practice-item">
+      <div class="practice-item reveal">
         <span class="practice-index">05</span>
         <div class="practice-body">
           <h3>Back-Office &amp; Process Automation</h3>
@@ -454,6 +675,117 @@ img{max-width:100%;display:block}
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEDICATED ANIMATION SECTION 3: Interactive Horizontal Scroll-Snap Stage -->
+<section class="hscroll-band" aria-label="100% Remote Delivery Engine Horizontal Scroll Pipeline">
+  <div class="hscroll-top reveal">
+    <div>
+      <p class="kicker">THE 100% REMOTE DELIVERY ENGINE · HORIZONTAL SCROLL PIPELINE</p>
+      <h2 style="font-family:var(--fd);font-weight:700;font-size:clamp(1.85rem,3.8vw,2.9rem);line-height:1.1;text-transform:uppercase;color:var(--ink);margin-bottom:.5rem">How distributed agile pods execute from day zero</h2>
+      <p style="font-size:1.02rem;color:var(--muted);max-width:44rem;line-height:1.65">Explore our end-to-end operational lifecycle. Drag, swipe, or use the controls below to scroll horizontally through our 100% remote delivery controls.</p>
+    </div>
+    <div class="hscroll-controls">
+      <button type="button" class="hscroll-btn" id="hscroll-prev" aria-label="Scroll to previous phase">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="hscroll-step-indicator" id="hscroll-step-counter">PHASE 1 OF 5</div>
+      <button type="button" class="hscroll-btn" id="hscroll-next" aria-label="Scroll to next phase">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="hscroll-progress-line" role="progressbar" aria-label="Horizontal scroll progress" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+    <div class="hscroll-progress-fill" id="hscroll-progress-fill"></div>
+  </div>
+
+  <!-- Interactive Quick Step Nav Pills -->
+  <div class="hscroll-pills-nav" role="tablist" aria-label="Select delivery phase">
+    <button type="button" class="hscroll-pill-btn active" data-index="0" role="tab" aria-selected="true">01 SEC Governance</button>
+    <button type="button" class="hscroll-pill-btn" data-index="1" role="tab" aria-selected="false">02 Talent Calibration</button>
+    <button type="button" class="hscroll-pill-btn" data-index="2" role="tab" aria-selected="false">03 Hardware &amp; Security</button>
+    <button type="button" class="hscroll-pill-btn" data-index="3" role="tab" aria-selected="false">04 Sprint Overlap</button>
+    <button type="button" class="hscroll-pill-btn" data-index="4" role="tab" aria-selected="false">05 Follow-The-Sun QA</button>
+  </div>
+
+  <!-- Horizontal Scroll Rail with Snapping Cards -->
+  <div class="hscroll-rail" id="hscroll-rail" tabindex="0" role="region" aria-label="Operational Delivery Phases Horizontal Rail">
+    <div class="hscroll-card is-active-step" data-index="0">
+      <div class="hscroll-card-step">
+        <span class="hscroll-step-badge">Phase 01</span>
+        <span class="hscroll-step-tag">Statutory Governance</span>
+      </div>
+      <h3>SEC Foundation &amp; MSA Contract</h3>
+      <p>Direct bilateral Master Services Agreement executed under Philippine corporate laws, establishing explicit SLA boundaries, mutual NDAs, and 100% intellectual property ownership assignment upon milestone payment.</p>
+      <ul class="hscroll-specs">
+        <li>Full IP assignment and repository transfer</li>
+        <li>Comprehensive bilateral Non-Disclosure Agreement</li>
+        <li>SEC-registered corporate invoicing (No. 2026080262213-03)</li>
+        <li>Clearly documented sprint milestones and acceptance SLAs</li>
+      </ul>
+    </div>
+
+    <div class="hscroll-card" data-index="1">
+      <div class="hscroll-card-step">
+        <span class="hscroll-step-badge">Phase 02</span>
+        <span class="hscroll-step-tag">Technical Vetting</span>
+      </div>
+      <h3>100% Remote Talent Calibration</h3>
+      <p>Proprietary assessment matrix combining automated algorithmic benchmarks, architectural defense scenarios, and cultural communication evaluations to isolate the top percentile of Philippine specialists.</p>
+      <ul class="hscroll-specs">
+        <li>Live coding challenge and system architecture audit</li>
+        <li>100% remote working discipline verification</li>
+        <li>Executive-level English fluency screening</li>
+        <li>Scenario-based escalation and problem solving</li>
+      </ul>
+    </div>
+
+    <div class="hscroll-card" data-index="2">
+      <div class="hscroll-card-step">
+        <span class="hscroll-step-badge">Phase 03</span>
+        <span class="hscroll-step-tag">Endpoint Security</span>
+      </div>
+      <h3>Zero-Trust Hardware Provisioning</h3>
+      <p>Enterprise laptops pre-configured with encrypted NVMe storage, Mobile Device Management (MDM), corporate VPN tunneling, and biometric authentication deployed directly to remote staff.</p>
+      <ul class="hscroll-specs">
+        <li>Hardware-enforced full-disk encryption</li>
+        <li>Mandatory multi-factor authentication (MFA)</li>
+        <li>Remote wipe and security posture auditing</li>
+        <li>Philippine Data Privacy Act (RA 10173) compliance</li>
+      </ul>
+    </div>
+
+    <div class="hscroll-card" data-index="3">
+      <div class="hscroll-card-step">
+        <span class="hscroll-step-badge">Phase 04</span>
+        <span class="hscroll-step-tag">Sprint Kickoff</span>
+      </div>
+      <h3>Timezone Synchronous Integration</h3>
+      <p>Immediate onboarding into your daily standups, Jira/Linear boards, and Slack/Teams channels with guaranteed 4–6 hours of concurrent working overlap with US or European engineering leads.</p>
+      <ul class="hscroll-specs">
+        <li>PST / EST / GMT shift alignments</li>
+        <li>Direct repo access and CI/CD pipeline integration</li>
+        <li>Daily standup participation and sprint planning</li>
+        <li>Zero-latency Slack/Teams communications</li>
+      </ul>
+    </div>
+
+    <div class="hscroll-card" data-index="4">
+      <div class="hscroll-card-step">
+        <span class="hscroll-step-badge">Phase 05</span>
+        <span class="hscroll-step-tag">24/7 Continuity</span>
+      </div>
+      <h3>Follow-The-Sun Handover &amp; QA</h3>
+      <p>Shift-end git commits and structured ticket handovers transition code smoothly across international time zones, creating a continuous 24-hour engineering and support lifecycle.</p>
+      <ul class="hscroll-specs">
+        <li>Automated CI/CD test verification on each PR</li>
+        <li>Shift-to-shift asynchronous handoff briefings</li>
+        <li>Weekly velocity metrics and monthly scorecards</li>
+        <li>Guaranteed 14-day personnel replacement warranty</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -506,35 +838,203 @@ img{max-width:100%;display:block}
 <!-- Section: Solutions Overview (Cards with Clickable Links) -->
 <section class="band band-surface">
   <div class="section-head center reveal">
-    <p class="kicker">Core Solutions</p>
+    <p class="kicker">Services &amp; Solutions</p>
     <h2>Tailored for modern enterprise demands</h2>
-    <p>Comprehensive workforce and technology delivery across our three fundamental pillars.</p>
+    <p>Comprehensive workforce and technology delivery across our core practices. All roles are 100% remote.</p>
   </div>
   <div class="solutions-grid">
     <article class="sol-card reveal">
       <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80" alt="Professional services and technical architecture">
       <div class="sol-body">
-        <h3>Professional Services</h3>
-        <p>Specialized technology solutions and a global delivery model for your strategic enterprise initiatives.</p>
-        <a href="about.html">Unlock solutions →</a>
+        <h3>Complete Services Directory</h3>
+        <p>Full suite of software development, systems integration, and business process outsourcing solutions.</p>
+        <a href="solutions.html">View complete services →</a>
       </div>
     </article>
     <article class="sol-card reveal">
       <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="Technology talent and engineering teams">
       <div class="sol-body">
-        <h3>Technology Talent</h3>
-        <p>IT careers and technical staffing across modern disciplines — remote-first, client-assigned, and enterprise-ready.</p>
-        <a href="talent.html">Learn about IT talent →</a>
+        <h3>Technology &amp; IT Services</h3>
+        <p>Custom software, web &amp; mobile apps, SaaS platforms, systems development, consulting, and databases.</p>
+        <a href="solutions.html#it-services">View all IT services →</a>
       </div>
     </article>
     <article class="sol-card reveal">
       <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Business operations and BPO support">
       <div class="sol-body">
-        <h3>Business Talent</h3>
-        <p>Business operations support across customer experience, finance, administration, logistics, and verification.</p>
-        <a href="talent.html">Explore business talent →</a>
+        <h3>Business Process &amp; BPO</h3>
+        <p>Customer service, technical support, help desk, back-office operations, data and document processing.</p>
+        <a href="solutions.html#bpo-services">View all BPO services →</a>
       </div>
     </article>
+  </div>
+  <div style="text-align:center;margin-top:2.5rem" class="reveal">
+    <a class="btn btn-primary" href="solutions.html">Explore Complete Services Directory →</a>
+  </div>
+</section>
+
+<!-- DEDICATED INTERACTIVE SECTION: Interactive 100% Remote Agile Pod Switcher -->
+<section class="pod-switcher-band" aria-label="Explore Dedicated 100% Remote Agile Pods">
+  <div class="section-head center reveal">
+    <p class="kicker">MODULAR TEAM COMPOSITION · 100% REMOTE POD ARCHITECTURE</p>
+    <h2>Autonomous cross-functional pods for every enterprise vector</h2>
+    <p>Select an operational practice to inspect team topologies, specialized remote roles, and performance delivery benchmarks.</p>
+  </div>
+
+  <div class="pod-tabs-bar" role="tablist" aria-label="Pod specializations">
+    <button type="button" class="pod-tab-btn active" role="tab" aria-selected="true" data-target="pod-engineering">01 Engineering &amp; Cloud Pods</button>
+    <button type="button" class="pod-tab-btn" role="tab" aria-selected="false" data-target="pod-support">02 24/7 Support &amp; CX Pods</button>
+    <button type="button" class="pod-tab-btn" role="tab" aria-selected="false" data-target="pod-ops">03 Back-Office &amp; Data Pods</button>
+  </div>
+
+  <!-- Panel 1: Engineering -->
+  <div class="pod-panel active" id="pod-engineering" role="tabpanel">
+    <div class="pod-panel-left">
+      <span class="pillar-num">PRACTICE / TECHNOLOGY</span>
+      <h3>Cloud Native &amp; Systems Engineering Pod</h3>
+      <p class="pod-lead">Engineered to integrate directly into active software sprints. All engineers operate 100% remotely with company-issued hardware, secure VPN access, and direct code commit rights.</p>
+      <ul class="pod-meta-list">
+        <li><strong>Deployment Velocity:</strong> 10–14 business days from scope to first commit</li>
+        <li><strong>Timezone Overlap:</strong> Guaranteed 4–6 hours PST/EST or GMT concurrent coverage</li>
+        <li><strong>Tooling Alignment:</strong> GitHub, GitLab, Jira, Linear, Slack, AWS, GCP, Docker</li>
+        <li><strong>IP Assignment:</strong> 100% client code ownership under Philippine SEC corporation rules</li>
+      </ul>
+      <a class="btn btn-primary" href="talent.html">Request Engineering Pod</a>
+    </div>
+    <div class="pod-panel-right">
+      <div class="pod-role-box">
+        <div>
+          <span class="pod-role-badge">Lead Technologist</span>
+          <h4>Staff Cloud Architect</h4>
+          <p>Drives distributed system design, IaC pipeline optimization, and cross-timezone architectural reviews.</p>
+        </div>
+        <span style="font-size:.75rem;color:var(--muted);font-weight:600">100% Remote · Senior Level</span>
+      </div>
+      <div class="pod-role-box">
+        <div>
+          <span class="pod-role-badge">Core Contributor</span>
+          <h4>Senior Full-Stack Engineer</h4>
+          <p>TypeScript, React, Next.js, Node.js, and Python backend services with microservice architectures.</p>
+        </div>
+        <span style="font-size:.75rem;color:var(--muted);font-weight:600">100% Remote · Mid / Senior</span>
+      </div>
+      <div class="pod-role-box">
+        <div>
+          <span class="pod-role-badge">Reliability &amp; Delivery</span>
+          <h4>DevOps &amp; Infrastructure Lead</h4>
+          <p>Automated CI/CD pipelines, Kubernetes clusters, zero-downtime releases, and observability dashboards.</p>
+        </div>
+        <span style="font-size:.75rem;color:var(--muted);font-weight:600">100% Remote · Senior Level</span>
+      </div>
+      <div class="pod-role-box">
+        <div>
+          <span class="pod-role-badge">Quality Governance</span>
+          <h4>Automation QA Engineer</h4>
+          <p>End-to-end Cypress and Playwright test suites, regression test coverage, and pre-release validation.</p>
+        </div>
+        <span style="font-size:.75rem;color:var(--muted);font-weight:600">100% Remote · Mid / Senior</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel 2: Customer Experience & Support -->
+  <div class="pod-panel" id="pod-support" role="tabpanel">
+    <div class="pod-panel-left">
+      <span class="pillar-num">PRACTICE / CUSTOMER EXPERIENCE</span>
+      <h3>Follow-The-Sun 24/7 Technical Support Pod</h3>
+      <p class="pod-lead">SLA-guaranteed omni-channel customer support and Tier 1–3 technical helpdesk teams operating around the clock. All agents are 100% remote with supervised shifts and live QA auditing.</p>
+      <ul class="pod-meta-list">
+        <li><strong>Response SLA:</strong> &lt; 3-minute first response on live channels</li>
+        <li><strong>Resolution SLA:</strong> 94.8% first-contact resolution on Tier 1 queries</li>
+        <li><strong>Language Standard:</strong> Neutral accent, native English professional proficiency</li>
+        <li><strong>Quality Audits:</strong> Continuous recording, transcription, and sentiment scoring</li>
+      </ul>
+      <a class="btn btn-primary" href="talent.html">Request Support Pod</a>
+    </div>
+    <div class="pod-panel-right">
+      <div class="pod-role-box">
+        <div>
+          <span class="pod-role-badge">Supervision</span>
+          <h4>Operations Team Leader</h4>
+          <p>Daily shift management, ticket escalation triage, real-time queue balancing, and client KPI reporting.</p>
+        </div>
+        <span style="font-size:.75rem;color:var(--muted);font-weight:600">100% Remote · Supervisory</span>
+      </div>
+      <div class="pod-role-box">
+        <div>
+          <span class="pod-role-badge">Specialist</span>
+          <h4>Tier-2 Technical Specialist</h4>
+          <p>API error diagnosis, bug reproduction, customer database inquiries, and engineering ticket handoffs.</p>
+        </div>
+        <span style="font-size:.75rem;color:var(--muted);font-weight:600">100% Remote · Technical</span>
+      </div>
+      <div class="pod-role-box">
+        <div>
+          <span class="pod-role-badge">Frontline</span>
+          <h4>Omni-Channel CX Associate</h4>
+          <p>High-volume chat, email, and voice support handled with high empathy, speed, and CRM accuracy.</p>
+        </div>
+        <span style="font-size:.75rem;color:var(--muted);font-weight:600">100% Remote · Frontline</span>
+      </div>
+      <div class="pod-role-box">
+        <div>
+          <span class="pod-role-badge">Compliance &amp; QA</span>
+          <h4>Quality Assurance Analyst</h4>
+          <p>Weekly ticket scoring, compliance checks against statutory privacy standards, and agent coaching.</p>
+        </div>
+        <span style="font-size:.75rem;color:var(--muted);font-weight:600">100% Remote · Specialist</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel 3: Back-Office & Process Automation -->
+  <div class="pod-panel" id="pod-ops" role="tabpanel">
+    <div class="pod-panel-left">
+      <span class="pillar-num">PRACTICE / BUSINESS OPERATIONS</span>
+      <h3>Back-Office &amp; Data Operations Pod</h3>
+      <p class="pod-lead">High-accuracy transaction processing, document verification, content moderation, and financial reconciliation delivered by structured remote specialists with audit-trail logging.</p>
+      <ul class="pod-meta-list">
+        <li><strong>Accuracy Benchmark:</strong> 99.8% precision across high-volume data workflows</li>
+        <li><strong>Audit Readiness:</strong> Complete transaction logging compliant with RA 10173 regulations</li>
+        <li><strong>Tooling Platforms:</strong> ERP, Salesforce, Zendesk, QuickBooks, bespoke client admin panels</li>
+        <li><strong>Security Standard:</strong> Zero-trust access controls, no unauthorized local downloads</li>
+      </ul>
+      <a class="btn btn-primary" href="talent.html">Request Back-Office Pod</a>
+    </div>
+    <div class="pod-panel-right">
+      <div class="pod-role-box">
+        <div>
+          <span class="pod-role-badge">Workflow Lead</span>
+          <h4>Operations Process Manager</h4>
+          <p>Standard Operating Procedure (SOP) documentation, throughput tracking, and exception handling.</p>
+        </div>
+        <span style="font-size:.75rem;color:var(--muted);font-weight:600">100% Remote · Managerial</span>
+      </div>
+      <div class="pod-role-box">
+        <div>
+          <span class="pod-role-badge">Data Operations</span>
+          <h4>Data Extraction &amp; Verification Lead</h4>
+          <p>Complex document inspection, KYC validation, record reconciliation, and digital catalog maintenance.</p>
+        </div>
+        <span style="font-size:.75rem;color:var(--muted);font-weight:600">100% Remote · Specialist</span>
+      </div>
+      <div class="pod-role-box">
+        <div>
+          <span class="pod-role-badge">Finance &amp; Billing</span>
+          <h4>Accounts &amp; Reconciliation Analyst</h4>
+          <p>Accounts payable/receivable matching, automated invoice reconciliation, and ledger hygiene.</p>
+        </div>
+        <span style="font-size:.75rem;color:var(--muted);font-weight:600">100% Remote · Specialist</span>
+      </div>
+      <div class="pod-role-box">
+        <div>
+          <span class="pod-role-badge">Automation</span>
+          <h4>RPA &amp; Workflow Automator</h4>
+          <p>Building automated scripts and bots to eliminate repetitive manual processing across systems.</p>
+        </div>
+        <span style="font-size:.75rem;color:var(--muted);font-weight:600">100% Remote · Technical</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -600,27 +1100,27 @@ img{max-width:100%;display:block}
   <div class="section-head center reveal">
     <p class="kicker">CAREERS &amp; OPPORTUNITIES</p>
     <h2>Standard professional tracks</h2>
-    <p>Broad executive tracks with specialization defined by client assignment. Remote-first and global.</p>
+    <p>Broad executive tracks with specialization defined by client assignment. All roles are 100% remote.</p>
   </div>
   <div class="jobs-wrap reveal">
     <div class="job-row">
       <div>
         <h3>OPERAVA Technology Executive</h3>
-        <p class="meta">Remote / Hybrid · Global Delivery · Full-time</p>
+        <p class="meta">100% Remote · Full-time</p>
       </div>
       <a href="careers.html#technology">View role details →</a>
     </div>
     <div class="job-row">
       <div>
         <h3>OPERAVA Customer Service Executive</h3>
-        <p class="meta">Remote · Global Delivery · Full-time</p>
+        <p class="meta">100% Remote · Full-time</p>
       </div>
       <a href="careers.html#customer-service">View role details →</a>
     </div>
     <div class="job-row">
       <div>
         <h3>OPERAVA Business Operations Executive</h3>
-        <p class="meta">Remote · Global Delivery · Full-time</p>
+        <p class="meta">100% Remote · Full-time</p>
       </div>
       <a href="careers.html#business-operations">View role details →</a>
     </div>
@@ -655,13 +1155,130 @@ img{max-width:100%;display:block}
       <p>The cultural, procedural, and tooling differences that separate teams that scale gracefully from teams that stall.</p>
     </article>
     <article class="news-card reveal" id="news-article-3">
-      <button type="button" class="news-img-btn" id="news-expand-btn-3" aria-label="Expand image: Remote-first delivery that works" data-full-src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=85" data-caption="Remote-first delivery that works — Operational Blueprint">
-        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Distributed remote-first delivery workspace">
+      <button type="button" class="news-img-btn" id="news-expand-btn-3" aria-label="Expand image: Enterprise remote delivery that works" data-full-src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=85" data-caption="Enterprise remote delivery that works — Operational Blueprint">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Distributed 100% remote delivery workspace">
         <span class="news-expand-badge">Expand ↗</span>
       </button>
-      <h3>Remote-first delivery that works</h3>
+      <h3>Enterprise remote delivery that works</h3>
       <p>Practical governance frameworks and communication protocols for distributed technology and BPO organizations.</p>
     </article>
+  </div>
+</section>
+
+<!-- DEDICATED STATUTORY SECTION: Full Official Philippine SEC Corporate Statement Band -->
+<section class="sec-statement-band" aria-label="Official Philippine SEC Corporate Registration and Statutory Statement">
+  <div class="sec-statement-box reveal">
+    <div class="sec-seal-bar">
+      <div class="sec-seal-left">
+        <div class="sec-seal-icon">SEC</div>
+        <div class="sec-seal-text">
+          <h3>Official Corporate Statutory Statement</h3>
+          <p>Republic of the Philippines · Securities and Exchange Commission</p>
+        </div>
+      </div>
+      <div class="sec-reg-number-pill">
+        SEC REG. NO. 2026080262213-03
+      </div>
+    </div>
+
+    <div class="sec-legal-content">
+      <div class="sec-statement-prose">
+        <p><strong>Operava Global Solutions</strong> is duly organized and legally existing under the corporate laws of the Republic of the Philippines as a <strong>registered corporation</strong>, having been formally issued Company Registration Number <strong>2026080262213-03</strong> pursuant to Title III of the Revised Corporation Code of the Philippines (Republic Act No. 11232).</p>
+        
+        <p>Operava operates with full legal authority and corporate capacity to enter into binding bilateral Master Services Agreements (MSAs), Statements of Work (SOWs), and enterprise Service Level Agreements (SLAs) with clients globally. All contracts guarantee complete intellectual property assignment and enforceable non-disclosure protection upon settlement of invoices.</p>
+
+        <p><strong>Operational Model &amp; Remote Workplace Mandate:</strong> In alignment with modern distributed architecture, all internal staff positions, talent placements, managed BPO pods, and client-assigned engineering roles across Operava Global Solutions are <strong>conducted 100% remotely</strong>. Operava maintains zero mandatory centralized physical reporting, operating through an enterprise zero-trust hardware and digital infrastructure model that upholds strict data isolation and continuous performance oversight.</p>
+
+        <p>Operava's regulatory compliance and corporate operations are actively maintained in strict conformity with the <strong>Securities and Exchange Commission (SEC)</strong>, the <strong>Bureau of Internal Revenue (BIR)</strong>, the <strong>Department of Labor and Employment (DOLE)</strong>, and the <strong>National Privacy Commission (NPC)</strong> under Republic Act No. 10173 (Data Privacy Act of 2012).</p>
+      </div>
+
+      <div class="sec-statutory-grid">
+        <div class="sec-stat-badge-card">
+          <div class="sec-stat-head">
+            <span class="sec-stat-title">Corporate Registration</span>
+            <span class="sec-stat-code">RA 11232</span>
+          </div>
+          <div class="sec-stat-desc">Duly registered Philippine corporation under Title III of the Revised Corporation Code. Official Reg. #2026080262213-03.</div>
+        </div>
+
+        <div class="sec-stat-badge-card">
+          <div class="sec-stat-head">
+            <span class="sec-stat-title">100% Remote Delivery</span>
+            <span class="sec-stat-code">Zero Commute</span>
+          </div>
+          <div class="sec-stat-desc">All roles across engineering, operations, and support are 100% remote with managed zero-trust hardware endpoints.</div>
+        </div>
+
+        <div class="sec-stat-badge-card">
+          <div class="sec-stat-head">
+            <span class="sec-stat-title">Data Privacy Act</span>
+            <span class="sec-stat-code">RA 10173</span>
+          </div>
+          <div class="sec-stat-desc">Full compliance with the National Privacy Commission regulations with designated Data Protection Officers.</div>
+        </div>
+
+        <div class="sec-stat-badge-card">
+          <div class="sec-stat-head">
+            <span class="sec-stat-title">Labor &amp; Tax Compliance</span>
+            <span class="sec-stat-code">DOLE &amp; BIR</span>
+          </div>
+          <div class="sec-stat-desc">Compliant with Philippine labor standards, statutory social benefits, and transparent international commercial invoicing.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEDICATED ANIMATION SECTION 4: Scroll-Activated Comparison Matrix -->
+<section class="comparison-band" aria-label="Operava Remote Corporation vs Traditional Vendors Comparison">
+  <div class="section-head center reveal">
+    <p class="kicker">STRATEGIC ADVANTAGE · COMPARATIVE MATRIX</p>
+    <h2>Why enterprise teams choose Operava's 100% remote corporate model</h2>
+    <p>Compare the operational realities of legacy office-bound outsourcing against Operava's SEC-registered, distributed agile pods.</p>
+  </div>
+
+  <div class="comparison-table-wrap reveal">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th style="width:28%">Operational Vector</th>
+          <th style="width:36%">Traditional In-Office BPO / Staffing</th>
+          <th class="th-operava" style="width:36%">Operava Global Solutions (100% Remote)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-feature">Corporate Standing</td>
+          <td class="td-traditional">Fragmented offshore shell entities or unregulated intermediaries.</td>
+          <td class="td-operava"><strong>SEC-Registered Corporation</strong> (Reg. #2026080262213-03) under Philippine Revised Corporation Code RA 11232.</td>
+        </tr>
+        <tr>
+          <td class="td-feature">Workplace Architecture</td>
+          <td class="td-traditional">Mandatory physical desks, rigid real-estate overhead passed to client billing.</td>
+          <td class="td-operava"><strong>100% Remote Model:</strong> Zero facility overhead, zero traffic fatigue, higher talent retention, and direct cost efficiency.</td>
+        </tr>
+        <tr>
+          <td class="td-feature">Talent Pool Geography</td>
+          <td class="td-traditional">Restricted to a 15-kilometer radius around a single metropolitan facility.</td>
+          <td class="td-operava"><strong>Nationwide &amp; Global Access:</strong> Access to the top percentile of engineers and specialists across all Philippine regions.</td>
+        </tr>
+        <tr>
+          <td class="td-feature">Sprint &amp; Workflow Integration</td>
+          <td class="td-traditional">Separated by rigid shift walls, ticketing silos, and bureaucratic account gatekeepers.</td>
+          <td class="td-operava"><strong>Direct Native Collaboration:</strong> Integrated directly into your Jira, GitHub, and Slack with guaranteed 4–6 hours timezone overlap.</td>
+        </tr>
+        <tr>
+          <td class="td-feature">Time-to-Deploy SLA</td>
+          <td class="td-traditional">45 to 90 days involving multi-layer administrative bureaucracy.</td>
+          <td class="td-operava"><strong>Under 14 Days:</strong> Accelerated calibration, live technical audits, and turnkey zero-trust hardware onboarding.</td>
+        </tr>
+        <tr>
+          <td class="td-feature">IP &amp; Security Governance</td>
+          <td class="td-traditional">Ambiguous shared-repo rights, localized network vulnerabilities.</td>
+          <td class="td-operava"><strong>100% IP Assignment:</strong> Full bilateral NDAs, encrypted NVMe laptops, MDM remote-wipe, and RA 10173 data privacy compliance.</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
@@ -676,7 +1293,7 @@ img{max-width:100%;display:block}
     <div class="gov-card reveal">
       <div class="gov-icon">SEC Registered</div>
       <h3>Corporate Standing</h3>
-      <p>Registered One Person Corporation in the Republic of the Philippines (SEC No. 2026080262213-03) with verifiable legal governance.</p>
+      <p>Registered Corporation in the Republic of the Philippines (SEC Registration No. 2026080262213-03) under Title III of the Revised Corporation Code (RA 11232). All roles are 100% remote.</p>
     </div>
     <div class="gov-card reveal">
       <div class="gov-icon">RA 10173</div>
@@ -815,7 +1432,7 @@ img{max-width:100%;display:block}
   <div class="footer-grid">
     <div>
       <div class="footer-brand">Operava Global Solutions</div>
-      <p>Technology is our focus, and quality is our commitment. Philippine-based · remote-first · global operations.</p>
+      <p>Technology is our focus, and quality is our commitment. Philippine SEC-registered corporation · All roles are 100% remote.</p>
     </div>
     <div>
       <h4>Company</h4>
@@ -828,9 +1445,10 @@ img{max-width:100%;display:block}
     <div>
       <h4>Solutions</h4>
       <ul>
-        <li><a href="talent.html">Technology Talent</a></li>
-        <li><a href="talent.html">Business Talent</a></li>
-        <li><a href="about.html">Professional Services</a></li>
+        <li><a href="solutions.html">Complete Services Directory</a></li>
+        <li><a href="solutions.html#it-services">Technology &amp; IT Services</a></li>
+        <li><a href="solutions.html#bpo-services">Business Process &amp; BPO</a></li>
+        <li><a href="talent.html">Request Dedicated Talent</a></li>
       </ul>
     </div>
     <div>
@@ -900,8 +1518,8 @@ img{max-width:100%;display:block}
   window.addEventListener('resize', updateScrollState, { passive: true });
   updateScrollState();
 
-  // Scroll Reveal Animations
-  var els = document.querySelectorAll('.reveal');
+  // Scroll Reveal Animations for sections, pillar cards, and practice items
+  var els = document.querySelectorAll('.reveal, .pillar-card, .practice-item');
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
@@ -910,7 +1528,7 @@ img{max-width:100%;display:block}
           io.unobserve(entry.target);
         }
       });
-    }, {threshold: 0.1});
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
     els.forEach(function(el){ io.observe(el); });
   } else {
     els.forEach(function(el){ el.classList.add('in'); });
@@ -1113,6 +1731,159 @@ img{max-width:100%;display:block}
 
     // Begin auto-rotation
     startTimer();
+  })();
+
+  // 1. Animated Metric Counters
+  (function initMetricCounters(){
+    var counters = document.querySelectorAll('.counter-num');
+    if(!counters.length) return;
+
+    function animateCounter(el){
+      var target = parseFloat(el.getAttribute('data-target')) || 0;
+      var decimals = parseInt(el.getAttribute('data-decimals'), 10) || 0;
+      var duration = 1600;
+      var startTimestamp = null;
+
+      function step(timestamp){
+        if(!startTimestamp) startTimestamp = timestamp;
+        var progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        // easeOutQuad curve
+        var ease = 1 - (1 - progress) * (1 - progress);
+        var current = (target * ease).toFixed(decimals);
+        el.textContent = current;
+        if(progress < 1){
+          window.requestAnimationFrame(step);
+        } else {
+          el.textContent = target.toFixed(decimals);
+        }
+      }
+      window.requestAnimationFrame(step);
+    }
+
+    if('IntersectionObserver' in window){
+      var counterObserver = new IntersectionObserver(function(entries, observer){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            counters.forEach(function(counter){
+              animateCounter(counter);
+            });
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.25 });
+
+      var band = document.getElementById('metrics-band');
+      if(band) counterObserver.observe(band);
+    } else {
+      counters.forEach(function(counter){
+        var target = parseFloat(counter.getAttribute('data-target')) || 0;
+        var decimals = parseInt(counter.getAttribute('data-decimals'), 10) || 0;
+        counter.textContent = target.toFixed(decimals);
+      });
+    }
+  })();
+
+  // 2. Interactive Horizontal Scroll-Snap Stage
+  (function initHorizontalScrollStage(){
+    var rail = document.getElementById('hscroll-rail');
+    var progressFill = document.getElementById('hscroll-progress-fill');
+    var prevBtn = document.getElementById('hscroll-prev');
+    var nextBtn = document.getElementById('hscroll-next');
+    var pills = document.querySelectorAll('.hscroll-pill-btn');
+    var cards = document.querySelectorAll('.hscroll-card');
+
+    if(!rail || !cards.length) return;
+
+    function updateProgress(){
+      var maxScroll = rail.scrollWidth - rail.clientWidth;
+      var currentScroll = rail.scrollLeft;
+      var pct = maxScroll > 0 ? (currentScroll / maxScroll) * 100 : 0;
+      if(progressFill){
+        progressFill.style.width = Math.min(100, Math.max(0, pct)) + '%';
+      }
+
+      // Determine active card by center position
+      var railCenter = rail.getBoundingClientRect().left + rail.clientWidth / 2;
+      var closestIdx = 0;
+      var minDistance = Infinity;
+
+      cards.forEach(function(card, idx){
+        var rect = card.getBoundingClientRect();
+        var cardCenter = rect.left + rect.width / 2;
+        var distance = Math.abs(railCenter - cardCenter);
+        if(distance < minDistance){
+          minDistance = distance;
+          closestIdx = idx;
+        }
+      });
+
+      pills.forEach(function(pill, idx){
+        pill.classList.toggle('active', idx === closestIdx);
+      });
+    }
+
+    var ticking = false;
+    rail.addEventListener('scroll', function(){
+      if(!ticking){
+        window.requestAnimationFrame(function(){
+          updateProgress();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    function scrollCard(direction){
+      var cardWidth = cards[0] ? cards[0].offsetWidth + 24 : 320;
+      rail.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+    }
+
+    if(prevBtn){
+      prevBtn.addEventListener('click', function(){ scrollCard(-1); });
+    }
+    if(nextBtn){
+      nextBtn.addEventListener('click', function(){ scrollCard(1); });
+    }
+
+    pills.forEach(function(pill){
+      pill.addEventListener('click', function(){
+        var targetStep = parseInt(pill.getAttribute('data-step'), 10);
+        var targetCard = rail.querySelector('.hscroll-card[data-step="' + targetStep + '"]');
+        if(targetCard){
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      });
+    });
+
+    // Initialize progress on load
+    updateProgress();
+  })();
+
+  // 3. Interactive 100% Remote Pod Switcher
+  (function initPodSwitcher(){
+    var tabBtns = document.querySelectorAll('.pod-tab-btn');
+    var panels = document.querySelectorAll('.pod-panel');
+
+    if(!tabBtns.length || !panels.length) return;
+
+    tabBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var targetId = btn.getAttribute('data-target');
+
+        // Toggle active button
+        tabBtns.forEach(function(b){
+          var isCurrent = b === btn;
+          b.classList.toggle('active', isCurrent);
+          b.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+        });
+
+        // Toggle active panel
+        panels.forEach(function(panel){
+          var isMatch = panel.id === targetId;
+          panel.classList.toggle('active', isMatch);
+        });
+      });
+    });
   })();
 })();
 </script>
