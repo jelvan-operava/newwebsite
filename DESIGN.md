@@ -21,22 +21,31 @@ Do **not**:
 
 ---
 
-## 2. Site structure
+## 2. Site structure & directory layout
 
-Static multi-page site. No build step required for production (plain HTML).
+The repository is organized into distinct, purposeful directories:
+- `/pages/` — All HTML documents (served cleanly at root and direct `.html` extensions)
+- `/public/` — Static media assets (`/public/images/`, `/public/icons/`)
+- `/api/` — Backend server routes (`/api/contact`, `/api/talent`, `/api/resume`, `/api/referral`, `/api/health`)
+- `server.js` — Express server providing clean routing, form processing, and asset serving
 
-| File | Purpose |
-|------|---------|
-| `index.html` | Home — marketing overview |
-| `about.html` | About Us |
-| `referral.html` | Referral Program |
-| `jobs-us.html` | U.S. Job Search |
-| `jobs-global.html` | Global Job Search |
-| `resume.html` | Submit Resume |
-| `talent.html` | Request Talent |
-| `contact.html` | Contact Us |
+| File in `/pages/` | Clean Route | Purpose |
+|-------------------|-------------|---------|
+| `index.html` | `/` | Home — Technology, Workforce & Talent Solutions overview |
+| `solutions.html` | `/solutions` | Complete Services Directory (IT & BPO services) |
+| `about.html` | `/about` | About Operava Global Solutions & SEC Corporate Governance |
+| `careers.html` | `/careers` | Careers & Core Professional Role Tracks |
+| `jobs-global.html` | `/jobs-global` | Global 100% Remote Opportunities |
+| `jobs-us.html` | `/jobs-us` | U.S. & North American Talent Opportunities |
+| `talent.html` | `/talent` | Request Dedicated Talent Pods & Enterprise Squads |
+| `resume.html` | `/resume` | Candidate Application Submission |
+| `referral.html` | `/referral` | Client & Candidate Referral Program |
+| `contact.html` | `/contact` | Corporate Inquiries & Direct Engagement |
+| `privacy-policy.html` | `/privacy-policy` | Data Privacy Policy (RA 10173 & Global Standards) |
+| `refund-policy.html` | `/refund-policy` | Billing, Milestone SOW & Refund Governance |
+| `terms.html` | `/terms` | Official Terms & Conditions of Engagement |
 
-Navigation must link to these files (not hash-only anchors for primary destinations). Keep header + footer consistent on every page. Active nav item uses `.is-active`.
+Navigation must link to these targets (not hash-only anchors for primary destinations). Keep header + footer consistent on every page. Active nav item uses `.is-active`.
 
 ---
 

@@ -8,10 +8,12 @@ You are editing the OPERAVA website repository. **Follow this file and `DESIGN.m
 - Footer brand text: **Operava Global Solutions**
 - Do not swap, merge, or restyle these inconsistently across pages
 
-## Architecture
+## Architecture & Directory Layout
 
-- Static multi-page HTML at repo root (no required build step)
-- Pages: `index.html`, `about.html`, `referral.html`, `careers.html`, `jobs-us.html`, `jobs-global.html`, `resume.html`, `talent.html`, `contact.html`, `terms.html`
+- HTML Pages organized in `/pages/`: `index.html`, `solutions.html`, `about.html`, `careers.html`, `jobs-global.html`, `jobs-us.html`, `talent.html`, `resume.html`, `referral.html`, `contact.html`, `privacy-policy.html`, `refund-policy.html`, `terms.html`
+- Static Assets in `/public/`: media, images (`/public/images/`), icons (`/public/icons/`)
+- Backend API in `/api/`: modular Express handlers (`/api/contact`, `/api/talent`, `/api/resume`, `/api/referral`, `/api/health`)
+- Server: Express in `server.js` serving `/pages`, `/public`, and `/api` on port 3000
 - Primary nav links to real files, not only `#` anchors
 - Keep header/footer present and consistent on every page
 - Careers content and Terms content must stay faithful to official OPERAVA source documents when updated
