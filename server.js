@@ -20,7 +20,7 @@ app.use((req, res, next) => {
     "font-src 'self' https://fonts.gstatic.com data:; " +
     "img-src 'self' data: https://images.unsplash.com; " +
     "connect-src 'self'; " +
-    "frame-ancestors 'self' https://*.run.app https://ai.studio https://*.google.com; " +
+    "frame-ancestors 'self' https://*.run.app https://ai.studio https://*.ai.studio https://*.google.com https://*.googleusercontent.com; " +
     "object-src 'none'; " +
     "base-uri 'self';"
   );

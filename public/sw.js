@@ -4,7 +4,7 @@
  * Network-Only for API and sensitive requests).
  */
 
-const SW_VERSION = 'v1';
+const SW_VERSION = 'v3';
 const STATIC_CACHE = `operava-static-${SW_VERSION}`;
 const RUNTIME_CACHE = `operava-runtime-${SW_VERSION}`;
 
@@ -12,7 +12,11 @@ const RUNTIME_CACHE = `operava-runtime-${SW_VERSION}`;
 const PRECACHE_ASSETS = [
   '/',
   '/index.html',
+  '/public/icons/favicon.svg',
+  '/public/images/hero-bg.webp',
   '/public/css/operava-privacy.css',
+  '/public/css/operava-search.css',
+  '/public/js/operava-search.js',
   '/public/js/operava-storage.js',
   '/public/js/operava-cookies.js',
   '/public/js/operava-cache.js',

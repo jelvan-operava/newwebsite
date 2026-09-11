@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { getHealth } from './health.js';
+import { handleSearch } from './search.js';
 import { handleContact } from './contact.js';
 import { handleTalentRequest } from './talent.js';
 import { handleResumeSubmission } from './resume.js';
@@ -10,6 +11,9 @@ const router = Router();
 
 // System status & verification
 router.get('/health', getHealth);
+
+// Universal Site Search across Services, Careers, and Documentation
+router.get('/search', handleSearch);
 
 // Session & CSRF lifecycle
 router.get('/session', handleGetSession);

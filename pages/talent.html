@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Request Talent | OPERAVA</title>
 <meta name="description" content="Request dedicated technology and business talent from Operava Global Solutions. Defined by quotation and Statement of Work.">
+<link rel="icon" type="image/svg+xml" href="/public/icons/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/public/css/operava-privacy.css">
+<link rel="stylesheet" href="/public/css/operava-search.css">
 <style>
 :root{
   --ink:#0a1628;
@@ -104,11 +106,27 @@ a{color:inherit;text-decoration:none}
     <a href="referral.html">Referral</a>
     <a href="contact.html">Contact</a>
   </nav>
+  <div class="nav-search-wrap">
+    <button type="button" class="nav-search-bar" id="header-search-btn" aria-label="Search services, careers, documentation (Press / or Ctrl+K)">
+      <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <span class="nav-search-text">Search services, careers, docs...</span>
+      <kbd class="nav-search-kbd" title="Press / to search">/</kbd>
+    </button>
+  </div>
+  <button type="button" class="nav-search-btn-mobile" id="header-search-mobile-btn" aria-label="Search site">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </button>
   <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 
 <section class="page-hero">
-  <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=85" alt="Operava Delivery Pods and Infrastructure" class="page-hero-bg" fetchpriority="high">
+  <img src="/public/images/hero-bg.webp" alt="Operava Delivery Pods and Infrastructure" class="page-hero-bg" fetchpriority="high">
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
     <p class="crumb"><a href="index.html">Home</a> / Request Talent</p>
@@ -315,5 +333,6 @@ a{color:inherit;text-decoration:none}
   }else els.forEach(function(el){el.classList.add('in')});
 })();
 </script>
+<script src="/public/js/operava-search.js" defer></script>
 </body>
 </html>

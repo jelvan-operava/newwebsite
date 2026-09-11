@@ -1,0 +1,536 @@
+/**
+ * OPERAVA Global Solutions — Universal Navigation Search Styles
+ * Adheres to OPERAVA Editorial Design System: High contrast, Plus Jakarta Sans & Roboto Condensed,
+ * fluid full-width layout, clean borders, and accessible keyboard states.
+ */
+
+/* ==========================================================================
+   Header Search Component (Desktop & Responsive)
+   ========================================================================== */
+.nav-search-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.nav-search-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--line, #e2e6ee);
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem 0.45rem 0.85rem;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  color: var(--muted, #505e73);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  user-select: none;
+  width: 220px;
+  height: 38px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+  .nav-search-bar {
+    width: 260px;
+  }
+}
+
+.nav-search-bar:hover {
+  border-color: var(--purple, #4b20c9);
+  background: #ffffff;
+  color: var(--ink, #0a1628);
+  box-shadow: 0 2px 8px rgba(75, 32, 201, 0.08);
+}
+
+.nav-search-bar:focus-visible {
+  outline: 2px solid var(--purple, #4b20c9);
+  outline-offset: 2px;
+}
+
+.nav-search-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  stroke: var(--muted, #505e73);
+  transition: stroke 0.2s;
+}
+
+.nav-search-bar:hover .nav-search-icon {
+  stroke: var(--purple, #4b20c9);
+}
+
+.nav-search-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.8125rem;
+  color: var(--muted, #505e73);
+  text-align: left;
+}
+
+.nav-search-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--muted, #505e73);
+  background: #f1f3f7;
+  border: 1px solid #d5dae4;
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+  min-width: 16px;
+  line-height: 1.2;
+}
+
+/* Mobile Search Icon Button */
+.nav-search-btn-mobile {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--line, #e2e6ee);
+  border-radius: 999px;
+  color: var(--ink, #0a1628);
+  padding: 0.5rem;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+
+.nav-search-btn-mobile:hover,
+.nav-search-btn-mobile:focus-visible {
+  border-color: var(--purple, #4b20c9);
+  background: #f7f8fc;
+  outline: none;
+}
+
+@media (max-width: 960px) {
+  .nav-search-wrap {
+    margin-right: 0.5rem;
+  }
+  .nav-search-bar {
+    width: 180px;
+    padding: 0.4rem 0.65rem;
+  }
+  .nav-search-kbd {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .nav-search-wrap {
+    display: none;
+  }
+  .nav-search-btn-mobile {
+    display: inline-flex;
+  }
+}
+
+/* ==========================================================================
+   Search Dialog & Command Palette Overlay
+   ========================================================================== */
+.operava-search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(10, 22, 40, 0.48);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(1rem, 5vh, 4rem) 1rem 1.5rem;
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s ease-out, visibility 0.22s;
+}
+
+.operava-search-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.operava-search-modal {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 24px 64px rgba(10, 22, 40, 0.22), 0 4px 16px rgba(10, 22, 40, 0.08);
+  border: 1px solid var(--line, #e2e6ee);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - clamp(2rem, 10vh, 6rem));
+  transform: translateY(-8px) scale(0.985);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.operava-search-overlay.is-open .operava-search-modal {
+  transform: translateY(0) scale(1);
+}
+
+/* Search Header & Input Box */
+.operava-search-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--line, #e2e6ee);
+  position: relative;
+  background: #ffffff;
+}
+
+.operava-search-input-icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--purple, #4b20c9);
+  flex-shrink: 0;
+}
+
+.operava-search-input {
+  flex: 1;
+  font-family: inherit;
+  font-size: 1.05rem;
+  color: var(--ink, #0a1628);
+  background: transparent;
+  border: none;
+  outline: none;
+  line-height: 1.5;
+  padding: 0;
+}
+
+.operava-search-input::placeholder {
+  color: #8c9ba5;
+}
+
+.operava-search-clear {
+  background: transparent;
+  border: none;
+  color: var(--muted, #505e73);
+  cursor: pointer;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: color 0.15s, background 0.15s;
+}
+
+.operava-search-clear:hover {
+  color: var(--ink, #0a1628);
+  background: #f1f3f7;
+}
+
+.operava-search-close-btn {
+  background: #f7f8fc;
+  border: 1px solid var(--line, #e2e6ee);
+  border-radius: 6px;
+  color: var(--muted, #505e73);
+  font-size: 0.75rem;
+  font-family: var(--fd, 'Roboto Condensed', sans-serif);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.operava-search-close-btn:hover {
+  background: #eef1f6;
+  color: var(--ink, #0a1628);
+}
+
+/* Category Filter Tabs Bar */
+.operava-search-categories {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  background: #f9fafc;
+  border-bottom: 1px solid var(--line, #e2e6ee);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.operava-search-categories::-webkit-scrollbar {
+  display: none;
+}
+
+.operava-category-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-family: var(--fd, 'Roboto Condensed', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted, #505e73);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.operava-category-tab:hover {
+  color: var(--ink, #0a1628);
+  background: #ffffff;
+  border-color: #dcd0f9;
+}
+
+.operava-category-tab.is-active {
+  background: var(--purple, #4b20c9);
+  color: #ffffff;
+  border-color: var(--purple, #4b20c9);
+}
+
+.operava-category-count {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+  color: inherit;
+}
+
+.operava-category-tab.is-active .operava-category-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Results Content Area */
+.operava-search-body {
+  overflow-y: auto;
+  flex: 1;
+  padding: 0.75rem 0.5rem;
+  max-height: 480px;
+}
+
+/* Quick Discovery / Empty Search State */
+.operava-search-discovery {
+  padding: 1rem 1rem 1.25rem;
+}
+
+.operava-discovery-title {
+  font-family: var(--fd, 'Roboto Condensed', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted, #505e73);
+  margin-bottom: 0.75rem;
+}
+
+.operava-discovery-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.operava-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f7f8fc;
+  border: 1px solid var(--line, #e2e6ee);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8125rem;
+  color: var(--ink, #0a1628);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.operava-chip:hover {
+  background: #f4f0ff;
+  border-color: #dcd0f9;
+  color: var(--purple, #4b20c9);
+}
+
+/* Results List */
+.operava-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.operava-result-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+}
+
+.operava-result-item:hover,
+.operava-result-item.is-focused {
+  background: #f7f5fe;
+  border-left-color: var(--purple, #4b20c9);
+}
+
+.operava-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.operava-result-title {
+  font-family: var(--fd, 'Roboto Condensed', sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink, #0a1628);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.operava-result-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: #eef1f6;
+  color: var(--muted, #505e73);
+}
+
+.operava-result-item[data-cat="services"] .operava-result-badge {
+  background: #edf2ff;
+  color: #2b54bb;
+}
+
+.operava-result-item[data-cat="careers"] .operava-result-badge {
+  background: #e9fbf0;
+  color: #1a7a40;
+}
+
+.operava-result-item[data-cat="documentation"] .operava-result-badge {
+  background: #f4f0ff;
+  color: var(--purple, #4b20c9);
+}
+
+.operava-result-desc {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--muted, #505e73);
+  margin: 0;
+}
+
+.operava-result-url {
+  font-size: 0.75rem;
+  color: #8c9ba5;
+  margin-top: 0.35rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.operava-result-item:hover .operava-result-url,
+.operava-result-item.is-focused .operava-result-url {
+  color: var(--purple, #4b20c9);
+}
+
+/* Highlighted match words */
+.operava-result-item mark {
+  background: #ffeaa7;
+  color: #0a1628;
+  padding: 0.05rem 0.2rem;
+  border-radius: 2px;
+}
+
+/* Empty State */
+.operava-search-empty {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--muted, #505e73);
+}
+
+.operava-search-empty h3 {
+  font-family: var(--fd, 'Roboto Condensed', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink, #0a1628);
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+}
+
+.operava-search-empty p {
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Footer Shortcuts Bar */
+.operava-search-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: #fafbfc;
+  border-top: 1px solid var(--line, #e2e6ee);
+  font-size: 0.75rem;
+  color: var(--muted, #505e73);
+}
+
+.operava-search-shortcuts {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.operava-search-shortcut-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.operava-search-shortcut-item kbd {
+  background: #ffffff;
+  border: 1px solid #d5dae4;
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.7rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 640px) {
+  .operava-search-footer {
+    display: none;
+  }
+  .operava-search-overlay {
+    padding: 0.5rem;
+  }
+  .operava-search-modal {
+    max-height: 94vh;
+  }
+}
